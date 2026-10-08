@@ -1,0 +1,3246 @@
+{
+  "version": 1,
+  "title": "Texas questionnaire \u2014 sections 0\u20136",
+  "start": "Q001",
+  "nodes": [
+    {
+      "id": "Q001",
+      "title": "Is the property in Texas?",
+      "type": "question",
+      "x": 80,
+      "y": 100,
+      "answers": [
+        {
+          "value": "Yes",
+          "label": "Yes",
+          "unknown": false,
+          "target": "Q002"
+        },
+        {
+          "value": "No",
+          "label": "No",
+          "unknown": false,
+          "target": "STOP-TX"
+        }
+      ],
+      "questionCode": "Q001",
+      "section": "0. SETUP",
+      "textIncomplete": false,
+      "notes": "Yes/No option values transcribed from detail screenshot. Destinations mapped from the Texas/non-Texas split in the flow screenshot.",
+      "details": {
+        "whyWeAsk": "This version of the document engine is Texas-specific.",
+        "stage": "STAGE_0",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": true,
+        "routeTag": "Core (no route tag)",
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": []
+        },
+        "canonicalMappings": [
+          {
+            "field": "property.address.state",
+            "displayName": "Property State",
+            "valueTransform": "Yes writes TX",
+            "valueClass": "USER_FACT",
+            "primary": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q002",
+      "title": "Are you buying a property or assigning a deal (selling a contract)?",
+      "type": "question",
+      "x": 350,
+      "y": 280,
+      "answers": [
+        {
+          "value": "Yes",
+          "label": "Buying",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "No",
+          "label": "Assigning/Wholesale",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Yes, but want the option to assign",
+          "label": "Yes, but want the option to assign",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q002",
+      "section": "0. SETUP",
+      "textIncomplete": false,
+      "notes": "Transcribed from question-detail screenshot. Canonical mapping is outside this screenshot; answer destinations are not supplied.",
+      "details": {
+        "whyWeAsk": "The wizard is built for investor acquisitions, assignments and exits. Example - If you are buying a property to fix & flip or assigning a contract (Wholesaling)",
+        "stage": "STAGE_0",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": true,
+        "routeTag": "Core (no route tag)",
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": []
+        },
+        "canonicalMappings": null
+      }
+    },
+    {
+      "id": "Q004",
+      "title": "What is your primary objective with this opportunity?",
+      "type": "question",
+      "x": 350,
+      "y": 460,
+      "answers": [
+        {
+          "value": "Quick cash",
+          "label": "Quick cash (Wholesale)",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Resale profit",
+          "label": "Resale profit (Eg. Fix & Flip)",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Long-term cash flow",
+          "label": "Long-term cash flow (Eg. Rental)",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Open to best option",
+          "label": "Open to best option",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q004",
+      "section": "0. SETUP",
+      "textIncomplete": false,
+      "notes": "Transcribed from question-detail screenshot. Visibility and canonical mapping are not visible; answer destinations are not supplied.",
+      "details": {
+        "whyWeAsk": "Captures preference without forcing a strategy choice.",
+        "stage": "STAGE_0",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": true,
+        "routeTag": "Core (no route tag)",
+        "visibility": null,
+        "canonicalMappings": null
+      }
+    },
+    {
+      "id": "Q007",
+      "title": "How are you Financing the deal?",
+      "type": "question",
+      "x": 350,
+      "y": 640,
+      "answers": [
+        {
+          "value": "Cash available",
+          "label": "Cash",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Bank/DSCR",
+          "label": "Bank/DSCR",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Hard money",
+          "label": "Hard money",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Private money",
+          "label": "Private money",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "No financing yet",
+          "label": "No financing yet",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Mixed",
+          "label": "Mixed",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q007",
+      "section": "0. SETUP",
+      "textIncomplete": false,
+      "notes": "Transcribed from two question-detail screenshots. Visibility and destinations are not shown.",
+      "details": {
+        "whyWeAsk": "Helps determine whether conventional, hard/private money, or cash routes are realistic.",
+        "stage": "STAGE_0",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": true,
+        "routeTag": "Core (no route tag)",
+        "visibility": null,
+        "canonicalMappings": [
+          {
+            "field": "investor.financingAccess",
+            "displayName": "Investor Financing Access",
+            "valueTransform": "None",
+            "valueClass": "USER_FACT",
+            "primary": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q010",
+      "title": "What type of property is it?",
+      "type": "question",
+      "x": 750,
+      "y": 820,
+      "answers": [
+        {
+          "value": "Single Family",
+          "label": "Single Family",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Residential condominium",
+          "label": "Residential condominium",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "New home construction",
+          "label": "New home construction",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Farm/ranch",
+          "label": "Farm/ranch",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Land/lot",
+          "label": "Land/Lot",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "5+ units/commercial/other",
+          "label": "5+ units/commercial/other",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q010",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": false,
+      "notes": "Transcribed from two question-detail screenshots. Visibility and answer destinations are not shown.",
+      "details": {
+        "whyWeAsk": "Texas uses different contract forms depending on property type.",
+        "stage": "STAGE_1",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": false,
+        "routeTag": "Core (no route tag)",
+        "visibility": null,
+        "canonicalMappings": [
+          {
+            "field": "property.type",
+            "displayName": "Property Type",
+            "valueTransform": "None",
+            "valueClass": "USER_FACT",
+            "primary": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q011",
+      "title": "Is the seller a builder selling a new home?",
+      "type": "question",
+      "x": 750,
+      "y": 1000,
+      "answers": [
+        {
+          "value": "Yes",
+          "label": "Yes",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "No",
+          "label": "No",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q011",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": false,
+      "notes": "Transcribed from Q011 detail screenshot. Visibility values differ from the supplied Q010 options (New home construction); retained exactly for reconciliation. Answer destinations are not supplied.",
+      "details": {
+        "whyWeAsk": "New construction uses different TREC contracts from resale property.",
+        "stage": "STAGE_1",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": false,
+        "routeTag": "Core (no route tag)",
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "sourceQuestion": "Q010",
+              "field": "property.type",
+              "operator": "is one of",
+              "values": [
+                "New home incomplete",
+                "New home complete"
+              ]
+            }
+          ]
+        },
+        "canonicalMappings": [
+          {
+            "field": "seller.isBuilder",
+            "displayName": "Seller Is Builder",
+            "valueTransform": "Yes/No to bit",
+            "valueClass": "USER_FACT",
+            "primary": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q012",
+      "title": "Who occupies the property today?",
+      "type": "question",
+      "x": 750,
+      "y": 1180,
+      "answers": [
+        {
+          "value": "Seller/owner",
+          "label": "Seller/owner",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Tenant",
+          "label": "Tenant",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Vacant",
+          "label": "Vacant",
+          "unknown": false,
+          "target": ""
+        },
+        {
+          "value": "Other occupant",
+          "label": "Other occupant",
+          "unknown": false,
+          "target": ""
+        }
+      ],
+      "questionCode": "Q012",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": false,
+      "notes": "Prompt, explanation, settings and options transcribed from Q012 screenshot. Canonical mapping confirmed separately by user. Visibility and destinations are not supplied.",
+      "details": {
+        "canonicalMappings": [
+          {
+            "field": "property.occupied",
+            "displayName": "Occupancy Status",
+            "valueTransform": "None",
+            "valueClass": "USER_FACT",
+            "primary": true
+          }
+        ],
+        "whyWeAsk": "Occupancy affects access, lease documents, possession and due diligence.",
+        "stage": "STAGE_1",
+        "responseType": "Single select",
+        "persona": "Both",
+        "rememberChoice": false,
+        "routeTag": "Core (no route tag)",
+        "visibility": null
+      }
+    },
+    {
+      "id": "Q013",
+      "title": "What year was the dwelling built?",
+      "type": "question",
+      "x": 600,
+      "y": 1360,
+      "answers": [],
+      "questionCode": "Q013",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "Q014",
+      "title": "Is mandatory membership in a pro\u2026",
+      "type": "question",
+      "x": 600,
+      "y": 1540,
+      "answers": [],
+      "questionCode": "Q014",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q015",
+      "title": "Is the property a condominium?",
+      "type": "question",
+      "x": 750,
+      "y": 1720,
+      "answers": [],
+      "questionCode": "Q015",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "Q016",
+      "title": "Is the property in a public improve\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 1900,
+      "answers": [],
+      "questionCode": "Q016",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "QG-MUD",
+      "title": "Is the property inside a municipal u\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2080,
+      "answers": [],
+      "questionCode": "QG-MUD",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "G006",
+      "title": "What is the name of the water distr\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2260,
+      "answers": [],
+      "questionCode": "G006",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "G007",
+      "title": "What is the district\u2019s current total t\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2440,
+      "answers": [],
+      "questionCode": "G007",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q017",
+      "title": "Are groundwater, water wells, pon\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2620,
+      "answers": [],
+      "questionCode": "Q017",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q018",
+      "title": "Is the property coastal or seaward \u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2800,
+      "answers": [],
+      "questionCode": "Q018",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q019",
+      "title": "Is the property in a propane gas sy\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 2980,
+      "answers": [],
+      "questionCode": "Q019",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q020",
+      "title": "Will the seller reserve any oil, gas, \u2026",
+      "type": "question",
+      "x": 750,
+      "y": 3160,
+      "answers": [],
+      "questionCode": "Q020",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q021",
+      "title": "Are there leased solar panels, wate\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 3340,
+      "answers": [],
+      "questionCode": "Q021",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q022",
+      "title": "Is the property currently rented un\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 3520,
+      "answers": [],
+      "questionCode": "Q022",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q023",
+      "title": "Are any personal property items in\u2026",
+      "type": "question",
+      "x": 480,
+      "y": 3700,
+      "answers": [],
+      "questionCode": "Q023",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q024",
+      "title": "Do you want environmental, endan\u2026",
+      "type": "question",
+      "x": 480,
+      "y": 3880,
+      "answers": [],
+      "questionCode": "Q024",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q025",
+      "title": "Does your purchase depend on sel\u2026",
+      "type": "question",
+      "x": 480,
+      "y": 4060,
+      "answers": [],
+      "questionCode": "Q025",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q026",
+      "title": "Will this be a backup contract behi\u2026",
+      "type": "question",
+      "x": 480,
+      "y": 4240,
+      "answers": [],
+      "questionCode": "Q026",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q027",
+      "title": "Does either party intend to comple\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 4420,
+      "answers": [],
+      "questionCode": "Q027",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "G017",
+      "title": "Are you acquiring this property to \u2026",
+      "type": "question",
+      "x": 750,
+      "y": 4600,
+      "answers": [],
+      "questionCode": "G017",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q028",
+      "title": "Will the seller remain in the propert\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 4780,
+      "answers": [],
+      "questionCode": "Q028",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q029",
+      "title": "Will the buyer occupy the property\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 4960,
+      "answers": [],
+      "questionCode": "Q029",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q030",
+      "title": "Do the parties agree to hydrostatic\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 5140,
+      "answers": [],
+      "questionCode": "Q030",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q031",
+      "title": "Will third-party financing be a con\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 5320,
+      "answers": [],
+      "questionCode": "Q031",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q032",
+      "title": "Do you want an additional contract\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 5500,
+      "answers": [],
+      "questionCode": "Q032",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "Q033",
+      "title": "Is the offer less than what is owed \u2026",
+      "type": "question",
+      "x": 750,
+      "y": 5680,
+      "answers": [],
+      "questionCode": "Q033",
+      "section": "1. PROPERTY AND CONTRACT",
+      "textIncomplete": true,
+      "notes": "Text is clipped in the screenshot. Full wording needed."
+    },
+    {
+      "id": "STOP-TX",
+      "title": "We only cover Texas right now",
+      "type": "deal",
+      "x": 50,
+      "y": 280,
+      "answers": [],
+      "section": "0. SETUP",
+      "notes": "Stops here. Other states are coming soon. Remaining screenshot text is clipped. This is a stop, not a deal classification."
+    },
+    {
+      "id": "Q040",
+      "questionCode": "Q040",
+      "title": "Who is the legal owner shown in c\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 5930,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q041",
+      "questionCode": "Q041",
+      "title": "Does the person signing have auth\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 6110,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G001",
+      "questionCode": "G001",
+      "title": "Is the seller married, and is this pro\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 6290,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G002",
+      "questionCode": "G002",
+      "title": "Will the seller\u2019s spouse sign the de\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 6470,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q042",
+      "questionCode": "Q042",
+      "title": "Are there known liens, judgments, \u2026",
+      "type": "question",
+      "x": 750,
+      "y": 6650,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q043",
+      "questionCode": "Q043",
+      "title": "Is there an existing mortgage or de\u2026",
+      "type": "question",
+      "x": 750,
+      "y": 6830,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q044",
+      "questionCode": "Q044",
+      "title": "What is the approximate current lo\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 7010,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q045",
+      "questionCode": "Q045",
+      "title": "Is the loan current?",
+      "type": "question",
+      "x": 1000,
+      "y": 7190,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "G008",
+      "questionCode": "G008",
+      "title": "What is the posted foreclosure sal\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 7370,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G009",
+      "questionCode": "G009",
+      "title": "What reinstatement amount has th\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 7550,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G010",
+      "questionCode": "G010",
+      "title": "What date was that reinstatement \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 7730,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q046",
+      "questionCode": "Q046",
+      "title": "What is the interest rate on the exi\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 7910,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q047",
+      "questionCode": "Q047",
+      "title": "What is the total monthly payment i\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 8090,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q048",
+      "questionCode": "Q048",
+      "title": "How many years remain on the loa\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 8270,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q049",
+      "questionCode": "Q049",
+      "title": "Is the existing loan formally assum\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 8450,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q050",
+      "questionCode": "Q050",
+      "title": "Does the seller need all of their eq\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 8630,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q051",
+      "questionCode": "Q051",
+      "title": "Would the seller consider receiving\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 8810,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q052",
+      "questionCode": "Q052",
+      "title": "Would the seller consider leaving t\u2026",
+      "type": "question",
+      "x": 500,
+      "y": 8990,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q053",
+      "questionCode": "Q053",
+      "title": "Is the seller willing to allow a new n\u2026",
+      "type": "question",
+      "x": 500,
+      "y": 9170,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q054",
+      "questionCode": "Q054",
+      "title": "Is the seller free and clear with no \u2026",
+      "type": "question",
+      "x": 500,
+      "y": 9350,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q055",
+      "questionCode": "Q055",
+      "title": "Will the buyer occupy the property\u2026",
+      "type": "question",
+      "x": 500,
+      "y": 9530,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q056",
+      "questionCode": "Q056",
+      "title": "How many residential properties h\u2026",
+      "type": "question",
+      "x": 500,
+      "y": 9710,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q057",
+      "questionCode": "Q057",
+      "title": "Has the seller provided the most re\u2026",
+      "type": "question",
+      "x": 500,
+      "y": 9890,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q058",
+      "questionCode": "Q058",
+      "title": "Have you confirmed insurance can\u2026",
+      "type": "question",
+      "x": 1100,
+      "y": 10070,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q059",
+      "questionCode": "Q059",
+      "title": "Will payments on any seller-carrie\u2026",
+      "type": "question",
+      "x": 1100,
+      "y": 10250,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q060",
+      "questionCode": "Q060",
+      "title": "Is there a clear exit before any ball\u2026",
+      "type": "question",
+      "x": 1100,
+      "y": 10430,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q191",
+      "questionCode": "Q191",
+      "title": "New question",
+      "type": "question",
+      "x": 1100,
+      "y": 10610,
+      "answers": [],
+      "section": "2. SELLER, TITLE AND DEBT",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "Q070",
+      "questionCode": "Q070",
+      "title": "What is the seller\u2019s asking price?",
+      "type": "question",
+      "x": 1000,
+      "y": 10860,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "Q071",
+      "questionCode": "Q071",
+      "title": "What price do you believe you can \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11040,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q072",
+      "questionCode": "Q072",
+      "title": "What is the as-is market value sup\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11220,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q073",
+      "questionCode": "Q073",
+      "title": "What is the after-repair value (ARV\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11400,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q074",
+      "questionCode": "Q074",
+      "title": "What is the repair budget based on\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11580,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q075",
+      "questionCode": "Q075",
+      "title": "What rehab contingency percenta\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11760,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q076",
+      "questionCode": "Q076",
+      "title": "What are estimated acquisition clo\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 11940,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q077",
+      "questionCode": "Q077",
+      "title": "What are estimated financing point\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 12120,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q078",
+      "questionCode": "Q078",
+      "title": "What are estimated monthly holdin\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 12300,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q079",
+      "questionCode": "Q079",
+      "title": "How many months do you realistic\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 12480,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q080",
+      "questionCode": "Q080",
+      "title": "What are estimated resale costs (c\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 12660,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q081",
+      "questionCode": "Q081",
+      "title": "What minimum dollar profit do you \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 12840,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q082",
+      "questionCode": "Q082",
+      "title": "What minimum profit margin on tot\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13020,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q083",
+      "questionCode": "Q083",
+      "title": "What is realistic monthly market re\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13200,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q084",
+      "questionCode": "Q084",
+      "title": "What vacancy/credit-loss assumpti\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13380,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G003",
+      "questionCode": "G003",
+      "title": "Should we underwrite a tax increa\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13560,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G004",
+      "questionCode": "G004",
+      "title": "What taxable value should we use \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13740,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q085",
+      "questionCode": "Q085",
+      "title": "What annual property taxes should\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 13920,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q086",
+      "questionCode": "Q086",
+      "title": "What annual insurance premium sh\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 14100,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q087",
+      "questionCode": "Q087",
+      "title": "What monthly HOA or condo dues \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 14280,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q088",
+      "questionCode": "Q088",
+      "title": "What annual repairs/maintenance r\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 14460,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q089",
+      "questionCode": "Q089",
+      "title": "What annual capital-expenditure re\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 14640,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q090",
+      "questionCode": "Q090",
+      "title": "Will you use professional property \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 14820,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q091",
+      "questionCode": "Q091",
+      "title": "What annual debt service will the r\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15000,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q092",
+      "questionCode": "Q092",
+      "title": "What minimum DSCR do you requir\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15180,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q093",
+      "questionCode": "Q093",
+      "title": "What minimum cash-on-cash retur\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15360,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q094",
+      "questionCode": "Q094",
+      "title": "After closing and repairs, how muc\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15540,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q095",
+      "questionCode": "Q095",
+      "title": "Is a refinance realistically available\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15720,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q096",
+      "questionCode": "Q096",
+      "title": "What stabilized value and refinanc\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 15900,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q097",
+      "questionCode": "Q097",
+      "title": "Can you fund the full rehab plus co\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 16080,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q098",
+      "questionCode": "Q098",
+      "title": "How strong is end-buyer demand f\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 16260,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q099",
+      "questionCode": "Q099",
+      "title": "What assignment fee or wholesale \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 16440,
+      "answers": [],
+      "section": "3. DEAL ECONOMICS",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q110",
+      "questionCode": "Q110",
+      "title": "Has a title company or attorney rev\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 16690,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q111",
+      "questionCode": "Q111",
+      "title": "Are there unresolved survey, boun\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 16870,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q112",
+      "questionCode": "Q112",
+      "title": "Is the current zoning/land use com\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17050,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q113",
+      "questionCode": "Q113",
+      "title": "Is the property in a flood hazard ar\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17230,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q114",
+      "questionCode": "Q114",
+      "title": "Are well, septic or private utility sy\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17410,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q115",
+      "questionCode": "Q115",
+      "title": "Have foundation, roof, HVAC, elect\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17590,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q116",
+      "questionCode": "Q116",
+      "title": "Are there open permits, code violat\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17770,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q117",
+      "questionCode": "Q117",
+      "title": "Can the property be insured at a c\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 17950,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G011",
+      "questionCode": "G011",
+      "title": "What date was the insurance quot\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 18130,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G012",
+      "questionCode": "G012",
+      "title": "How does the quote treat the roof?",
+      "type": "question",
+      "x": 1000,
+      "y": 18310,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": false,
+      "notes": "Transcribed from screenshot; answers not supplied."
+    },
+    {
+      "id": "Q118",
+      "questionCode": "Q118",
+      "title": "If tenant-occupied, have you verifi\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 18490,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G013",
+      "questionCode": "G013",
+      "title": "Has each tenant signed an estopp\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 18670,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G014",
+      "questionCode": "G014",
+      "title": "What is the total security-deposit b\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 18850,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "G015",
+      "questionCode": "G015",
+      "title": "Will those deposits be credited to y\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 19030,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q119",
+      "questionCode": "Q119",
+      "title": "Have you confirmed local rental/s\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 19210,
+      "answers": [],
+      "section": "4. DUE DILIGENCE",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q130",
+      "questionCode": "Q130 WHOLESALE",
+      "title": "Do you have a signed purchase co\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 19640,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q131",
+      "questionCode": "Q131 WHOLESALE",
+      "title": "Does the contract allow assignmen\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 19820,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q132",
+      "questionCode": "Q132 WHOLESALE",
+      "title": "After the end buyer\u2019s required prof\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 20000,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q133",
+      "questionCode": "Q133 WHOLESALE",
+      "title": "Have you identified realistic end bu\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 20180,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q134",
+      "questionCode": "Q134 WHOLESALE",
+      "title": "Can you close or otherwise perfor\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 20360,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q135",
+      "questionCode": "Q135 WHOLESALE",
+      "title": "Will all marketing clearly state that \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 20540,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "QG-WHOLESALE-CONDUCT",
+      "questionCode": "QG-WHOLESALE-CONDUCT WHOLESALE",
+      "title": "Will you market only your own cont\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 20720,
+      "answers": [],
+      "section": "5A. WHOLESALE",
+      "strategyTag": "WHOLESALE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q140",
+      "questionCode": "Q140 FIX_FLIP",
+      "title": "Does projected net profit meet bot\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 21150,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q141",
+      "questionCode": "Q141 FIX_FLIP",
+      "title": "Do you have a written rehab scope\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 21330,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q142",
+      "questionCode": "Q142 FIX_FLIP",
+      "title": "Is the rehab contingency adequate\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 21510,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q143",
+      "questionCode": "Q143 FIX_FLIP",
+      "title": "Are ARV comps truly renovated an\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 21690,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q144",
+      "questionCode": "Q144 FIX_FLIP",
+      "title": "Can financing and cash carry the p\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 21870,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q145",
+      "questionCode": "Q145 FIX_FLIP",
+      "title": "Does the deal still work if ARV is lo\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 22050,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q146",
+      "questionCode": "Q146 FIX_FLIP",
+      "title": "Is there a credible fallback exit suc\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 22230,
+      "answers": [],
+      "section": "5B. FIX AND FLIP",
+      "strategyTag": "FIX_FLIP",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q150",
+      "questionCode": "Q150 HOLD_BRRRR",
+      "title": "Does stabilized NOI remain positiv\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 22660,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q151",
+      "questionCode": "Q151 HOLD_BRRRR",
+      "title": "Does DSCR meet your selected tar\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 22840,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q152",
+      "questionCode": "Q152 HOLD_BRRRR",
+      "title": "Does cash-on-cash return meet yo\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23020,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q153",
+      "questionCode": "Q153 HOLD_BRRRR",
+      "title": "Are reserves adequate for turnover\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23200,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q154",
+      "questionCode": "Q154 HOLD_BRRRR",
+      "title": "Are market rents supported by act\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23380,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q155",
+      "questionCode": "Q155 HOLD_BRRRR",
+      "title": "Is the property\u2019s condition compati\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23560,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "HOLD_BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q156",
+      "questionCode": "Q156 BRRRR",
+      "title": "For BRRRR, will projected refinanc\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23740,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q157",
+      "questionCode": "Q157 BRRRR",
+      "title": "Have you verified lender seasonin\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 23920,
+      "answers": [],
+      "section": "5C. HOLD / BRRRR",
+      "strategyTag": "BRRRR",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q160",
+      "questionCode": "Q160 FORMAL_ASSUMPTION",
+      "title": "Is a formal lender-approved loan a\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 24350,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "FORMAL_ASSUMPTION",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q161",
+      "questionCode": "Q161 SUBJECT_TO",
+      "title": "For subject-to, are the existing rate\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 24530,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "SUBJECT_TO",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q162",
+      "questionCode": "Q162 SUBJECT_TO",
+      "title": "For subject-to, can seller equity an\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 24710,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "SUBJECT_TO",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q163",
+      "questionCode": "Q163 SUBJECT_TO",
+      "title": "For subject-to, has an attorney/title\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 24890,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "SUBJECT_TO",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q164",
+      "questionCode": "Q164 SELLER_FINANCE",
+      "title": "For seller financing, are rate, term, \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25070,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "SELLER_FINANCE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q165",
+      "questionCode": "Q165 SELLER_FINANCE",
+      "title": "For seller financing involving possi\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25250,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "SELLER_FINANCE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q166",
+      "questionCode": "Q166 WRAP_HYBRID",
+      "title": "Does the proposed new seller-fina\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25430,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "WRAP_HYBRID",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q167",
+      "questionCode": "Q167 WRAP_HYBRID",
+      "title": "If wrap financing is proposed, is th\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25610,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "WRAP_HYBRID",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q168",
+      "questionCode": "Q168 CREATIVE_FINANCE",
+      "title": "Is there a professional servicing, ta\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25790,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "CREATIVE_FINANCE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q169",
+      "questionCode": "Q169 CREATIVE_FINANCE",
+      "title": "Does the creative-finance exit occ\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 25970,
+      "answers": [],
+      "section": "5D. CREATIVE FINANCE",
+      "strategyTag": "CREATIVE_FINANCE",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q180",
+      "questionCode": "Q180",
+      "title": "Is the seller required to provide the\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 26400,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q181",
+      "questionCode": "Q181",
+      "title": "Has the seller completed the curre\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 26580,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q182",
+      "questionCode": "Q182",
+      "title": "Has the contract been fully execut\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 26760,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q183",
+      "questionCode": "Q183",
+      "title": "Have the parties agreed to change \u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 26940,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q184",
+      "questionCode": "Q184",
+      "title": "Is the buyer terminating under a va\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 27120,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q185",
+      "questionCode": "Q185",
+      "title": "Is the seller terminating under a val\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 27300,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q186",
+      "questionCode": "Q186",
+      "title": "Has a backup contract become the\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 27480,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q187",
+      "questionCode": "Q187",
+      "title": "Are all title objections, payoff issue\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 27660,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q188",
+      "questionCode": "Q188",
+      "title": "Are all financing conditions and re\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 27840,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q189",
+      "questionCode": "Q189",
+      "title": "Are all required disclosures/adden\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 28020,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    },
+    {
+      "id": "Q190",
+      "questionCode": "Q190",
+      "title": "Is the final strategy still the same a\u2026",
+      "type": "question",
+      "x": 1000,
+      "y": 28200,
+      "answers": [],
+      "section": "6. CONTRACT AND CLOSING",
+      "strategyTag": "",
+      "textIncomplete": true,
+      "notes": "Text clipped in screenshot; answers not supplied."
+    }
+  ],
+  "groups": [
+    {
+      "id": "setup",
+      "title": "0. SETUP - shows when property.address.state = TX",
+      "members": [
+        "Q001",
+        "Q002",
+        "Q004",
+        "Q007",
+        "STOP-TX"
+      ]
+    },
+    {
+      "id": "property",
+      "title": "1. PROPERTY AND CONTRACT",
+      "members": [
+        "Q010",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q016",
+        "QG-MUD",
+        "G006",
+        "G007",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025",
+        "Q026",
+        "Q027",
+        "G017",
+        "Q028",
+        "Q029",
+        "Q030",
+        "Q031",
+        "Q032",
+        "Q033"
+      ]
+    },
+    {
+      "id": "seller",
+      "title": "2. SELLER, TITLE AND DEBT",
+      "members": [
+        "Q040",
+        "Q041",
+        "G001",
+        "G002",
+        "Q042",
+        "Q043",
+        "Q044",
+        "Q045",
+        "G008",
+        "G009",
+        "G010",
+        "Q046",
+        "Q047",
+        "Q048",
+        "Q049",
+        "Q050",
+        "Q051",
+        "Q052",
+        "Q053",
+        "Q054",
+        "Q055",
+        "Q056",
+        "Q057",
+        "Q058",
+        "Q059",
+        "Q060",
+        "Q191"
+      ]
+    },
+    {
+      "id": "economics",
+      "title": "3. DEAL ECONOMICS",
+      "members": [
+        "Q070",
+        "Q071",
+        "Q072",
+        "Q073",
+        "Q074",
+        "Q075",
+        "Q076",
+        "Q077",
+        "Q078",
+        "Q079",
+        "Q080",
+        "Q081",
+        "Q082",
+        "Q083",
+        "Q084",
+        "G003",
+        "G004",
+        "Q085",
+        "Q086",
+        "Q087",
+        "Q088",
+        "Q089",
+        "Q090",
+        "Q091",
+        "Q092",
+        "Q093",
+        "Q094",
+        "Q095",
+        "Q096",
+        "Q097",
+        "Q098",
+        "Q099"
+      ]
+    },
+    {
+      "id": "diligence",
+      "title": "4. DUE DILIGENCE",
+      "members": [
+        "Q110",
+        "Q111",
+        "Q112",
+        "Q113",
+        "Q114",
+        "Q115",
+        "Q116",
+        "Q117",
+        "G011",
+        "G012",
+        "Q118",
+        "G013",
+        "G014",
+        "G015",
+        "Q119"
+      ]
+    },
+    {
+      "id": "wholesale",
+      "title": "5A. WHOLESALE",
+      "members": [
+        "Q130",
+        "Q131",
+        "Q132",
+        "Q133",
+        "Q134",
+        "Q135",
+        "QG-WHOLESALE-CONDUCT"
+      ]
+    },
+    {
+      "id": "fix-flip",
+      "title": "5B. FIX AND FLIP",
+      "members": [
+        "Q140",
+        "Q141",
+        "Q142",
+        "Q143",
+        "Q144",
+        "Q145",
+        "Q146"
+      ]
+    },
+    {
+      "id": "hold-brrrr",
+      "title": "5C. HOLD / BRRRR",
+      "members": [
+        "Q150",
+        "Q151",
+        "Q152",
+        "Q153",
+        "Q154",
+        "Q155",
+        "Q156",
+        "Q157"
+      ]
+    },
+    {
+      "id": "creative-finance",
+      "title": "5D. CREATIVE FINANCE",
+      "members": [
+        "Q160",
+        "Q161",
+        "Q162",
+        "Q163",
+        "Q164",
+        "Q165",
+        "Q166",
+        "Q167",
+        "Q168",
+        "Q169"
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "6. CONTRACT AND CLOSING",
+      "members": [
+        "Q180",
+        "Q181",
+        "Q182",
+        "Q183",
+        "Q184",
+        "Q185",
+        "Q186",
+        "Q187",
+        "Q188",
+        "Q189",
+        "Q190"
+      ]
+    }
+  ],
+  "referenceLinks": [
+    {
+      "source": "Q002",
+      "target": "Q004",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q004",
+      "target": "Q007",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q007",
+      "target": "Q010",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q010",
+      "target": "Q011",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q011",
+      "target": "Q012",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q012",
+      "target": "Q013",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q013",
+      "target": "Q014",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q014",
+      "target": "Q015",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q015",
+      "target": "Q016",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q016",
+      "target": "QG-MUD",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "QG-MUD",
+      "target": "G006",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G006",
+      "target": "G007",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G007",
+      "target": "Q017",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q017",
+      "target": "Q018",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q018",
+      "target": "Q019",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q019",
+      "target": "Q020",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q020",
+      "target": "Q021",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q021",
+      "target": "Q022",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q022",
+      "target": "Q023",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q023",
+      "target": "Q024",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q024",
+      "target": "Q025",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q025",
+      "target": "Q026",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q026",
+      "target": "Q027",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q027",
+      "target": "G017",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G017",
+      "target": "Q028",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q028",
+      "target": "Q029",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q029",
+      "target": "Q030",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q030",
+      "target": "Q031",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q031",
+      "target": "Q032",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q032",
+      "target": "Q033",
+      "label": "Visible connector \u00b7 answer unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q040",
+      "target": "Q041",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q041",
+      "target": "G001",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G001",
+      "target": "G002",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G002",
+      "target": "Q042",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q042",
+      "target": "Q043",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q043",
+      "target": "Q044",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q044",
+      "target": "Q045",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q045",
+      "target": "G008",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G008",
+      "target": "G009",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G009",
+      "target": "G010",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G010",
+      "target": "Q046",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q046",
+      "target": "Q047",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q047",
+      "target": "Q048",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q048",
+      "target": "Q049",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q049",
+      "target": "Q050",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q050",
+      "target": "Q051",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q051",
+      "target": "Q052",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q052",
+      "target": "Q053",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q053",
+      "target": "Q054",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q054",
+      "target": "Q055",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q055",
+      "target": "Q056",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q056",
+      "target": "Q057",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q057",
+      "target": "Q058",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q058",
+      "target": "Q059",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q059",
+      "target": "Q060",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q060",
+      "target": "Q191",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q191",
+      "target": "Q070",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q070",
+      "target": "Q071",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q071",
+      "target": "Q072",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q072",
+      "target": "Q073",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q073",
+      "target": "Q074",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q074",
+      "target": "Q075",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q075",
+      "target": "Q076",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q076",
+      "target": "Q077",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q077",
+      "target": "Q078",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q078",
+      "target": "Q079",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q079",
+      "target": "Q080",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q080",
+      "target": "Q081",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q081",
+      "target": "Q082",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q082",
+      "target": "Q083",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q083",
+      "target": "Q084",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q084",
+      "target": "G003",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G003",
+      "target": "G004",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G004",
+      "target": "Q085",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q085",
+      "target": "Q086",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q086",
+      "target": "Q087",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q087",
+      "target": "Q088",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q088",
+      "target": "Q089",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q089",
+      "target": "Q090",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q090",
+      "target": "Q091",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q091",
+      "target": "Q092",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q092",
+      "target": "Q093",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q093",
+      "target": "Q094",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q094",
+      "target": "Q095",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q095",
+      "target": "Q096",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q096",
+      "target": "Q097",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q097",
+      "target": "Q098",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q098",
+      "target": "Q099",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q110",
+      "target": "Q111",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q111",
+      "target": "Q112",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q112",
+      "target": "Q113",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q113",
+      "target": "Q114",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q114",
+      "target": "Q115",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q115",
+      "target": "Q116",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q116",
+      "target": "Q117",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q117",
+      "target": "G011",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G011",
+      "target": "G012",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G012",
+      "target": "Q118",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q118",
+      "target": "G013",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G013",
+      "target": "G014",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G014",
+      "target": "G015",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "G015",
+      "target": "Q119",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q130",
+      "target": "Q131",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q131",
+      "target": "Q132",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q132",
+      "target": "Q133",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q133",
+      "target": "Q134",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q134",
+      "target": "Q135",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q135",
+      "target": "QG-WHOLESALE-CONDUCT",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q140",
+      "target": "Q141",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q141",
+      "target": "Q142",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q142",
+      "target": "Q143",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q143",
+      "target": "Q144",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q144",
+      "target": "Q145",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q145",
+      "target": "Q146",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q150",
+      "target": "Q151",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q151",
+      "target": "Q152",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q152",
+      "target": "Q153",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q153",
+      "target": "Q154",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q154",
+      "target": "Q155",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q155",
+      "target": "Q156",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q156",
+      "target": "Q157",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q160",
+      "target": "Q161",
+      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q119",
+      "target": "Q130",
+      "label": "Visible inter-section connector \u00b7 routing condition unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "QG-WHOLESALE-CONDUCT",
+      "target": "Q140",
+      "label": "Visible inter-section connector \u00b7 routing condition unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q157",
+      "target": "Q160",
+      "label": "Visible inter-section connector \u00b7 routing condition unknown",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q161",
+      "target": "Q162",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q162",
+      "target": "Q163",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q163",
+      "target": "Q164",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q164",
+      "target": "Q165",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q165",
+      "target": "Q166",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q166",
+      "target": "Q167",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q167",
+      "target": "Q168",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q168",
+      "target": "Q169",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q169",
+      "target": "Q180",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q180",
+      "target": "Q181",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q181",
+      "target": "Q182",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q182",
+      "target": "Q183",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q183",
+      "target": "Q184",
+      "label": "Yes (visible label; other branches unknown)",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q184",
+      "target": "Q185",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q185",
+      "target": "Q186",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q186",
+      "target": "Q187",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q187",
+      "target": "Q188",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q188",
+      "target": "Q189",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    },
+    {
+      "source": "Q189",
+      "target": "Q190",
+      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
+      "confirmedAnswer": false
+    }
+  ],
+  "sourceNotes": "Screenshot transcription of sections 0\u20136, including creative finance continuation and contract/closing. All questions deduplicated by source ID across overlapping pieces. Clipped text, missing answers and bypass routing remain unconfirmed; dashed connectors are references, not executable answers.",
+  "pendingSourceDetails": [],
+  "uploadProgress": {
+    "lastQuestionDetailUploaded": "Q012",
+    "nextQuestionDetail": "Q013",
+    "flowScreenshotCaptureComplete": true
+  }
+}
