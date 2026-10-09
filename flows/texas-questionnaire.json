@@ -3204,8 +3204,12 @@
     {
       "source": "Q119",
       "target": "Q130",
-      "label": "Visible inter-section connector \u00b7 routing condition unknown",
-      "confirmedAnswer": false
+      "label": "Next",
+      "confirmedAnswer": false,
+      "displayLabel": "",
+      "traced": true,
+      "kind": "sequence",
+      "evidence": "User confirmed Due Diligence flows into Wholesale; screenshot shows Q119 \u2192 Q130 pale connector. No answer condition shown."
     },
     {
       "source": "QG-WHOLESALE-CONDUCT",
@@ -3558,7 +3562,7 @@
     "status": "Partial: Q043 No and Q049 Yes/Maybe confirmed; Setup chain clarified; remaining long branches await confirmation",
     "missingRoutes": [
       "Remaining Q049\u2013Q054 bypass branches (Q049 Yes/Maybe \u2192 Q058 is confirmed)",
-      "Origins/conditions of lines entering 5A\u20135D",
+      "Remaining conditional entry lines into 5A; origins/conditions entering 5B and 5D",
       "Long Tenant branches and remaining cross-section Yes/Maybe branches",
       "Ambiguous bypass origins in creative finance and closing"
     ],

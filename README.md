@@ -35,3 +35,5 @@ Use **Build command:** `npm run build` and **Deploy command:** `npx --yes wrangl
 The toolbar includes a dark/light toggle; the preference persists in browser storage and defaults to the system theme. Individual canvas cards show their source ID/strategy label and question, while group titles remain on group boundaries and in Properties.
 
 The latest screenshot review adds local bypass references. Teal connectors indicate endpoints traced within screenshots, not executable answer routing. Dashed lines remain unconfirmed. Candidate bypass origins hidden by overlapping lines are explicitly marked as requiring confirmation. `connectionReview` in the supplied JSON tracks outstanding long cross-section routes and strategy entry conditions. All-connectors completeness is not yet established; see the pending routing question in chat. CSV and PDF reports preserve outgoing screenshot connector references.
+
+Group names are again included on canvas cards, following the latest user clarification, as well as on group boundaries. The Due Diligence exit **Q119 → Q130 (Wholesale)** is confirmed as a visible sequence; conditional entry/bypass rules remain separate.
