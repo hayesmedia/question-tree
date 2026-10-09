@@ -2434,8 +2434,10 @@
     {
       "source": "QG-MUD",
       "target": "G006",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "G006",
@@ -2512,8 +2514,10 @@
     {
       "source": "Q027",
       "target": "G017",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "G017",
@@ -2542,8 +2546,10 @@
     {
       "source": "Q031",
       "target": "Q032",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "Q032",
@@ -2566,8 +2572,10 @@
     {
       "source": "G001",
       "target": "G002",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Married - homestead / Unknown",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Married - homestead / Unknown"
     },
     {
       "source": "G002",
@@ -2596,8 +2604,10 @@
     {
       "source": "Q045",
       "target": "G008",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "In foreclosure / Behind",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "In foreclosure / Behind"
     },
     {
       "source": "G008",
@@ -2878,8 +2888,10 @@
     {
       "source": "Q095",
       "target": "Q096",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "Q096",
@@ -2944,8 +2956,10 @@
     {
       "source": "Q117",
       "target": "G011",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "G011",
@@ -3154,8 +3168,10 @@
     {
       "source": "Q166",
       "target": "Q167",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "Q167",
@@ -3190,14 +3206,18 @@
     {
       "source": "Q182",
       "target": "Q183",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "Q183",
       "target": "Q184",
-      "label": "Yes (visible label; other branches unknown)",
-      "confirmedAnswer": false
+      "label": "Yes",
+      "confirmedAnswer": false,
+      "traced": true,
+      "displayLabel": "Yes"
     },
     {
       "source": "Q184",
@@ -3234,6 +3254,165 @@
       "target": "Q190",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
       "confirmedAnswer": false
+    },
+    {
+      "source": "Q010",
+      "target": "Q012",
+      "kind": "bypass",
+      "traced": false,
+      "displayLabel": "Endpoint needs confirmation",
+      "label": "Candidate bypass: endpoint needs confirmation",
+      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
+      "confirmedAnswer": false,
+      "lane": 0,
+      "candidate": true
+    },
+    {
+      "source": "Q012",
+      "target": "Q015",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Property/contract screenshots: right-side bypass skips Q013 and Q014",
+      "confirmedAnswer": false,
+      "lane": 1
+    },
+    {
+      "source": "QG-MUD",
+      "target": "G007",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Property/contract screenshot: direct path bypasses G006",
+      "confirmedAnswer": false,
+      "lane": 2
+    },
+    {
+      "source": "Q027",
+      "target": "Q028",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Property/contract screenshot: path bypasses G017",
+      "confirmedAnswer": false,
+      "lane": 0
+    },
+    {
+      "source": "Q031",
+      "target": "Q033",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Property/contract screenshot: path bypasses Q032",
+      "confirmedAnswer": false,
+      "lane": 1
+    },
+    {
+      "source": "Q043",
+      "target": "Q045",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "Yes",
+      "label": "Yes",
+      "evidence": "Seller/title/debt screenshot: second Yes connector enters Q045",
+      "confirmedAnswer": false,
+      "lane": 2
+    },
+    {
+      "source": "Q045",
+      "target": "G009",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "In foreclosure / Behind",
+      "label": "In foreclosure / Behind",
+      "evidence": "Seller/title/debt screenshot: path bypasses G008",
+      "confirmedAnswer": false,
+      "lane": 0
+    },
+    {
+      "source": "Q095",
+      "target": "Q097",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Deal economics screenshot: left vertical path bypasses Q096",
+      "confirmedAnswer": false,
+      "lane": 1
+    },
+    {
+      "source": "Q117",
+      "target": "G012",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Due diligence screenshot: left path bypasses G011",
+      "confirmedAnswer": false,
+      "lane": 2
+    },
+    {
+      "source": "Q118",
+      "target": "G014",
+      "kind": "bypass",
+      "traced": true,
+      "displayLabel": "",
+      "label": "Condition not readable",
+      "evidence": "Due diligence screenshot: left path bypasses G013",
+      "confirmedAnswer": false,
+      "lane": 0
+    },
+    {
+      "source": "Q166",
+      "target": "Q168",
+      "kind": "bypass",
+      "traced": false,
+      "displayLabel": "Endpoint needs confirmation",
+      "label": "Candidate bypass: endpoint needs confirmation",
+      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
+      "confirmedAnswer": false,
+      "lane": 1,
+      "candidate": true
+    },
+    {
+      "source": "Q180",
+      "target": "Q182",
+      "kind": "bypass",
+      "traced": false,
+      "displayLabel": "Endpoint needs confirmation",
+      "label": "Candidate bypass: endpoint needs confirmation",
+      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
+      "confirmedAnswer": false,
+      "lane": 2,
+      "candidate": true
+    },
+    {
+      "source": "Q182",
+      "target": "Q184",
+      "kind": "bypass",
+      "traced": false,
+      "displayLabel": "Endpoint needs confirmation",
+      "label": "Candidate bypass: endpoint needs confirmation",
+      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
+      "confirmedAnswer": false,
+      "lane": 0,
+      "candidate": true
+    },
+    {
+      "source": "Q183",
+      "target": "Q185",
+      "kind": "bypass",
+      "traced": false,
+      "displayLabel": "Endpoint needs confirmation",
+      "label": "Candidate bypass: endpoint needs confirmation",
+      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
+      "confirmedAnswer": false,
+      "lane": 1,
+      "candidate": true
     }
   ],
   "sourceNotes": "Screenshot transcription of sections 0\u20136, including creative finance continuation and contract/closing. All questions deduplicated by source ID across overlapping pieces. Clipped text, missing answers and bypass routing remain unconfirmed; dashed connectors are references, not executable answers.",
@@ -3242,5 +3421,16 @@
     "lastQuestionDetailUploaded": "Q012",
     "nextQuestionDetail": "Q013",
     "flowScreenshotCaptureComplete": true
+  },
+  "connectionReview": {
+    "status": "Partial: unresolved overlapping and cross-section endpoints need user confirmation",
+    "missingRoutes": [
+      "Q002/Q004/Q007 outgoing long branches",
+      "Q043 No path",
+      "Q049\u2013Q054 conditional and bypass routes",
+      "Entry/exit conditions for strategy sections 5A\u20135D",
+      "Long Tenant branches and cross-section Yes/Maybe branches"
+    ],
+    "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable."
   }
 }

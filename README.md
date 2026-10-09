@@ -30,3 +30,8 @@ The site and questionnaire data are public. Flow edits are stored locally in you
 
 ## Cloudflare Workers static hosting
 Use **Build command:** `npm run build` and **Deploy command:** `npx --yes wrangler@4.149.0 deploy` in Cloudflare's Git-connected Worker settings. Alternatively use `npm run deploy` as the deploy command, which builds first. `wrangler.jsonc` publishes only `_site`, assembled from `index.html`, `src` and `flows`; never set the assets directory to the repository root. This excludes dependencies, development tools and Git metadata from deployment. Cloudflare supplies authentication in its build environment. No API keys belong in repository files.
+
+## Theme and connection review
+The toolbar includes a dark/light toggle; the preference persists in browser storage and defaults to the system theme. Individual canvas cards show their source ID/strategy label and question, while group titles remain on group boundaries and in Properties.
+
+The latest screenshot review adds local bypass references. Teal connectors indicate endpoints traced within screenshots, not executable answer routing. Dashed lines remain unconfirmed. Candidate bypass origins hidden by overlapping lines are explicitly marked as requiring confirmation. `connectionReview` in the supplied JSON tracks outstanding long cross-section routes and strategy entry conditions. All-connectors completeness is not yet established; see the pending routing question in chat. CSV and PDF reports preserve outgoing screenshot connector references.
