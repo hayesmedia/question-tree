@@ -23,10 +23,10 @@ Question-detail screenshots for Q001, Q002, Q004 and Q007 populate explanation, 
 ## Upload stopping point
 Question-detail uploads are complete through **Q012**. Resume at **Q013**. All overview flow screenshots have already been captured. Q012 includes Seller/owner, Tenant, Vacant and Other occupant, with its confirmed `property.occupied` mapping.
 
-## Free hosting with GitHub Pages
-In the GitHub repository, open **Settings → Pages**, and select **GitHub Actions** as the source. The **Publish Question Tree** workflow tests and deploys the static app on every push to `main`. Run it manually under **Actions** if Pages was enabled after the last push. The expected address is `https://hayesmedia.github.io/question-tree/` once GitHub confirms deployment. Only `index.html`, `src` and `flows` are published.
+## Hosting and automatic updates
+The project is hosted on Cloudflare Workers at https://question-tree.dry-bonus-373b.workers.dev, protected by Cloudflare Access. Cloudflare's Git integration deploys pushes to `main`. GitHub Actions runs tests and builds only; the unused GitHub Pages deployment has been removed.
 
-The site and questionnaire data are public. Flow edits are stored locally in your browser; export JSON for backups. Code and supplied-questionnaire updates are published by pushing to `main`. Existing browser data can receive new supplied questions with **Load your questionnaire**. That merge preserves edited data; changed source settings do not automatically override your local edits.
+Flow edits save locally in your browser. Export JSON for backups, and use **Load your questionnaire** to merge supplied-questionnaire updates after a deployment.
 
 ## Cloudflare Workers static hosting
 Use **Build command:** `npm run build` and **Deploy command:** `npx --yes wrangler@4.149.0 deploy` in Cloudflare's Git-connected Worker settings. Alternatively use `npm run deploy` as the deploy command, which builds first. `wrangler.jsonc` publishes only `_site`, assembled from `index.html`, `src` and `flows`; never set the assets directory to the repository root. This excludes dependencies, development tools and Git metadata from deployment. Cloudflare supplies authentication in its build environment. No API keys belong in repository files.
