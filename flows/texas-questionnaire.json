@@ -3557,5 +3557,23 @@
     "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable.",
     "confirmedQ150Entry": "Q099 \u2014 Yes \u2192 Q150; no direct Q095\u2013Q098 entry",
     "closeupClarification": "User confirmed Q116\u2013Q118 screenshot range. The property and closing close-ups show the intermediate sequence; speculative direct bypass candidates were removed."
-  }
+  },
+  "retiredReferenceLinks": [
+    {
+      "source": "Q010",
+      "target": "Q012"
+    },
+    {
+      "source": "Q180",
+      "target": "Q182"
+    },
+    {
+      "source": "Q182",
+      "target": "Q184"
+    },
+    {
+      "source": "Q183",
+      "target": "Q185"
+    }
+  ]
 }
