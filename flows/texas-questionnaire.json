@@ -2404,14 +2404,20 @@
     {
       "source": "Q010",
       "target": "Q011",
-      "label": "Visible connector \u00b7 answer unknown",
-      "confirmedAnswer": false
+      "label": "Property type is one of New home incomplete, New home complete",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": "New home incomplete / complete"
     },
     {
       "source": "Q011",
       "target": "Q012",
-      "label": "Visible connector \u00b7 answer unknown",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q012",
@@ -2994,8 +3000,11 @@
     {
       "source": "Q116",
       "target": "Q117",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q117",
@@ -3003,25 +3012,35 @@
       "label": "Yes",
       "confirmedAnswer": false,
       "traced": true,
-      "displayLabel": "Yes"
+      "displayLabel": "Yes",
+      "evidence": "Latest close-up shows both endpoints of the local connector"
     },
     {
       "source": "G011",
       "target": "G012",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "G012",
       "target": "Q118",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q118",
       "target": "G013",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "G013",
@@ -3297,14 +3316,20 @@
     {
       "source": "Q180",
       "target": "Q181",
-      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q181",
       "target": "Q182",
-      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q182",
@@ -3312,7 +3337,8 @@
       "label": "Yes",
       "confirmedAnswer": false,
       "traced": true,
-      "displayLabel": "Yes"
+      "displayLabel": "Yes",
+      "evidence": "Latest close-up shows both endpoints of the local connector"
     },
     {
       "source": "Q183",
@@ -3320,25 +3346,35 @@
       "label": "Yes",
       "confirmedAnswer": false,
       "traced": true,
-      "displayLabel": "Yes"
+      "displayLabel": "Yes",
+      "evidence": "Latest close-up shows both endpoints of the local connector"
     },
     {
       "source": "Q184",
       "target": "Q185",
-      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q185",
       "target": "Q186",
-      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q186",
       "target": "Q187",
-      "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible connector; answer condition not shown)",
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Latest close-up shows both endpoints of the local connector",
+      "displayLabel": ""
     },
     {
       "source": "Q187",
@@ -3567,6 +3603,7 @@
       "Ambiguous bypass origins in creative finance and closing"
     ],
     "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable.",
-    "confirmedQ150Entry": "Q099 \u2014 Yes \u2192 Q150; no direct Q095\u2013Q098 entry"
+    "confirmedQ150Entry": "Q099 \u2014 Yes \u2192 Q150; no direct Q095\u2013Q098 entry",
+    "pendingCloseupClarification": "Clarify whether Q116 to Q168 is direct or means Q116\u2013Q118; whether Q010\u2013Q012 and Q180\u2013Q185 denote ranges or direct bypasses."
   }
 }
