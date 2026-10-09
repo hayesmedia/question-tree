@@ -2374,20 +2374,32 @@
     {
       "source": "Q002",
       "target": "Q004",
-      "label": "Visible connector \u00b7 answer unknown",
-      "confirmedAnswer": false
+      "label": "Next",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "Setup overview screenshot: continuous pale connector with both endpoints visible"
     },
     {
       "source": "Q004",
       "target": "Q007",
-      "label": "Visible connector \u00b7 answer unknown",
-      "confirmedAnswer": false
+      "label": "Next",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "Setup overview screenshot: continuous pale connector with both endpoints visible"
     },
     {
       "source": "Q007",
       "target": "Q010",
-      "label": "Visible connector \u00b7 answer unknown",
-      "confirmedAnswer": false
+      "label": "Next",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "Setup overview screenshot: continuous pale connector with both endpoints visible"
     },
     {
       "source": "Q010",
@@ -3001,121 +3013,161 @@
       "source": "Q130",
       "target": "Q131",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q131",
       "target": "Q132",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q132",
       "target": "Q133",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q133",
       "target": "Q134",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q134",
       "target": "Q135",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q135",
       "target": "QG-WHOLESALE-CONDUCT",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q140",
       "target": "Q141",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q141",
       "target": "Q142",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q142",
       "target": "Q143",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q143",
       "target": "Q144",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q144",
       "target": "Q145",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q145",
       "target": "Q146",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q150",
       "target": "Q151",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q151",
       "target": "Q152",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q152",
       "target": "Q153",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q153",
       "target": "Q154",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q154",
       "target": "Q155",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q155",
       "target": "Q156",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q156",
       "target": "Q157",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q160",
       "target": "Q161",
       "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q119",
@@ -3139,31 +3191,41 @@
       "source": "Q161",
       "target": "Q162",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q162",
       "target": "Q163",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q163",
       "target": "Q164",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q164",
       "target": "Q165",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q165",
       "target": "Q166",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q166",
@@ -3171,19 +3233,24 @@
       "label": "Yes",
       "confirmedAnswer": false,
       "traced": true,
-      "displayLabel": "Yes"
+      "displayLabel": "Yes",
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q167",
       "target": "Q168",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q168",
       "target": "Q169",
       "label": "Visible connector \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "confirmedAnswer": false,
+      "traced": true,
+      "evidence": "Both endpoints visible in strategy overview screenshot; condition remains unconfirmed unless a label is shown"
     },
     {
       "source": "Q169",
@@ -3413,6 +3480,28 @@
       "confirmedAnswer": false,
       "lane": 1,
       "candidate": true
+    },
+    {
+      "source": "Q043",
+      "target": "Q053",
+      "label": "No",
+      "displayLabel": "No",
+      "traced": true,
+      "confirmedAnswer": true,
+      "kind": "bypass",
+      "lane": 2,
+      "evidence": "Explicit destination confirmed by user"
+    },
+    {
+      "source": "Q049",
+      "target": "Q058",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
+      "traced": true,
+      "confirmedAnswer": true,
+      "kind": "bypass",
+      "lane": 2,
+      "evidence": "Explicit destination confirmed by user"
     }
   ],
   "sourceNotes": "Screenshot transcription of sections 0\u20136, including creative finance continuation and contract/closing. All questions deduplicated by source ID across overlapping pieces. Clipped text, missing answers and bypass routing remain unconfirmed; dashed connectors are references, not executable answers.",
@@ -3423,13 +3512,12 @@
     "flowScreenshotCaptureComplete": true
   },
   "connectionReview": {
-    "status": "Partial: unresolved overlapping and cross-section endpoints need user confirmation",
+    "status": "Partial: Q043 No and Q049 Yes/Maybe confirmed; Setup chain clarified; remaining long branches await confirmation",
     "missingRoutes": [
-      "Q002/Q004/Q007 outgoing long branches",
-      "Q043 No path",
-      "Q049\u2013Q054 conditional and bypass routes",
-      "Entry/exit conditions for strategy sections 5A\u20135D",
-      "Long Tenant branches and cross-section Yes/Maybe branches"
+      "Remaining Q049\u2013Q054 bypass branches (Q049 Yes/Maybe \u2192 Q058 is confirmed)",
+      "Origins/conditions of lines entering 5A\u20135D",
+      "Long Tenant branches and remaining cross-section Yes/Maybe branches",
+      "Ambiguous bypass origins in creative finance and closing"
     ],
     "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable."
   }
