@@ -2708,50 +2708,82 @@
     {
       "source": "Q057",
       "target": "Q058",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q058",
       "target": "Q059",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q059",
       "target": "Q060",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q060",
       "target": "Q191",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q191",
       "target": "Q070",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q070",
       "target": "Q071",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q071",
       "target": "Q072",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q072",
       "target": "Q073",
-      "label": "Visible ordering \u00b7 answer and bypass destinations need confirmation",
-      "confirmedAnswer": false
+      "label": "Next (visible pale connector; answer condition not shown)",
+      "displayLabel": "",
+      "traced": true,
+      "confirmedAnswer": false,
+      "kind": "sequence",
+      "evidence": "User screenshot of Seller/Title/Debt into Deal Economics shows bounded pale connectors"
     },
     {
       "source": "Q073",
@@ -3519,6 +3551,7 @@
       "Long Tenant branches and remaining cross-section Yes/Maybe branches",
       "Ambiguous bypass origins in creative finance and closing"
     ],
-    "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable."
+    "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable.",
+    "pendingQ150Clarification": "User confirms a Yes path from the Q095\u2013Q099 region into Q150; exact originating question(s) awaiting clarification."
   }
 }
