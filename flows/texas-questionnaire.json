@@ -3534,6 +3534,17 @@
       "kind": "bypass",
       "lane": 2,
       "evidence": "Explicit destination confirmed by user"
+    },
+    {
+      "source": "Q099",
+      "target": "Q150",
+      "label": "Yes",
+      "displayLabel": "Yes",
+      "traced": true,
+      "confirmedAnswer": true,
+      "kind": "bypass",
+      "lane": 3,
+      "evidence": "User explicitly confirmed only Q099 connects directly to Q150 on Yes"
     }
   ],
   "sourceNotes": "Screenshot transcription of sections 0\u20136, including creative finance continuation and contract/closing. All questions deduplicated by source ID across overlapping pieces. Clipped text, missing answers and bypass routing remain unconfirmed; dashed connectors are references, not executable answers.",
@@ -3552,6 +3563,6 @@
       "Ambiguous bypass origins in creative finance and closing"
     ],
     "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable.",
-    "pendingQ150Clarification": "User confirms a Yes path from the Q095\u2013Q099 region into Q150; exact originating question(s) awaiting clarification."
+    "confirmedQ150Entry": "Q099 \u2014 Yes \u2192 Q150; no direct Q095\u2013Q098 entry"
   }
 }
