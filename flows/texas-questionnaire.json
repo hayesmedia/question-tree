@@ -3395,18 +3395,6 @@
       "confirmedAnswer": false
     },
     {
-      "source": "Q010",
-      "target": "Q012",
-      "kind": "bypass",
-      "traced": false,
-      "displayLabel": "Endpoint needs confirmation",
-      "label": "Candidate bypass: endpoint needs confirmation",
-      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
-      "confirmedAnswer": false,
-      "lane": 0,
-      "candidate": true
-    },
-    {
       "source": "Q012",
       "target": "Q015",
       "kind": "bypass",
@@ -3518,42 +3506,6 @@
       "candidate": true
     },
     {
-      "source": "Q180",
-      "target": "Q182",
-      "kind": "bypass",
-      "traced": false,
-      "displayLabel": "Endpoint needs confirmation",
-      "label": "Candidate bypass: endpoint needs confirmation",
-      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
-      "confirmedAnswer": false,
-      "lane": 2,
-      "candidate": true
-    },
-    {
-      "source": "Q182",
-      "target": "Q184",
-      "kind": "bypass",
-      "traced": false,
-      "displayLabel": "Endpoint needs confirmation",
-      "label": "Candidate bypass: endpoint needs confirmation",
-      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
-      "confirmedAnswer": false,
-      "lane": 0,
-      "candidate": true
-    },
-    {
-      "source": "Q183",
-      "target": "Q185",
-      "kind": "bypass",
-      "traced": false,
-      "displayLabel": "Endpoint needs confirmation",
-      "label": "Candidate bypass: endpoint needs confirmation",
-      "evidence": "A bypass is visible, but its originating question is obscured by overlapping lines. Requires confirmation.",
-      "confirmedAnswer": false,
-      "lane": 1,
-      "candidate": true
-    },
-    {
       "source": "Q043",
       "target": "Q053",
       "label": "No",
@@ -3604,6 +3556,6 @@
     ],
     "note": "Teal means endpoints traced in screenshots, not verified executable answer routing. Existing dashed ordering connectors remain provisional. Conditions left blank when not readable.",
     "confirmedQ150Entry": "Q099 \u2014 Yes \u2192 Q150; no direct Q095\u2013Q098 entry",
-    "pendingCloseupClarification": "Clarify whether Q116 to Q168 is direct or means Q116\u2013Q118; whether Q010\u2013Q012 and Q180\u2013Q185 denote ranges or direct bypasses."
+    "closeupClarification": "User confirmed Q116\u2013Q118 screenshot range. The property and closing close-ups show the intermediate sequence; speculative direct bypass candidates were removed."
   }
 }
