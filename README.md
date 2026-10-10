@@ -55,3 +55,8 @@ Hold Space while dragging to pan (including over cards/groups). Drag empty space
 `docs/question-data-audit.csv` lists missing source data for all 149 questions. The uploaded overview screenshots contain 136 clipped prompts; detailed screenshots currently cover Q001, Q002, Q004, Q007, Q010, Q011 and Q012. 142 questions do not yet have source answer options. Resume detail uploads at Q013 or supply a source export. Ellipses in those cards are transcribed source fragments, not a CSS shortening rule.
 
 Select a card and use **Review uploaded source details** to compare and explicitly apply a complete uploaded detail record to that card. This saves a backup and retains position/group membership and matching answer destinations. Normal updates/merges still preserve existing edits.
+
+## Diagram editing toolbar
+A dedicated toolbar now provides Select/Hand/Connector tools (V/H/C), undo/redo, duplicate (Ctrl/Cmd+D), delete, group/ungroup, alignment, distribution, card fill, connector color, grid and snapping. Card ports start connections. Select a connection to choose arrowheads, width, label, line style and original/elbow/curved/straight routing. Group labels can be edited in Properties after selecting a group. These controls preserve saved data until explicitly used.
+
+**Review source connections** lists missing supplied screenshot connectors in the current saved project and adds them only after a backup and explicit action. Deleted reference connections remain excluded. This editor is not full Lucidchart parity: the source routing remains partially unconfirmed, and collaboration, a general shape library and full obstacle-aware routing are not implemented.
