@@ -50,3 +50,8 @@ To use only this shared password, remove the separate Worker-specific Cloudflare
 Hold Space while dragging to pan (including over cards/groups). Drag empty space to box-select fully enclosed cards/groups; Shift adds to the selection. Shift-click group labels or boundaries to select multiple groups, then drag a selected group to move them together. Click empty space to deselect. Sidebar entries include question IDs and search accepts IDs.
 
 **Connect cards** lets you pick a source and destination for a visual connector. Click a connector to edit its label, arrowheads and solid/dashed style or delete it. Answer-destination connectors remain executable; newly created visual connectors are references until assigned as answers in Properties. UI-only deployment updates leave saved flows unchanged. The additional pointer controls do not require merging the supplied questionnaire.
+
+## Source-data completeness audit
+`docs/question-data-audit.csv` lists missing source data for all 149 questions. The uploaded overview screenshots contain 136 clipped prompts; detailed screenshots currently cover Q001, Q002, Q004, Q007, Q010, Q011 and Q012. 142 questions do not yet have source answer options. Resume detail uploads at Q013 or supply a source export. Ellipses in those cards are transcribed source fragments, not a CSS shortening rule.
+
+Select a card and use **Review uploaded source details** to compare and explicitly apply a complete uploaded detail record to that card. This saves a backup and retains position/group membership and matching answer destinations. Normal updates/merges still preserve existing edits.
