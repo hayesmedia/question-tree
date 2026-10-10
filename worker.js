@@ -1,3 +1,5 @@
+import {validate} from './src/model.js';
+export {ProjectStore} from './project-store.js';
 const enc=new TextEncoder();
 const cookieName='__Host-question_tree_session';
 const ttl=24*60*60;
@@ -21,5 +23,15 @@ export default {async fetch(req,env){
   return new Response(null,{status:303,headers:{...headers,Location:'/', 'Set-Cookie':`${cookieName}=${expiry}.${mac}; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=${ttl}`}});
  }
  if(!await authenticated(req,env.SITE_PASSWORD))return login('',401);
+ if(url.pathname==='/api/project'){
+ if(!env.PROJECTS)return Response.json({error:'Shared storage is not configured'},{status:503});
+ if(req.method==='PUT'){
+  if(req.headers.get('Origin')!==url.origin)return new Response('Forbidden',{status:403,headers});
+  let payload;try{const text=await req.text();if(text.length>4*1024*1024)return Response.json({error:'Project is too large'},{status:413});payload=JSON.parse(text);validate(payload.flow);}catch{return Response.json({error:'Invalid project data'},{status:400});}
+  req=new Request(req,{body:JSON.stringify(payload)});
+ }
+ if(!['GET','PUT'].includes(req.method))return new Response('Method not allowed',{status:405});
+ return env.PROJECTS.get(env.PROJECTS.idFromName('team-project')).fetch(req);
+ }
  const response=await env.ASSETS.fetch(req);const result=new Response(response.body,response);result.headers.set('Cache-Control','private, no-store');return result;
 }};

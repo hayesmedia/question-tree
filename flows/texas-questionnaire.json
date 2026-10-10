@@ -60,25 +60,28 @@
           "value": "Yes",
           "label": "Buying",
           "unknown": false,
-          "target": ""
+          "target": "Q004",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "No",
           "label": "Assigning/Wholesale",
           "unknown": false,
-          "target": ""
+          "target": "Q004",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Yes, but want the option to assign",
           "label": "Yes, but want the option to assign",
           "unknown": false,
-          "target": ""
+          "target": "Q004",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         }
       ],
       "questionCode": "Q002",
       "section": "0. SETUP",
       "textIncomplete": false,
-      "notes": "Transcribed from question-detail screenshot. Canonical mapping is outside this screenshot; answer destinations are not supplied.",
+      "notes": "Transcribed from question-detail screenshot. Canonical mapping is outside this screenshot; answer destinations are not supplied. Known next-question destinations completed from the visible sequence; no visibility conditions inferred.",
       "details": {
         "whyWeAsk": "The wizard is built for investor acquisitions, assignments and exits. Example - If you are buying a property to fix & flip or assigning a contract (Wholesaling)",
         "stage": "STAGE_0",
@@ -104,31 +107,35 @@
           "value": "Quick cash",
           "label": "Quick cash (Wholesale)",
           "unknown": false,
-          "target": ""
+          "target": "Q007",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Resale profit",
           "label": "Resale profit (Eg. Fix & Flip)",
           "unknown": false,
-          "target": ""
+          "target": "Q007",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Long-term cash flow",
           "label": "Long-term cash flow (Eg. Rental)",
           "unknown": false,
-          "target": ""
+          "target": "Q007",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Open to best option",
           "label": "Open to best option",
           "unknown": false,
-          "target": ""
+          "target": "Q007",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         }
       ],
       "questionCode": "Q004",
       "section": "0. SETUP",
       "textIncomplete": false,
-      "notes": "Transcribed from question-detail screenshot. Visibility and canonical mapping are not visible; answer destinations are not supplied.",
+      "notes": "Transcribed from question-detail screenshot. Visibility and canonical mapping are not visible; answer destinations are not supplied. Known next-question destinations completed from the visible sequence; no visibility conditions inferred.",
       "details": {
         "whyWeAsk": "Captures preference without forcing a strategy choice.",
         "stage": "STAGE_0",
@@ -151,43 +158,49 @@
           "value": "Cash available",
           "label": "Cash",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Bank/DSCR",
           "label": "Bank/DSCR",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Hard money",
           "label": "Hard money",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Private money",
           "label": "Private money",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "No financing yet",
           "label": "No financing yet",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "Mixed",
           "label": "Mixed",
           "unknown": false,
-          "target": ""
+          "target": "Q010",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         }
       ],
       "questionCode": "Q007",
       "section": "0. SETUP",
       "textIncomplete": false,
-      "notes": "Transcribed from two question-detail screenshots. Visibility and destinations are not shown.",
+      "notes": "Transcribed from two question-detail screenshots. Visibility and destinations are not shown. Known next-question destinations completed from the visible sequence; no visibility conditions inferred.",
       "details": {
         "whyWeAsk": "Helps determine whether conventional, hard/private money, or cash routes are realistic.",
         "stage": "STAGE_0",
@@ -285,19 +298,21 @@
           "value": "Yes",
           "label": "Yes",
           "unknown": false,
-          "target": ""
+          "target": "Q012",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         },
         {
           "value": "No",
           "label": "No",
           "unknown": false,
-          "target": ""
+          "target": "Q012",
+          "destinationEvidence": "Unconditional pale next-question connector shown in supplied overview"
         }
       ],
       "questionCode": "Q011",
       "section": "1. PROPERTY AND CONTRACT",
       "textIncomplete": false,
-      "notes": "Transcribed from Q011 detail screenshot. Visibility values differ from the supplied Q010 options (New home construction); retained exactly for reconciliation. Answer destinations are not supplied.",
+      "notes": "Transcribed from Q011 detail screenshot. Visibility values differ from the supplied Q010 options (New home construction); retained exactly for reconciliation. Answer destinations are not supplied. Known next-question destinations completed from the visible sequence; no visibility conditions inferred.",
       "details": {
         "whyWeAsk": "New construction uses different TREC contracts from resale property.",
         "stage": "STAGE_1",
