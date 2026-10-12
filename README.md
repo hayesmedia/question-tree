@@ -34,7 +34,7 @@ As requested, JSON supplies the question wording/options/visibility; conflicting
 
 ## Editor controls
 
-Hold Space while dragging to pan. Drag empty canvas to box-select fully enclosed cards/groups; Shift adds to the selection. Shift-click group labels or boundaries to select multiple groups, then drag a selected group to move them together. Click empty space to deselect. Sidebar entries include original question IDs, and search accepts IDs or complete prompt text. Group names appear on cards and boundaries.
+Hold Space while dragging to pan. Drag empty canvas to box-select fully enclosed cards/groups; Shift adds to the selection. Shift-click group labels or boundaries to select multiple groups, then drag a selected group to move them together. Click empty space to deselect. Sidebar entries include original question IDs, and search accepts IDs or complete prompt text. Group names appear on cards and boundaries. After moving cards or groups, the viewport recenters on their current positions and remembers that focus on reload. **Center diagrams** fits the selection, or all cards when nothing is selected; tall flows can zoom out far enough to fit without the old minimum-zoom clipping. Centering changes the view, not saved diagram coordinates.
 
 The toolbar provides Select/Hand/Connector (V/H/C), undo/redo, duplicate (Ctrl/Cmd+D), delete, group/ungroup, alignment, distribution, fill, connector color, grid and snapping. Shapes include rectangles, diamonds, ellipses and notes. Cards support resize, rotation, font size/style and text/border colors. Select a connector to edit labels, arrows, line style/width, routing or bend points. Automatic routing uses a bounded obstacle search with an exterior-lane fallback; dense layouts may need manual bends.
 
