@@ -1,15 +1,41 @@
 {
   "total_questions": 149,
-  "clipped_prompts": 136,
-  "detail_screenshots_received": [
-    "Q001",
-    "Q002",
-    "Q004",
-    "Q007",
-    "Q010",
-    "Q011",
-    "Q012"
+  "clipped_prompts": 0,
+  "source_options_complete": true,
+  "typed_inputs": 42,
+  "visibility_rules": 39,
+  "missing_export_fields": [
+    "canonicalMappings",
+    "rememberChoice",
+    "explicit answer destinations",
+    "strategy entry conditions"
   ],
-  "questions_without_options": 142,
-  "next_detail_upload": "Q013"
+  "source_conflicts": [
+    {
+      "source": "Q043",
+      "target": "Q053",
+      "message": "Earlier No connector conflicts with Q053 visibility requiring mortgage.first.exists = Yes."
+    },
+    {
+      "source": "Q049",
+      "target": "Q058",
+      "message": "Earlier Yes/Maybe label does not match the exported Q049 options; Q058 has its own OR visibility rule."
+    },
+    {
+      "source": "Q099",
+      "target": "Q150",
+      "message": "Earlier Yes connector conflicts with Q099 being a currency input."
+    },
+    {
+      "source": "Q010",
+      "target": "Q011",
+      "field": "property.type",
+      "message": "Q011 visibility uses New home incomplete, New home complete, which does not match all exported option values on Q010."
+    },
+    {
+      "target": "Q191",
+      "message": "The uploaded source still names this card \"New question\"; a final prompt was not supplied."
+    }
+  ],
+  "source_revision": "2026-10-12T16:04:13.3859827Z"
 }

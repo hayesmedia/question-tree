@@ -1,150 +1,150 @@
-id,section,current_prompt,missing
-Q001,0. SETUP,Is the property in Texas?,
-Q002,0. SETUP,Are you buying a property or assigning a deal (selling a contract)?,Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q004,0. SETUP,What is your primary objective with this opportunity?,Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q007,0. SETUP,How are you Financing the deal?,Visibility rules (or confirmation of none); Answer destinations / routing confirmation
-Q010,1. PROPERTY AND CONTRACT,What type of property is it?,Visibility rules (or confirmation of none); Answer destinations / routing confirmation
-Q011,1. PROPERTY AND CONTRACT,Is the seller a builder selling a new home?,Answer destinations / routing confirmation
-Q012,1. PROPERTY AND CONTRACT,Who occupies the property today?,Visibility rules (or confirmation of none); Answer destinations / routing confirmation
-Q013,1. PROPERTY AND CONTRACT,What year was the dwelling built?,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q014,1. PROPERTY AND CONTRACT,Is mandatory membership in a pro…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q015,1. PROPERTY AND CONTRACT,Is the property a condominium?,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q016,1. PROPERTY AND CONTRACT,Is the property in a public improve…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-QG-MUD,1. PROPERTY AND CONTRACT,Is the property inside a municipal u…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G006,1. PROPERTY AND CONTRACT,What is the name of the water distr…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G007,1. PROPERTY AND CONTRACT,What is the district’s current total t…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q017,1. PROPERTY AND CONTRACT,"Are groundwater, water wells, pon…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q018,1. PROPERTY AND CONTRACT,Is the property coastal or seaward …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q019,1. PROPERTY AND CONTRACT,Is the property in a propane gas sy…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q020,1. PROPERTY AND CONTRACT,"Will the seller reserve any oil, gas, …",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q021,1. PROPERTY AND CONTRACT,"Are there leased solar panels, wate…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q022,1. PROPERTY AND CONTRACT,Is the property currently rented un…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q023,1. PROPERTY AND CONTRACT,Are any personal property items in…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q024,1. PROPERTY AND CONTRACT,"Do you want environmental, endan…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q025,1. PROPERTY AND CONTRACT,Does your purchase depend on sel…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q026,1. PROPERTY AND CONTRACT,Will this be a backup contract behi…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q027,1. PROPERTY AND CONTRACT,Does either party intend to comple…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G017,1. PROPERTY AND CONTRACT,Are you acquiring this property to …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q028,1. PROPERTY AND CONTRACT,Will the seller remain in the propert…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q029,1. PROPERTY AND CONTRACT,Will the buyer occupy the property…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q030,1. PROPERTY AND CONTRACT,Do the parties agree to hydrostatic…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q031,1. PROPERTY AND CONTRACT,Will third-party financing be a con…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q032,1. PROPERTY AND CONTRACT,Do you want an additional contract…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q033,1. PROPERTY AND CONTRACT,Is the offer less than what is owed …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q040,"2. SELLER, TITLE AND DEBT",Who is the legal owner shown in c…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q041,"2. SELLER, TITLE AND DEBT",Does the person signing have auth…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G001,"2. SELLER, TITLE AND DEBT","Is the seller married, and is this pro…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G002,"2. SELLER, TITLE AND DEBT",Will the seller’s spouse sign the de…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q042,"2. SELLER, TITLE AND DEBT","Are there known liens, judgments, …",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q043,"2. SELLER, TITLE AND DEBT",Is there an existing mortgage or de…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q044,"2. SELLER, TITLE AND DEBT",What is the approximate current lo…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q045,"2. SELLER, TITLE AND DEBT",Is the loan current?,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G008,"2. SELLER, TITLE AND DEBT",What is the posted foreclosure sal…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G009,"2. SELLER, TITLE AND DEBT",What reinstatement amount has th…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G010,"2. SELLER, TITLE AND DEBT",What date was that reinstatement …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q046,"2. SELLER, TITLE AND DEBT",What is the interest rate on the exi…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q047,"2. SELLER, TITLE AND DEBT",What is the total monthly payment i…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q048,"2. SELLER, TITLE AND DEBT",How many years remain on the loa…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q049,"2. SELLER, TITLE AND DEBT",Is the existing loan formally assum…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q050,"2. SELLER, TITLE AND DEBT",Does the seller need all of their eq…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q051,"2. SELLER, TITLE AND DEBT",Would the seller consider receiving…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q052,"2. SELLER, TITLE AND DEBT",Would the seller consider leaving t…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q053,"2. SELLER, TITLE AND DEBT",Is the seller willing to allow a new n…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q054,"2. SELLER, TITLE AND DEBT",Is the seller free and clear with no …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q055,"2. SELLER, TITLE AND DEBT",Will the buyer occupy the property…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q056,"2. SELLER, TITLE AND DEBT",How many residential properties h…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q057,"2. SELLER, TITLE AND DEBT",Has the seller provided the most re…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q058,"2. SELLER, TITLE AND DEBT",Have you confirmed insurance can…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q059,"2. SELLER, TITLE AND DEBT",Will payments on any seller-carrie…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q060,"2. SELLER, TITLE AND DEBT",Is there a clear exit before any ball…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q191,"2. SELLER, TITLE AND DEBT",New question,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q070,3. DEAL ECONOMICS,What is the seller’s asking price?,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q071,3. DEAL ECONOMICS,What price do you believe you can …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q072,3. DEAL ECONOMICS,What is the as-is market value sup…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q073,3. DEAL ECONOMICS,What is the after-repair value (ARV…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q074,3. DEAL ECONOMICS,What is the repair budget based on…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q075,3. DEAL ECONOMICS,What rehab contingency percenta…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q076,3. DEAL ECONOMICS,What are estimated acquisition clo…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q077,3. DEAL ECONOMICS,What are estimated financing point…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q078,3. DEAL ECONOMICS,What are estimated monthly holdin…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q079,3. DEAL ECONOMICS,How many months do you realistic…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q080,3. DEAL ECONOMICS,What are estimated resale costs (c…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q081,3. DEAL ECONOMICS,What minimum dollar profit do you …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q082,3. DEAL ECONOMICS,What minimum profit margin on tot…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q083,3. DEAL ECONOMICS,What is realistic monthly market re…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q084,3. DEAL ECONOMICS,What vacancy/credit-loss assumpti…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G003,3. DEAL ECONOMICS,Should we underwrite a tax increa…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G004,3. DEAL ECONOMICS,What taxable value should we use …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q085,3. DEAL ECONOMICS,What annual property taxes should…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q086,3. DEAL ECONOMICS,What annual insurance premium sh…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q087,3. DEAL ECONOMICS,What monthly HOA or condo dues …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q088,3. DEAL ECONOMICS,What annual repairs/maintenance r…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q089,3. DEAL ECONOMICS,What annual capital-expenditure re…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q090,3. DEAL ECONOMICS,Will you use professional property …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q091,3. DEAL ECONOMICS,What annual debt service will the r…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q092,3. DEAL ECONOMICS,What minimum DSCR do you requir…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q093,3. DEAL ECONOMICS,What minimum cash-on-cash retur…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q094,3. DEAL ECONOMICS,"After closing and repairs, how muc…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q095,3. DEAL ECONOMICS,Is a refinance realistically available…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q096,3. DEAL ECONOMICS,What stabilized value and refinanc…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q097,3. DEAL ECONOMICS,Can you fund the full rehab plus co…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q098,3. DEAL ECONOMICS,How strong is end-buyer demand f…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q099,3. DEAL ECONOMICS,What assignment fee or wholesale …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q110,4. DUE DILIGENCE,Has a title company or attorney rev…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q111,4. DUE DILIGENCE,"Are there unresolved survey, boun…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q112,4. DUE DILIGENCE,Is the current zoning/land use com…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q113,4. DUE DILIGENCE,Is the property in a flood hazard ar…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q114,4. DUE DILIGENCE,"Are well, septic or private utility sy…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q115,4. DUE DILIGENCE,"Have foundation, roof, HVAC, elect…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q116,4. DUE DILIGENCE,"Are there open permits, code violat…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q117,4. DUE DILIGENCE,Can the property be insured at a c…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G011,4. DUE DILIGENCE,What date was the insurance quot…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G012,4. DUE DILIGENCE,How does the quote treat the roof?,Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q118,4. DUE DILIGENCE,"If tenant-occupied, have you verifi…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G013,4. DUE DILIGENCE,Has each tenant signed an estopp…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G014,4. DUE DILIGENCE,What is the total security-deposit b…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-G015,4. DUE DILIGENCE,Will those deposits be credited to y…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q119,4. DUE DILIGENCE,Have you confirmed local rental/s…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q130,5A. WHOLESALE,Do you have a signed purchase co…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q131,5A. WHOLESALE,Does the contract allow assignmen…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q132,5A. WHOLESALE,After the end buyer’s required prof…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q133,5A. WHOLESALE,Have you identified realistic end bu…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q134,5A. WHOLESALE,Can you close or otherwise perfor…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q135,5A. WHOLESALE,Will all marketing clearly state that …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-QG-WHOLESALE-CONDUCT,5A. WHOLESALE,Will you market only your own cont…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q140,5B. FIX AND FLIP,Does projected net profit meet bot…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q141,5B. FIX AND FLIP,Do you have a written rehab scope…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q142,5B. FIX AND FLIP,Is the rehab contingency adequate…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q143,5B. FIX AND FLIP,Are ARV comps truly renovated an…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q144,5B. FIX AND FLIP,Can financing and cash carry the p…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q145,5B. FIX AND FLIP,Does the deal still work if ARV is lo…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q146,5B. FIX AND FLIP,Is there a credible fallback exit suc…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q150,5C. HOLD / BRRRR,Does stabilized NOI remain positiv…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q151,5C. HOLD / BRRRR,Does DSCR meet your selected tar…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q152,5C. HOLD / BRRRR,Does cash-on-cash return meet yo…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q153,5C. HOLD / BRRRR,Are reserves adequate for turnover…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q154,5C. HOLD / BRRRR,Are market rents supported by act…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q155,5C. HOLD / BRRRR,Is the property’s condition compati…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q156,5C. HOLD / BRRRR,"For BRRRR, will projected refinanc…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q157,5C. HOLD / BRRRR,Have you verified lender seasonin…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q160,5D. CREATIVE FINANCE,Is a formal lender-approved loan a…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q161,5D. CREATIVE FINANCE,"For subject-to, are the existing rate…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q162,5D. CREATIVE FINANCE,"For subject-to, can seller equity an…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q163,5D. CREATIVE FINANCE,"For subject-to, has an attorney/title…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q164,5D. CREATIVE FINANCE,"For seller financing, are rate, term, …",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q165,5D. CREATIVE FINANCE,For seller financing involving possi…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q166,5D. CREATIVE FINANCE,Does the proposed new seller-fina…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q167,5D. CREATIVE FINANCE,"If wrap financing is proposed, is th…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q168,5D. CREATIVE FINANCE,"Is there a professional servicing, ta…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q169,5D. CREATIVE FINANCE,Does the creative-finance exit occ…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q180,6. CONTRACT AND CLOSING,Is the seller required to provide the…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q181,6. CONTRACT AND CLOSING,Has the seller completed the curre…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q182,6. CONTRACT AND CLOSING,Has the contract been fully execut…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q183,6. CONTRACT AND CLOSING,Have the parties agreed to change …,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q184,6. CONTRACT AND CLOSING,Is the buyer terminating under a va…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q185,6. CONTRACT AND CLOSING,Is the seller terminating under a val…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q186,6. CONTRACT AND CLOSING,Has a backup contract become the…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q187,6. CONTRACT AND CLOSING,"Are all title objections, payoff issue…",Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q188,6. CONTRACT AND CLOSING,Are all financing conditions and re…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q189,6. CONTRACT AND CLOSING,Are all required disclosures/adden…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
-Q190,6. CONTRACT AND CLOSING,Is the final strategy still the same a…,Full prompt; Explanation; Stage; Response type; Persona; Remember choice; Route tag; Answer options; Visibility rules (or confirmation of none); Field mappings (or confirmation of none); Answer destinations / routing confirmation
+"ID","Prompt","Response type","Options","Visibility rules","Source warning"
+"Q001","Is the property in Texas?","SINGLE_SELECT","2","0",""
+"Q002","Are you buying a property or assigning a deal (selling a contract)?","SINGLE_SELECT","3","0",""
+"Q004","What is your primary objective with this opportunity?","SINGLE_SELECT","4","0",""
+"Q007","How are you Financing the deal?","SINGLE_SELECT","6","0",""
+"Q010","What type of property is it?","SINGLE_SELECT","6","0",""
+"Q011","Is the seller a builder selling a new home?","SINGLE_SELECT","2","1","Q011 visibility uses New home incomplete, New home complete, which does not match all exported option values on Q010."
+"Q012","Who occupies the property today?","SINGLE_SELECT","4","0",""
+"Q013","What year was the dwelling built?","YEAR","0","0",""
+"Q014","Is mandatory membership in a property owners association required?","SINGLE_SELECT","3","0",""
+"Q015","Is the property a condominium?","SINGLE_SELECT","2","0",""
+"Q016","Is the property in a public improvement district or another special taxing/assessment district?","SINGLE_SELECT","3","0",""
+"QG-MUD","Is the property inside a municipal utility district or another water district that has to give the statutory water-district notice?","SINGLE_SELECT","3","0",""
+"G006","What is the name of the water district exactly as it appears on the notice?","TEXT","0","1",""
+"G007","What is the district's current total tax rate per $100 of assessed valuation?","NUMBER","0","1",""
+"Q017","Are groundwater, water wells, ponds/lakes, or surface-water rights associated with the property?","SINGLE_SELECT","3","0",""
+"Q018","Is the property coastal or seaward of the Gulf Intracoastal Waterway?","SINGLE_SELECT","3","0",""
+"Q019","Is the property in a propane gas system service area?","SINGLE_SELECT","3","0",""
+"Q020","Will the seller reserve any oil, gas, or other mineral rights?","SINGLE_SELECT","2","0",""
+"Q021","Are there leased solar panels, water softeners, propane tanks, security systems, or other fixture leases?","SINGLE_SELECT","3","0",""
+"Q022","Is the property currently rented under a residential lease?","SINGLE_SELECT","2","0",""
+"Q023","Are any personal property items included in the sale, such as appliances, furniture or equipment?","SINGLE_SELECT","2","0",""
+"Q024","Do you want environmental, endangered-species, or wetlands reports as a contract condition?","SINGLE_SELECT","2","0",""
+"Q025","Does your purchase depend on selling another property first?","SINGLE_SELECT","2","0",""
+"Q026","Will this be a backup contract behind another contract?","SINGLE_SELECT","2","0",""
+"Q027","Does either party intend to complete a Section 1031 exchange?","SINGLE_SELECT","3","0",""
+"G017","Are you acquiring this property to hold for investment, or primarily to resell?","SINGLE_SELECT","3","1",""
+"Q028","Will the seller remain in the property after closing?","SINGLE_SELECT","2","0",""
+"Q029","Will the buyer occupy the property before closing?","SINGLE_SELECT","2","0",""
+"Q030","Do the parties agree to hydrostatic testing?","SINGLE_SELECT","2","0",""
+"Q031","Will third-party financing be a condition of the purchase contract?","SINGLE_SELECT","2","0",""
+"Q032","Do you want an additional contractual right to terminate if the lender's appraisal is too low?","SINGLE_SELECT","2","1",""
+"Q033","Is the offer less than what is owed on the property?","SINGLE_SELECT","3","0",""
+"Q040","Who is the legal owner shown in current title records?","TEXT","0","0",""
+"Q041","Does the person signing have authority to sell?","SINGLE_SELECT","7","0",""
+"G001","Is the seller married, and is this property their Texas homestead?","SINGLE_SELECT","4","0",""
+"G002","Will the seller's spouse sign the deed and closing documents, even though they are not on title?","SINGLE_SELECT","4","1",""
+"Q042","Are there known liens, judgments, delinquent taxes, HOA balances, or other payoff items?","SINGLE_SELECT","3","0",""
+"Q043","Is there an existing mortgage or deed of trust?","SINGLE_SELECT","2","0",""
+"Q044","What is the approximate current loan balance?","CURRENCY","0","1",""
+"Q045","Is the loan current?","SINGLE_SELECT","4","1",""
+"G008","What is the posted foreclosure sale date?","DATE","0","1",""
+"G009","What reinstatement amount has the servicer quoted in writing?","CURRENCY","0","1",""
+"G010","What date was that reinstatement quote issued?","DATE","0","1",""
+"Q046","What is the interest rate on the existing loan?","PERCENTAGE","0","1",""
+"Q047","What is the total monthly payment including taxes/insurance/escrow?","CURRENCY","0","1",""
+"Q048","How many years remain on the loan or when does it mature?","NUMBER","0","1",""
+"Q049","Is the existing loan formally assumable, and will the lender approve the assumption?","SINGLE_SELECT","3","1",""
+"Q050","Does the seller need all of their equity in cash at closing?","SINGLE_SELECT","4","0",""
+"Q051","Would the seller consider receiving payments over time?","SINGLE_SELECT","3","0",""
+"Q052","Would the seller consider leaving the existing loan in place after title transfers?","SINGLE_SELECT","3","1",""
+"Q053","Is the seller willing to allow a new note to be created while an existing loan remains in place?","SINGLE_SELECT","3","1","Earlier No connector conflicts with Q053 visibility requiring mortgage.first.exists = Yes."
+"Q054","Is the seller free and clear with no mortgage?","SINGLE_SELECT","2","1",""
+"Q055","Will the buyer occupy the property primarily for personal/family use?","SINGLE_SELECT","2","1",""
+"Q056","How many residential properties has this seller financed in the last 12 months?","SINGLE_SELECT","5","1",""
+"Q057","Has the seller provided the most recent mortgage statement, escrow information and loan documents?","SINGLE_SELECT","2","1",""
+"Q058","Have you confirmed insurance can remain or be replaced correctly after closing?","SINGLE_SELECT","3","1","Earlier Yes/Maybe label does not match the exported Q049 options; Q058 has its own OR visibility rule."
+"Q059","Will payments on any seller-carried or underlying loan be handled by a professional servicer?","SINGLE_SELECT","3","1",""
+"Q060","Is there a clear exit before any balloon, maturity, or refinance deadline?","SINGLE_SELECT","3","1",""
+"Q191","New question","TEXT","0","0","The uploaded source still names this card ""New question""; a final prompt was not supplied."
+"Q070","What is the seller's asking price?","CURRENCY","0","0",""
+"Q071","What price do you believe you can contract at today?","CURRENCY","0","0",""
+"Q072","What is the as-is market value supported by comps?","CURRENCY","0","0",""
+"Q073","What is the after-repair value (ARV) supported by renovated sold comps?","CURRENCY","0","0",""
+"Q074","What is the repair budget based on scope and bids?","CURRENCY","0","0",""
+"Q075","What rehab contingency percentage will you carry?","PERCENTAGE","0","0",""
+"Q076","What are estimated acquisition closing costs?","CURRENCY","0","0",""
+"Q077","What are estimated financing points, interest and lender fees?","CURRENCY","0","0",""
+"Q078","What are estimated monthly holding costs during rehab/marketing?","CURRENCY","0","0",""
+"Q079","How many months do you realistically expect to own it before resale or stabilization?","NUMBER","0","0",""
+"Q080","What are estimated resale costs (commissions, concessions, title/closing, make-ready)?","CURRENCY","0","0",""
+"Q081","What minimum dollar profit do you require on a flip?","CURRENCY","0","0",""
+"Q082","What minimum profit margin on total project cost do you require?","PERCENTAGE","0","0",""
+"Q083","What is realistic monthly market rent after repairs?","CURRENCY","0","0",""
+"Q084","What vacancy/credit-loss assumption will you use?","PERCENTAGE","0","0",""
+"G003","Should we underwrite a tax increase after closing because the seller's exemptions and homestead cap will not transfer to you?","SINGLE_SELECT","3","0",""
+"G004","What taxable value should we use for your first full year of ownership?","CURRENCY","0","0",""
+"Q085","What annual property taxes should be underwritten after acquisition?","CURRENCY","0","0",""
+"Q086","What annual insurance premium should be underwritten?","CURRENCY","0","0",""
+"Q087","What monthly HOA or condo dues apply?","CURRENCY","0","1",""
+"Q088","What annual repairs/maintenance reserve will you use?","CURRENCY","0","0",""
+"Q089","What annual capital-expenditure reserve will you use?","CURRENCY","0","0",""
+"Q090","Will you use professional property management? If so, what fee?","PERCENTAGE","0","0",""
+"Q091","What annual debt service will the rental actually have?","CURRENCY","0","0",""
+"Q092","What minimum DSCR do you require?","NUMBER","0","0",""
+"Q093","What minimum cash-on-cash return do you require?","PERCENTAGE","0","0",""
+"Q094","After closing and repairs, how much cash will remain in reserves?","CURRENCY","0","0",""
+"Q095","Is a refinance realistically available after stabilization?","SINGLE_SELECT","3","0",""
+"Q096","What stabilized value and refinance LTV are you assuming?","TEXT","0","1",""
+"Q097","Can you fund the full rehab plus contingency if draws are delayed?","SINGLE_SELECT","2","0",""
+"Q098","How strong is end-buyer demand for this property type and price point?","SINGLE_SELECT","4","0",""
+"Q099","What assignment fee or wholesale spread are you targeting?","CURRENCY","0","0",""
+"Q110","Has a title company or attorney reviewed title?","SINGLE_SELECT","2","0",""
+"Q111","Are there unresolved survey, boundary, access or easement issues?","SINGLE_SELECT","3","0",""
+"Q112","Is the current zoning/land use compatible with your intended strategy?","SINGLE_SELECT","3","0",""
+"Q113","Is the property in a flood hazard area or subject to known drainage issues?","SINGLE_SELECT","3","0",""
+"Q114","Are well, septic or private utility systems present?","SINGLE_SELECT","3","0",""
+"Q115","Have foundation, roof, HVAC, electrical and plumbing been evaluated?","SINGLE_SELECT","3","0",""
+"Q116","Are there open permits, code violations or unpermitted additions?","SINGLE_SELECT","3","0",""
+"Q117","Can the property be insured at a cost consistent with your underwriting?","SINGLE_SELECT","3","0",""
+"G011","What date was the insurance quote you used for this underwriting?","DATE","0","1",""
+"G012","How does the quote treat the roof?","SINGLE_SELECT","4","1",""
+"Q118","If tenant-occupied, have you verified leases, ledgers, deposits, delinquencies and notices?","SINGLE_SELECT","3","1",""
+"G013","Has each tenant signed an estoppel certificate confirming their rent, term, deposit and any promises from the seller?","SINGLE_SELECT","3","1",""
+"G014","What is the total security-deposit balance held for all tenants?","CURRENCY","0","1",""
+"G015","Will those deposits be credited to you on the settlement statement at closing?","SINGLE_SELECT","3","1",""
+"Q119","Have you confirmed local rental/STR rules if your exit depends on renting?","SINGLE_SELECT","3","0",""
+"Q130","Do you have a signed purchase contract or option giving you a real contractual/equitable interest?","SINGLE_SELECT","2","0",""
+"Q131","Does the contract allow assignment, or has assignment been approved?","SINGLE_SELECT","3","0",""
+"Q132","After the end buyer's required profit/return, closing costs and your fee, is there still enough spread?","SINGLE_SELECT","2","0",""
+"Q133","Have you identified realistic end buyers for this exact deal type/area?","SINGLE_SELECT","2","0",""
+"Q134","Can you close or otherwise perform if you do not find an assignee?","SINGLE_SELECT","3","0",""
+"Q135","Will all marketing clearly state that you are selling/assigning your contractual or equitable interest rather than representing that you own title?","SINGLE_SELECT","2","0",""
+"QG-WHOLESALE-CONDUCT","Will you market only your own contractual interest, and avoid advertising, showing or negotiating the sale of the property on the owner's behalf?","SINGLE_SELECT","2","0",""
+"Q140","Does projected net profit meet both your minimum dollar profit and minimum margin thresholds?","SINGLE_SELECT","2","0",""
+"Q141","Do you have a written rehab scope and credible bids for major work?","SINGLE_SELECT","2","0",""
+"Q142","Is the rehab contingency adequate for the property's condition?","SINGLE_SELECT","2","0",""
+"Q143","Are ARV comps truly renovated and comparable in size, location and condition?","SINGLE_SELECT","3","0",""
+"Q144","Can financing and cash carry the project through a meaningful delay?","SINGLE_SELECT","2","0",""
+"Q145","Does the deal still work if ARV is lower and rehab/holding costs are higher than expected?","SINGLE_SELECT","2","0",""
+"Q146","Is there a credible fallback exit such as rental, wholetail or price reduction?","SINGLE_SELECT","2","0",""
+"Q150","Does stabilized NOI remain positive after realistic vacancy, repairs, management, taxes, insurance and reserves?","SINGLE_SELECT","2","0","Earlier Yes connector conflicts with Q099 being a currency input."
+"Q151","Does DSCR meet your selected target?","SINGLE_SELECT","2","0",""
+"Q152","Does cash-on-cash return meet your target?","SINGLE_SELECT","2","0",""
+"Q153","Are reserves adequate for turnover and capital expenses?","SINGLE_SELECT","2","0",""
+"Q154","Are market rents supported by actual comparable leases/listings?","SINGLE_SELECT","2","0",""
+"Q155","Is the property's condition compatible with long-term maintenance and insurance costs?","SINGLE_SELECT","2","0",""
+"Q156","For BRRRR, will projected refinance proceeds recycle enough capital while keeping the rental within your DSCR target?","SINGLE_SELECT","3","1",""
+"Q157","Have you verified lender seasoning, appraisal and refinance requirements?","SINGLE_SELECT","3","0",""
+"Q160","Is a formal lender-approved loan assumption available?","SINGLE_SELECT","2","0",""
+"Q161","For subject-to, are the existing rate/payment/remaining term materially better than replacement financing or otherwise strategically valuable?","SINGLE_SELECT","2","0",""
+"Q162","For subject-to, can seller equity and arrears be funded without destroying the deal economics?","SINGLE_SELECT","2","0",""
+"Q163","For subject-to, has an attorney/title professional reviewed due-on-sale, disclosures, deed, insurance and closing structure?","SINGLE_SELECT","2","0",""
+"Q164","For seller financing, are rate, term, amortization, down payment, balloon and lien position all defined?","SINGLE_SELECT","2","0",""
+"Q165","For seller financing involving possible consumer-purpose credit, has mortgage/compliance counsel or an appropriate licensed professional reviewed federal requirements?","SINGLE_SELECT","3","0",""
+"Q166","Does the proposed new seller-financed note wrap around an existing mortgage?","SINGLE_SELECT","2","0",""
+"Q167","If wrap financing is proposed, is the closing being handled in the manner required by Texas law?","SINGLE_SELECT","3","1",""
+"Q168","Is there a professional servicing, tax/insurance and default-management plan for creative financing?","SINGLE_SELECT","2","0",""
+"Q169","Does the creative-finance exit occur before any balloon, maturity or known refinance constraint?","SINGLE_SELECT","2","0",""
+"Q180","Is the seller required to provide the Texas Seller's Disclosure Notice, or does a statutory exemption apply?","SINGLE_SELECT","3","0",""
+"Q181","Has the seller completed the current water-rights disclosure/election required by the applicable 2026 contract workflow?","SINGLE_SELECT","3","1",""
+"Q182","Has the contract been fully executed by all required parties?","SINGLE_SELECT","2","0",""
+"Q183","Have the parties agreed to change terms after execution?","SINGLE_SELECT","2","1",""
+"Q184","Is the buyer terminating under a valid contractual termination right?","SINGLE_SELECT","2","1",""
+"Q185","Is the seller terminating under a valid contractual/legal right?","SINGLE_SELECT","2","1",""
+"Q186","Has a backup contract become the primary contract because the first contract ended?","SINGLE_SELECT","3","1",""
+"Q187","Are all title objections, payoff issues, lien releases and authority issues resolved?","SINGLE_SELECT","2","0",""
+"Q188","Are all financing conditions and required lender approvals satisfied?","SINGLE_SELECT","3","0",""
+"Q189","Are all required disclosures/addenda delivered and signed/acknowledged as required by their forms?","SINGLE_SELECT","2","0",""
+"Q190","Is the final strategy still the same as the strategy used to create the document package?","SINGLE_SELECT","2","0",""

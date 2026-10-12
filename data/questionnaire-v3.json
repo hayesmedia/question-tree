@@ -1,0 +1,5443 @@
+{
+  "questionnaireCode": "GUIDED_INVESTOR_DEAL_JAMES",
+  "questionnaireName": "Texas Investor Deal Discovery (James)",
+  "description": "Guided Investor Questionnaire v1. 134 plain-English questions over the canonical field catalog. Texas jurisdiction.",
+  "jurisdiction": "TX",
+  "versionNumber": 1,
+  "status": "DRAFT",
+  "exportedAtUtc": "2026-10-12T16:04:13.3859827Z",
+  "stages": [
+    {
+      "stageCode": "STAGE_0",
+      "stageName": "0. Setup",
+      "headline": "First, a little about you.",
+      "subHeadline": "Your capital and your risk tolerance decide which routes are even on the table.",
+      "stageKind": "CORE",
+      "sortOrder": 10,
+      "stopsQuestionnaire": true,
+      "blockedHeadline": "We only cover Texas right now",
+      "blockedBody": "Other states are coming soon. This questionnaire is for Texas deals today.",
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.address.state\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022TX\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "stageCode": "STAGE_1",
+      "stageName": "1. Property and Contract",
+      "headline": "Now the property itself.",
+      "subHeadline": "These answers pick your base contract and every disclosure that rides along with it.",
+      "stageKind": "CORE",
+      "sortOrder": 20,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_2",
+      "stageName": "2. Seller, Title and Debt",
+      "headline": "What is the seller carrying?",
+      "subHeadline": "Existing debt is where the creative structures live. It is also where the risk hides.",
+      "stageKind": "CORE",
+      "sortOrder": 30,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_3",
+      "stageName": "3. Deal Economics",
+      "headline": "Let\u0027s talk money.",
+      "subHeadline": "Rough numbers are fine. We will show you which ones are actually moving the deal.",
+      "stageKind": "CORE",
+      "sortOrder": 40,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_4",
+      "stageName": "4. Due Diligence",
+      "headline": "What have you actually verified?",
+      "subHeadline": "We would rather mark something unknown than let you underwrite a guess.",
+      "stageKind": "CORE",
+      "sortOrder": 50,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_5A",
+      "stageName": "5A. Wholesale",
+      "headline": "Prove wholesale before you commit.",
+      "subHeadline": "Only the questions the wholesale route actually depends on.",
+      "stageKind": "ROUTE_VALIDATION",
+      "sortOrder": 60,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_5B",
+      "stageName": "5B. Fix and Flip",
+      "headline": "Prove the flip before you commit.",
+      "subHeadline": "Only the questions the flip route actually depends on.",
+      "stageKind": "ROUTE_VALIDATION",
+      "sortOrder": 70,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_5C",
+      "stageName": "5C. Hold / BRRRR",
+      "headline": "Prove the hold before you commit.",
+      "subHeadline": "Only the questions buy-and-hold and BRRRR actually depend on.",
+      "stageKind": "ROUTE_VALIDATION",
+      "sortOrder": 80,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_5D",
+      "stageName": "5D. Creative Finance",
+      "headline": "Prove the structure before you commit.",
+      "subHeadline": "Only the questions this creative-finance route actually depends on.",
+      "stageKind": "ROUTE_VALIDATION",
+      "sortOrder": 90,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    },
+    {
+      "stageCode": "STAGE_6",
+      "stageName": "6. Contract and Closing",
+      "headline": "Paperwork this deal actually needs.",
+      "subHeadline": "Every Texas addendum evaluated against the facts you already gave.",
+      "stageKind": "CORE",
+      "sortOrder": 100,
+      "stopsQuestionnaire": false,
+      "blockedHeadline": null,
+      "blockedBody": null,
+      "branches": []
+    }
+  ],
+  "questions": [
+    {
+      "questionCode": "Q001",
+      "stageCode": "STAGE_0",
+      "prompt": "Is the property in Texas?",
+      "whyItMatters": "This version of the document engine is Texas-specific.",
+      "beginnerHelp": "Other states need a different legal/form ruleset.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q140",
+      "stageCode": "STAGE_5B",
+      "prompt": "Does projected net profit meet both your minimum dollar profit and minimum margin thresholds?",
+      "whyItMatters": "A flip must compensate for construction, market and time risk.",
+      "beginnerHelp": "No = renegotiate or reject flip route.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q002",
+      "stageCode": "STAGE_0",
+      "prompt": "Are you buying a property or assigning a deal (selling a contract)?",
+      "whyItMatters": "The wizard is built for investor acquisitions, assignments and exits. Example - If you are buying a property to fix \u0026 flip or assigning a contract (Wholesaling)",
+      "beginnerHelp": "If you are acting only as an agent/broker for someone else, a different workflow applies.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 2,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Buying",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "Assigning/Wholesale",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Yes, but want the option to assign",
+          "optionLabel": "Yes, but want the option to assign",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q141",
+      "stageCode": "STAGE_5B",
+      "prompt": "Do you have a written rehab scope and credible bids for major work?",
+      "whyItMatters": "Beginners commonly underestimate repairs.",
+      "beginnerHelp": "No = estimate remains provisional.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 2,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q142",
+      "stageCode": "STAGE_5B",
+      "prompt": "Is the rehab contingency adequate for the property\u0027s condition?",
+      "whyItMatters": "Contingency protects against hidden conditions and scope creep.",
+      "beginnerHelp": "No = increase contingency or pass.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 3,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q004",
+      "stageCode": "STAGE_0",
+      "prompt": "What is your primary objective with this opportunity?",
+      "whyItMatters": "Captures preference without forcing a strategy choice.",
+      "beginnerHelp": "You can choose \u0027Open to best option\u0027 and let the engine compare routes.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 4,
+      "options": [
+        {
+          "optionValue": "Quick cash",
+          "optionLabel": "Quick cash (Wholesale)",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Resale profit",
+          "optionLabel": "Resale profit (Eg. Fix \u0026 Flip)",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Long-term cash flow",
+          "optionLabel": "Long-term cash flow (Eg. Rental)",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Open to best option",
+          "optionLabel": "Open to best option",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q143",
+      "stageCode": "STAGE_5B",
+      "prompt": "Are ARV comps truly renovated and comparable in size, location and condition?",
+      "whyItMatters": "Bad ARV is one of the fastest ways to lose money on a flip.",
+      "beginnerHelp": "No/unknown = rework ARV.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 4,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q007",
+      "stageCode": "STAGE_0",
+      "prompt": "How are you Financing the deal?",
+      "whyItMatters": "Helps determine whether conventional, hard/private money, or cash routes are realistic.",
+      "beginnerHelp": "No financing does not automatically mean the deal is impossible; it changes route feasibility.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 5,
+      "options": [
+        {
+          "optionValue": "Cash available",
+          "optionLabel": "Cash",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Bank/DSCR",
+          "optionLabel": "Bank/DSCR",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Hard money",
+          "optionLabel": "Hard money",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Private money",
+          "optionLabel": "Private money",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        },
+        {
+          "optionValue": "No financing yet",
+          "optionLabel": "No financing yet",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 5
+        },
+        {
+          "optionValue": "Mixed",
+          "optionLabel": "Mixed",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 6
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q144",
+      "stageCode": "STAGE_5B",
+      "prompt": "Can financing and cash carry the project through a meaningful delay?",
+      "whyItMatters": "Delays increase interest, taxes, insurance and utilities.",
+      "beginnerHelp": "No = liquidity risk.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 5,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q145",
+      "stageCode": "STAGE_5B",
+      "prompt": "Does the deal still work if ARV is lower and rehab/holding costs are higher than expected?",
+      "whyItMatters": "A downside stress test shows whether the margin is robust.",
+      "beginnerHelp": "No = red/yellow recommendation.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 6,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q146",
+      "stageCode": "STAGE_5B",
+      "prompt": "Is there a credible fallback exit such as rental, wholetail or price reduction?",
+      "whyItMatters": "Fallback exits reduce forced-sale risk.",
+      "beginnerHelp": "No = higher risk score.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FIX_FLIP",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 7,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q010",
+      "stageCode": "STAGE_1",
+      "prompt": "What type of property is it?",
+      "whyItMatters": "Texas uses different contract forms depending on property type.",
+      "beginnerHelp": "Choosing the correct base contract is the first document decision.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 80,
+      "options": [
+        {
+          "optionValue": "Single Family",
+          "optionLabel": "Single Family",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Residential condominium",
+          "optionLabel": "Residential condominium",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "New home construction",
+          "optionLabel": "New home construction",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Farm/ranch",
+          "optionLabel": "Farm/ranch",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        },
+        {
+          "optionValue": "Land/lot",
+          "optionLabel": "Land/Lot",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 5
+        },
+        {
+          "optionValue": "5\u002B units/commercial/other",
+          "optionLabel": "5\u002B units/commercial/other",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 6
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q011",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the seller a builder selling a new home?",
+      "whyItMatters": "New construction uses different TREC contracts from resale property.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 90,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.type\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022New home incomplete,New home complete\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q012",
+      "stageCode": "STAGE_1",
+      "prompt": "Who occupies the property today?",
+      "whyItMatters": "Occupancy affects access, lease documents, possession and due diligence.",
+      "beginnerHelp": "Tenant-occupied property needs lease and deposit review.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 100,
+      "options": [
+        {
+          "optionValue": "Seller/owner",
+          "optionLabel": "Seller/owner",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Tenant",
+          "optionLabel": "Tenant",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Vacant",
+          "optionLabel": "Vacant",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Other occupant",
+          "optionLabel": "Other occupant",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q013",
+      "stageCode": "STAGE_1",
+      "prompt": "What year was the dwelling built?",
+      "whyItMatters": "Pre-1978 housing can trigger federal lead disclosure requirements.",
+      "beginnerHelp": "If the year is unknown, treat it as a diligence item rather than guessing.",
+      "responseType": "YEAR",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.hud.gov/sites/dfiles/OCHCO/documents/9545-Y.pdf",
+      "placeholder": "YYYY",
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 110,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q014",
+      "stageCode": "STAGE_1",
+      "prompt": "Is mandatory membership in a property owners association required?",
+      "whyItMatters": "Texas has a specific HOA addendum if the property is part of an HOA",
+      "beginnerHelp": "Unknown should create a title/HOA research task.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 120,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q015",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property a condominium?",
+      "whyItMatters": "Condominiums use a separate TREC contract and resale-certificate process.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 130,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q016",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property in a public improvement district or another special taxing/assessment district?",
+      "whyItMatters": "Special districts can require additional notices/addenda.",
+      "beginnerHelp": "Check title, tax records and seller disclosures; do not rely only on the seller.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 140,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "QG-MUD",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property inside a municipal utility district or another water district that has to give the statutory water-district notice?",
+      "whyItMatters": "Water Code 49.452 requires a separate, specifically-worded notice with the district\u0027s tax rate and bonded debt. It is not the PID addendum and not the generic special-district notice.",
+      "beginnerHelp": "Check the tax bill for a district line item and check title. Many newer Houston, Dallas and Austin subdivisions sit inside a MUD, and the district tax can add well over a point to the effective tax rate.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 145,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G006",
+      "stageCode": "STAGE_1",
+      "prompt": "What is the name of the water district exactly as it appears on the notice?",
+      "whyItMatters": "The statutory notice has to name the district correctly, and the name is how title and the appraisal district identify the debt.",
+      "beginnerHelp": "Copy it from the tax statement or the district\u0027s own notice, not from the listing. \u0022Harris County MUD No. 374\u0022 and \u0022HC MUD 374\u0022 are not interchangeable on a recorded notice.",
+      "responseType": "TEXT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 146,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasMud\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G007",
+      "stageCode": "STAGE_1",
+      "prompt": "What is the district\u0027s current total tax rate per $100 of assessed valuation?",
+      "whyItMatters": "District tax sits on top of city, county and school tax, and it is a real line in your operating expenses.",
+      "beginnerHelp": "Take this from the current notice, not from last year\u0027s. A district that is still paying off bonds can carry a rate above one dollar per hundred, which on a $250,000 property is more than $2,500 a year on its own.",
+      "responseType": "NUMBER",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm",
+      "placeholder": "Number",
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 147,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasMud\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q017",
+      "stageCode": "STAGE_1",
+      "prompt": "Are groundwater, water wells, ponds/lakes, or surface-water rights associated with the property?",
+      "whyItMatters": "Texas added a 2026 groundwater/surface-water disclosure form and current contracts address water rights.",
+      "beginnerHelp": "Water rights can be severed or separately owned; title/attorney review may be needed.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 150,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q018",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property coastal or seaward of the Gulf Intracoastal Waterway?",
+      "whyItMatters": "Special TREC coastal addenda may apply.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 160,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q019",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property in a propane gas system service area?",
+      "whyItMatters": "A specific TREC addendum exists for this condition.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 170,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q020",
+      "stageCode": "STAGE_1",
+      "prompt": "Will the seller reserve any oil, gas, or other mineral rights?",
+      "whyItMatters": "Reservation of minerals uses a specific TREC addendum.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 180,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q021",
+      "stageCode": "STAGE_1",
+      "prompt": "Are there leased solar panels, water softeners, propane tanks, security systems, or other fixture leases?",
+      "whyItMatters": "Fixture leases can survive a sale or create payoff/assumption obligations.",
+      "beginnerHelp": "Get the actual lease before underwriting the deal.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 190,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q022",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the property currently rented under a residential lease?",
+      "whyItMatters": "Existing leases affect possession, income, deposits and closing documents.",
+      "beginnerHelp": "Request every lease, amendment, ledger and deposit record.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 200,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q023",
+      "stageCode": "STAGE_1",
+      "prompt": "Are any personal property items included in the sale, such as appliances, furniture or equipment?",
+      "whyItMatters": "This helps the buyer to know what items are included as part of the sale. If there are items specifically NOT INCLUDED consider using TREC form 57-0",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 210,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q024",
+      "stageCode": "STAGE_1",
+      "prompt": "Do you want environmental, endangered-species, or wetlands reports as a contract condition?",
+      "whyItMatters": "A TREC environmental addendum exists when these reports are to be obtained.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 220,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q025",
+      "stageCode": "STAGE_1",
+      "prompt": "Does your purchase depend on selling another property first?",
+      "whyItMatters": "A TREC addendum exists for sale-of-other-property contingencies.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 230,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q026",
+      "stageCode": "STAGE_1",
+      "prompt": "Will this be a backup contract behind another contract?",
+      "whyItMatters": "Texas has a specific backup-contract addendum.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 240,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q027",
+      "stageCode": "STAGE_1",
+      "prompt": "Does either party intend to complete a Section 1031 exchange?",
+      "whyItMatters": "Texas has a 1031 addendum; federal tax rules generally require investment/business real property, not property held primarily for sale.",
+      "beginnerHelp": "A 1031 exchange defers tax when you swap one investment property for another. It does not work on property you bought primarily to resell, which is exactly what a flip or a wholesale assignment is. Buying, renovating and selling within a few months is treated as inventory, not investment, no matter how the paperwork is titled. Only a CPA or qualified intermediary can tell you which side of that line you are on, and they need to be involved before you close, not after.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.irs.gov/publications/p544",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 250,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G017",
+      "stageCode": "STAGE_1",
+      "prompt": "Are you acquiring this property to hold for investment, or primarily to resell?",
+      "whyItMatters": "Holding intent decides whether a 1031 exchange is even available, and it affects how the IRS treats your profit.",
+      "beginnerHelp": "Be honest here rather than optimistic. A flip or an assignment is resale, and calling it investment on a form does not change how it is taxed. If you genuinely have not decided, say so, and the engine will keep both exits open instead of promising you a 1031.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.irs.gov/publications/p544",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 251,
+      "options": [
+        {
+          "optionValue": "Hold for investment",
+          "optionLabel": "Hold for investment",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Primarily for resale",
+          "optionLabel": "Primarily for resale",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Undecided",
+          "optionLabel": "Undecided",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.addendums.has.section1031Exchange\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q028",
+      "stageCode": "STAGE_1",
+      "prompt": "Will the seller remain in the property after closing?",
+      "whyItMatters": "Temporary post-closing occupancy can require the Seller\u0027s Temporary Residential Lease.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 260,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q029",
+      "stageCode": "STAGE_1",
+      "prompt": "Will the buyer occupy the property before closing?",
+      "whyItMatters": "Temporary pre-closing occupancy can require the Buyer\u0027s Temporary Residential Lease. \nNote: This may apply if the buyer is going to occupy the residence prior to closing. Typically no more that 90 days.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 270,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q030",
+      "stageCode": "STAGE_1",
+      "prompt": "Do the parties agree to hydrostatic testing?",
+      "whyItMatters": "The hydrostatic addendum is triggered by the decision to test, not simply by the age of the property.",
+      "beginnerHelp": "Old plumbing may be a reason to request testing, but age itself is not the form trigger.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 280,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q031",
+      "stageCode": "STAGE_1",
+      "prompt": "Will third-party financing be a condition of the purchase contract?",
+      "whyItMatters": "Third-party financing uses a specific TREC addendum.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 290,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q032",
+      "stageCode": "STAGE_1",
+      "prompt": "Do you want an additional contractual right to terminate if the lender\u0027s appraisal is too low?",
+      "whyItMatters": "TREC provides an appraisal-termination addendum for this election.",
+      "beginnerHelp": "This is different from merely having a lender order an appraisal.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 300,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.addendums.has.thirdPartyFinancingAddendum\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q033",
+      "stageCode": "STAGE_1",
+      "prompt": "Is the offer less than what is owed on the property?",
+      "whyItMatters": "If the offer is less that what is owed by the seller then the deal becomes as \u0022Short Sale\u0022.  A short sale requires lender/servicer approval and has a specific TREC addendum.",
+      "beginnerHelp": "If yes or unknown, do not underwrite as a normal closing.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 310,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q040",
+      "stageCode": "STAGE_2",
+      "prompt": "Who is the legal owner shown in current title records?",
+      "whyItMatters": "You need to know who can actually sign and convey title.",
+      "beginnerHelp": "Compare seller identity to title commitment/deed records.",
+      "responseType": "TEXT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Legal owner name as on title",
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 320,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q041",
+      "stageCode": "STAGE_2",
+      "prompt": "Does the person signing have authority to sell?",
+      "whyItMatters": "Probate, divorce, trusts, entities and powers of attorney can affect authority.",
+      "beginnerHelp": "Anything other than clearly confirmed authority should create a title/legal review task.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 330,
+      "options": [
+        {
+          "optionValue": "Yes confirmed",
+          "optionLabel": "Yes confirmed",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Probate/estate",
+          "optionLabel": "Probate/estate",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Trust",
+          "optionLabel": "Trust",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Entity",
+          "optionLabel": "Entity",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        },
+        {
+          "optionValue": "Power of attorney",
+          "optionLabel": "Power of attorney",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 5
+        },
+        {
+          "optionValue": "Divorce/community property issue",
+          "optionLabel": "Divorce/community property issue",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 6
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 7
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G001",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the seller married, and is this property their Texas homestead?",
+      "whyItMatters": "A Texas homestead conveyance can require the seller\u0027s spouse to sign even when that spouse is not named on the deed.",
+      "beginnerHelp": "Homestead status is about where the seller actually lives and claims their exemption, not about the loan. If you are unsure, treat it as Unknown and let title confirm it. Getting this wrong after closing means re-opening the conveyance.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 335,
+      "options": [
+        {
+          "optionValue": "Married - homestead",
+          "optionLabel": "Married - homestead",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Married - not homestead",
+          "optionLabel": "Married - not homestead",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Not married",
+          "optionLabel": "Not married",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 4
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G002",
+      "stageCode": "STAGE_2",
+      "prompt": "Will the seller\u0027s spouse sign the deed and closing documents, even though they are not on title?",
+      "whyItMatters": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
+      "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 336,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.maritalHomesteadStatus\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Married - homestead,Unknown\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q042",
+      "stageCode": "STAGE_2",
+      "prompt": "Are there known liens, judgments, delinquent taxes, HOA balances, or other payoff items?",
+      "whyItMatters": "These can consume equity or prevent closing.",
+      "beginnerHelp": "Unknown means order title and payoff information before final offer.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 340,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q043",
+      "stageCode": "STAGE_2",
+      "prompt": "Is there an existing mortgage or deed of trust?",
+      "whyItMatters": "Existing debt drives assumption, subject-to, seller finance, short sale and payoff logic.",
+      "beginnerHelp": "If yes, capture the actual statement-not just the seller\u0027s estimate.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 350,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q044",
+      "stageCode": "STAGE_2",
+      "prompt": "What is the approximate current loan balance?",
+      "whyItMatters": "Needed to calculate seller equity and creative-finance feasibility.",
+      "beginnerHelp": "Use current payoff when available.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 360,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q045",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the loan current?",
+      "whyItMatters": "Arrears, foreclosure status and reinstatement costs materially change risk.",
+      "beginnerHelp": "Behind or foreclosure should trigger exact reinstatement/payoff and deadline review.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 370,
+      "options": [
+        {
+          "optionValue": "Current",
+          "optionLabel": "Current",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Behind",
+          "optionLabel": "Behind",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "In foreclosure",
+          "optionLabel": "In foreclosure",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 4
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G008",
+      "stageCode": "STAGE_2",
+      "prompt": "What is the posted foreclosure sale date?",
+      "whyItMatters": "Texas foreclosure sales happen on the first Tuesday of the month after a 21-day notice. If your closing lands after the sale date, there is nothing to buy.",
+      "beginnerHelp": "The date is on the notice of sale posted at the county courthouse and filed with the county clerk. Do not use the date the seller remembers. Work backwards from this date to decide whether any route is actually executable.",
+      "responseType": "DATE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.51.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 375,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.status\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022In foreclosure,Behind\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G009",
+      "stageCode": "STAGE_2",
+      "prompt": "What reinstatement amount has the servicer quoted in writing?",
+      "whyItMatters": "Reinstating stops the sale, and the reinstatement figure is cash you have to bring that never shows up in the purchase price.",
+      "beginnerHelp": "Reinstatement is more than the missed payments. It includes late fees, servicer advances, attorney fees and posting costs, and it grows every month. Ask for the written quote and its expiry, not a phone number.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.51.htm",
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 376,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.status\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022In foreclosure,Behind\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G010",
+      "stageCode": "STAGE_2",
+      "prompt": "What date was that reinstatement quote issued?",
+      "whyItMatters": "Reinstatement quotes expire. An out-of-date figure understates the cash you need.",
+      "beginnerHelp": "Quotes are usually good only to a stated date. If your quote is more than a couple of weeks old, treat the number as a floor rather than a total.",
+      "responseType": "DATE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.51.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 377,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.status\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022In foreclosure,Behind\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q046",
+      "stageCode": "STAGE_2",
+      "prompt": "What is the interest rate on the existing loan?",
+      "whyItMatters": "A low-rate loan can make subject-to/assumption more attractive; a high-rate loan may not.",
+      "beginnerHelp": "Rate alone is not enough-also check balance, term, payment and escrow.",
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 380,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q047",
+      "stageCode": "STAGE_2",
+      "prompt": "What is the total monthly payment including taxes/insurance/escrow?",
+      "whyItMatters": "Creative-finance and rental underwriting depends on the real monthly obligation.",
+      "beginnerHelp": "Use the actual mortgage statement.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 390,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q048",
+      "stageCode": "STAGE_2",
+      "prompt": "How many years remain on the loan or when does it mature?",
+      "whyItMatters": "A near-term maturity or balloon can create major refinance risk.",
+      "beginnerHelp": "Flag any balloon/maturity inside the planned hold period.",
+      "responseType": "NUMBER",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Number",
+      "unit": "yr",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 400,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q049",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the existing loan formally assumable, and will the lender approve the assumption?",
+      "whyItMatters": "Formal assumption is different from buying subject to an existing loan.",
+      "beginnerHelp": "Do not call a subject-to transaction an assumption unless the lender is actually approving it.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 410,
+      "options": [
+        {
+          "optionValue": "Yes lender-approved/approvable",
+          "optionLabel": "Yes lender-approved/approvable",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q050",
+      "stageCode": "STAGE_2",
+      "prompt": "Does the seller need all of their equity in cash at closing?",
+      "whyItMatters": "This helps distinguish conventional/wholesale routes from seller-financed or hybrid structures.",
+      "beginnerHelp": "A seller who needs all cash may still accept subject-to if equity is paid separately, but liquidity must be modeled.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 420,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Some of it",
+          "optionLabel": "Some of it",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Unsure",
+          "optionLabel": "Unsure",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q051",
+      "stageCode": "STAGE_2",
+      "prompt": "Would the seller consider receiving payments over time?",
+      "whyItMatters": "This identifies seller-financing possibilities.",
+      "beginnerHelp": "If yes, the system should ask term, rate, down payment, lien position and balloon.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 430,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Maybe",
+          "optionLabel": "Maybe",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q052",
+      "stageCode": "STAGE_2",
+      "prompt": "Would the seller consider leaving the existing loan in place after title transfers?",
+      "whyItMatters": "This identifies a possible subject-to structure, which has due-on-sale and legal risks.",
+      "beginnerHelp": "Subject-to should always be labeled advanced and routed to attorney/title review.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/12/1701j-3",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 440,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Maybe",
+          "optionLabel": "Maybe",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q053",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the seller willing to allow a new note to be created while an existing loan remains in place?",
+      "whyItMatters": "This may create a wrap or hybrid structure subject to special Texas law.",
+      "beginnerHelp": "Treat wrap financing as an advanced legal/closing workflow, not a beginner auto-document path.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/FI/htm/FI.159.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 450,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Maybe",
+          "optionLabel": "Maybe",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q054",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the seller free and clear with no mortgage?",
+      "whyItMatters": "Free-and-clear property is simpler for seller financing and removes underlying-loan risk.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 460,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022No\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q055",
+      "stageCode": "STAGE_2",
+      "prompt": "Will the buyer occupy the property primarily for personal/family use?",
+      "whyItMatters": "Consumer-purpose seller financing can trigger federal mortgage rules that differ from business-purpose investment credit.",
+      "beginnerHelp": "Owner-occupant seller-finance deals require a stronger compliance gate.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.consumerfinance.gov/rules-policy/regulations/1026/36/",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 470,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSellerFinance\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q056",
+      "stageCode": "STAGE_2",
+      "prompt": "How many residential properties has this seller financed in the last 12 months?",
+      "whyItMatters": "Federal seller-financer exemptions depend in part on transaction count and other conditions.",
+      "beginnerHelp": "Do not auto-approve seller financing from this answer alone; use a compliance professional when consumer-credit rules may apply.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.consumerfinance.gov/rules-policy/regulations/1026/36/",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 480,
+      "options": [
+        {
+          "optionValue": "0",
+          "optionLabel": "0",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "1",
+          "optionLabel": "1",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "2-3",
+          "optionLabel": "2-3",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "4\u002B",
+          "optionLabel": "4\u002B",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 4
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 5
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSellerFinance\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q057",
+      "stageCode": "STAGE_2",
+      "prompt": "Has the seller provided the most recent mortgage statement, escrow information and loan documents?",
+      "whyItMatters": "Creative-finance decisions require verification of debt terms.",
+      "beginnerHelp": "No = information request and hold final recommendation.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 490,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q058",
+      "stageCode": "STAGE_2",
+      "prompt": "Have you confirmed insurance can remain or be replaced correctly after closing?",
+      "whyItMatters": "Improper insurance setup can leave the property or lender unprotected.",
+      "beginnerHelp": "Subject-to/wrap deals should not close until insurance treatment is confirmed.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 500,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSellerFinance\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSubjectTo\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToWrap\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q059",
+      "stageCode": "STAGE_2",
+      "prompt": "Will payments on any seller-carried or underlying loan be handled by a professional servicer?",
+      "whyItMatters": "Third-party servicing improves recordkeeping and payment control.",
+      "beginnerHelp": "For creative finance, the wizard should recommend a servicing plan rather than assume manual payments.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 510,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Not decided",
+          "optionLabel": "Not decided",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSellerFinance\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToSubjectTo\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.openToWrap\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Yes,Maybe\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q060",
+      "stageCode": "STAGE_2",
+      "prompt": "Is there a clear exit before any balloon, maturity, or refinance deadline?",
+      "whyItMatters": "Creative finance can fail if the exit depends on an uncertain refinance.",
+      "beginnerHelp": "No/unknown should downgrade the route to yellow/red.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 520,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022mortgage.first.exists\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q070",
+      "stageCode": "STAGE_3",
+      "prompt": "What is the seller\u0027s asking price?",
+      "whyItMatters": "Starting point for negotiation and strategy analysis.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 530,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q191",
+      "stageCode": "STAGE_2",
+      "prompt": "New question",
+      "whyItMatters": null,
+      "beginnerHelp": null,
+      "responseType": "TEXT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 530,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q071",
+      "stageCode": "STAGE_3",
+      "prompt": "What price do you believe you can contract at today?",
+      "whyItMatters": "The route engine must use the likely purchase price, not only asking price.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 540,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q072",
+      "stageCode": "STAGE_3",
+      "prompt": "What is the as-is market value supported by comps?",
+      "whyItMatters": "Helps identify immediate equity and wholesale/hold viability.",
+      "beginnerHelp": "Use recent, similar, nearby sold comps when possible.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 550,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q073",
+      "stageCode": "STAGE_3",
+      "prompt": "What is the after-repair value (ARV) supported by renovated sold comps?",
+      "whyItMatters": "Flip and BRRRR decisions depend heavily on ARV.",
+      "beginnerHelp": "Do not use active listing prices as the only evidence.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 560,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q074",
+      "stageCode": "STAGE_3",
+      "prompt": "What is the repair budget based on scope and bids?",
+      "whyItMatters": "Repair error is one of the biggest beginner risks.",
+      "beginnerHelp": "Separate cosmetic rehab from structural/mechanical work.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 570,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q075",
+      "stageCode": "STAGE_3",
+      "prompt": "What rehab contingency percentage will you carry?",
+      "whyItMatters": "Older/distressed properties often produce surprises.",
+      "beginnerHelp": "Use a user-configurable contingency, not a universal rule.",
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 580,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q076",
+      "stageCode": "STAGE_3",
+      "prompt": "What are estimated acquisition closing costs?",
+      "whyItMatters": "True all-in basis includes more than purchase price and repairs.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 590,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q077",
+      "stageCode": "STAGE_3",
+      "prompt": "What are estimated financing points, interest and lender fees?",
+      "whyItMatters": "Financing costs can erase a flip margin.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 600,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q078",
+      "stageCode": "STAGE_3",
+      "prompt": "What are estimated monthly holding costs during rehab/marketing?",
+      "whyItMatters": "Taxes, insurance, utilities, lawn, HOA and debt service continue while you own the asset.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 610,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q079",
+      "stageCode": "STAGE_3",
+      "prompt": "How many months do you realistically expect to own it before resale or stabilization?",
+      "whyItMatters": "Time is a major cost and risk variable.",
+      "beginnerHelp": "Stress-test a delay scenario.",
+      "responseType": "NUMBER",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Number",
+      "unit": "mo",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 620,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q080",
+      "stageCode": "STAGE_3",
+      "prompt": "What are estimated resale costs (commissions, concessions, title/closing, make-ready)?",
+      "whyItMatters": "Gross ARV is not net profit.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 630,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q081",
+      "stageCode": "STAGE_3",
+      "prompt": "What minimum dollar profit do you require on a flip?",
+      "whyItMatters": "Routes should be judged against the investor\u0027s own minimum, not a social-media rule.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 640,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q082",
+      "stageCode": "STAGE_3",
+      "prompt": "What minimum profit margin on total project cost do you require?",
+      "whyItMatters": "A percentage hurdle catches deals where the dollar profit is not enough for the risk.",
+      "beginnerHelp": null,
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 650,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q083",
+      "stageCode": "STAGE_3",
+      "prompt": "What is realistic monthly market rent after repairs?",
+      "whyItMatters": "Rent is the foundation of hold/BRRRR underwriting.",
+      "beginnerHelp": "Use actual market comparables.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 660,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q084",
+      "stageCode": "STAGE_3",
+      "prompt": "What vacancy/credit-loss assumption will you use?",
+      "whyItMatters": "Gross rent overstates sustainable income.",
+      "beginnerHelp": null,
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 670,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "G003",
+      "stageCode": "STAGE_3",
+      "prompt": "Should we underwrite a tax increase after closing because the seller\u0027s exemptions and homestead cap will not transfer to you?",
+      "whyItMatters": "Texas caps annual taxable-value increases for a homesteaded owner. An investor purchase removes that cap, so your first tax bill can be far higher than the seller\u0027s.",
+      "beginnerHelp": "If the seller lives there and claims a homestead exemption, assume Yes. The appraisal district will reassess to market value for your first full year, and a resale-triggered reassessment is the most common reason a rental that penciled at purchase stops penciling in year one.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://comptroller.texas.gov/taxes/property-tax/basics.php",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 675,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G004",
+      "stageCode": "STAGE_3",
+      "prompt": "What taxable value should we use for your first full year of ownership?",
+      "whyItMatters": "The underwritten tax figure is only as good as the taxable value behind it.",
+      "beginnerHelp": "For a flip, your purchase price is usually the safest proxy. For a hold or BRRRR, use the stabilized value you expect after repairs, because that is what the appraisal district will eventually see. Leave this blank and the engine falls back to your contract price.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://comptroller.texas.gov/taxes/property-tax/basics.php",
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 676,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q085",
+      "stageCode": "STAGE_3",
+      "prompt": "What annual property taxes should be underwritten after acquisition?",
+      "whyItMatters": "Texas property taxes can materially change rental economics.",
+      "beginnerHelp": "Do not rely blindly on the seller\u0027s current tax bill; exemptions/assessed value may change.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://comptroller.texas.gov/taxes/property-tax/basics.php",
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 680,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q086",
+      "stageCode": "STAGE_3",
+      "prompt": "What annual insurance premium should be underwritten?",
+      "whyItMatters": "Insurance costs and insurability can materially change cash flow.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 690,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q087",
+      "stageCode": "STAGE_3",
+      "prompt": "What monthly HOA or condo dues apply?",
+      "whyItMatters": "Association dues reduce NOI and can limit rental use.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 700,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasHOA\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q088",
+      "stageCode": "STAGE_3",
+      "prompt": "What annual repairs/maintenance reserve will you use?",
+      "whyItMatters": "Routine repairs should not be confused with capital improvements.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 710,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q089",
+      "stageCode": "STAGE_3",
+      "prompt": "What annual capital-expenditure reserve will you use?",
+      "whyItMatters": "Roof, HVAC, plumbing and other large items are real long-term costs.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 720,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q090",
+      "stageCode": "STAGE_3",
+      "prompt": "Will you use professional property management? If so, what fee?",
+      "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+      "beginnerHelp": null,
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 730,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q091",
+      "stageCode": "STAGE_3",
+      "prompt": "What annual debt service will the rental actually have?",
+      "whyItMatters": "DSCR compares NOI to required debt payments.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 740,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q092",
+      "stageCode": "STAGE_3",
+      "prompt": "What minimum DSCR do you require?",
+      "whyItMatters": "This is a user risk threshold for buy-and-hold screening.",
+      "beginnerHelp": "Keep the threshold configurable.",
+      "responseType": "NUMBER",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Number",
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 750,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q093",
+      "stageCode": "STAGE_3",
+      "prompt": "What minimum cash-on-cash return do you require?",
+      "whyItMatters": "Measures pre-tax cash flow relative to cash invested.",
+      "beginnerHelp": null,
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Percent",
+      "unit": "%",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 760,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q094",
+      "stageCode": "STAGE_3",
+      "prompt": "After closing and repairs, how much cash will remain in reserves?",
+      "whyItMatters": "A good deal can still fail from lack of liquidity.",
+      "beginnerHelp": null,
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 770,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q095",
+      "stageCode": "STAGE_3",
+      "prompt": "Is a refinance realistically available after stabilization?",
+      "whyItMatters": "BRRRR depends on future lender eligibility, value and loan terms.",
+      "beginnerHelp": "Unknown means BRRRR should be shown as conditional, not promised.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 780,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q096",
+      "stageCode": "STAGE_3",
+      "prompt": "What stabilized value and refinance LTV are you assuming?",
+      "whyItMatters": "Determines whether enough capital can be recycled.",
+      "beginnerHelp": "Keep LTV and seasoning assumptions lender-specific.",
+      "responseType": "TEXT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Stabilized value and refinance LTV",
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 790,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022deal.refinanceAvailable\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q097",
+      "stageCode": "STAGE_3",
+      "prompt": "Can you fund the full rehab plus contingency if draws are delayed?",
+      "whyItMatters": "Construction/rehab lenders may reimburse after work rather than before.",
+      "beginnerHelp": "No = flip/BRRRR risk flag.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 800,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q098",
+      "stageCode": "STAGE_3",
+      "prompt": "How strong is end-buyer demand for this property type and price point?",
+      "whyItMatters": "Wholesale deals need a real buyer pool, not just theoretical spread.",
+      "beginnerHelp": "Unknown should trigger buyer-list/comps validation before relying on wholesale.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 810,
+      "options": [
+        {
+          "optionValue": "Strong",
+          "optionLabel": "Strong",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Moderate",
+          "optionLabel": "Moderate",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Weak",
+          "optionLabel": "Weak",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 4
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q099",
+      "stageCode": "STAGE_3",
+      "prompt": "What assignment fee or wholesale spread are you targeting?",
+      "whyItMatters": "The purchase price must leave enough room for the end buyer and wholesaler.",
+      "beginnerHelp": "The platform should calculate backward from end-buyer economics, not blindly apply a 70% rule.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 820,
+      "options": [],
+      "branches": []
+    },
+    {
+      "questionCode": "Q110",
+      "stageCode": "STAGE_4",
+      "prompt": "Has a title company or attorney reviewed title?",
+      "whyItMatters": "Title defects can kill every exit strategy.",
+      "beginnerHelp": "No = provisional recommendation only.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 830,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q111",
+      "stageCode": "STAGE_4",
+      "prompt": "Are there unresolved survey, boundary, access or easement issues?",
+      "whyItMatters": "Access/boundary defects can hurt value, financing and resale.",
+      "beginnerHelp": "Yes/unknown = title/survey review.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 840,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q112",
+      "stageCode": "STAGE_4",
+      "prompt": "Is the current zoning/land use compatible with your intended strategy?",
+      "whyItMatters": "A deal may underwrite well but be unusable for the planned purpose.",
+      "beginnerHelp": "Unknown = verify before waiving diligence.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 850,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q113",
+      "stageCode": "STAGE_4",
+      "prompt": "Is the property in a flood hazard area or subject to known drainage issues?",
+      "whyItMatters": "Flood exposure affects insurance, financing, tenant demand and rehab scope.",
+      "beginnerHelp": "Get flood/insurance quotes if relevant.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 860,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q114",
+      "stageCode": "STAGE_4",
+      "prompt": "Are well, septic or private utility systems present?",
+      "whyItMatters": "Private systems need condition, capacity and permit review.",
+      "beginnerHelp": "Add inspections/records where applicable.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 870,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q115",
+      "stageCode": "STAGE_4",
+      "prompt": "Have foundation, roof, HVAC, electrical and plumbing been evaluated?",
+      "whyItMatters": "Major systems drive rehab risk and insurability.",
+      "beginnerHelp": "Unknown = rehab contingency and inspection task.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 880,
+      "options": [
+        {
+          "optionValue": "Inspected/known",
+          "optionLabel": "Inspected/known",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Partially known",
+          "optionLabel": "Partially known",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q116",
+      "stageCode": "STAGE_4",
+      "prompt": "Are there open permits, code violations or unpermitted additions?",
+      "whyItMatters": "These can delay rehab, financing and resale.",
+      "beginnerHelp": "Yes/unknown = municipal research.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 890,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q117",
+      "stageCode": "STAGE_4",
+      "prompt": "Can the property be insured at a cost consistent with your underwriting?",
+      "whyItMatters": "Uninsurable properties can make financing/holding impossible.",
+      "beginnerHelp": "Unknown = obtain quote before final commitment.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 900,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G011",
+      "stageCode": "STAGE_4",
+      "prompt": "What date was the insurance quote you used for this underwriting?",
+      "whyItMatters": "Texas property premiums have risen sharply, so a quote from last season can be materially wrong.",
+      "beginnerHelp": "A quote older than about sixty days should be refreshed before you commit. This is one of the cheapest things to re-verify and one of the most common reasons a hold deal stops cash-flowing after closing.",
+      "responseType": "DATE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.tdi.texas.gov/",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 901,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022insurance.insurable\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G012",
+      "stageCode": "STAGE_4",
+      "prompt": "How does the quote treat the roof?",
+      "whyItMatters": "A roof-surfacing payment schedule or a cosmetic-damage exclusion can leave you paying for a roof you thought was insured.",
+      "beginnerHelp": "Replacement cost pays to replace the roof. An actual-cash-value roof schedule depreciates it by age, so a fifteen-year-old roof may be worth a fraction of what it costs to replace. On an older Texas property this single endorsement can swing your capital plan by five figures.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.tdi.texas.gov/",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 902,
+      "options": [
+        {
+          "optionValue": "Replacement cost roof",
+          "optionLabel": "Replacement cost roof",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "ACV roof schedule",
+          "optionLabel": "ACV roof schedule",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Cosmetic damage exclusion",
+          "optionLabel": "Cosmetic damage exclusion",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 4
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022insurance.insurable\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q118",
+      "stageCode": "STAGE_4",
+      "prompt": "If tenant-occupied, have you verified leases, ledgers, deposits, delinquencies and notices?",
+      "whyItMatters": "Rental income and possession cannot be assumed.",
+      "beginnerHelp": "No = hold/BRRRR recommendation remains conditional.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 910,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.occupied\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Tenant\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasLease\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G013",
+      "stageCode": "STAGE_4",
+      "prompt": "Has each tenant signed an estoppel certificate confirming their rent, term, deposit and any promises from the seller?",
+      "whyItMatters": "An estoppel is the tenant\u0027s own written statement of the deal. Without it you are underwriting the seller\u0027s version of the lease.",
+      "beginnerHelp": "Estoppels routinely surface things the seller forgot: a verbal rent discount, a promised repair, a pet fee that was never charged, a deposit that was already partly returned. Get one per tenant before your option period ends.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.92.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 911,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.occupied\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Tenant\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasLease\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G014",
+      "stageCode": "STAGE_4",
+      "prompt": "What is the total security-deposit balance held for all tenants?",
+      "whyItMatters": "Texas Property Code 92.105 makes the new owner liable for returning deposits, whether or not the seller hands the money over.",
+      "beginnerHelp": "This is a liability you inherit at closing. If the seller has already spent it, you still owe it back to the tenant, so it has to be credited to you on the settlement statement or funded out of the purchase price.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.92.htm",
+      "placeholder": "Approximate dollar amount",
+      "unit": "$",
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 912,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.occupied\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Tenant\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasLease\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "G015",
+      "stageCode": "STAGE_4",
+      "prompt": "Will those deposits be credited to you on the settlement statement at closing?",
+      "whyItMatters": "The liability transfers automatically. The money does not.",
+      "beginnerHelp": "Put the deposit credit in the contract and check for it on the settlement statement. \u0022The seller said they would send it\u0022 is not a transfer, and the tenant\u0027s claim is against you from the day you own the property.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.92.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 913,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022groups\u0022:[{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.occupied\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Tenant\u0022}],\u0022combinator\u0022:\u0022AND\u0022},{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasLease\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}],\u0022combinator\u0022:\u0022OR\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q119",
+      "stageCode": "STAGE_4",
+      "prompt": "Have you confirmed local rental/STR rules if your exit depends on renting?",
+      "whyItMatters": "Local restrictions can invalidate the planned exit.",
+      "beginnerHelp": "No = verify before choosing that route.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 920,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q130",
+      "stageCode": "STAGE_5A",
+      "prompt": "Do you have a signed purchase contract or option giving you a real contractual/equitable interest?",
+      "whyItMatters": "You cannot assign or market an interest you do not actually control.",
+      "beginnerHelp": "No = wholesale route cannot proceed.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 930,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q131",
+      "stageCode": "STAGE_5A",
+      "prompt": "Does the contract allow assignment, or has assignment been approved?",
+      "whyItMatters": "An anti-assignment clause can eliminate the standard assignment route.",
+      "beginnerHelp": "Unclear = attorney/title review.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 940,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unclear",
+          "optionLabel": "Unclear",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q132",
+      "stageCode": "STAGE_5A",
+      "prompt": "After the end buyer\u0027s required profit/return, closing costs and your fee, is there still enough spread?",
+      "whyItMatters": "Wholesale feasibility depends on the end buyer\u0027s economics, not just your fee.",
+      "beginnerHelp": "No = renegotiate, choose another exit, or pass.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 950,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q133",
+      "stageCode": "STAGE_5A",
+      "prompt": "Have you identified realistic end buyers for this exact deal type/area?",
+      "whyItMatters": "Buyer demand is a core execution risk.",
+      "beginnerHelp": "No = market validation task.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 960,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q134",
+      "stageCode": "STAGE_5A",
+      "prompt": "Can you close or otherwise perform if you do not find an assignee?",
+      "whyItMatters": "Beginners should understand the obligation created by the purchase contract.",
+      "beginnerHelp": "No/unknown = high-risk warning before contracting.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 970,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q135",
+      "stageCode": "STAGE_5A",
+      "prompt": "Will all marketing clearly state that you are selling/assigning your contractual or equitable interest rather than representing that you own title?",
+      "whyItMatters": "Texas requires written disclosure of the nature of the equitable interest before certain option/assignment transactions and TREC warns against acting as an unlicensed broker.",
+      "beginnerHelp": "No = blocking compliance gate.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 980,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "QG-WHOLESALE-CONDUCT",
+      "stageCode": "STAGE_5A",
+      "prompt": "Will you market only your own contractual interest, and avoid advertising, showing or negotiating the sale of the property on the owner\u0027s behalf?",
+      "whyItMatters": "Disclosing your equitable interest handles one requirement. Acting as an unlicensed broker for the owner is a separate violation, and doing the first correctly does not excuse the second.",
+      "beginnerHelp": "The line is what you are selling. Advertising \u0022my contract on 123 Main\u0022 is selling your interest. Advertising \u0022123 Main for sale, call me for a showing\u0022 while the seller still owns it looks like brokering their property. Keep every advertisement, sign and listing pointed at your interest, and let the owner speak for the property.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WHOLESALE",
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 985,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q150",
+      "stageCode": "STAGE_5C",
+      "prompt": "Does stabilized NOI remain positive after realistic vacancy, repairs, management, taxes, insurance and reserves?",
+      "whyItMatters": "Gross rent is not investment income.",
+      "beginnerHelp": "No = hold route fails.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1060,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q151",
+      "stageCode": "STAGE_5C",
+      "prompt": "Does DSCR meet your selected target?",
+      "whyItMatters": "Debt coverage is a core rental resilience test.",
+      "beginnerHelp": "No = lower price, less debt, higher rent, or reject hold.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1070,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q152",
+      "stageCode": "STAGE_5C",
+      "prompt": "Does cash-on-cash return meet your target?",
+      "whyItMatters": "This tests whether the cash invested is producing enough ongoing return.",
+      "beginnerHelp": "No = compare to alternatives.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1080,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q153",
+      "stageCode": "STAGE_5C",
+      "prompt": "Are reserves adequate for turnover and capital expenses?",
+      "whyItMatters": "A rental with no reserves can become a cash emergency.",
+      "beginnerHelp": "No = increase cash requirement.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1090,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q154",
+      "stageCode": "STAGE_5C",
+      "prompt": "Are market rents supported by actual comparable leases/listings?",
+      "whyItMatters": "Optimistic rent assumptions can make weak deals look strong.",
+      "beginnerHelp": "No = re-underwrite rent.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1100,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q155",
+      "stageCode": "STAGE_5C",
+      "prompt": "Is the property\u0027s condition compatible with long-term maintenance and insurance costs?",
+      "whyItMatters": "Cheap purchase price can hide recurring capital needs.",
+      "beginnerHelp": "No = increase capex/rehab or reject.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "HOLD_BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1110,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q156",
+      "stageCode": "STAGE_5C",
+      "prompt": "For BRRRR, will projected refinance proceeds recycle enough capital while keeping the rental within your DSCR target?",
+      "whyItMatters": "A BRRRR only works if the refinance and post-refi cash flow both work.",
+      "beginnerHelp": "No = keep as normal hold, bring more cash, or reject BRRRR.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1120,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022deal.refinanceAvailable\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q157",
+      "stageCode": "STAGE_5C",
+      "prompt": "Have you verified lender seasoning, appraisal and refinance requirements?",
+      "whyItMatters": "Refinance rules vary by lender and can change the BRRRR result.",
+      "beginnerHelp": "No = BRRRR shown as conditional.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "BRRRR",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 1130,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q160",
+      "stageCode": "STAGE_5D",
+      "prompt": "Is a formal lender-approved loan assumption available?",
+      "whyItMatters": "If yes, use the assumption path rather than treating it as subject-to.",
+      "beginnerHelp": "Yes = formal assumption route with lender approval and TREC 41-3.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "FORMAL_ASSUMPTION",
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1140,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q161",
+      "stageCode": "STAGE_5D",
+      "prompt": "For subject-to, are the existing rate/payment/remaining term materially better than replacement financing or otherwise strategically valuable?",
+      "whyItMatters": "Subject-to adds legal and operational risk; the debt terms should justify that complexity.",
+      "beginnerHelp": "No = prefer simpler route unless another compelling reason exists.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "SUBJECT_TO",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1150,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q162",
+      "stageCode": "STAGE_5D",
+      "prompt": "For subject-to, can seller equity and arrears be funded without destroying the deal economics?",
+      "whyItMatters": "A low-rate loan is not helpful if the cash-to-seller is too large.",
+      "beginnerHelp": "No = renegotiate or reject.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "SUBJECT_TO",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1160,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q163",
+      "stageCode": "STAGE_5D",
+      "prompt": "For subject-to, has an attorney/title professional reviewed due-on-sale, disclosures, deed, insurance and closing structure?",
+      "whyItMatters": "Federal law generally permits enforcement of due-on-sale clauses except specified protected transfers; an investor purchase is not automatically protected.",
+      "beginnerHelp": "No = BLOCK closing.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "SUBJECT_TO",
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/12/1701j-3",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 1170,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q164",
+      "stageCode": "STAGE_5D",
+      "prompt": "For seller financing, are rate, term, amortization, down payment, balloon and lien position all defined?",
+      "whyItMatters": "Seller-finance economics must be modeled just like bank debt.",
+      "beginnerHelp": "No = terms not ready.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "SELLER_FINANCE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1180,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q165",
+      "stageCode": "STAGE_5D",
+      "prompt": "For seller financing involving possible consumer-purpose credit, has mortgage/compliance counsel or an appropriate licensed professional reviewed federal requirements?",
+      "whyItMatters": "Seller-financer exemptions are conditional and can depend on transaction count, loan terms and other facts.",
+      "beginnerHelp": "No = BLOCK consumer-purpose seller finance.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "SELLER_FINANCE",
+      "sourceUrl": "https://www.consumerfinance.gov/rules-policy/regulations/1026/36/",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 1190,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q166",
+      "stageCode": "STAGE_5D",
+      "prompt": "Does the proposed new seller-financed note wrap around an existing mortgage?",
+      "whyItMatters": "A wrap is legally distinct and subject to Texas Finance Code Chapter 159.",
+      "beginnerHelp": "Yes = advanced wrap workflow; attorney/title closing required.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WRAP_HYBRID",
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/FI/htm/FI.159.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1200,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q167",
+      "stageCode": "STAGE_5D",
+      "prompt": "If wrap financing is proposed, is the closing being handled in the manner required by Texas law?",
+      "whyItMatters": "Texas Chapter 159 imposes special requirements on wrap mortgage loans.",
+      "beginnerHelp": "No = BLOCK closing.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "WRAP_HYBRID",
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/FI/htm/FI.159.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 1210,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022creativeFinance.isWrap\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q168",
+      "stageCode": "STAGE_5D",
+      "prompt": "Is there a professional servicing, tax/insurance and default-management plan for creative financing?",
+      "whyItMatters": "Creative structures can fail operationally even when the contract is valid.",
+      "beginnerHelp": "No = yellow/red risk.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "CREATIVE_FINANCE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1220,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q169",
+      "stageCode": "STAGE_5D",
+      "prompt": "Does the creative-finance exit occur before any balloon, maturity or known refinance constraint?",
+      "whyItMatters": "Balloon risk can force a sale/refinance at the worst time.",
+      "beginnerHelp": "No = red risk.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": "CREATIVE_FINANCE",
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1230,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q180",
+      "stageCode": "STAGE_6",
+      "prompt": "Is the seller required to provide the Texas Seller\u0027s Disclosure Notice, or does a statutory exemption apply?",
+      "whyItMatters": "Texas Property Code 5.008 generally requires a seller disclosure for covered residential property, with statutory exemptions.",
+      "beginnerHelp": "Unknown = legal/title/broker review; do not auto-suppress the disclosure.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1240,
+      "options": [
+        {
+          "optionValue": "Required",
+          "optionLabel": "Required",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Exempt",
+          "optionLabel": "Exempt",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "helpText": null,
+          "isUnknownOption": true,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q181",
+      "stageCode": "STAGE_6",
+      "prompt": "Has the seller completed the current water-rights disclosure/election required by the applicable 2026 contract workflow?",
+      "whyItMatters": "TREC adopted Form 61-0 effective July 1, 2026.",
+      "beginnerHelp": "Do not guess on applicability; use current TREC contract logic.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1250,
+      "options": [
+        {
+          "optionValue": "Complete",
+          "optionLabel": "Complete",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Not complete",
+          "optionLabel": "Not complete",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Not applicable/exception confirmed",
+          "optionLabel": "Not applicable/exception confirmed",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.waterRights\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q182",
+      "stageCode": "STAGE_6",
+      "prompt": "Has the contract been fully executed by all required parties?",
+      "whyItMatters": "Event notices and amendments should not be generated as though a contract exists before execution.",
+      "beginnerHelp": null,
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1260,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q183",
+      "stageCode": "STAGE_6",
+      "prompt": "Have the parties agreed to change terms after execution?",
+      "whyItMatters": "An amendment should be generated only when terms actually change.",
+      "beginnerHelp": "Yes = add current TREC Amendment 39-11 when applicable.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1270,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022contract.fullyExecuted\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q184",
+      "stageCode": "STAGE_6",
+      "prompt": "Is the buyer terminating under a valid contractual termination right?",
+      "whyItMatters": "Buyer\u0027s termination notice is event-driven, not part of every initial package.",
+      "beginnerHelp": "Yes = generate current Notice of Buyer\u0027s Termination 38-8 when applicable.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1280,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022contract.fullyExecuted\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q185",
+      "stageCode": "STAGE_6",
+      "prompt": "Is the seller terminating under a valid contractual/legal right?",
+      "whyItMatters": "Seller termination should not be triggered merely because the property is listed.",
+      "beginnerHelp": "Yes = legal/broker review and current Seller\u0027s Notice of Termination 50-0 if appropriate.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1290,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022contract.fullyExecuted\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q186",
+      "stageCode": "STAGE_6",
+      "prompt": "Has a backup contract become the primary contract because the first contract ended?",
+      "whyItMatters": "TREC created a specific notice for removal of the backup contingency.",
+      "beginnerHelp": "Yes = Form 62-0 may apply.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://www.trec.texas.gov/agency-information/rules-and-laws/trec-rules",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1300,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.addendums.has.backUpContract\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q187",
+      "stageCode": "STAGE_6",
+      "prompt": "Are all title objections, payoff issues, lien releases and authority issues resolved?",
+      "whyItMatters": "Do not send a deal to closing with unresolved title blockers.",
+      "beginnerHelp": "No = BLOCK closing.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": true,
+      "allowUnknown": false,
+      "sortOrder": 1310,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q188",
+      "stageCode": "STAGE_6",
+      "prompt": "Are all financing conditions and required lender approvals satisfied?",
+      "whyItMatters": "A contract may be valid while financing is still not ready to close.",
+      "beginnerHelp": "No = closing not ready.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1320,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "N/A",
+          "optionLabel": "N/A",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q189",
+      "stageCode": "STAGE_6",
+      "prompt": "Are all required disclosures/addenda delivered and signed/acknowledged as required by their forms?",
+      "whyItMatters": "Signature and acknowledgment requirements vary by document; routing should be form-specific.",
+      "beginnerHelp": "No = document-completion task.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1330,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q190",
+      "stageCode": "STAGE_6",
+      "prompt": "Is the final strategy still the same as the strategy used to create the document package?",
+      "whyItMatters": "Strategy changes can require different disclosures, addenda or assignment documents.",
+      "beginnerHelp": "No = re-run document engine before closing.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 1340,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "helpText": null,
+          "isUnknownOption": false,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    }
+  ]
+}

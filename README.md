@@ -1,70 +1,55 @@
 # Question Tree
-Internal questionnaire flow editor. Run `npm start` with Node.js 20+ and open port 3000. No dependency installation or API credentials are required.
 
-Features: draggable questions and deal outcomes, editable answers and destinations, start node selection, multi-selection (Shift-click), grouping and ungrouping, group movement, pan/zoom/fit, search, undo/redo, local browser saving, validated JSON import/export, screenshot reference uploads, and a questionnaire preview with cycle detection.
+Internal questionnaire and diagram editor. Run `npm start` with Node.js 20+; the local server uses port 3000. No dependency installation is required. Run `npm test` for validation, source migration, exports, routing and authentication checks; `npm run build` assembles the deployment assets in `_site`.
 
-Screenshots are manual recreation references, not automatic OCR imports. They remain in the current browser session. Flows save only in the current browser; export JSON for backups or sharing. This prototype has no authentication, shared storage, or real-time collaboration. Add those before hosting confidential questionnaires on a shared network.
+## Questionnaire data
 
-Run `npm test` for flow validation and routing tests. Sample deal classifications are illustrative; replace them with your questionnaire.
+`data/questionnaire-v3.json` is the original uploaded package, preserved without changing its question data. It contains **149 questions in 10 stages**, including 107 single-select questions, 42 typed inputs and 39 question visibility rules. Its description says 134 questions, but the actual question array contains 149.
 
-## Supplied questionnaire
-`flows/texas-questionnaire.json` contains the first two screenshot sections: 32 questions and the Texas-only stop. New browser sessions load this flow; existing sessions can use **Load your questionnaire** (export any current work first). Original question IDs are retained. Clipped text is marked in Properties. Dashed screenshot connectors are visual references, not executable answer routes. Only the readable Texas split has answer routing; the remaining answers and cropped bypass destinations require more source information.
+`flows/texas-questionnaire.json` is the editor version. It includes complete prompts, option values/labels/help/unknown flags/order, explanations, beginner help, response types, persona, route codes, URLs, placeholders, units, limits, required/unknown settings, order and parsed visibility branches. Original question records and all stage definitions are retained in the project. Run `node scripts/import-questionnaire.js` to regenerate the editor flow and completeness audit from the package and screenshot baseline.
 
-Section 2, **2. SELLER, TITLE AND DEBT**, adds 27 unique questions (59 total). Earlier section labels are **0. SETUP - shows when property.address.state = TX** and **1. PROPERTY AND CONTRACT**. Every supplied card shows its section title and source ID. **Load your questionnaire** now merges by ID, preserving edited questions and avoiding duplicates across overlapping screenshots. Missing answer routes remain unconfigured; dashed connector ordering is provisional.
+The package does **not** contain canonical mappings, remember-choice settings, explicit answer destinations or strategy-entry conditions. Existing screenshot mappings and remember-choice settings are retained; missing values are not invented. Visibility dependency connectors associate field conditions with questions by field meaning, separately from canonical mappings. These dependencies are not answer jumps.
 
-Section 3, **3. DEAL ECONOMICS**, adds Q070–Q099 plus G003 and G004: 32 new questions, bringing the total to 91 across four groups. Overlapping Q191 and Q095–Q099 are retained only once, including the duplicated final screenshot. Merge the supplied flow to add this section without replacing existing question edits.
+**Question data** opens the source review and downloads the original package. Select a card and use **Review uploaded source details** to explicitly replace that card's details if you want to override custom wording. **Import** accepts both editor project JSON and raw questionnaire packages: editor project imports replace the canvas after a backup; questionnaire packages merge source data while preserving custom work. Manually imported packages remain authoritative across reloads; deployments do not replace them automatically.
 
-The next screenshot batch adds **4. DUE DILIGENCE** (15), **5A. WHOLESALE** (7), **5B. FIX AND FLIP** (7), **5C. HOLD / BRRRR** (8), and the visible beginning of **5D. CREATIVE FINANCE** (2). Total: 130 unique questions across nine groups, plus the Texas stop. Strategy tags are shown alongside question IDs. Creative Finance remains partial pending further screenshots.
+## Existing work and updates
 
-Creative Finance now includes Q160–Q169, and **6. CONTRACT AND CLOSING** includes Q180–Q190. This batch adds 19 unique questions; the total is 149 questions in ten groups plus the Texas stop. Overlapping Q166, Q180, Q183, Q184 and Q188 are deduplicated. Wording and answer routes still need completion from full source material.
+Deployments upgrade unchanged screenshot fragments automatically using a three-way comparison against `flows/questionnaire-screenshot-baseline.json`. Before an upgrade, the existing browser project is saved as a backup. Custom prompts/settings/answer destinations, removed options, positions, formatting, groups, custom connectors and deleted questions are preserved. Source updates fill missing fields and add missing dependency references. Source connectors intentionally deleted by the user stay deleted. **Question data** lists the fields kept as custom edits.
 
-Question-detail screenshots for Q001, Q002, Q004 and Q007 populate explanation, settings, option values and labels, and any visible canonical mappings. Missing visibility/mappings/routes remain unconfirmed. Project CSV exports all cards and nested data as JSON columns. Project PDF opens the full project report with tiled group diagrams and question details; choose **Print / Save as PDF** in that report. These are project-wide exports, not per-card downloads.
+If a browser cannot save the backup, the upgrade pauses and leaves the existing project intact. **Backup** downloads the saved pre-import/pre-update project. Export **JSON** for an independent backup; browser copies depend on the same origin and profile. Loading an older team project also upgrades its source data, with its original version retained in `question-tree-source-backup` and the current local canvas backed up separately. Team saves remain explicit.
 
-## Upload stopping point
-Question-detail uploads are complete through **Q012**. Resume at **Q013**. All overview flow screenshots have already been captured. Q012 includes Seller/owner, Tenant, Vacant and Other occupant, with its confirmed `property.occupied` mapping.
+Fresh projects allow space for complete wording and answer options. Source upgrades never reposition an existing saved layout; expanded cards may need rearranging in a previously compact layout.
 
-## Hosting and automatic updates
-The project is hosted on Cloudflare Workers at https://question-tree.dry-bonus-373b.workers.dev, protected by Cloudflare Access. Cloudflare's Git integration deploys pushes to `main`. GitHub Actions runs tests and builds only; the unused GitHub Pages deployment has been removed.
+## Source issues
 
-Flow edits save locally in your browser. Export JSON for backups, and use **Load your questionnaire** to merge supplied-questionnaire updates after a deployment.
+The source review and `docs/question-data-audit.json` / `.csv` flag five issues:
 
-## Cloudflare Workers static hosting
-Use **Build command:** `npm run build` and **Deploy command:** `npx --yes wrangler@4.149.0 deploy` in Cloudflare's Git-connected Worker settings. Alternatively use `npm run deploy` as the deploy command, which builds first. `wrangler.jsonc` publishes only `_site`, assembled from `index.html`, `src` and `flows`; never set the assets directory to the repository root. This excludes dependencies, development tools and Git metadata from deployment. Cloudflare supplies authentication in its build environment. No API keys belong in repository files.
+- Q043 No → Q053 conflicts with Q053 requiring an existing mortgage.
+- Q049's earlier Yes/Maybe → Q058 label does not match the exported options; Q058 has a separate OR visibility rule.
+- Q099 Yes → Q150 conflicts with Q099 being a currency input.
+- Q011 requires property values that are not offered by Q010.
+- Q191 still has the source prompt **New question**.
 
-## Theme and connection review
-The toolbar includes a dark/light toggle; the preference persists in browser storage and defaults to the system theme. Individual canvas cards show their source ID/strategy label and question, while group titles remain on group boundaries and in Properties.
+As requested, JSON supplies the question wording/options/visibility; conflicting screenshot connectors remain flagged visual references. Other unconfirmed screenshot connectors are retained. The export does not resolve all strategy-entry or answer-destination paths. Orange dashed connectors mark source conflicts, teal connectors indicate traced references or visibility dependencies, and other dashed connectors remain unconfirmed.
 
-The latest screenshot review adds local bypass references. Teal connectors indicate endpoints traced within screenshots, not executable answer routing. Dashed lines remain unconfirmed. Candidate bypass origins hidden by overlapping lines are explicitly marked as requiring confirmation. `connectionReview` in the supplied JSON tracks outstanding long cross-section routes and strategy entry conditions. All-connectors completeness is not yet established; see the pending routing question in chat. CSV and PDF reports preserve outgoing screenshot connector references.
+## Editor controls
 
-Group names are again included on canvas cards, following the latest user clarification, as well as on group boundaries. The Due Diligence exit **Q119 → Q130 (Wholesale)** is confirmed as a visible sequence; conditional entry/bypass rules remain separate.
+Hold Space while dragging to pan. Drag empty canvas to box-select fully enclosed cards/groups; Shift adds to the selection. Shift-click group labels or boundaries to select multiple groups, then drag a selected group to move them together. Click empty space to deselect. Sidebar entries include original question IDs, and search accepts IDs or complete prompt text. Group names appear on cards and boundaries.
 
-## Preserve browser edits
-Normal deployments do not replace the `question-tree` browser record. Source merges now preserve existing nodes and groups exactly, including wording, settings, destinations, removed answers, grouping and positions. Only missing nodes and connector references are added; questions deleted after this safeguard are not reintroduced. Source updates to existing questions therefore require an explicit manual edit, rather than automatic replacement. Imports intentionally replace the active flow, but imports and source merges first store `question-tree-backup`; download it using **Backup** and restore via Import. Backup failure blocks the operation. These browser copies are local to the same origin and browser profile; export JSON for an independent copy.
+The toolbar provides Select/Hand/Connector (V/H/C), undo/redo, duplicate (Ctrl/Cmd+D), delete, group/ungroup, alignment, distribution, fill, connector color, grid and snapping. Shapes include rectangles, diamonds, ellipses and notes. Cards support resize, rotation, font size/style and text/border colors. Select a connector to edit labels, arrows, line style/width, routing or bend points. Automatic routing uses a bounded obstacle search with an exterior-lane fallback; dense layouts may need manual bends.
 
-## Shared-password login on Cloudflare
-The Worker protects every static asset with a server-side shared password. In **Workers & Pages → question-tree → Settings → Variables and Secrets**, add **SITE_PASSWORD** with type **Secret** and your chosen password, then deploy. Never commit it or send it through chat. A missing secret fails closed with a setup message. Sessions last 24 hours; cookies are Secure, HttpOnly and SameSite=Strict. Changing the password invalidates existing sessions. Sign out does not delete browser-saved flows.
+Screenshot uploads are session-only references, not automatic OCR imports. The dark/light preference persists in browser storage. This editor does not provide full Lucidchart parity or live simultaneous editing.
 
-To use only this shared password, remove the separate Worker-specific Cloudflare Access protection after verifying the password secret is configured and the Worker is deployed. Otherwise users will see both the Cloudflare email gate and the password gate. The local Node development server remains for local testing without authentication; only the Cloudflare Worker enforces production login. Shared passwords do not provide individual accounts or audit history.
+## Preview and exports
 
-## Canvas controls
-Hold Space while dragging to pan (including over cards/groups). Drag empty space to box-select fully enclosed cards/groups; Shift adds to the selection. Shift-click group labels or boundaries to select multiple groups, then drag a selected group to move them together. Click empty space to deselect. Sidebar entries include question IDs and search accepts IDs.
+**Test questionnaire** supports select, text, currency, percentage, number, year and date answers. It uses stage/question order when no explicit answer destination exists, and skips questions with false visibility conditions. It shows unresolved conditions for review rather than silently hiding them. Because strategy-entry conditions are not exported, choose a strategy section for the test explicitly. The known Texas stop remains executable. Typed values are temporary preview responses and do not change the editor's source records.
 
-**Connect cards** lets you pick a source and destination for a visual connector. Click a connector to edit its label, arrowheads and solid/dashed style or delete it. Answer-destination connectors remain executable; newly created visual connectors are references until assigned as answers in Properties. UI-only deployment updates leave saved flows unchanged. The additional pointer controls do not require merging the supplied questionnaire.
+**Project CSV** and **Project PDF** cover the entire project. CSV includes configuration, raw source question records, stage definitions, metadata, groups, source warnings, connectors and formatting. PDF includes tiled diagrams, full prompts and question details, help, options, source issues and stage rules. Choose **Print / Save as PDF** in the report. Project JSON retains the original package. Uploaded screenshot images are not embedded in exports.
 
-## Source-data completeness audit
-`docs/question-data-audit.csv` lists missing source data for all 149 questions. The uploaded overview screenshots contain 136 clipped prompts; detailed screenshots currently cover Q001, Q002, Q004, Q007, Q010, Q011 and Q012. 142 questions do not yet have source answer options. Resume detail uploads at Q013 or supply a source export. Ellipses in those cards are transcribed source fragments, not a CSS shortening rule.
+## Hosting and shared password
 
-Select a card and use **Review uploaded source details** to compare and explicitly apply a complete uploaded detail record to that card. This saves a backup and retains position/group membership and matching answer destinations. Normal updates/merges still preserve existing edits.
+Production: https://question-tree.dry-bonus-373b.workers.dev. Cloudflare's Git integration deploys pushes to `main`; GitHub Actions runs tests/build only. Set the deploy command to `npm run deploy`, which builds before deploying. `wrangler.jsonc` publishes `_site`, never the repository root.
 
-## Diagram editing toolbar
-A dedicated toolbar now provides Select/Hand/Connector tools (V/H/C), undo/redo, duplicate (Ctrl/Cmd+D), delete, group/ungroup, alignment, distribution, card fill, connector color, grid and snapping. Card ports start connections. Select a connection to choose arrowheads, width, label, line style and original/elbow/curved/straight routing. Group labels can be edited in Properties after selecting a group. These controls preserve saved data until explicitly used.
+Set **SITE_PASSWORD** as a Cloudflare Worker secret. The Worker protects all static assets and the team API. Sessions last 24 hours with signed Secure/HttpOnly/SameSite=Strict cookies. Changing the password invalidates sessions. Sign out preserves browser work. A missing password fails closed. Never commit the password or send it through chat. Remove separate Worker-specific Cloudflare Access protection if only the shared password is desired, after verifying the password gate works. The local Node server intentionally has no authentication.
 
-**Review source connections** lists missing supplied screenshot connectors in the current saved project and adds them only after a backup and explicit action. Deleted reference connections remain excluded. This editor is not full Lucidchart parity: the source routing remains partially unconfirmed, and collaboration, a general shape library and full obstacle-aware routing are not implemented.
-
-## Additional editor capabilities
-The shape palette supports rectangles, diamonds, ellipses and notes. Existing cards can change shape, width/height, rotation, font size, bold/italic, text/border colors, and fill. Selected cards have a drag resize handle. Connector Properties includes automatic obstacle routing and draggable manual bend points; manual bends take precedence until cleared. Routing has a bounded search with an exterior-lane fallback, so inspect dense diagrams and adjust bends where needed. CSV includes formatting JSON, while PDF diagrams now carry card geometry, labels and connector styling.
-
-## Shared team storage
-**Team project** provides explicit save/load through a Cloudflare SQLite Durable Object, configured in `wrangler.jsonc`. A newly deployed Worker creates its binding via the included migration. The same password protects the API. No local project is automatically uploaded or replaced. Team saves use revision checks and reject stale writes; load creates a local backup first. The last five previous revisions are retained server-side. This is shared versioned saving, not live simultaneous editing. Local development via `npm start` doesn't provide the team API; use `wrangler dev` with a test password to exercise it.
-
-The original JSON package remains necessary to complete clipped prompts, missing answer settings and unclear screenshot branch conditions. Screenshot references support manual reconstruction; automatic OCR extraction and real-time collaboration are not implemented.
+**Team project** saves/loads explicitly through a Cloudflare SQLite Durable Object. The included migration creates the binding on deployment. Loading first backs up local work; revision checks reject stale saves. Five previous revisions are retained server-side. No local project is uploaded automatically. Use `wrangler dev` with a test password to test the protected team API locally.

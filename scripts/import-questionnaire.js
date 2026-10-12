@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {convertPackage} from '../src/source-data.js';
+const root=new URL('../',import.meta.url);
+const pkg=JSON.parse(await readFile(new URL('data/questionnaire-v3.json',root)));
+const baseline=JSON.parse(await readFile(new URL('flows/questionnaire-screenshot-baseline.json',root)));
+const flow=convertPackage(pkg,baseline);
+await writeFile(new URL('flows/texas-questionnaire.json',root),JSON.stringify(flow,null,2)+'\n');
+const questions=flow.nodes.filter(n=>n.type==='question');
+const audit={total_questions:questions.length,clipped_prompts:questions.filter(n=>n.textIncomplete).length,source_options_complete:true,typed_inputs:questions.filter(n=>n.details.responseType!=='SINGLE_SELECT').length,visibility_rules:questions.reduce((sum,n)=>sum+n.details.branches.length,0),missing_export_fields:['canonicalMappings','rememberChoice','explicit answer destinations','strategy entry conditions'],source_conflicts:flow.sourceConflicts,source_revision:flow.sourceRevision};
+await writeFile(new URL('docs/question-data-audit.json',root),JSON.stringify(audit,null,2)+'\n');
+const cell=v=>'"'+String(v??'').replaceAll('"','""')+'"';
+await writeFile(new URL('docs/question-data-audit.csv',root),[['ID','Prompt','Response type','Options','Visibility rules','Source warning'],...questions.map(n=>[n.id,n.title,n.details.responseType,n.answers.length,n.details.branches.length,flow.sourceConflicts.filter(c=>c.target===n.id).map(c=>c.message).join(' | ')])].map(row=>row.map(cell).join(',')).join('\n')+'\n');
+console.log(`Imported ${questions.length} complete questions; ${audit.typed_inputs} typed inputs, ${audit.visibility_rules} visibility rules, ${flow.sourceConflicts.length} source conflicts.`);
