@@ -2,7 +2,7 @@
   "version": 1,
   "title": "Texas Investor Deal Discovery (James)",
   "start": "Q001",
-  "sourceModel": "json-linked-v2",
+  "sourceModel": "json-linked-v3",
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
     "questionnaireCode": "GUIDED_INVESTOR_DEAL_JAMES",
@@ -5902,48 +5902,6 @@
       ]
     },
     {
-      "id": "STAGE-RULE:STAGE_0:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.address.state eq TX",
-      "section": "0. Setup · stage condition",
-      "x": 280,
-      "y": 1552,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.address.state\",\"operator\":\"eq\",\"value\":\"TX\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.address.state",
-              "operator": "eq",
-              "value": "TX"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceStage": {
-        "stageCode": "STAGE_0",
-        "stageName": "0. Setup",
-        "headline": "First, a little about you.",
-        "subHeadline": "Your capital and your risk tolerance decide which routes are even on the table.",
-        "stageKind": "CORE",
-        "sortOrder": 10,
-        "stopsQuestionnaire": true,
-        "blockedHeadline": "We only cover Texas right now",
-        "blockedBody": "Other states are coming soon. This questionnaire is for Texas deals today.",
-        "branches": [
-          {
-            "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.address.state\",\"operator\":\"eq\",\"value\":\"TX\"}],\"combinator\":\"AND\"}"
-          }
-        ]
-      }
-    },
-    {
       "id": "Q010",
       "questionCode": "Q010",
       "type": "question",
@@ -6205,32 +6163,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q011:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.type in New home incomplete,New home complete",
-      "section": "Visibility · AND",
-      "x": 1880,
-      "y": 520,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.type",
-              "operator": "in",
-              "value": "New home incomplete,New home complete"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q011"
     },
     {
       "id": "Q012",
@@ -6881,32 +6813,6 @@
       "answers": []
     },
     {
-      "id": "RULE:G006:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.hasMud eq Yes",
-      "section": "Visibility · AND",
-      "x": 1880,
-      "y": 2741,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.hasMud",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G006"
-    },
-    {
       "id": "G007",
       "questionCode": "G007",
       "type": "question",
@@ -6988,32 +6894,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:G007:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.hasMud eq Yes",
-      "section": "Visibility · AND",
-      "x": 1880,
-      "y": 3021,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.hasMud",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G007"
     },
     {
       "id": "Q017",
@@ -8178,32 +8058,6 @@
       ]
     },
     {
-      "id": "RULE:G017:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.addendums.has.section1031Exchange eq Yes",
-      "section": "Visibility · AND",
-      "x": 1880,
-      "y": 6874,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.addendums.has.section1031Exchange",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G017"
-    },
-    {
       "id": "Q028",
       "questionCode": "Q028",
       "type": "question",
@@ -8665,32 +8519,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q032:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.addendums.has.thirdPartyFinancingAddendum eq Yes",
-      "section": "Visibility · AND",
-      "x": 1880,
-      "y": 8395,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.thirdPartyFinancingAddendum\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.addendums.has.thirdPartyFinancingAddendum",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q032"
     },
     {
       "id": "Q033",
@@ -9275,32 +9103,6 @@
       ]
     },
     {
-      "id": "RULE:G002:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "seller.maritalHomesteadStatus in Married - homestead,Unknown",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 1202,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.maritalHomesteadStatus\",\"operator\":\"in\",\"value\":\"Married - homestead,Unknown\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.maritalHomesteadStatus",
-              "operator": "in",
-              "value": "Married - homestead,Unknown"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G002"
-    },
-    {
       "id": "Q042",
       "questionCode": "Q042",
       "type": "question",
@@ -9573,32 +9375,6 @@
       "answers": []
     },
     {
-      "id": "RULE:Q044:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 2222,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q044"
-    },
-    {
       "id": "Q045",
       "questionCode": "Q045",
       "type": "question",
@@ -9744,32 +9520,6 @@
       ]
     },
     {
-      "id": "RULE:Q045:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 2460,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q045"
-    },
-    {
       "id": "G008",
       "questionCode": "G008",
       "type": "question",
@@ -9852,32 +9602,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:G008:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.status in In foreclosure,Behind",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 2787,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G008"
     },
     {
       "id": "G009",
@@ -9964,32 +9688,6 @@
       "answers": []
     },
     {
-      "id": "RULE:G009:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.status in In foreclosure,Behind",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 3025,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G009"
-    },
-    {
       "id": "G010",
       "questionCode": "G010",
       "type": "question",
@@ -10072,32 +9770,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:G010:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.status in In foreclosure,Behind",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 3284,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G010"
     },
     {
       "id": "Q046",
@@ -10183,32 +9855,6 @@
       "answers": []
     },
     {
-      "id": "RULE:Q046:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 3522,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q046"
-    },
-    {
       "id": "Q047",
       "questionCode": "Q047",
       "type": "question",
@@ -10292,32 +9938,6 @@
       "answers": []
     },
     {
-      "id": "RULE:Q047:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 3760,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q047"
-    },
-    {
       "id": "Q048",
       "questionCode": "Q048",
       "type": "question",
@@ -10399,32 +10019,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:Q048:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 4019,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q048"
     },
     {
       "id": "Q049",
@@ -10555,32 +10149,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q049:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 4278,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q049"
     },
     {
       "id": "Q050",
@@ -10932,32 +10500,6 @@
       ]
     },
     {
-      "id": "RULE:Q052:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 5352,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q052"
-    },
-    {
       "id": "Q053",
       "questionCode": "Q053",
       "type": "question",
@@ -11088,32 +10630,6 @@
       ]
     },
     {
-      "id": "RULE:Q053:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 5706,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q053"
-    },
-    {
       "id": "Q054",
       "questionCode": "Q054",
       "type": "question",
@@ -11227,32 +10743,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q054:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq No",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 6060,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"No\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "No"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q054"
     },
     {
       "id": "Q055",
@@ -11369,32 +10859,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q055:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "seller.openToSellerFinance in Yes,Maybe",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 6336,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.openToSellerFinance",
-              "operator": "in",
-              "value": "Yes,Maybe"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q055"
     },
     {
       "id": "Q056",
@@ -11558,32 +11022,6 @@
       ]
     },
     {
-      "id": "RULE:Q056:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "seller.openToSellerFinance in Yes,Maybe",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 6633,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.openToSellerFinance",
-              "operator": "in",
-              "value": "Yes,Maybe"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q056"
-    },
-    {
       "id": "Q057",
       "questionCode": "Q057",
       "type": "question",
@@ -11697,32 +11135,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q057:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 7059,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q057"
     },
     {
       "id": "Q058",
@@ -11938,67 +11350,6 @@
       ]
     },
     {
-      "id": "RULE:Q058:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(mortgage.first.exists eq Yes) OR (seller.openToSellerFinance in Yes,Maybe) OR (seller.openToSubjectTo in Yes,Maybe) OR (seller.openToWrap in Yes,Maybe)",
-      "section": "Visibility · OR",
-      "x": 3480,
-      "y": 7398,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "mortgage.first.exists",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSellerFinance",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSubjectTo",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToWrap",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "Q058"
-    },
-    {
       "id": "Q059",
       "questionCode": "Q059",
       "type": "question",
@@ -12189,57 +11540,6 @@
       ]
     },
     {
-      "id": "RULE:Q059:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(seller.openToSellerFinance in Yes,Maybe) OR (seller.openToSubjectTo in Yes,Maybe) OR (seller.openToWrap in Yes,Maybe)",
-      "section": "Visibility · OR",
-      "x": 3480,
-      "y": 7752,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSellerFinance",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSubjectTo",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToWrap",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "Q059"
-    },
-    {
       "id": "Q060",
       "questionCode": "Q060",
       "type": "question",
@@ -12368,32 +11668,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q060:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "mortgage.first.exists eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 8106,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q060"
     },
     {
       "id": "Q191",
@@ -13626,32 +12900,6 @@
       "answers": []
     },
     {
-      "id": "RULE:Q087:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.hasHOA eq Yes",
-      "section": "Visibility · AND",
-      "x": 5080,
-      "y": 5158,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasHOA\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.hasHOA",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q087"
-    },
-    {
       "id": "Q088",
       "questionCode": "Q088",
       "type": "question",
@@ -14220,32 +13468,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:Q096:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "deal.refinanceAvailable eq Yes",
-      "section": "Visibility · AND",
-      "x": 5080,
-      "y": 7500,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "deal.refinanceAvailable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q096"
     },
     {
       "id": "Q097",
@@ -15391,32 +14613,6 @@
       "answers": []
     },
     {
-      "id": "RULE:G011:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "insurance.insurable eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 2728,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "insurance.insurable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G011"
-    },
-    {
       "id": "G012",
       "questionCode": "G012",
       "type": "question",
@@ -15560,32 +14756,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:G012:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "insurance.insurable eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 2987,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "insurance.insurable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "G012"
     },
     {
       "id": "Q118",
@@ -15752,47 +14922,6 @@
       ]
     },
     {
-      "id": "RULE:Q118:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "section": "Visibility · OR",
-      "x": 6680,
-      "y": 3335,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "Q118"
-    },
-    {
       "id": "G013",
       "questionCode": "G013",
       "type": "question",
@@ -15957,47 +15086,6 @@
       ]
     },
     {
-      "id": "RULE:G013:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "section": "Visibility · OR",
-      "x": 6680,
-      "y": 3689,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "G013"
-    },
-    {
       "id": "G014",
       "questionCode": "G014",
       "type": "question",
@@ -16113,47 +15201,6 @@
         }
       },
       "answers": []
-    },
-    {
-      "id": "RULE:G014:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "section": "Visibility · OR",
-      "x": 6680,
-      "y": 4064,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "G014"
     },
     {
       "id": "G015",
@@ -16318,47 +15365,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:G015:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "section": "Visibility · OR",
-      "x": 6680,
-      "y": 4323,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      },
-      "sourceOwner": "G015"
     },
     {
       "id": "Q119",
@@ -18378,32 +17384,6 @@
       ]
     },
     {
-      "id": "RULE:Q156:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "deal.refinanceAvailable eq Yes",
-      "section": "Visibility · AND",
-      "x": 3480,
-      "y": 11099,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "deal.refinanceAvailable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q156"
-    },
-    {
       "id": "Q157",
       "questionCode": "Q157",
       "type": "question",
@@ -19260,32 +18240,6 @@
       ]
     },
     {
-      "id": "RULE:Q167:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "creativeFinance.isWrap eq Yes",
-      "section": "Visibility · AND",
-      "x": 5080,
-      "y": 11705,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"creativeFinance.isWrap\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "creativeFinance.isWrap",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q167"
-    },
-    {
       "id": "Q168",
       "questionCode": "Q168",
       "type": "question",
@@ -19692,32 +18646,6 @@
       ]
     },
     {
-      "id": "RULE:Q181:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.waterRights eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 9671,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.waterRights\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.waterRights",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q181"
-    },
-    {
       "id": "Q182",
       "questionCode": "Q182",
       "type": "question",
@@ -19920,32 +18848,6 @@
       ]
     },
     {
-      "id": "RULE:Q183:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "contract.fullyExecuted eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 10361,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "contract.fullyExecuted",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q183"
-    },
-    {
       "id": "Q184",
       "questionCode": "Q184",
       "type": "question",
@@ -20061,32 +18963,6 @@
       ]
     },
     {
-      "id": "RULE:Q184:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "contract.fullyExecuted eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 10658,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "contract.fullyExecuted",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q184"
-    },
-    {
       "id": "Q185",
       "questionCode": "Q185",
       "type": "question",
@@ -20200,32 +19076,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q185:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "contract.fullyExecuted eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 10955,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "contract.fullyExecuted",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q185"
     },
     {
       "id": "Q186",
@@ -20356,32 +19206,6 @@
           "target": ""
         }
       ]
-    },
-    {
-      "id": "RULE:Q186:1",
-      "type": "shape",
-      "shape": "note",
-      "title": "property.addendums.has.backUpContract eq Yes",
-      "section": "Visibility · AND",
-      "x": 6680,
-      "y": 11252,
-      "width": 400,
-      "answers": [],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.backUpContract\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.addendums.has.backUpContract",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      },
-      "sourceOwner": "Q186"
     },
     {
       "id": "Q187",
@@ -20755,8 +19579,7 @@
         "Q001",
         "Q002",
         "Q004",
-        "Q007",
-        "STAGE-RULE:STAGE_0:1"
+        "Q007"
       ],
       "stage": {
         "stageCode": "STAGE_0",
@@ -20782,7 +19605,6 @@
       "members": [
         "Q010",
         "Q011",
-        "RULE:Q011:1",
         "Q012",
         "Q013",
         "Q014",
@@ -20790,9 +19612,7 @@
         "Q016",
         "QG-MUD",
         "G006",
-        "RULE:G006:1",
         "G007",
-        "RULE:G007:1",
         "Q017",
         "Q018",
         "Q019",
@@ -20805,13 +19625,11 @@
         "Q026",
         "Q027",
         "G017",
-        "RULE:G017:1",
         "Q028",
         "Q029",
         "Q030",
         "Q031",
         "Q032",
-        "RULE:Q032:1",
         "Q033"
       ],
       "stage": {
@@ -20835,47 +19653,28 @@
         "Q041",
         "G001",
         "G002",
-        "RULE:G002:1",
         "Q042",
         "Q043",
         "Q044",
-        "RULE:Q044:1",
         "Q045",
-        "RULE:Q045:1",
         "G008",
-        "RULE:G008:1",
         "G009",
-        "RULE:G009:1",
         "G010",
-        "RULE:G010:1",
         "Q046",
-        "RULE:Q046:1",
         "Q047",
-        "RULE:Q047:1",
         "Q048",
-        "RULE:Q048:1",
         "Q049",
-        "RULE:Q049:1",
         "Q050",
         "Q051",
         "Q052",
-        "RULE:Q052:1",
         "Q053",
-        "RULE:Q053:1",
         "Q054",
-        "RULE:Q054:1",
         "Q055",
-        "RULE:Q055:1",
         "Q056",
-        "RULE:Q056:1",
         "Q057",
-        "RULE:Q057:1",
         "Q058",
-        "RULE:Q058:1",
         "Q059",
-        "RULE:Q059:1",
         "Q060",
-        "RULE:Q060:1",
         "Q191"
       ],
       "stage": {
@@ -20915,7 +19714,6 @@
         "Q085",
         "Q086",
         "Q087",
-        "RULE:Q087:1",
         "Q088",
         "Q089",
         "Q090",
@@ -20925,7 +19723,6 @@
         "Q094",
         "Q095",
         "Q096",
-        "RULE:Q096:1",
         "Q097",
         "Q098",
         "Q099"
@@ -20956,17 +19753,11 @@
         "Q116",
         "Q117",
         "G011",
-        "RULE:G011:1",
         "G012",
-        "RULE:G012:1",
         "Q118",
-        "RULE:Q118:1",
         "G013",
-        "RULE:G013:1",
         "G014",
-        "RULE:G014:1",
         "G015",
-        "RULE:G015:1",
         "Q119"
       ],
       "stage": {
@@ -21043,7 +19834,6 @@
         "Q154",
         "Q155",
         "Q156",
-        "RULE:Q156:1",
         "Q157"
       ],
       "stage": {
@@ -21071,7 +19861,6 @@
         "Q165",
         "Q166",
         "Q167",
-        "RULE:Q167:1",
         "Q168",
         "Q169"
       ],
@@ -21094,16 +19883,11 @@
       "members": [
         "Q180",
         "Q181",
-        "RULE:Q181:1",
         "Q182",
         "Q183",
-        "RULE:Q183:1",
         "Q184",
-        "RULE:Q184:1",
         "Q185",
-        "RULE:Q185:1",
         "Q186",
-        "RULE:Q186:1",
         "Q187",
         "Q188",
         "Q189",
@@ -21127,14 +19911,30 @@
     {
       "source": "Q001",
       "target": "Q002",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "TX",
+      "displayLabel": "TX",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "stageRules": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.address.state\",\"operator\":\"eq\",\"value\":\"TX\"}],\"combinator\":\"AND\"}",
+          "condition": {
+            "conditions": [
+              {
+                "fieldCode": "property.address.state",
+                "operator": "eq",
+                "value": "TX"
+              }
+            ],
+            "combinator": "AND"
+          }
+        }
+      ]
     },
     {
       "source": "Q002",
@@ -21161,63 +19961,16 @@
       "color": "#168d88"
     },
     {
-      "source": "STAGE-RULE:STAGE_0:1",
-      "target": "Q001",
-      "label": "property.address.state eq TX",
-      "displayLabel": "Stage condition AND",
-      "kind": "visibility",
-      "provenance": "json-stage-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.address.state\",\"operator\":\"eq\",\"value\":\"TX\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.address.state",
-              "operator": "eq",
-              "value": "TX"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q010",
       "target": "Q011",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "New home incomplete / New home complete",
+      "displayLabel": "New home incomplete / New home complete",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.type",
-          "operator": "in",
-          "value": "New home incomplete,New home complete"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q011:1",
-      "target": "Q011",
-      "label": "property.type in New home incomplete,New home complete",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21316,35 +20069,14 @@
     {
       "source": "QG-MUD",
       "target": "G006",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasMud",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:G006:1",
-      "target": "G006",
-      "label": "property.hasMud eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21379,41 +20111,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:G007:1",
-      "target": "G007",
-      "label": "property.hasMud eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasMud",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.hasMud",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "G007",
@@ -21550,35 +20247,14 @@
     {
       "source": "Q027",
       "target": "G017",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.addendums.has.section1031Exchange",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:G017:1",
-      "target": "G017",
-      "label": "property.addendums.has.section1031Exchange eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21653,35 +20329,14 @@
     {
       "source": "Q031",
       "target": "Q032",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.addendums.has.thirdPartyFinancingAddendum",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q032:1",
-      "target": "Q032",
-      "label": "property.addendums.has.thirdPartyFinancingAddendum eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21744,35 +20399,14 @@
     {
       "source": "G001",
       "target": "G002",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Married - homestead / Unknown",
+      "displayLabel": "Married - homestead / Unknown",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.maritalHomesteadStatus",
-          "operator": "in",
-          "value": "Married - homestead,Unknown"
-        }
-      ]
-    },
-    {
-      "source": "RULE:G002:1",
-      "target": "G002",
-      "label": "seller.maritalHomesteadStatus in Married - homestead,Unknown",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21823,35 +20457,14 @@
     {
       "source": "Q043",
       "target": "Q044",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q044:1",
-      "target": "Q044",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21888,72 +20501,16 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q045:1",
-      "target": "Q045",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q045",
       "target": "G008",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "In foreclosure / Behind",
+      "displayLabel": "In foreclosure / Behind",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.status",
-          "operator": "in",
-          "value": "In foreclosure,Behind"
-        }
-      ]
-    },
-    {
-      "source": "RULE:G008:1",
-      "target": "G008",
-      "label": "mortgage.first.status in In foreclosure,Behind",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -21990,41 +20547,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:G009:1",
-      "target": "G009",
-      "label": "mortgage.first.status in In foreclosure,Behind",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.status",
-          "operator": "in",
-          "value": "In foreclosure,Behind"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "G009",
       "target": "G010",
       "label": "Next in stage order",
@@ -22035,41 +20557,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:G010:1",
-      "target": "G010",
-      "label": "mortgage.first.status in In foreclosure,Behind",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.status",
-          "operator": "in",
-          "value": "In foreclosure,Behind"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "G010",
@@ -22084,41 +20571,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q046:1",
-      "target": "Q046",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q046",
       "target": "Q047",
       "label": "Next in stage order",
@@ -22129,41 +20581,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q047:1",
-      "target": "Q047",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q047",
@@ -22178,41 +20595,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q048:1",
-      "target": "Q048",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q048",
       "target": "Q049",
       "label": "Next in stage order",
@@ -22223,41 +20605,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q049:1",
-      "target": "Q049",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q049",
@@ -22296,41 +20643,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q052:1",
-      "target": "Q052",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q052",
       "target": "Q053",
       "label": "Next in stage order",
@@ -22341,41 +20653,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q053:1",
-      "target": "Q053",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q053",
@@ -22390,41 +20667,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q054:1",
-      "target": "Q054",
-      "label": "mortgage.first.exists eq No",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "No"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"No\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "No"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q054",
       "target": "Q055",
       "label": "Next in stage order",
@@ -22435,41 +20677,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q055:1",
-      "target": "Q055",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSellerFinance",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.openToSellerFinance",
-              "operator": "in",
-              "value": "Yes,Maybe"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q055",
@@ -22484,41 +20691,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q056:1",
-      "target": "Q056",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSellerFinance",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.openToSellerFinance",
-              "operator": "in",
-              "value": "Yes,Maybe"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q056",
       "target": "Q057",
       "label": "Next in stage order",
@@ -22529,41 +20701,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q057:1",
-      "target": "Q057",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q057",
@@ -22578,94 +20715,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q058:1",
-      "target": "Q058",
-      "label": "(mortgage.first.exists eq Yes) OR (seller.openToSellerFinance in Yes,Maybe) OR (seller.openToSubjectTo in Yes,Maybe) OR (seller.openToWrap in Yes,Maybe)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSellerFinance",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSubjectTo",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToWrap",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "mortgage.first.exists",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSellerFinance",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSubjectTo",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToWrap",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
-    },
-    {
       "source": "Q058",
       "target": "Q059",
       "label": "Next in stage order",
@@ -22678,78 +20727,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q059:1",
-      "target": "Q059",
-      "label": "(seller.openToSellerFinance in Yes,Maybe) OR (seller.openToSubjectTo in Yes,Maybe) OR (seller.openToWrap in Yes,Maybe)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSellerFinance",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToSubjectTo",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.openToWrap",
-          "operator": "in",
-          "value": "Yes,Maybe"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSellerFinance",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToSubjectTo",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "seller.openToWrap",
-                  "operator": "in",
-                  "value": "Yes,Maybe"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
-    },
-    {
       "source": "Q059",
       "target": "Q060",
       "label": "Next in stage order",
@@ -22760,41 +20737,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q060:1",
-      "target": "Q060",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q060",
@@ -23037,41 +20979,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q087:1",
-      "target": "Q087",
-      "label": "property.hasHOA eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasHOA",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasHOA\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.hasHOA",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q087",
       "target": "Q088",
       "label": "Next in stage order",
@@ -23170,35 +21077,14 @@
     {
       "source": "Q095",
       "target": "Q096",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "deal.refinanceAvailable",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q096:1",
-      "target": "Q096",
-      "label": "deal.refinanceAvailable eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -23345,35 +21231,14 @@
     {
       "source": "Q117",
       "target": "G011",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "insurance.insurable",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:G011:1",
-      "target": "G011",
-      "label": "insurance.insurable eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -23410,41 +21275,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:G012:1",
-      "target": "G012",
-      "label": "insurance.insurable eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "insurance.insurable",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "insurance.insurable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "G012",
       "target": "Q118",
       "label": "Next in stage order",
@@ -23455,62 +21285,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q118:1",
-      "target": "Q118",
-      "label": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.occupied",
-          "operator": "eq",
-          "value": "Tenant"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasLease",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
     },
     {
       "source": "Q118",
@@ -23525,62 +21299,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:G013:1",
-      "target": "G013",
-      "label": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.occupied",
-          "operator": "eq",
-          "value": "Tenant"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasLease",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
-    },
-    {
       "source": "G013",
       "target": "G014",
       "label": "Next in stage order",
@@ -23593,62 +21311,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:G014:1",
-      "target": "G014",
-      "label": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.occupied",
-          "operator": "eq",
-          "value": "Tenant"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasLease",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
-    },
-    {
       "source": "G014",
       "target": "G015",
       "label": "Next in stage order",
@@ -23659,62 +21321,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:G015:1",
-      "target": "G015",
-      "label": "(property.occupied eq Tenant) OR (property.hasLease eq Yes)",
-      "displayLabel": "Visible when OR",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.occupied",
-          "operator": "eq",
-          "value": "Tenant"
-        },
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.hasLease",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
-        "condition": {
-          "groups": [
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.occupied",
-                  "operator": "eq",
-                  "value": "Tenant"
-                }
-              ],
-              "combinator": "AND"
-            },
-            {
-              "conditions": [
-                {
-                  "fieldCode": "property.hasLease",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          ],
-          "combinator": "OR"
-        }
-      }
     },
     {
       "source": "G015",
@@ -23945,41 +21551,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q156:1",
-      "target": "Q156",
-      "label": "deal.refinanceAvailable eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "deal.refinanceAvailable",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "deal.refinanceAvailable",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q156",
       "target": "Q157",
       "label": "Next in stage order",
@@ -24066,35 +21637,14 @@
     {
       "source": "Q166",
       "target": "Q167",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "creativeFinance.isWrap",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q167:1",
-      "target": "Q167",
-      "label": "creativeFinance.isWrap eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -24155,41 +21705,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q181:1",
-      "target": "Q181",
-      "label": "property.waterRights eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.waterRights",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.waterRights\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.waterRights",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q181",
       "target": "Q182",
       "label": "Next in stage order",
@@ -24204,35 +21719,14 @@
     {
       "source": "Q182",
       "target": "Q183",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
       "width": 4,
       "style": "solid",
       "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "contract.fullyExecuted",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "source": "RULE:Q183:1",
-      "target": "Q183",
-      "label": "contract.fullyExecuted eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
       "visibilityDependencies": [
         {
           "ruleOrder": 1,
@@ -24269,41 +21763,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q184:1",
-      "target": "Q184",
-      "label": "contract.fullyExecuted eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "contract.fullyExecuted",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "contract.fullyExecuted",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q184",
       "target": "Q185",
       "label": "Next in stage order",
@@ -24316,41 +21775,6 @@
       "color": "#168d88"
     },
     {
-      "source": "RULE:Q185:1",
-      "target": "Q185",
-      "label": "contract.fullyExecuted eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "contract.fullyExecuted",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "contract.fullyExecuted",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q185",
       "target": "Q186",
       "label": "Next in stage order",
@@ -24361,41 +21785,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "RULE:Q186:1",
-      "target": "Q186",
-      "label": "property.addendums.has.backUpContract eq Yes",
-      "displayLabel": "Visible when AND",
-      "kind": "visibility",
-      "provenance": "json-visibility",
-      "routing": "straight",
-      "traced": true,
-      "width": 4,
-      "color": "#6754d9",
-      "style": "solid",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.addendums.has.backUpContract",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.backUpContract\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.addendums.has.backUpContract",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "Q186",
@@ -24448,8 +21837,8 @@
     {
       "source": "QG-MUD",
       "target": "G007",
-      "label": "property.hasMud eq Yes",
-      "displayLabel": "property.hasMud eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24486,8 +21875,8 @@
     {
       "source": "Q043",
       "target": "Q045",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24524,8 +21913,8 @@
     {
       "source": "Q045",
       "target": "G009",
-      "label": "mortgage.first.status in In foreclosure,Behind",
-      "displayLabel": "mortgage.first.status in In foreclosure,Behind",
+      "label": "In foreclosure / Behind",
+      "displayLabel": "In foreclosure / Behind",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24562,8 +21951,8 @@
     {
       "source": "Q045",
       "target": "G010",
-      "label": "mortgage.first.status in In foreclosure,Behind",
-      "displayLabel": "mortgage.first.status in In foreclosure,Behind",
+      "label": "In foreclosure / Behind",
+      "displayLabel": "In foreclosure / Behind",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24600,8 +21989,8 @@
     {
       "source": "Q043",
       "target": "Q046",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24638,8 +22027,8 @@
     {
       "source": "Q043",
       "target": "Q047",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24676,8 +22065,8 @@
     {
       "source": "Q043",
       "target": "Q048",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24714,8 +22103,8 @@
     {
       "source": "Q043",
       "target": "Q049",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24752,8 +22141,8 @@
     {
       "source": "Q043",
       "target": "Q052",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24790,8 +22179,8 @@
     {
       "source": "Q043",
       "target": "Q053",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24828,8 +22217,8 @@
     {
       "source": "Q043",
       "target": "Q054",
-      "label": "mortgage.first.exists eq No",
-      "displayLabel": "mortgage.first.exists eq No",
+      "label": "No",
+      "displayLabel": "No",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24866,8 +22255,8 @@
     {
       "source": "Q051",
       "target": "Q055",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24904,8 +22293,8 @@
     {
       "source": "Q051",
       "target": "Q056",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24942,8 +22331,8 @@
     {
       "source": "Q043",
       "target": "Q057",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -24980,8 +22369,8 @@
     {
       "source": "Q043",
       "target": "Q058",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25053,8 +22442,8 @@
     {
       "source": "Q051",
       "target": "Q058",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25126,8 +22515,8 @@
     {
       "source": "Q052",
       "target": "Q058",
-      "label": "seller.openToSubjectTo in Yes,Maybe",
-      "displayLabel": "seller.openToSubjectTo in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25199,8 +22588,8 @@
     {
       "source": "Q053",
       "target": "Q058",
-      "label": "seller.openToWrap in Yes,Maybe",
-      "displayLabel": "seller.openToWrap in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25272,8 +22661,8 @@
     {
       "source": "Q051",
       "target": "Q059",
-      "label": "seller.openToSellerFinance in Yes,Maybe",
-      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25335,8 +22724,8 @@
     {
       "source": "Q052",
       "target": "Q059",
-      "label": "seller.openToSubjectTo in Yes,Maybe",
-      "displayLabel": "seller.openToSubjectTo in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25398,8 +22787,8 @@
     {
       "source": "Q053",
       "target": "Q059",
-      "label": "seller.openToWrap in Yes,Maybe",
-      "displayLabel": "seller.openToWrap in Yes,Maybe",
+      "label": "Yes / Maybe",
+      "displayLabel": "Yes / Maybe",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25461,8 +22850,8 @@
     {
       "source": "Q043",
       "target": "Q060",
-      "label": "mortgage.first.exists eq Yes",
-      "displayLabel": "mortgage.first.exists eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25499,8 +22888,8 @@
     {
       "source": "Q014",
       "target": "Q087",
-      "label": "property.hasHOA eq Yes",
-      "displayLabel": "property.hasHOA eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25537,8 +22926,8 @@
     {
       "source": "Q117",
       "target": "G012",
-      "label": "insurance.insurable eq Yes",
-      "displayLabel": "insurance.insurable eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25575,8 +22964,8 @@
     {
       "source": "Q012",
       "target": "Q118",
-      "label": "property.occupied eq Tenant",
-      "displayLabel": "property.occupied eq Tenant",
+      "label": "Tenant",
+      "displayLabel": "Tenant",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25628,8 +23017,8 @@
     {
       "source": "Q022",
       "target": "Q118",
-      "label": "property.hasLease eq Yes",
-      "displayLabel": "property.hasLease eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25681,8 +23070,8 @@
     {
       "source": "Q012",
       "target": "G013",
-      "label": "property.occupied eq Tenant",
-      "displayLabel": "property.occupied eq Tenant",
+      "label": "Tenant",
+      "displayLabel": "Tenant",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25734,8 +23123,8 @@
     {
       "source": "Q022",
       "target": "G013",
-      "label": "property.hasLease eq Yes",
-      "displayLabel": "property.hasLease eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25787,8 +23176,8 @@
     {
       "source": "Q012",
       "target": "G014",
-      "label": "property.occupied eq Tenant",
-      "displayLabel": "property.occupied eq Tenant",
+      "label": "Tenant",
+      "displayLabel": "Tenant",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25840,8 +23229,8 @@
     {
       "source": "Q022",
       "target": "G014",
-      "label": "property.hasLease eq Yes",
-      "displayLabel": "property.hasLease eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25893,8 +23282,8 @@
     {
       "source": "Q012",
       "target": "G015",
-      "label": "property.occupied eq Tenant",
-      "displayLabel": "property.occupied eq Tenant",
+      "label": "Tenant",
+      "displayLabel": "Tenant",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25946,8 +23335,8 @@
     {
       "source": "Q022",
       "target": "G015",
-      "label": "property.hasLease eq Yes",
-      "displayLabel": "property.hasLease eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -25999,8 +23388,8 @@
     {
       "source": "Q095",
       "target": "Q156",
-      "label": "deal.refinanceAvailable eq Yes",
-      "displayLabel": "deal.refinanceAvailable eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -26037,8 +23426,8 @@
     {
       "source": "Q017",
       "target": "Q181",
-      "label": "property.waterRights eq Yes",
-      "displayLabel": "property.waterRights eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -26075,8 +23464,8 @@
     {
       "source": "Q182",
       "target": "Q184",
-      "label": "contract.fullyExecuted eq Yes",
-      "displayLabel": "contract.fullyExecuted eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -26113,8 +23502,8 @@
     {
       "source": "Q182",
       "target": "Q185",
-      "label": "contract.fullyExecuted eq Yes",
-      "displayLabel": "contract.fullyExecuted eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -26151,8 +23540,8 @@
     {
       "source": "Q026",
       "target": "Q186",
-      "label": "property.addendums.has.backUpContract eq Yes",
-      "displayLabel": "property.addendums.has.backUpContract eq Yes",
+      "label": "Yes",
+      "displayLabel": "Yes",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -26190,7 +23579,7 @@
       "source": "Q007",
       "target": "Q010",
       "label": "Continue to 1. Property and Contract",
-      "displayLabel": "Continue to 1. Property and Contract",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-core-stage-order",
       "inferred": false,
@@ -26206,7 +23595,7 @@
       "source": "Q033",
       "target": "Q040",
       "label": "Continue to 2. Seller, Title and Debt",
-      "displayLabel": "Continue to 2. Seller, Title and Debt",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-core-stage-order",
       "inferred": false,
@@ -26222,7 +23611,7 @@
       "source": "Q191",
       "target": "Q070",
       "label": "Continue to 3. Deal Economics",
-      "displayLabel": "Continue to 3. Deal Economics",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-core-stage-order",
       "inferred": false,
@@ -26238,7 +23627,7 @@
       "source": "Q099",
       "target": "Q110",
       "label": "Continue to 4. Due Diligence",
-      "displayLabel": "Continue to 4. Due Diligence",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-core-stage-order",
       "inferred": false,
@@ -26254,7 +23643,7 @@
       "source": "Q119",
       "target": "Q130",
       "label": "Selected route: 5A. Wholesale",
-      "displayLabel": "Selected route: 5A. Wholesale",
+      "displayLabel": "Wholesale",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26270,7 +23659,7 @@
       "source": "QG-WHOLESALE-CONDUCT",
       "target": "Q180",
       "label": "Continue to 6. Contract and Closing",
-      "displayLabel": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26286,7 +23675,7 @@
       "source": "Q119",
       "target": "Q140",
       "label": "Selected route: 5B. Fix and Flip",
-      "displayLabel": "Selected route: 5B. Fix and Flip",
+      "displayLabel": "Fix and Flip",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26302,7 +23691,7 @@
       "source": "Q146",
       "target": "Q180",
       "label": "Continue to 6. Contract and Closing",
-      "displayLabel": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26318,7 +23707,7 @@
       "source": "Q119",
       "target": "Q150",
       "label": "Selected route: 5C. Hold / BRRRR",
-      "displayLabel": "Selected route: 5C. Hold / BRRRR",
+      "displayLabel": "Hold / BRRRR",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26334,7 +23723,7 @@
       "source": "Q157",
       "target": "Q180",
       "label": "Continue to 6. Contract and Closing",
-      "displayLabel": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26350,7 +23739,7 @@
       "source": "Q119",
       "target": "Q160",
       "label": "Selected route: 5D. Creative Finance",
-      "displayLabel": "Selected route: 5D. Creative Finance",
+      "displayLabel": "Creative Finance",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,
@@ -26366,7 +23755,7 @@
       "source": "Q169",
       "target": "Q180",
       "label": "Continue to 6. Contract and Closing",
-      "displayLabel": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue",
       "kind": "stage-transition",
       "provenance": "json-inferred-stage-navigation",
       "inferred": true,

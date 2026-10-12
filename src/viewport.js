@@ -9,3 +9,5 @@ export function centeredView(nodes,width,height,maxZoom=1){
  const zoom=Math.min(maxZoom,Math.max(1,width-80)/(bounds.right-bounds.left),Math.max(1,height-80)/(bounds.bottom-bounds.top));
  return {zoom,pan:{x:width/2-(bounds.left+bounds.right)/2*zoom,y:height/2-(bounds.top+bounds.bottom)/2*zoom}};
 }
+
+export function horizontalWheelDelta(event,width){const unit=event.deltaMode===1?16:event.deltaMode===2?width:1;return (Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY)*unit;}

@@ -32,16 +32,18 @@ export function addLongConnections(flow){
   for(const condition of leaves(branch.condition)){
    const pattern=fieldPrompts[condition.fieldCode],candidates=pattern?questions.filter(n=>pattern.test(n.sourceRecord.prompt)):[];
    if(candidates.length!==1||candidates[0].id===target.id)continue;
-   const source=candidates[0],label=`${condition.fieldCode} ${condition.operator} ${condition.value}`;
+   const source=candidates[0],label=String(condition.value).split(',').join(' / ');
    flow.diagramFieldAssociations[condition.fieldCode]={question:source.id,evidence:'Unique match to question wording; mapping not exported'};
    const link=add({source:source.id,target:target.id,label,displayLabel:label,kind:'dependency',provenance:'json-inferred-dependency',inferred:true,executable:false,evidence:'Visibility condition is exported; source question inferred from its wording.',traced:false,style:'dashed',width:4,color:'#9575ed',routing:'orthogonal',sourceRule:structuredClone(branch)});
    link.visibilityDependencies??=[];link.visibilityDependencies.push({ruleOrder:branch.ruleOrder,...structuredClone(condition)});
+   link.sourceRule??=structuredClone(branch);link.label=[...new Set(link.visibilityDependencies.flatMap(c=>String(c.value).split(',')))].join(' / ');link.displayLabel=link.label;
   }
  }
  const stages=[...flow.sourcePackage.stages].sort((a,b)=>a.sortOrder-b.sortOrder);
  const inStage=s=>questions.filter(q=>q.details.stage===s.stageCode).sort((a,b)=>a.details.sortOrder-b.details.sortOrder);
+ for(const stage of stages){const first=inStage(stage)[0],second=inStage(stage)[1];if(!first||!second||!stage.branches?.length)continue;const link=links.get(first.id+'|'+second.id);if(!link)continue;link.stageRules=stage.branches.map(b=>({...structuredClone(b),condition:JSON.parse(b.conditionJson)}));link.label=[...new Set(link.stageRules.flatMap(b=>leaves(b.condition)).flatMap(c=>String(c.value).split(',')))].join(' / ');link.displayLabel=link.label;}
  const core=stages.filter(s=>s.stageKind==='CORE'&&inStage(s).length),routes=stages.filter(s=>s.stageKind==='ROUTE_VALIDATION'&&inStage(s).length);
- const bridge=(source,target,label,inferred=false)=>add({source:source.id,target:target.id,label,displayLabel:label,kind:'stage-transition',provenance:inferred?'json-inferred-stage-navigation':'json-core-stage-order',inferred,executable:false,evidence:inferred?'Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.':'Core-stage order from the exported sortOrder, not an answer destination.',traced:!inferred,style:inferred?'dashed':'solid',width:4,color:inferred?'#9575ed':'#168d88',routing:'orthogonal'});
+ const bridge=(source,target,label,inferred=false)=>add({source:source.id,target:target.id,label,displayLabel:label.startsWith('Selected route: ')?label.slice('Selected route: '.length).replace(/^\w+\.\s*/, ''):label.startsWith('Continue to ')?'Continue':label,kind:'stage-transition',provenance:inferred?'json-inferred-stage-navigation':'json-core-stage-order',inferred,executable:false,evidence:inferred?'Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.':'Core-stage order from the exported sortOrder, not an answer destination.',traced:!inferred,style:inferred?'dashed':'solid',width:4,color:inferred?'#9575ed':'#168d88',routing:'orthogonal'});
  for(let i=0;i<core.length-1;i++){
   const from=core[i],to=core[i+1],between=routes.filter(s=>s.sortOrder>from.sortOrder&&s.sortOrder<to.sortOrder);
   if(between.length)for(const route of between){bridge(inStage(from).at(-1),inStage(route)[0],'Selected route: '+route.stageName,true);bridge(inStage(route).at(-1),inStage(to)[0],'Continue to '+to.stageName,true);}
