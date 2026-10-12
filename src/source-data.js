@@ -1,92 +1,70 @@
 import {validate,mergeSource} from './model.js';
 import {nodeHeight} from './geometry.js';
-
-// Associations identify the questions mentioned by visibility rules. They are
-// not exported canonical mappings (the supplied package contains no mappings).
-export const conditionSources={
- 'property.address.state':'Q001','property.type':'Q010','property.hasHOA':'Q014',
- 'property.hasMud':'QG-MUD','property.waterRights':'Q017','property.hasLease':'Q022',
- 'property.occupied':'Q012','property.addendums.has.section1031Exchange':'Q027',
- 'property.addendums.has.thirdPartyFinancingAddendum':'Q031',
- 'property.addendums.has.backUpContract':'Q026','seller.maritalHomesteadStatus':'G001',
- 'mortgage.first.exists':'Q043','mortgage.first.status':'Q045',
- 'seller.openToSellerFinance':'Q051','seller.openToSubjectTo':'Q052',
- 'seller.openToWrap':'Q053','deal.refinanceAvailable':'Q095',
- 'insurance.insurable':'Q117','creativeFinance.isWrap':'Q166',
- 'contract.fullyExecuted':'Q182'
-};
+import {convertLegacyPackage} from './legacy-source.js';
 const clone=v=>v===undefined?undefined:structuredClone(v);
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function conditions(rule){return [...(rule.conditions||[]),...(rule.groups||[]).flatMap(conditions)];}
 function parseBranches(branches){return branches.map(b=>({...b,condition:JSON.parse(b.conditionJson)}));}
-function visibilityRule(rule){return {match:rule.combinator==='OR'?'ANY (OR)':'ALL (AND)',conditions:(rule.conditions||[]).map(c=>({sourceQuestion:conditionSources[c.fieldCode]||null,field:c.fieldCode,operator:c.operator==='in'?'is one of':c.operator==='eq'?'equals':c.operator,values:c.operator==='in'?String(c.value).split(','):[c.value]})),groups:(rule.groups||[]).map(visibilityRule)};}
-export function convertPackage(pkg,baseline){
- if(!pkg||!Array.isArray(pkg.questions)||!Array.isArray(pkg.stages))throw Error('Invalid questionnaire package.');
- const ids=new Set(),stages=new Map(pkg.stages.map(s=>[s.stageCode,s]));
- const result=clone(baseline);result.title=pkg.questionnaireName;
- result.sourceRevision=pkg.exportedAtUtc;result.sourcePackage=clone(pkg);
- result.conditionSources=clone(conditionSources);result.sourceNotes=['Question wording, options, settings and visibility from questionnaire-v3.json.','Original package retained losslessly. Canonical mappings and remember-choice settings were not exported; screenshot settings are retained.','Visibility connectors show dependencies, not answer jumps. Question order follows stage sortOrder then question sortOrder.'];
- const ordered=[...pkg.questions].sort((a,b)=>(stages.get(a.stageCode)?.sortOrder??0)-(stages.get(b.stageCode)?.sortOrder??0)||a.sortOrder-b.sortOrder);
- const oldNodes=new Map(baseline.nodes.map(n=>[n.id,n]));
- result.nodes=ordered.map((q,i)=>{
-  if(typeof q.questionCode!=='string'||ids.has(q.questionCode)||typeof q.prompt!=='string'||!stages.has(q.stageCode)||!Array.isArray(q.options)||!Array.isArray(q.branches))throw Error('Invalid or duplicate question.');
-  ids.add(q.questionCode);const old=oldNodes.get(q.questionCode),stage=stages.get(q.stageCode),branches=parseBranches(q.branches);
-  const answers=[...q.options].sort((a,b)=>a.sortOrder-b.sortOrder).map(o=>{if(typeof o.optionValue!=='string'||typeof o.optionLabel!=='string')throw Error('Invalid option.');const prior=old?.answers.find(a=>a.value===o.optionValue||a.label===o.optionLabel);return {value:o.optionValue,label:o.optionLabel,unknown:o.isUnknownOption,helpText:o.helpText,sortOrder:o.sortOrder,target:prior?.target||''};});
-  return {...clone(old||{x:80+(i%5)*340,y:100+Math.floor(i/5)*260}),id:q.questionCode,questionCode:q.questionCode,type:'question',title:q.prompt,section:stage.stageName.toUpperCase(),strategyTag:q.routeCode||null,textIncomplete:false,sourceRecord:clone(q),sequenceTarget:ordered[i+1]?.questionCode||'',details:{...clone(old?.details||{}),whyWeAsk:q.whyItMatters,beginnerHelp:q.beginnerHelp,stage:q.stageCode,responseType:q.responseType,persona:q.personaMode,routeTag:q.routeCode||'Core (no route tag)',sourceUrl:q.sourceUrl,placeholder:q.placeholder,unit:q.unit,minValue:q.minValue,maxValue:q.maxValue,isRequired:q.isRequired,allowUnknown:q.allowUnknown,sortOrder:q.sortOrder,branches,visibility:branches.length===1?visibilityRule(branches[0].condition):{match:'ANY (OR)',conditions:[],groups:branches.map(b=>visibilityRule(b.condition))}},answers,notes:'Complete question data from uploaded questionnaire-v3.json. Canonical mappings and remember choice are retained only where supplied previously.'};
- });
- result.nodes.push(...baseline.nodes.filter(n=>n.type!=='question').map(clone));
- result.groups=baseline.groups.map((g,i)=>({...g,title:pkg.stages[i]?.stageName.toUpperCase()||g.title,stage:clone(pkg.stages[i])}));
- result.start=ordered[0]?.questionCode||'';
- result.referenceLinks=clone(baseline.referenceLinks||[]);
- const links=new Map(result.referenceLinks.map(l=>[l.source+'|'+l.target,l]));
- for(const n of result.nodes.filter(n=>n.sourceRecord)){
-  for(const branch of n.details.branches)for(const c of conditions(branch.condition)){
-   const source=conditionSources[c.fieldCode];if(!source||source===n.id)continue;
-   const key=source+'|'+n.id,existing=links.get(key),label=c.fieldCode+' '+c.operator+' '+c.value;
-   if(existing){existing.visibilityDependencies??=[];existing.visibilityDependencies.push({ruleOrder:branch.ruleOrder,...clone(c)});existing.visibilityLabel=existing.visibilityDependencies.map(d=>d.fieldCode+' '+d.operator+' '+d.value).join(' · ');}
-   else{const link={source,target:n.id,label,displayLabel:label,kind:'visibility',traced:true,evidence:'JSON visibility rule; source question associated by field meaning',visibilityDependencies:[{ruleOrder:branch.ruleOrder,...clone(c)}]};links.set(key,link);result.referenceLinks.push(link);}
+function visibilityRule(rule){return {match:rule.combinator==='OR'?'ANY (OR)':'ALL (AND)',conditions:(rule.conditions||[]).map(c=>({field:c.fieldCode,operator:c.operator,values:c.operator==='in'?String(c.value).split(','):[c.value]})),groups:(rule.groups||[]).map(visibilityRule)};}
+function ruleLabel(rule){const terms=[...(rule.conditions||[]).map(c=>c.fieldCode+' '+c.operator+' '+c.value),...(rule.groups||[]).map(r=>'('+ruleLabel(r)+')')];return terms.join(' '+(rule.combinator||'AND')+' ');}
+export function convertPackage(pkg){
+ if(!pkg||typeof pkg.questionnaireName!=='string'||!Array.isArray(pkg.questions)||!Array.isArray(pkg.stages))throw Error('Invalid questionnaire package.');
+ const orderedStages=[...pkg.stages].sort((a,b)=>a.sortOrder-b.sortOrder),stages=new Map(orderedStages.map(s=>[s.stageCode,s]));
+ if(stages.size!==orderedStages.length)throw Error('Duplicate stage.');
+ const result={version:1,title:pkg.questionnaireName,start:'',sourceModel:'json-only-v1',sourceRevision:pkg.exportedAtUtc,sourcePackage:clone(pkg),nodes:[],groups:[],referenceLinks:[],conditionSources:{},sourceConflicts:[],sourceNotes:['Recreated exclusively from the uploaded JSON.','Order connectors reflect sortOrder; rule connectors reflect exported visibility conditions.','No screenshot routes, settings, canonical mappings or inferred question-to-field mappings are included.'],connectionReview:{status:'JSON only',missingRoutes:[],note:'Order and visibility connectors are generated from the JSON and are not answer destinations.'},uploadProgress:{questionDataComplete:true,source:'questionnaire-v3.json',questions:pkg.questions.length}};
+ const ids=new Set();
+ for(const q of pkg.questions){if(typeof q.questionCode!=='string'||ids.has(q.questionCode)||typeof q.prompt!=='string'||!stages.has(q.stageCode)||!Array.isArray(q.options)||!Array.isArray(q.branches))throw Error('Invalid or duplicate question.');ids.add(q.questionCode);}
+ let cursor=100,rowTop=100,rowBottom=100;
+ for(const [stageIndex,stage] of orderedStages.entries()){
+  cursor=rowTop;const offsetX=(stageIndex%5)*1600;
+  const group={id:stage.stageCode,title:stage.stageName,members:[],stage:clone(stage)};result.groups.push(group);
+  const questions=pkg.questions.filter(q=>q.stageCode===stage.stageCode).sort((a,b)=>a.sortOrder-b.sortOrder);
+  for(const [i,q] of questions.entries()){
+   const branches=parseBranches(q.branches),n={id:q.questionCode,questionCode:q.questionCode,type:'question',title:q.prompt,section:stage.stageName,strategyTag:q.routeCode||null,x:850+offsetX,y:cursor,textIncomplete:false,sourceRecord:clone(q),sequenceTarget:questions[i+1]?.questionCode||'',details:{whyWeAsk:q.whyItMatters,beginnerHelp:q.beginnerHelp,stage:q.stageCode,responseType:q.responseType,persona:q.personaMode,routeTag:q.routeCode,sourceUrl:q.sourceUrl,placeholder:q.placeholder,unit:q.unit,minValue:q.minValue,maxValue:q.maxValue,isRequired:q.isRequired,allowUnknown:q.allowUnknown,sortOrder:q.sortOrder,branches,visibility:branches.length===1?visibilityRule(branches[0].condition):{match:'ANY (OR)',conditions:[],groups:branches.map(b=>visibilityRule(b.condition))}},answers:[...q.options].sort((a,b)=>a.sortOrder-b.sortOrder).map(o=>{if(typeof o.optionValue!=='string'||typeof o.optionLabel!=='string')throw Error('Invalid option.');return {value:o.optionValue,label:o.optionLabel,unknown:o.isUnknownOption,helpText:o.helpText,sortOrder:o.sortOrder,target:''};})};
+   result.nodes.push(n);group.members.push(n.id);if(!result.start)result.start=n.id;
+   if(i)result.referenceLinks.push({source:questions[i-1].questionCode,target:n.id,label:'Next in stage order',displayLabel:'Next',kind:'sequence',provenance:'json-order',traced:true,width:4,style:'solid',color:'#168d88'});
+   let ruleCursor=cursor;
+   for(const b of branches){const rule={id:'RULE:'+q.questionCode+':'+b.ruleOrder,type:'shape',shape:'note',title:ruleLabel(b.condition),section:'Visibility · '+(b.condition.combinator||'AND'),x:280+offsetX,y:ruleCursor,width:400,answers:[],sourceRule:clone(b),sourceOwner:n.id};if(ids.has(rule.id))throw Error('Reserved rule ID collision.');ids.add(rule.id);result.nodes.push(rule);group.members.push(rule.id);ruleCursor+=nodeHeight(rule)+30;result.referenceLinks.push({source:rule.id,target:n.id,label:rule.title,displayLabel:'Visible when '+(b.condition.combinator||'AND'),kind:'visibility',provenance:'json-visibility',routing:'straight',traced:true,width:4,color:'#6754d9',style:'solid',visibilityDependencies:conditions(b.condition).map(c=>({ruleOrder:b.ruleOrder,...clone(c)})),sourceRule:clone(b)});}
+   cursor=Math.max(cursor+nodeHeight(n),ruleCursor)+90;
   }
+  for(const b of parseBranches(stage.branches||[])){const rule={id:'STAGE-RULE:'+stage.stageCode+':'+b.ruleOrder,type:'shape',shape:'note',title:ruleLabel(b.condition),section:stage.stageName+' · stage condition',x:280+offsetX,y:cursor,width:400,answers:[],sourceRule:clone(b),sourceStage:clone(stage)};result.nodes.push(rule);group.members.push(rule.id);if(questions.length)result.referenceLinks.push({source:rule.id,target:questions[0].questionCode,label:rule.title,displayLabel:'Stage condition '+(b.condition.combinator||'AND'),kind:'visibility',provenance:'json-stage-visibility',routing:'straight',traced:true,width:4,color:'#6754d9',sourceRule:clone(b)});cursor+=nodeHeight(rule)+90;}
+  rowBottom=Math.max(rowBottom,cursor);if(stageIndex%5===4)rowTop=rowBottom+250;
  }
- result.sourceConflicts=detectConflicts(result);
- for(const conflict of result.sourceConflicts)if(conflict.source&&conflict.target){const link=links.get(conflict.source+'|'+conflict.target);if(link){link.sourceWarning=conflict.message;link.style='dashed';link.color='#d97706';link.executable=false;}}
- result.connectionReview={status:'JSON visibility imported; screenshot conflicts flagged',missingRoutes:['The export has visibility rules but no explicit answer destinations or canonical mapping catalog. Strategy entry conditions are not exported.'],note:'Visibility dependencies are not executable answer jumps. Screenshot references remain available.',conflicts:clone(result.sourceConflicts)};
- result.pendingSourceDetails=[];result.uploadProgress={questionDataComplete:true,source:'questionnaire-v3.json',questions:ordered.length};
- // Fresh projects get room for full wording and options. Upgrades never copy these coordinates.
- let cursor=100;
- for(const group of result.groups){
-  for(const id of group.members){const n=result.nodes.find(n=>n.id===id);if(!n||n.type!=='question')continue;n.y=cursor;cursor+=nodeHeight(n)+90;}
-  cursor+=150;
- }
- const stop=result.nodes.find(n=>n.id==='STOP-TX');if(stop)stop.y=result.nodes.find(n=>n.id==='Q001')?.y||100;
  return validate(result);
 }
-export function detectConflicts(flow){
- const conflicts=[],node=id=>flow.nodes.find(n=>n.id===id);
- for(const [source,target,message] of [
-  ['Q043','Q053','Earlier No connector conflicts with Q053 visibility requiring mortgage.first.exists = Yes.'],
-  ['Q049','Q058','Earlier Yes/Maybe label does not match the exported Q049 options; Q058 has its own OR visibility rule.'],
-  ['Q099','Q150','Earlier Yes connector conflicts with Q099 being a currency input.']
- ])if(node(source)&&node(target))conflicts.push({source,target,message});
- for(const n of flow.nodes)for(const b of n.details?.branches||[])for(const c of conditions(b.condition)){
-  const source=conditionSources[c.fieldCode],parent=node(source);if(!parent)continue;
-  const values=c.operator==='in'?String(c.value).split(','):[c.value];
-  if(parent.answers.length&&values.some(v=>!parent.answers.some(a=>a.value===v)))conflicts.push({source,target:n.id,field:c.fieldCode,message:`${n.id} visibility uses ${values.join(', ')}, which does not match all exported option values on ${source}.`});
- }
- for(const n of flow.nodes)if(n.sourceRecord&&n.title.trim()==='New question')conflicts.push({target:n.id,message:'The uploaded source still names this card "New question"; a final prompt was not supplied.'});
- return conflicts;
-}
-
 // Three-way source upgrade: only fields still equal to their screenshot source
 // are replaced. Canvas geometry, groups and edited destinations are user-owned.
 export function upgradeSource(current,source,baseline){
- if(current.sourceRevision===source.sourceRevision&&same(current.sourcePackage,source.sourcePackage))return {flow:current,changed:false,preserved:[]};
- if(current.sourcePackage){baseline=convertPackage(current.sourcePackage,baseline);}
- const result=mergeSource(current,source),preserved=[];
+ if(current.sourceModel===source.sourceModel&&current.sourceRevision===source.sourceRevision&&same(current.sourcePackage,source.sourcePackage))return {flow:current,changed:false,preserved:[]};
+ const screenshotGroups=baseline.groups;
+ if(current.sourcePackage){baseline=current.sourceModel==='json-only-v1'?convertPackage(current.sourcePackage):convertLegacyPackage(current.sourcePackage,baseline);}
+ const previous=clone(current),preserved=[];
+ const oldLinks=new Map((baseline.referenceLinks||[]).map(l=>[l.source+'|'+l.target,l]));
+ previous.referenceLinks=(previous.referenceLinks||[]).filter(l=>{const old=oldLinks.get(l.source+'|'+l.target);if(!old||l.userCreated)return true;return false;});
+ const result=mergeSource(previous,source);
+ for(const link of result.referenceLinks){const prior=current.referenceLinks?.find(l=>l.source===link.source&&l.target===link.target),old=oldLinks.get(link.source+'|'+link.target);if(!prior||!old)continue;for(const key of ['color','width','arrow','routing','points','style'])if(prior[key]!==undefined&&!same(prior[key],old[key]))link[key]=clone(prior[key]);}
+ // Place new rule cards beside their current target, even if the user moved it.
+ const originalIds=new Set(current.nodes.map(n=>n.id));
+ for(const rule of result.nodes.filter(n=>(n.sourceOwner||n.sourceStage)&&!originalIds.has(n.id))){const owner=rule.sourceOwner||source.nodes.find(n=>n.details?.stage===rule.sourceStage.stageCode)?.id;const target=result.nodes.find(n=>n.id===owner);if(target){rule.x=target.x-570;rule.y=target.y;}}
+ // Keep rules with the actual saved group of their target; never regroup existing cards.
+ for(const rule of result.nodes.filter(n=>n.sourceOwner||n.sourceStage)){
+  const owner=rule.sourceOwner||source.nodes.find(n=>n.details?.stage===rule.sourceStage.stageCode)?.id;
+  const actual=current.groups.find(g=>g.members.includes(owner));if(!actual)continue;
+  for(const g of result.groups)g.members=g.members.filter(id=>id!==rule.id);
+  result.groups.find(g=>g.id===actual.id)?.members.push(rule.id);
+ }
+ result.groups=result.groups.filter(g=>g.members.length);
+ for(const g of result.groups){const oldGroup=baseline.groups.find(b=>b.id===g.id),fresh=source.groups.find(s=>s.members.some(id=>g.members.includes(id)&&source.nodes.find(n=>n.id===id)?.type==='question'));if(oldGroup&&fresh&&(g.title===oldGroup.title||g.title===screenshotGroups.find(s=>s.id===g.id)?.title)){g.title=fresh.title;g.stage=clone(fresh.stage);}}
+
  const oldNodes=new Map(baseline.nodes.map(n=>[n.id,n]));
+ const removed=new Set(baseline.nodes.filter(n=>!source.nodes.some(s=>s.id===n.id)&&n.id==='STOP-TX').map(n=>n.id));
+ result.nodes=result.nodes.filter(n=>!removed.has(n.id)&&(!n.sourceOwner||result.nodes.some(t=>t.id===n.sourceOwner&&!removed.has(t.id))));const keptIds=new Set(result.nodes.map(n=>n.id));for(const g of result.groups)g.members=g.members.filter(id=>keptIds.has(id));result.groups=result.groups.filter(g=>g.members.length);
+ for(const n of result.nodes)for(const a of n.answers)if(removed.has(a.target))a.target='';
+ result.referenceLinks=result.referenceLinks.filter(l=>keptIds.has(l.source)&&keptIds.has(l.target));
  function mergeValue(currentValue,oldValue,newValue,path){
   if(same(currentValue,oldValue)||currentValue===undefined)return clone(newValue);
   if(newValue&&currentValue&&typeof newValue==='object'&&!Array.isArray(newValue)&&!Array.isArray(currentValue)){
-   const value=clone(currentValue);for(const key of Object.keys(newValue))value[key]=mergeValue(currentValue[key],oldValue?.[key],newValue[key],path+'.'+key);return value;
+   const value=clone(currentValue);for(const key of Object.keys(oldValue||{}))if(!(key in newValue)&&same(currentValue[key],oldValue[key]))delete value[key];for(const key of Object.keys(newValue))value[key]=mergeValue(currentValue[key],oldValue?.[key],newValue[key],path+'.'+key);return value;
   }
   if(!same(currentValue,newValue))preserved.push(path);return clone(currentValue);
  }
@@ -103,13 +81,14 @@ export function upgradeSource(current,source,baseline){
   n.sourceRecord=clone(incoming.sourceRecord);n.sequenceTarget=incoming.sequenceTarget;
  }
  for(const incoming of source.referenceLinks||[]){const l=result.referenceLinks.find(l=>l.source===incoming.source&&l.target===incoming.target);const old=baseline.referenceLinks?.find(l=>l.source===incoming.source&&l.target===incoming.target);if(!l)continue;for(const key of ['visibilityDependencies','visibilityLabel','sourceWarning','executable','evidence'])if(incoming[key]!==undefined)l[key]=clone(incoming[key]);if(old&&incoming.sourceWarning){for(const key of ['color','style'])if(l[key]===undefined||same(l[key],old[key]))l[key]=incoming[key];}}
- result.sourceRevision=source.sourceRevision;result.sourcePackage=clone(source.sourcePackage);result.conditionSources=clone(source.conditionSources);result.sourceConflicts=clone(source.sourceConflicts);result.connectionReview=clone(source.connectionReview);result.uploadProgress=clone(source.uploadProgress);result.sourceUpgrade={revision:source.sourceRevision,preservedFields:[...new Set(preserved)]};
+ for(const l of result.referenceLinks)l.width=Math.max(4,l.width||4);for(const n of result.nodes)for(const a of n.answers)if(a.target)a.width=Math.max(4,a.width||4);
+ result.sourceModel=source.sourceModel;result.sourceRevision=source.sourceRevision;result.sourcePackage=clone(source.sourcePackage);result.conditionSources=clone(source.conditionSources);result.sourceConflicts=clone(source.sourceConflicts);result.connectionReview=clone(source.connectionReview);result.uploadProgress=clone(source.uploadProgress);for(const key of ['retiredReferenceLinks','pendingSourceDetails'])delete result[key];result.sourceNotes=clone(source.sourceNotes);result.sourceUpgrade={revision:source.sourceRevision,preservedFields:[...new Set(preserved)]};
  return {flow:validate(result),changed:true,preserved:result.sourceUpgrade.preservedFields};
 }
 
 // Manually imported packages remain authoritative until the user explicitly
 // reviews deployed source data. A deployment must not roll them back on reload.
 export function upgradeForDeployment(current,source,baseline){
- if(current.sourceImport==='manual'||(current.sourceRevision&&Date.parse(current.sourceRevision)>Date.parse(source.sourceRevision)))return {flow:current,changed:false,preserved:[]};
+ if((current.sourceImport==='manual'&&current.sourceModel===source.sourceModel)||(current.sourceRevision&&Date.parse(current.sourceRevision)>Date.parse(source.sourceRevision)))return {flow:current,changed:false,preserved:[]};
  return upgradeSource(current,source,baseline);
 }

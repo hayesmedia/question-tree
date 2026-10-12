@@ -14,11 +14,7 @@ test('all 149 records, stage definitions and every exported field survive conver
  for(const q of pkg.questions){const n=source.nodes.find(n=>n.id===q.questionCode);assert.equal(n.title,q.prompt);assert.equal(n.textIncomplete,false);assert.deepEqual(n.sourceRecord,q);assert.equal(n.details.beginnerHelp,q.beginnerHelp);assert.equal(n.details.responseType,q.responseType);assert.equal(n.answers.length,q.options.length);for(const o of q.options){const a=n.answers.find(a=>a.value===o.optionValue);assert.equal(a.label,o.optionLabel);assert.equal(a.helpText,o.helpText);assert.equal(a.unknown,o.isUnknownOption);}assert.deepEqual(n.details.branches.map(({condition,...b})=>b),q.branches);}
  assert.equal(issues(source).length,0);
 });
-test('every visibility condition is preserved and represented by a source dependency',()=>{
- let count=0;for(const n of source.nodes)for(const b of n.details?.branches||[]){count++;for(const c of conditions(b.condition)){const from=source.conditionSources[c.fieldCode];assert.ok(from,c.fieldCode);const l=source.referenceLinks.find(l=>l.source===from&&l.target===n.id);assert.ok(l);assert.ok(l.visibilityDependencies.some(d=>d.fieldCode===c.fieldCode&&d.value===c.value&&d.operator===c.operator));}}
- assert.equal(count,39);assert.ok(source.sourceConflicts.some(c=>c.target==='Q191'));
- for(const [from,to] of [['Q043','Q053'],['Q049','Q058'],['Q099','Q150'],['Q010','Q011']]){const l=source.referenceLinks.find(l=>l.source===from&&l.target===to);assert.ok(l.sourceWarning);assert.equal(l.executable,false);}
-});
+test('every exported branch has a literal condition card and no inferred question mapping',()=>{let count=0;for(const n of source.nodes.filter(n=>n.type==='question'))for(const b of n.details.branches){count++;const rule=source.nodes.find(r=>r.sourceOwner===n.id&&r.sourceRule.ruleOrder===b.ruleOrder);assert.ok(rule);assert.deepEqual(rule.sourceRule,b);const l=source.referenceLinks.find(l=>l.source===rule.id&&l.target===n.id);assert.ok(l);assert.deepEqual(l.visibilityDependencies.map(({ruleOrder,...c})=>c),conditions(b.condition));}assert.equal(count,39);assert.deepEqual(source.conditionSources,{});assert.equal(source.sourceConflicts.length,0);assert.ok(source.referenceLinks.every(l=>l.width===4));});
 test('safe upgrade fills unchanged fragments while preserving geometry, grouping, routes and custom fields',()=>{
  const saved=structuredClone(baseline);const n=saved.nodes.find(n=>n.id==='Q088');n.x=9000;n.y=8000;n.width=400;n.rotation=15;
  const custom=saved.nodes.find(n=>n.id==='Q004');custom.title='My custom prompt';custom.details.whyWeAsk='My own explanation';custom.answers[0].target='Q043';custom.answers.splice(1,1);
@@ -28,8 +24,8 @@ test('safe upgrade fills unchanged fragments while preserving geometry, grouping
  const upgraded=upgradeSource(saved,source,baseline);validate(upgraded.flow);
  const updated=upgraded.flow.nodes.find(n=>n.id==='Q088');assert.equal(updated.title,pkg.questions.find(q=>q.questionCode==='Q088').prompt);for(const key of ['x','y','width','rotation'])assert.equal(updated[key],n[key]);
  const retained=upgraded.flow.nodes.find(n=>n.id==='Q004');assert.equal(retained.title,custom.title);assert.equal(retained.details.whyWeAsk,custom.details.whyWeAsk);assert.equal(retained.answers[0].target,'Q043');assert.ok(!retained.answers.some(a=>a.value==='Resale profit'));assert.equal(retained.details.beginnerHelp,pkg.questions.find(q=>q.questionCode==='Q004').beginnerHelp);
- assert.deepEqual(upgraded.flow.groups,saved.groups);assert.ok(!upgraded.flow.nodes.some(n=>n.id==='Q090'));
- const retainedLink=upgraded.flow.referenceLinks.find(l=>l.source==='Q099'&&l.target==='Q150');assert.equal(retainedLink.label,'My route');assert.equal(retainedLink.color,'#abcdef');assert.deepEqual(retainedLink.points,link.points);assert.ok(retainedLink.sourceWarning);
+ assert.equal(upgraded.flow.groups.find(g=>g.id==='custom-group').title,'My group');assert.ok(upgraded.flow.groups.find(g=>g.id==='custom-group').members.includes('Q004'));assert.ok(!upgraded.flow.nodes.some(n=>n.id==='Q090'));
+ const retainedLink=upgraded.flow.referenceLinks.find(l=>l.source==='Q099'&&l.target==='Q150');assert.equal(retainedLink,undefined);assert.ok(!upgraded.flow.nodes.some(n=>n.id==='STOP-TX'));
  assert.ok(upgraded.preserved.includes('Q004.title'));assert.equal(upgradeSource(upgraded.flow,source,baseline).changed,false);
 });
 test('new settings are filled when a saved card has a partial custom details object',()=>{
@@ -39,15 +35,15 @@ test('new settings are filled when a saved card has a partial custom details obj
 test('project CSV/PDF include all source prompts and complete configuration, metadata and conflicts',()=>{
  const c=csv(source),r=report(source);for(const q of pkg.questions){assert.ok(c.includes(q.prompt.replaceAll('"','""')),q.questionCode);const safe=q.prompt.replaceAll('&','&amp;').replaceAll("'",'&#39;');assert.ok(r.includes(safe),q.questionCode);}
  for(const field of ['Beginner help','Placeholder','Required','Allow unknown','Stage definition','Original question record'])assert.ok(c.includes(field));
- assert.ok(r.includes('Q099 being a currency input'));assert.ok(r.includes('No answer options are defined for this input.'));assert.ok(r.includes('blockedHeadline'));
+ assert.ok(!r.includes('Earlier No connector'));assert.ok(r.includes('stroke-width="4"'));assert.ok(r.includes('No answer options are defined for this input.'));assert.ok(r.includes('blockedHeadline'));
 });
 test('preview uses typed values, skips false visibility and retains unresolved source conditions for review',()=>{
  const find=id=>source.nodes.find(n=>n.id===id);
- assert.equal(visibilityState(find('Q044'),source,{Q043:'No'}),false);
+ assert.equal(visibilityState(find('Q044'),source,{'mortgage.first.exists':'No'}),false);
  assert.equal(visibilityState(find('Q044'),source,{}),null);
- assert.equal(visibilityState(find('Q058'),source,{Q043:'No',Q051:'Maybe',Q052:'No',Q053:'No'}),true);
- assert.equal(visibilityState(find('Q011'),source,{Q010:'New home construction'}),null);
- assert.equal(nextPreview(source,'Q043',{Q043:'No'}).id,'Q050');
+ assert.equal(visibilityState(find('Q058'),source,{'mortgage.first.exists':'No','seller.openToSellerFinance':'Maybe','seller.openToSubjectTo':'No','seller.openToWrap':'No'}),true);
+ assert.equal(visibilityState(find('Q011'),source,{'property.type':'New home construction'}),false);
+ assert.equal(nextPreview(source,'Q043',{'mortgage.first.exists':'No'}).id,'G008');
  assert.equal(nextPreview(source,'Q099',{},'STAGE_5C').id,'Q110');
  assert.equal(nextPreview(source,'Q119',{},'STAGE_5C').id,'Q150');
  assert.equal(checkResponse({...find('Q088'),details:{responseType:'CURRENCY',minValue:10,maxValue:20}},'8'),'Enter 10 or more.');
@@ -65,4 +61,14 @@ test('deployments do not revert a manually imported package or a newer source ve
  const {upgradeForDeployment}=await import('../src/source-data.js');const manual=structuredClone(source);manual.sourceImport='manual';manual.sourcePackage.questions[0].prompt='My imported prompt';
  assert.equal(upgradeForDeployment(manual,source,baseline).changed,false);
  const newer=structuredClone(source);newer.sourceRevision='2027-01-01T00:00:00Z';assert.equal(upgradeForDeployment(newer,source,baseline).changed,false);
+});
+test('JSON-only conversion is independent of every screenshot detail and group',()=>{
+ const poison={nodes:[{id:'Q001',title:'WRONG',answers:[{label:'Bogus',target:'fake'}],details:{canonicalMappings:['WRONG']}}],groups:[{title:'WRONG',members:['fake']}],referenceLinks:[{source:'Q043',target:'Q053',label:'No'}]};assert.deepEqual(convertPackage(pkg,poison),source);
+ assert.equal(source.nodes.filter(n=>n.sourceRule).length,40);assert.equal(source.groups.length,10);
+ for(const stage of pkg.stages){const group=source.groups.find(g=>g.id===stage.stageCode);assert.equal(group.title,stage.stageName);assert.deepEqual(group.stage,stage);const ids=group.members.filter(id=>source.nodes.find(n=>n.id===id).type==='question');assert.deepEqual(ids,pkg.questions.filter(q=>q.stageCode===stage.stageCode).sort((a,b)=>a.sortOrder-b.sortOrder).map(q=>q.questionCode));}
+});
+test('legacy JSON migration removes screenshot routes/settings, preserves custom work and stays idempotent',async()=>{
+ const {convertLegacyPackage}=await import('../src/legacy-source.js');const saved=convertLegacyPackage(pkg,baseline);saved.nodes.find(n=>n.id==='Q088').x=5000;saved.nodes.find(n=>n.id==='Q088').y=6000;saved.nodes.find(n=>n.id==='Q004').title='Custom objective';saved.referenceLinks.push({source:'Q001',target:'Q140',label:'Custom link',userCreated:true,width:1});
+ const upgraded=upgradeSource(saved,source,baseline).flow;assert.equal(upgraded.nodes.find(n=>n.id==='Q088').x,5000);assert.equal(upgraded.nodes.find(n=>n.id==='Q004').title,'Custom objective');assert.equal(upgraded.nodes.find(n=>n.id==='Q001').details.canonicalMappings,undefined);assert.equal(upgraded.nodes.find(n=>n.id==='Q001').details.rememberChoice,undefined);
+ assert.ok(!upgraded.referenceLinks.some(l=>l.source==='Q099'&&l.target==='Q150'));assert.ok(upgraded.referenceLinks.find(l=>l.label==='Custom link').width>=4);assert.ok(!upgraded.nodes.some(n=>n.id==='STOP-TX'));assert.equal(upgraded.groups.length,10);assert.equal(upgradeSource(upgraded,source,baseline).changed,false);
 });

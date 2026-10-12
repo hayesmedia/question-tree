@@ -17,7 +17,7 @@ export function visibilityState(n,flow,responses,visited=new Set()){
  const rule=n.details?.visibility;if(!rule)return true;
  function evaluate(r){
   const states=(r.conditions||[]).map(c=>{
-   const source=c.sourceQuestion||flow.conditionSources?.[c.field];if(!source)return null;
+   const source=Object.hasOwn(responses,c.field)?c.field:c.sourceQuestion||flow.conditionSources?.[c.field];if(!source)return null;
    if(responses[source]===undefined||responses[source]===null){const parent=flow.nodes.find(p=>p.id===source);if(parent&&visibilityState(parent,flow,responses,visited)===false)return false;return null;}
    let actual=responses[source];if(c.field==='property.address.state')actual=actual==='Yes'?'TX':actual==='No'?'NON_TX':actual;
    const values=c.values||[c.value];if(['equals','eq'].includes(c.operator))return actual===values[0];

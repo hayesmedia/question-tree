@@ -6,31 +6,19 @@ Internal questionnaire and diagram editor. Run `npm start` with Node.js 20+; the
 
 `data/questionnaire-v3.json` is the original uploaded package, preserved without changing its question data. It contains **149 questions in 10 stages**, including 107 single-select questions, 42 typed inputs and 39 question visibility rules. Its description says 134 questions, but the actual question array contains 149.
 
-`flows/texas-questionnaire.json` is the editor version. It includes complete prompts, option values/labels/help/unknown flags/order, explanations, beginner help, response types, persona, route codes, URLs, placeholders, units, limits, required/unknown settings, order and parsed visibility branches. Original question records and all stage definitions are retained in the project. Run `node scripts/import-questionnaire.js` to regenerate the editor flow and completeness audit from the package and screenshot baseline.
+`flows/texas-questionnaire.json` is recreated exclusively from this JSON. It includes complete prompts, option values/labels/help/unknown flags/order, explanations, beginner help, response types, persona, route codes, URLs, placeholders, units, limits, required/unknown settings, order and parsed visibility branches. All original question records and stage definitions are retained. Run `node scripts/import-questionnaire.js` to regenerate it; generation has no screenshot input.
 
-The package does **not** contain canonical mappings, remember-choice settings, explicit answer destinations or strategy-entry conditions. Existing screenshot mappings and remember-choice settings are retained; missing values are not invented. Visibility dependency connectors associate field conditions with questions by field meaning, separately from canonical mappings. These dependencies are not answer jumps.
+Each stage has its JSON title and ordered questions. Teal connectors show question order within the stage. Purple connectors join literal visibility-condition cards to their questions. Condition cards retain the entire AND/OR expression and the original branch JSON; the stage condition is also represented. No question-to-field mappings, screenshot routes, Texas stop card or screenshot-only settings are inferred. Route-validation stages remain separate because the JSON does not specify their entry edges. Q191 remains exactly **New question**, as provided.
 
-**Question data** opens the source review and downloads the original package. Select a card and use **Review uploaded source details** to explicitly replace that card's details if you want to override custom wording. **Import** accepts both editor project JSON and raw questionnaire packages: editor project imports replace the canvas after a backup; questionnaire packages merge source data while preserving custom work. Manually imported packages remain authoritative across reloads; deployments do not replace them automatically.
+Connectors default to **4 px** on the canvas and in PDF diagrams. Canvas strokes retain their visual thickness when zooming out. The connection inspector can adjust individual widths.
 
-## Existing work and updates
+## Existing work and JSON recreation
 
-Deployments upgrade unchanged screenshot fragments automatically using a three-way comparison against `flows/questionnaire-screenshot-baseline.json`. Before an upgrade, the existing browser project is saved as a backup. Custom prompts/settings/answer destinations, removed options, positions, formatting, groups, custom connectors and deleted questions are preserved. Source updates fill missing fields and add missing dependency references. Source connectors intentionally deleted by the user stay deleted. **Question data** lists the fields kept as custom edits.
+Existing browser/team projects receive a backed-up migration that removes old source-owned screenshot connectors and unchanged screenshot-only settings. It keeps card positions, custom wording/settings, custom-created connectors, edited destinations, deleted questions and existing group memberships. New JSON condition cards join their targets' actual saved groups. The old screenshot baseline and legacy converter are retained solely to distinguish old source data from user edits during migration; they are not used to generate the current workflow.
 
-If a browser cannot save the backup, the upgrade pauses and leaves the existing project intact. **Backup** downloads the saved pre-import/pre-update project. Export **JSON** for an independent backup; browser copies depend on the same origin and profile. Loading an older team project also upgrades its source data, with its original version retained in `question-tree-source-backup` and the current local canvas backed up separately. Team saves remain explicit.
+**Question data → Recreate canvas from JSON only** replaces the active canvas with the clean JSON reconstruction and its generated layout, after saving a backup. This also clears local custom additions from the active canvas; they remain in the backup. Use it when a clean reconstruction is desired instead of retaining a previous layout.
 
-Fresh projects allow space for complete wording and answer options. Source upgrades never reposition an existing saved layout; expanded cards may need rearranging in a previously compact layout.
-
-## Source issues
-
-The source review and `docs/question-data-audit.json` / `.csv` flag five issues:
-
-- Q043 No → Q053 conflicts with Q053 requiring an existing mortgage.
-- Q049's earlier Yes/Maybe → Q058 label does not match the exported options; Q058 has a separate OR visibility rule.
-- Q099 Yes → Q150 conflicts with Q099 being a currency input.
-- Q011 requires property values that are not offered by Q010.
-- Q191 still has the source prompt **New question**.
-
-As requested, JSON supplies the question wording/options/visibility; conflicting screenshot connectors remain flagged visual references. Other unconfirmed screenshot connectors are retained. The export does not resolve all strategy-entry or answer-destination paths. Orange dashed connectors mark source conflicts, teal connectors indicate traced references or visibility dependencies, and other dashed connectors remain unconfirmed.
+**Question data** downloads the original package. Per-card **Review uploaded source details** applies source details explicitly. **Import** accepts editor projects (replace after backup) or questionnaire packages (safe merge). A failed browser backup blocks updates. **Backup** downloads the previous project; export **JSON** for an independent copy. Manually imported packages remain authoritative across reloads.
 
 ## Editor controls
 
@@ -42,7 +30,7 @@ Screenshot uploads are session-only references, not automatic OCR imports. The d
 
 ## Preview and exports
 
-**Test questionnaire** supports select, text, currency, percentage, number, year and date answers. It uses stage/question order when no explicit answer destination exists, and skips questions with false visibility conditions. It shows unresolved conditions for review rather than silently hiding them. Because strategy-entry conditions are not exported, choose a strategy section for the test explicitly. The known Texas stop remains executable. Typed values are temporary preview responses and do not change the editor's source records.
+**Test questionnaire** supports select, text, currency, percentage, number, year and date answers. It uses stage/question order when no explicit answer destination exists. Visibility rules can evaluate supplied values keyed by their exact field codes; the export does not map question answers to those fields, so the preview shows unresolved conditions for review rather than inventing mappings or hiding questions. Because strategy-entry conditions are not exported, choose a strategy section for the test explicitly. The stage’s stop configuration is retained exactly in its JSON definition; a screenshot-derived Yes/No stop route is not added. Typed values are temporary preview responses and do not change the editor's source records.
 
 **Project CSV** and **Project PDF** cover the entire project. CSV includes configuration, raw source question records, stage definitions, metadata, groups, source warnings, connectors and formatting. PDF includes tiled diagrams, full prompts and question details, help, options, source issues and stage rules. Choose **Print / Save as PDF** in the report. Project JSON retains the original package. Uploaded screenshot images are not embedded in exports.
 
