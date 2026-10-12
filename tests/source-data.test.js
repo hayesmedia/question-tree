@@ -72,3 +72,15 @@ test('legacy JSON migration removes screenshot routes/settings, preserves custom
  const upgraded=upgradeSource(saved,source,baseline).flow;assert.equal(upgraded.nodes.find(n=>n.id==='Q088').x,5000);assert.equal(upgraded.nodes.find(n=>n.id==='Q004').title,'Custom objective');assert.equal(upgraded.nodes.find(n=>n.id==='Q001').details.canonicalMappings,undefined);assert.equal(upgraded.nodes.find(n=>n.id==='Q001').details.rememberChoice,undefined);
  assert.ok(!upgraded.referenceLinks.some(l=>l.source==='Q099'&&l.target==='Q150'));assert.ok(upgraded.referenceLinks.find(l=>l.label==='Custom link').width>=4);assert.ok(!upgraded.nodes.some(n=>n.id==='STOP-TX'));assert.equal(upgraded.groups.length,10);assert.equal(upgradeSource(upgraded,source,baseline).changed,false);
 });
+test('long dependencies and stage bridges connect the JSON flow without screenshot routes',()=>{
+ const edge=(a,b)=>source.referenceLinks.find(l=>l.source===a&&l.target===b);
+ assert.ok(edge('Q007','Q010'));assert.ok(edge('Q191','Q070'));
+ for(const [a,b,field,value] of [['Q043','Q053','mortgage.first.exists','Yes'],['Q012','Q118','property.occupied','Tenant'],['Q095','Q156','deal.refinanceAvailable','Yes']]){const l=edge(a,b);assert.ok(l);assert.equal(l.inferred,true);assert.equal(l.executable,false);assert.ok(l.visibilityDependencies.some(c=>c.fieldCode===field&&c.value===value));}
+ for(const [first,last] of [['Q130','QG-WHOLESALE-CONDUCT'],['Q140','Q146'],['Q150','Q157'],['Q160','Q169']]){assert.ok(edge('Q119',first));assert.ok(edge(last,'Q180'));}
+ assert.ok(!edge('Q099','Q150'));assert.ok(!edge('Q049','Q058'));assert.equal(edge('Q043','Q053').label.includes('No'),false);
+ assert.deepEqual(source.conditionSources,{});assert.ok(source.referenceLinks.filter(l=>l.inferred).every(l=>l.style==='dashed'&&l.width===4));
+});
+test('v1 migration restores long connections while preserving existing positions, group names and custom arrows',()=>{
+ const old=structuredClone(source);old.sourceModel='json-only-v1';old.referenceLinks=old.referenceLinks.filter(l=>!['dependency','stage-transition'].includes(l.kind));const q=old.nodes.find(n=>n.id==='Q118');q.x=-4200;q.y=7800;old.groups[0].title='My custom setup';old.referenceLinks.push({source:'Q001',target:'Q150',userCreated:true,label:'My custom connector'});
+ const upgraded=upgradeSource(old,source,baseline).flow;assert.ok(upgraded.referenceLinks.find(l=>l.source==='Q012'&&l.target==='Q118'));assert.equal(upgraded.nodes.find(n=>n.id==='Q118').x,-4200);assert.equal(upgraded.nodes.find(n=>n.id==='Q118').y,7800);assert.equal(upgraded.groups[0].title,'My custom setup');assert.ok(upgraded.referenceLinks.find(l=>l.label==='My custom connector'));assert.equal(upgradeSource(upgraded,source,baseline).changed,false);
+});

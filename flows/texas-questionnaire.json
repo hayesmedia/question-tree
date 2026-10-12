@@ -2,7 +2,7 @@
   "version": 1,
   "title": "Texas Investor Deal Discovery (James)",
   "start": "Q001",
-  "sourceModel": "json-only-v1",
+  "sourceModel": "json-linked-v2",
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
     "questionnaireCode": "GUIDED_INVESTOR_DEAL_JAMES",
@@ -21196,7 +21196,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.type",
+          "operator": "in",
+          "value": "New home incomplete,New home complete"
+        }
+      ]
     },
     {
       "source": "RULE:Q011:1",
@@ -21315,7 +21323,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasMud",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:G006:1",
@@ -21541,7 +21557,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.addendums.has.section1031Exchange",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:G017:1",
@@ -21636,7 +21660,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.addendums.has.thirdPartyFinancingAddendum",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:Q032:1",
@@ -21719,7 +21751,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.maritalHomesteadStatus",
+          "operator": "in",
+          "value": "Married - homestead,Unknown"
+        }
+      ]
     },
     {
       "source": "RULE:G002:1",
@@ -21790,7 +21830,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:Q044:1",
@@ -21884,7 +21932,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.status",
+          "operator": "in",
+          "value": "In foreclosure,Behind"
+        }
+      ]
     },
     {
       "source": "RULE:G008:1",
@@ -23121,7 +23177,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "deal.refinanceAvailable",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:Q096:1",
@@ -23288,7 +23352,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "insurance.insurable",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:G011:1",
@@ -24001,7 +24073,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "creativeFinance.isWrap",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:Q167:1",
@@ -24131,7 +24211,15 @@
       "traced": true,
       "width": 4,
       "style": "solid",
-      "color": "#168d88"
+      "color": "#168d88",
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "contract.fullyExecuted",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
     },
     {
       "source": "RULE:Q183:1",
@@ -24356,6 +24444,1939 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
+    },
+    {
+      "source": "QG-MUD",
+      "target": "G007",
+      "label": "property.hasMud eq Yes",
+      "displayLabel": "property.hasMud eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "property.hasMud",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasMud",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q045",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q045",
+      "target": "G009",
+      "label": "mortgage.first.status in In foreclosure,Behind",
+      "displayLabel": "mortgage.first.status in In foreclosure,Behind",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.status",
+              "operator": "in",
+              "value": "In foreclosure,Behind"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.status",
+          "operator": "in",
+          "value": "In foreclosure,Behind"
+        }
+      ]
+    },
+    {
+      "source": "Q045",
+      "target": "G010",
+      "label": "mortgage.first.status in In foreclosure,Behind",
+      "displayLabel": "mortgage.first.status in In foreclosure,Behind",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.status",
+              "operator": "in",
+              "value": "In foreclosure,Behind"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.status",
+          "operator": "in",
+          "value": "In foreclosure,Behind"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q046",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q047",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q048",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q049",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q052",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q053",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q054",
+      "label": "mortgage.first.exists eq No",
+      "displayLabel": "mortgage.first.exists eq No",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"No\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "No"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "No"
+        }
+      ]
+    },
+    {
+      "source": "Q051",
+      "target": "Q055",
+      "label": "seller.openToSellerFinance in Yes,Maybe",
+      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "seller.openToSellerFinance",
+              "operator": "in",
+              "value": "Yes,Maybe"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSellerFinance",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q051",
+      "target": "Q056",
+      "label": "seller.openToSellerFinance in Yes,Maybe",
+      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "seller.openToSellerFinance",
+              "operator": "in",
+              "value": "Yes,Maybe"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSellerFinance",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q057",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q058",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "mortgage.first.exists",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q051",
+      "target": "Q058",
+      "label": "seller.openToSellerFinance in Yes,Maybe",
+      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "mortgage.first.exists",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSellerFinance",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q052",
+      "target": "Q058",
+      "label": "seller.openToSubjectTo in Yes,Maybe",
+      "displayLabel": "seller.openToSubjectTo in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "mortgage.first.exists",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSubjectTo",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q053",
+      "target": "Q058",
+      "label": "seller.openToWrap in Yes,Maybe",
+      "displayLabel": "seller.openToWrap in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "mortgage.first.exists",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToWrap",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q051",
+      "target": "Q059",
+      "label": "seller.openToSellerFinance in Yes,Maybe",
+      "displayLabel": "seller.openToSellerFinance in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSellerFinance",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q052",
+      "target": "Q059",
+      "label": "seller.openToSubjectTo in Yes,Maybe",
+      "displayLabel": "seller.openToSubjectTo in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToSubjectTo",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q053",
+      "target": "Q059",
+      "label": "seller.openToWrap in Yes,Maybe",
+      "displayLabel": "seller.openToWrap in Yes,Maybe",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"seller.openToSellerFinance\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToSubjectTo\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"seller.openToWrap\",\"operator\":\"in\",\"value\":\"Yes,Maybe\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSellerFinance",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToSubjectTo",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "seller.openToWrap",
+                  "operator": "in",
+                  "value": "Yes,Maybe"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "seller.openToWrap",
+          "operator": "in",
+          "value": "Yes,Maybe"
+        }
+      ]
+    },
+    {
+      "source": "Q043",
+      "target": "Q060",
+      "label": "mortgage.first.exists eq Yes",
+      "displayLabel": "mortgage.first.exists eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "mortgage.first.exists",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "mortgage.first.exists",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q014",
+      "target": "Q087",
+      "label": "property.hasHOA eq Yes",
+      "displayLabel": "property.hasHOA eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasHOA\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "property.hasHOA",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasHOA",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q117",
+      "target": "G012",
+      "label": "insurance.insurable eq Yes",
+      "displayLabel": "insurance.insurable eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "insurance.insurable",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "insurance.insurable",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q012",
+      "target": "Q118",
+      "label": "property.occupied eq Tenant",
+      "displayLabel": "property.occupied eq Tenant",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.occupied",
+          "operator": "eq",
+          "value": "Tenant"
+        }
+      ]
+    },
+    {
+      "source": "Q022",
+      "target": "Q118",
+      "label": "property.hasLease eq Yes",
+      "displayLabel": "property.hasLease eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasLease",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q012",
+      "target": "G013",
+      "label": "property.occupied eq Tenant",
+      "displayLabel": "property.occupied eq Tenant",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.occupied",
+          "operator": "eq",
+          "value": "Tenant"
+        }
+      ]
+    },
+    {
+      "source": "Q022",
+      "target": "G013",
+      "label": "property.hasLease eq Yes",
+      "displayLabel": "property.hasLease eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasLease",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q012",
+      "target": "G014",
+      "label": "property.occupied eq Tenant",
+      "displayLabel": "property.occupied eq Tenant",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.occupied",
+          "operator": "eq",
+          "value": "Tenant"
+        }
+      ]
+    },
+    {
+      "source": "Q022",
+      "target": "G014",
+      "label": "property.hasLease eq Yes",
+      "displayLabel": "property.hasLease eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasLease",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q012",
+      "target": "G015",
+      "label": "property.occupied eq Tenant",
+      "displayLabel": "property.occupied eq Tenant",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.occupied",
+          "operator": "eq",
+          "value": "Tenant"
+        }
+      ]
+    },
+    {
+      "source": "Q022",
+      "target": "G015",
+      "label": "property.hasLease eq Yes",
+      "displayLabel": "property.hasLease eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"groups\":[{\"conditions\":[{\"fieldCode\":\"property.occupied\",\"operator\":\"eq\",\"value\":\"Tenant\"}],\"combinator\":\"AND\"},{\"conditions\":[{\"fieldCode\":\"property.hasLease\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}],\"combinator\":\"OR\"}",
+        "condition": {
+          "groups": [
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.occupied",
+                  "operator": "eq",
+                  "value": "Tenant"
+                }
+              ],
+              "combinator": "AND"
+            },
+            {
+              "conditions": [
+                {
+                  "fieldCode": "property.hasLease",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          ],
+          "combinator": "OR"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.hasLease",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q095",
+      "target": "Q156",
+      "label": "deal.refinanceAvailable eq Yes",
+      "displayLabel": "deal.refinanceAvailable eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "deal.refinanceAvailable",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "deal.refinanceAvailable",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q017",
+      "target": "Q181",
+      "label": "property.waterRights eq Yes",
+      "displayLabel": "property.waterRights eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.waterRights\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "property.waterRights",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.waterRights",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q182",
+      "target": "Q184",
+      "label": "contract.fullyExecuted eq Yes",
+      "displayLabel": "contract.fullyExecuted eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "contract.fullyExecuted",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "contract.fullyExecuted",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q182",
+      "target": "Q185",
+      "label": "contract.fullyExecuted eq Yes",
+      "displayLabel": "contract.fullyExecuted eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"contract.fullyExecuted\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "contract.fullyExecuted",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "contract.fullyExecuted",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q026",
+      "target": "Q186",
+      "label": "property.addendums.has.backUpContract eq Yes",
+      "displayLabel": "property.addendums.has.backUpContract eq Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.backUpContract\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "property.addendums.has.backUpContract",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "property.addendums.has.backUpContract",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "source": "Q007",
+      "target": "Q010",
+      "label": "Continue to 1. Property and Contract",
+      "displayLabel": "Continue to 1. Property and Contract",
+      "kind": "stage-transition",
+      "provenance": "json-core-stage-order",
+      "inferred": false,
+      "executable": false,
+      "evidence": "Core-stage order from the exported sortOrder, not an answer destination.",
+      "traced": true,
+      "style": "solid",
+      "width": 4,
+      "color": "#168d88",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q033",
+      "target": "Q040",
+      "label": "Continue to 2. Seller, Title and Debt",
+      "displayLabel": "Continue to 2. Seller, Title and Debt",
+      "kind": "stage-transition",
+      "provenance": "json-core-stage-order",
+      "inferred": false,
+      "executable": false,
+      "evidence": "Core-stage order from the exported sortOrder, not an answer destination.",
+      "traced": true,
+      "style": "solid",
+      "width": 4,
+      "color": "#168d88",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q191",
+      "target": "Q070",
+      "label": "Continue to 3. Deal Economics",
+      "displayLabel": "Continue to 3. Deal Economics",
+      "kind": "stage-transition",
+      "provenance": "json-core-stage-order",
+      "inferred": false,
+      "executable": false,
+      "evidence": "Core-stage order from the exported sortOrder, not an answer destination.",
+      "traced": true,
+      "style": "solid",
+      "width": 4,
+      "color": "#168d88",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q099",
+      "target": "Q110",
+      "label": "Continue to 4. Due Diligence",
+      "displayLabel": "Continue to 4. Due Diligence",
+      "kind": "stage-transition",
+      "provenance": "json-core-stage-order",
+      "inferred": false,
+      "executable": false,
+      "evidence": "Core-stage order from the exported sortOrder, not an answer destination.",
+      "traced": true,
+      "style": "solid",
+      "width": 4,
+      "color": "#168d88",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q119",
+      "target": "Q130",
+      "label": "Selected route: 5A. Wholesale",
+      "displayLabel": "Selected route: 5A. Wholesale",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "QG-WHOLESALE-CONDUCT",
+      "target": "Q180",
+      "label": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue to 6. Contract and Closing",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q119",
+      "target": "Q140",
+      "label": "Selected route: 5B. Fix and Flip",
+      "displayLabel": "Selected route: 5B. Fix and Flip",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q146",
+      "target": "Q180",
+      "label": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue to 6. Contract and Closing",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q119",
+      "target": "Q150",
+      "label": "Selected route: 5C. Hold / BRRRR",
+      "displayLabel": "Selected route: 5C. Hold / BRRRR",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q157",
+      "target": "Q180",
+      "label": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue to 6. Contract and Closing",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q119",
+      "target": "Q160",
+      "label": "Selected route: 5D. Creative Finance",
+      "displayLabel": "Selected route: 5D. Creative Finance",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
+    },
+    {
+      "source": "Q169",
+      "target": "Q180",
+      "label": "Continue to 6. Contract and Closing",
+      "displayLabel": "Continue to 6. Contract and Closing",
+      "kind": "stage-transition",
+      "provenance": "json-inferred-stage-navigation",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Diagram navigation based on stage kind/order and explicitly selected preview route; entry conditions are not exported.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal"
     }
   ],
   "conditionSources": {},
@@ -24363,7 +26384,7 @@
   "sourceNotes": [
     "Recreated exclusively from the uploaded JSON.",
     "Order connectors reflect sortOrder; rule connectors reflect exported visibility conditions.",
-    "No screenshot routes, settings, canonical mappings or inferred question-to-field mappings are included."
+    "No screenshot routes or settings are included. Dashed long dependencies are inferred from unique question wording; route-navigation links show selected strategy sections."
   ],
   "connectionReview": {
     "status": "JSON only",
@@ -24374,5 +26395,83 @@
     "questionDataComplete": true,
     "source": "questionnaire-v3.json",
     "questions": 149
+  },
+  "diagramFieldAssociations": {
+    "property.type": {
+      "question": "Q010",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.hasMud": {
+      "question": "QG-MUD",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.addendums.has.section1031Exchange": {
+      "question": "Q027",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.addendums.has.thirdPartyFinancingAddendum": {
+      "question": "Q031",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "seller.maritalHomesteadStatus": {
+      "question": "G001",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "mortgage.first.exists": {
+      "question": "Q043",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "mortgage.first.status": {
+      "question": "Q045",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "seller.openToSellerFinance": {
+      "question": "Q051",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "seller.openToSubjectTo": {
+      "question": "Q052",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "seller.openToWrap": {
+      "question": "Q053",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.hasHOA": {
+      "question": "Q014",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "deal.refinanceAvailable": {
+      "question": "Q095",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "insurance.insurable": {
+      "question": "Q117",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.occupied": {
+      "question": "Q012",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.hasLease": {
+      "question": "Q022",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "creativeFinance.isWrap": {
+      "question": "Q166",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.waterRights": {
+      "question": "Q017",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "contract.fullyExecuted": {
+      "question": "Q182",
+      "evidence": "Unique match to question wording; mapping not exported"
+    },
+    "property.addendums.has.backUpContract": {
+      "question": "Q026",
+      "evidence": "Unique match to question wording; mapping not exported"
+    }
   }
 }
