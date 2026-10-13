@@ -11,3 +11,10 @@ export function centeredView(nodes,width,height,maxZoom=1){
 }
 
 export function horizontalWheelDelta(event,width){const unit=event.deltaMode===1?16:event.deltaMode===2?width:1;return (Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY)*unit;}
+
+// Inclusive intersection lets a marquee select objects whose edges it touches.
+export function rectanglesTouch(a,b){return !!b&&b.right>=a.x&&b.x<=a.right&&b.bottom>=a.y&&b.y<=a.bottom;}
+export function edgePanVelocity(pointer,rect,margin=60,speed=600){
+ const axis=(position,start,end)=>position<start+margin?speed*Math.min(1,(start+margin-position)/margin):position>end-margin?-speed*Math.min(1,(position-end+margin)/margin):0;
+ return {x:axis(pointer.clientX,rect.left,rect.right),y:axis(pointer.clientY,rect.top,rect.bottom)};
+}
