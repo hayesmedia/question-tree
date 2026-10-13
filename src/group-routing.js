@@ -7,7 +7,12 @@ export function routeBetweenGroups(source,target,link,nodes,groups){
  const boxes=obstacles.map(g=>({...groupRectangle(g,nodes),id:g.id,answers:[],title:''})).filter(b=>b.width);
  const s=boxes.find(b=>b.id===sg.id),t=boxes.find(b=>b.id===tg.id),dx=t.x+t.width/2-s.x-s.width/2,dy=t.y+t.height/2-s.y-s.height/2;
  let start,end,sp,tp;
- if(Math.abs(dy)>Math.abs(dx)){
+ // Prefer the clear corridor between group boundaries. Tall side-by-side
+ // groups can have very different centers without being vertically stacked.
+ const separatedX=s.x+s.width<=t.x||t.x+t.width<=s.x;
+ const separatedY=s.y+s.height<=t.y||t.y+t.height<=s.y;
+ const vertical=!separatedX&&(separatedY||Math.abs(dy)>Math.abs(dx));
+ if(vertical){
   const down=dy>=0;start={x:source.x+nodeWidth(source)/2,y:source.y+(down?nodeHeight(source):0)};end={x:target.x+nodeWidth(target)/2,y:target.y+(down?0:nodeHeight(target))};sp={x:start.x,y:down?s.y+s.height+30:s.y-30};tp={x:end.x,y:down?t.y-30:t.y+t.height+30};
  }else{
   const right=dx>=0;start={x:source.x+(right?nodeWidth(source):0),y:source.y+nodeHeight(source)/2};end={x:target.x+(right?0:nodeWidth(target)),y:target.y+nodeHeight(target)/2};sp={x:right?s.x+s.width+30:s.x-30,y:start.y};tp={x:right?t.x-30:t.x+t.width+30,y:end.y};
