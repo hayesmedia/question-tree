@@ -44,3 +44,5 @@ Set **SITE_PASSWORD** as a Cloudflare Worker secret. The Worker protects all sta
 
 ## Main green connections
 Solid green connections between groups use outward-facing card ports and exterior routes around group bounds (including their labels) and intervening cards. Their thicker stroke and background outline make them easier to follow. Green connections within the same group keep their existing paths, and dotted connections keep their routing/style. Manual bend points take precedence. Overlapping groups may leave no completely clear route; use manual bends in those cases. The PDF uses the same group-aware routing. These changes redraw the view without changing saved card positions or connector endpoints.
+
+The card spacing cleanup runs once per project: it leaves horizontal positions and card order intact and adds at least 90 canvas units between nearby cards inside each group, using their rendered dimensions. It creates a backup before moving cards and can be undone. Subsequent manual overlap is allowed; refresh does not repeat the cleanup.
