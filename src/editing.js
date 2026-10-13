@@ -9,3 +9,22 @@ export function reorderAnswer(node,from,to){
  const [answer]=node.answers.splice(from,1);node.answers.splice(to,0,answer);
  node.answers.forEach((a,i)=>a.sortOrder=i+1);return true;
 }
+
+export function rewireConnection(flow,key,sourceId,targetId){
+ const sourceIndex=flow.nodes.findIndex(n=>n.id===sourceId),target=flow.nodes.find(n=>n.id===targetId);
+ if(sourceIndex<0||!target)throw Error('Choose existing connection endpoints.');
+ const [type,a,b]=key.split(':');
+ if(type==='r'){
+  const link=flow.referenceLinks[+a];if(!link)throw Error('Connection not found.');
+  if(link.source===sourceId&&link.target===targetId)return key;
+  if(!link.userCreated){flow.deletedReferenceLinks=[...new Set([...(flow.deletedReferenceLinks||[]),link.source+'|'+link.target])];}
+  link.source=sourceId;link.target=targetId;link.userCreated=true;link.endpointEdited=true;return key;
+ }
+ const previous=flow.nodes[+a],answer=previous?.answers[+b];if(!answer)throw Error('Connection not found.');
+ if(flow.nodes[sourceIndex].type!=='question')throw Error('An answer connection must start at a question.');
+ answer.target=targetId;
+ if(previous.id===sourceId)return key;
+ previous.answers.splice(+b,1);const next=flow.nodes[sourceIndex];next.answers.push(answer);
+ for(const node of [previous,next])node.answers.forEach((option,i)=>option.sortOrder=i+1);
+ return 'a:'+sourceIndex+':'+(next.answers.length-1);
+}
