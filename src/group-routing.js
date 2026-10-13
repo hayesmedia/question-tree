@@ -19,7 +19,7 @@ export function routeBetweenGroups(source,target,link,nodes,groups){
  }
  const proxySource={x:sp.x-15,y:sp.y-39,width:1,height:78,answers:[]},proxyTarget={x:tp.x+14,y:tp.y-39,width:1,height:78,answers:[]};
  // Tiny endpoint proxies only specify portals; groups are the routing obstacles.
- const routed=routeConnector(proxySource,proxyTarget,boxes),points=[start,...routed.points.slice(1,-1),end];
+ const routed=routeConnector(proxySource,proxyTarget,boxes,[],{sourceSide:'right',targetSide:'left'}),points=[start,...routed.points.slice(1,-1),end];
  let longest=0,label={x:sp.x,y:sp.y};for(let i=2;i<points.length-1;i++){const a=points[i-1],b=points[i],length=Math.abs(a.x-b.x)+Math.abs(a.y-b.y);if(length>longest){longest=length;label={x:(a.x+b.x)/2,y:(a.y+b.y)/2};}}
  return {points,d:pointsPath(points),x:label.x+6,y:label.y-8,fallback:routed.fallback};
 }
