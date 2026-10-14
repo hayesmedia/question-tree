@@ -32,6 +32,7 @@ export function visibilityState(n,flow,responses,visited=new Set()){
 }
 export function nextPreview(flow,currentId,responses,strategy='STAGE_5A',explicitTarget=''){
  const current=flow.nodes.find(n=>n.id===currentId);
+ explicitTarget ||= current?.continueTarget||'';
  if(explicitTarget){const target=flow.nodes.find(n=>n.id===explicitTarget);if(target&&(target.type==='deal'||visibilityState(target,flow,responses)!==false))return target;}
  const list=flow.nodes.filter(n=>n.type==='question'&&(!n.details?.stage?.startsWith('STAGE_5')||n.details.stage===strategy));
  const index=list.findIndex(n=>n.id===currentId);if(index<0)return null;

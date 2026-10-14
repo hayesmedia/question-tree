@@ -3009,7 +3009,7 @@
       {
         "questionCode": "Q084",
         "stageCode": "STAGE_3",
-        "prompt": "What vacancy/credit-loss assumption will you use?",
+        "prompt": "What percentage of potential rental income will you allow for vacancy and unpaid rent?",
         "whyItMatters": "Gross rent overstates sustainable income.",
         "beginnerHelp": null,
         "responseType": "PERCENTAGE",
@@ -3196,22 +3196,134 @@
       {
         "questionCode": "Q090",
         "stageCode": "STAGE_3",
-        "prompt": "Will you use professional property management? If so, what fee?",
+        "prompt": "Will you be paying for any property management services?",
         "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
-        "beginnerHelp": null,
+        "beginnerHelp": "Choose Yes if you will pay for property management services.",
+        "responseType": "SINGLE_SELECT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 730,
+        "options": [
+          {
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 1
+          },
+          {
+            "optionValue": "No",
+            "optionLabel": "No",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 2
+          }
+        ],
+        "branches": []
+      },
+      {
+        "questionCode": "Q090A",
+        "stageCode": "STAGE_3",
+        "prompt": "Are they collecting a flat fee or percentage of monthly rent?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Choose the recurring management fee structure. Unknown continues without a fee amount.",
+        "responseType": "SINGLE_SELECT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 731,
+        "options": [
+          {
+            "optionValue": "Flat fee",
+            "optionLabel": "Flat fee",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 1
+          },
+          {
+            "optionValue": "Percentage",
+            "optionLabel": "Percentage",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 2
+          },
+          {
+            "optionValue": "Unknown",
+            "optionLabel": "Unknown",
+            "isUnknownOption": true,
+            "helpText": null,
+            "sortOrder": 3
+          }
+        ],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      {
+        "questionCode": "Q090B",
+        "stageCode": "STAGE_3",
+        "prompt": "How much is the flat monthly property management fee?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the recurring monthly management fee, excluding separate leasing or setup charges.",
+        "responseType": "CURRENCY",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Monthly dollar amount",
+        "unit": "$",
+        "minValue": 0,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 732,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Flat fee\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      {
+        "questionCode": "Q090C",
+        "stageCode": "STAGE_3",
+        "prompt": "What percentage of monthly rent will they charge for property management?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the percentage of monthly rent charged for management, excluding separate leasing or setup charges.",
         "responseType": "PERCENTAGE",
         "personaMode": "BOTH",
         "routeCode": null,
         "sourceUrl": null,
-        "placeholder": "Percent",
+        "placeholder": "Percent of monthly rent",
         "unit": "%",
-        "minValue": null,
-        "maxValue": null,
+        "minValue": 0,
+        "maxValue": 100,
         "isRequired": false,
         "allowUnknown": true,
-        "sortOrder": 730,
+        "sortOrder": 733,
         "options": [],
-        "branches": []
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Percentage\"}],\"combinator\":\"AND\"}"
+          }
+        ]
       },
       {
         "questionCode": "Q091",
@@ -3256,7 +3368,7 @@
       {
         "questionCode": "Q093",
         "stageCode": "STAGE_3",
-        "prompt": "What minimum cash-on-cash return do you require?",
+        "prompt": "What minimum annual cash-on-cash return do you require on your invested cash?",
         "whyItMatters": "Measures pre-tax cash flow relative to cash invested.",
         "beginnerHelp": null,
         "responseType": "PERCENTAGE",
@@ -12498,7 +12610,7 @@
       "id": "Q084",
       "questionCode": "Q084",
       "type": "question",
-      "title": "What vacancy/credit-loss assumption will you use?",
+      "title": "What percentage of potential rental income will you allow for vacancy and unpaid rent?",
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
@@ -12507,7 +12619,7 @@
       "sourceRecord": {
         "questionCode": "Q084",
         "stageCode": "STAGE_3",
-        "prompt": "What vacancy/credit-loss assumption will you use?",
+        "prompt": "What percentage of potential rental income will you allow for vacancy and unpaid rent?",
         "whyItMatters": "Gross rent overstates sustainable income.",
         "beginnerHelp": null,
         "responseType": "PERCENTAGE",
@@ -12557,7 +12669,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 3985,
+      "y": 4006,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G003",
@@ -12659,7 +12771,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 4381,
+      "y": 4402,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G004",
@@ -12714,7 +12826,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 4640,
+      "y": 4661,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q085",
@@ -12769,7 +12881,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 4899,
+      "y": 4920,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q086",
@@ -12824,7 +12936,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 5158,
+      "y": 5179,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q087",
@@ -12907,7 +13019,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 5396,
+      "y": 5417,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q088",
@@ -12962,7 +13074,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 5655,
+      "y": 5676,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q089",
@@ -13013,47 +13125,62 @@
       "id": "Q090",
       "questionCode": "Q090",
       "type": "question",
-      "title": "Will you use professional property management? If so, what fee?",
+      "title": "Will you be paying for any property management services?",
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 5914,
+      "y": 5935,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q090",
         "stageCode": "STAGE_3",
-        "prompt": "Will you use professional property management? If so, what fee?",
+        "prompt": "Will you be paying for any property management services?",
         "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
-        "beginnerHelp": null,
-        "responseType": "PERCENTAGE",
+        "beginnerHelp": "Choose Yes if you will pay for property management services.",
+        "responseType": "SINGLE_SELECT",
         "personaMode": "BOTH",
         "routeCode": null,
         "sourceUrl": null,
-        "placeholder": "Percent",
-        "unit": "%",
+        "placeholder": null,
+        "unit": null,
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 730,
-        "options": [],
+        "options": [
+          {
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 1
+          },
+          {
+            "optionValue": "No",
+            "optionLabel": "No",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 2
+          }
+        ],
         "branches": []
       },
       "sequenceTarget": "Q091",
       "details": {
         "whyWeAsk": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
-        "beginnerHelp": null,
+        "beginnerHelp": "Choose Yes if you will pay for property management services.",
         "stage": "STAGE_3",
-        "responseType": "PERCENTAGE",
+        "responseType": "SINGLE_SELECT",
         "persona": "BOTH",
         "routeTag": null,
         "sourceUrl": null,
-        "placeholder": "Percent",
-        "unit": "%",
+        "placeholder": null,
+        "unit": null,
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 730,
         "branches": [],
         "visibility": {
@@ -13062,7 +13189,325 @@
           "groups": []
         }
       },
-      "answers": []
+      "answers": [
+        {
+          "value": "Yes",
+          "label": "Yes",
+          "unknown": false,
+          "helpText": null,
+          "sortOrder": 1,
+          "target": "Q090A"
+        },
+        {
+          "value": "No",
+          "label": "No",
+          "unknown": false,
+          "helpText": null,
+          "sortOrder": 2,
+          "target": "Q091"
+        }
+      ]
+    },
+    {
+      "id": "Q090A",
+      "questionCode": "Q090A",
+      "type": "question",
+      "title": "Are they collecting a flat fee or percentage of monthly rent?",
+      "section": "3. Deal Economics",
+      "strategyTag": null,
+      "x": 5650,
+      "y": 6232,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "Q090A",
+        "stageCode": "STAGE_3",
+        "prompt": "Are they collecting a flat fee or percentage of monthly rent?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Choose the recurring management fee structure. Unknown continues without a fee amount.",
+        "responseType": "SINGLE_SELECT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 731,
+        "options": [
+          {
+            "optionValue": "Flat fee",
+            "optionLabel": "Flat fee",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 1
+          },
+          {
+            "optionValue": "Percentage",
+            "optionLabel": "Percentage",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 2
+          },
+          {
+            "optionValue": "Unknown",
+            "optionLabel": "Unknown",
+            "isUnknownOption": true,
+            "helpText": null,
+            "sortOrder": 3
+          }
+        ],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      "sequenceTarget": "Q091",
+      "details": {
+        "whyWeAsk": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Choose the recurring management fee structure. Unknown continues without a fee amount.",
+        "stage": "STAGE_3",
+        "responseType": "SINGLE_SELECT",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": null,
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 731,
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "Q090",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        ],
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "field": "Q090",
+              "sourceQuestion": "Q090",
+              "operator": "eq",
+              "values": [
+                "Yes"
+              ]
+            }
+          ],
+          "groups": []
+        }
+      },
+      "answers": [
+        {
+          "value": "Flat fee",
+          "label": "Flat fee",
+          "unknown": false,
+          "helpText": null,
+          "sortOrder": 1,
+          "target": "Q090B"
+        },
+        {
+          "value": "Percentage",
+          "label": "Percentage",
+          "unknown": false,
+          "helpText": null,
+          "sortOrder": 2,
+          "target": "Q090C"
+        },
+        {
+          "value": "Unknown",
+          "label": "Unknown",
+          "unknown": true,
+          "helpText": null,
+          "sortOrder": 3,
+          "target": "Q091"
+        }
+      ]
+    },
+    {
+      "id": "Q090B",
+      "questionCode": "Q090B",
+      "type": "question",
+      "title": "How much is the flat monthly property management fee?",
+      "section": "3. Deal Economics",
+      "strategyTag": null,
+      "x": 5650,
+      "y": 6565,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "Q090B",
+        "stageCode": "STAGE_3",
+        "prompt": "How much is the flat monthly property management fee?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the recurring monthly management fee, excluding separate leasing or setup charges.",
+        "responseType": "CURRENCY",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Monthly dollar amount",
+        "unit": "$",
+        "minValue": 0,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 732,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Flat fee\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      "sequenceTarget": "Q091",
+      "details": {
+        "whyWeAsk": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the recurring monthly management fee, excluding separate leasing or setup charges.",
+        "stage": "STAGE_3",
+        "responseType": "CURRENCY",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": null,
+        "placeholder": "Monthly dollar amount",
+        "unit": "$",
+        "minValue": 0,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 732,
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Flat fee\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "Q090A",
+                  "operator": "eq",
+                  "value": "Flat fee"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        ],
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "field": "Q090A",
+              "sourceQuestion": "Q090A",
+              "operator": "eq",
+              "values": [
+                "Flat fee"
+              ]
+            }
+          ],
+          "groups": []
+        }
+      },
+      "answers": [],
+      "continueTarget": "Q091"
+    },
+    {
+      "id": "Q090C",
+      "questionCode": "Q090C",
+      "type": "question",
+      "title": "What percentage of monthly rent will they charge for property management?",
+      "section": "3. Deal Economics",
+      "strategyTag": null,
+      "x": 5650,
+      "y": 6824,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "Q090C",
+        "stageCode": "STAGE_3",
+        "prompt": "What percentage of monthly rent will they charge for property management?",
+        "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the percentage of monthly rent charged for management, excluding separate leasing or setup charges.",
+        "responseType": "PERCENTAGE",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Percent of monthly rent",
+        "unit": "%",
+        "minValue": 0,
+        "maxValue": 100,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 733,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Percentage\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      "sequenceTarget": "Q091",
+      "details": {
+        "whyWeAsk": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+        "beginnerHelp": "Enter the percentage of monthly rent charged for management, excluding separate leasing or setup charges.",
+        "stage": "STAGE_3",
+        "responseType": "PERCENTAGE",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": null,
+        "placeholder": "Percent of monthly rent",
+        "unit": "%",
+        "minValue": 0,
+        "maxValue": 100,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 733,
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Percentage\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "Q090A",
+                  "operator": "eq",
+                  "value": "Percentage"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        ],
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "field": "Q090A",
+              "sourceQuestion": "Q090A",
+              "operator": "eq",
+              "values": [
+                "Percentage"
+              ]
+            }
+          ],
+          "groups": []
+        }
+      },
+      "answers": [],
+      "continueTarget": "Q091"
     },
     {
       "id": "Q091",
@@ -13072,7 +13517,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 6173,
+      "y": 7104,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q091",
@@ -13127,7 +13572,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 6432,
+      "y": 7363,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q092",
@@ -13178,16 +13623,16 @@
       "id": "Q093",
       "questionCode": "Q093",
       "type": "question",
-      "title": "What minimum cash-on-cash return do you require?",
+      "title": "What minimum annual cash-on-cash return do you require on your invested cash?",
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 6670,
+      "y": 7601,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q093",
         "stageCode": "STAGE_3",
-        "prompt": "What minimum cash-on-cash return do you require?",
+        "prompt": "What minimum annual cash-on-cash return do you require on your invested cash?",
         "whyItMatters": "Measures pre-tax cash flow relative to cash invested.",
         "beginnerHelp": null,
         "responseType": "PERCENTAGE",
@@ -13237,7 +13682,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 6908,
+      "y": 7881,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q094",
@@ -13292,7 +13737,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7167,
+      "y": 8140,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q095",
@@ -13394,7 +13839,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7500,
+      "y": 8473,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q096",
@@ -13477,7 +13922,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7759,
+      "y": 8732,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q097",
@@ -13564,7 +14009,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8056,
+      "y": 9029,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q098",
@@ -13681,7 +14126,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8425,
+      "y": 9398,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q099",
@@ -15476,7 +15921,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 9296,
+      "y": 9907,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q130",
@@ -15563,7 +16008,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 9635,
+      "y": 10246,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q131",
@@ -15665,7 +16110,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 9968,
+      "y": 10579,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q132",
@@ -15752,7 +16197,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10307,
+      "y": 10918,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q133",
@@ -15839,7 +16284,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10604,
+      "y": 11215,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q134",
@@ -15941,7 +16386,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10937,
+      "y": 11548,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q135",
@@ -16028,7 +16473,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11318,
+      "y": 11929,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "QG-WHOLESALE-CONDUCT",
@@ -16115,7 +16560,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 9296,
+      "y": 9907,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q140",
@@ -16202,7 +16647,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 9614,
+      "y": 10225,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q141",
@@ -16289,7 +16734,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 9911,
+      "y": 10522,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q142",
@@ -16376,7 +16821,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10208,
+      "y": 10819,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q143",
@@ -16478,7 +16923,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10562,
+      "y": 11173,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q144",
@@ -16565,7 +17010,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10859,
+      "y": 11470,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q145",
@@ -16652,7 +17097,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11177,
+      "y": 11788,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q146",
@@ -16739,7 +17184,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 9296,
+      "y": 9907,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q150",
@@ -16826,7 +17271,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 9635,
+      "y": 10246,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q151",
@@ -16913,7 +17358,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 9911,
+      "y": 10522,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q152",
@@ -17000,7 +17445,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10187,
+      "y": 10798,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q153",
@@ -17087,7 +17532,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10484,
+      "y": 11095,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q154",
@@ -17174,7 +17619,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10781,
+      "y": 11392,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q155",
@@ -17261,7 +17706,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 11099,
+      "y": 11710,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q156",
@@ -17391,7 +17836,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 11474,
+      "y": 12085,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q157",
@@ -17493,7 +17938,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "FORMAL_ASSUMPTION",
       "x": 5650,
-      "y": 9296,
+      "y": 9907,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q160",
@@ -17580,7 +18025,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 9593,
+      "y": 10204,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q161",
@@ -17667,7 +18112,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 9953,
+      "y": 10564,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q162",
@@ -17754,7 +18199,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10271,
+      "y": 10882,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q163",
@@ -17841,7 +18286,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 10631,
+      "y": 11242,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q164",
@@ -17928,7 +18373,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 10970,
+      "y": 11581,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q165",
@@ -18030,7 +18475,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 11387,
+      "y": 11998,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q166",
@@ -18117,7 +18562,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 11705,
+      "y": 12316,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q167",
@@ -18247,7 +18692,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 12059,
+      "y": 12670,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q168",
@@ -18334,7 +18779,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 12398,
+      "y": 13009,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q169",
@@ -18421,7 +18866,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 9296,
+      "y": 9907,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q180",
@@ -18523,7 +18968,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 9671,
+      "y": 10282,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q181",
@@ -18653,7 +19098,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10064,
+      "y": 10675,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q182",
@@ -18740,7 +19185,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10361,
+      "y": 10972,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q183",
@@ -18855,7 +19300,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10658,
+      "y": 11269,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q184",
@@ -18970,7 +19415,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10955,
+      "y": 11566,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q185",
@@ -19085,7 +19530,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11252,
+      "y": 11863,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q186",
@@ -19215,7 +19660,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11606,
+      "y": 12217,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q187",
@@ -19302,7 +19747,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11924,
+      "y": 12535,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q188",
@@ -19404,7 +19849,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12257,
+      "y": 12868,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q189",
@@ -19491,7 +19936,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12596,
+      "y": 13207,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q190",
@@ -19717,6 +20162,9 @@
         "Q088",
         "Q089",
         "Q090",
+        "Q090A",
+        "Q090B",
+        "Q090C",
         "Q091",
         "Q092",
         "Q093",
@@ -21005,18 +21453,6 @@
     {
       "source": "Q089",
       "target": "Q090",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
-    },
-    {
-      "source": "Q090",
-      "target": "Q091",
       "label": "Next in stage order",
       "displayLabel": "Next",
       "kind": "sequence",
@@ -23766,6 +24202,30 @@
       "width": 4,
       "color": "#9575ed",
       "routing": "orthogonal"
+    },
+    {
+      "source": "Q090B",
+      "target": "Q091",
+      "label": "Continue",
+      "displayLabel": "Continue",
+      "traced": true,
+      "style": "solid",
+      "color": "#168d88",
+      "routing": "auto",
+      "userCreated": true,
+      "kind": "management-continuation"
+    },
+    {
+      "source": "Q090C",
+      "target": "Q091",
+      "label": "Continue",
+      "displayLabel": "Continue",
+      "traced": true,
+      "style": "solid",
+      "color": "#168d88",
+      "routing": "auto",
+      "userCreated": true,
+      "kind": "management-continuation"
     }
   ],
   "conditionSources": {},
@@ -23783,7 +24243,7 @@
   "uploadProgress": {
     "questionDataComplete": true,
     "source": "questionnaire-v3.json",
-    "questions": 149
+    "questions": 152
   },
   "diagramFieldAssociations": {
     "property.type": {
@@ -23862,5 +24322,11 @@
       "question": "Q026",
       "evidence": "Unique match to question wording; mapping not exported"
     }
+  },
+  "deletedReferenceLinks": [
+    "Q090|Q091"
+  ],
+  "questionCorrections": {
+    "management": "v1"
   }
 }

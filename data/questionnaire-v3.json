@@ -3003,7 +3003,7 @@
     {
       "questionCode": "Q084",
       "stageCode": "STAGE_3",
-      "prompt": "What vacancy/credit-loss assumption will you use?",
+      "prompt": "What percentage of potential rental income will you allow for vacancy and unpaid rent?",
       "whyItMatters": "Gross rent overstates sustainable income.",
       "beginnerHelp": null,
       "responseType": "PERCENTAGE",
@@ -3190,22 +3190,134 @@
     {
       "questionCode": "Q090",
       "stageCode": "STAGE_3",
-      "prompt": "Will you use professional property management? If so, what fee?",
+      "prompt": "Will you be paying for any property management services?",
       "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
-      "beginnerHelp": null,
+      "beginnerHelp": "Choose Yes if you will pay for property management services.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": false,
+      "sortOrder": 730,
+      "options": [
+        {
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
+          "isUnknownOption": false,
+          "helpText": null,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "No",
+          "optionLabel": "No",
+          "isUnknownOption": false,
+          "helpText": null,
+          "sortOrder": 2
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "Q090A",
+      "stageCode": "STAGE_3",
+      "prompt": "Are they collecting a flat fee or percentage of monthly rent?",
+      "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+      "beginnerHelp": "Choose the recurring management fee structure. Unknown continues without a fee amount.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": false,
+      "sortOrder": 731,
+      "options": [
+        {
+          "optionValue": "Flat fee",
+          "optionLabel": "Flat fee",
+          "isUnknownOption": false,
+          "helpText": null,
+          "sortOrder": 1
+        },
+        {
+          "optionValue": "Percentage",
+          "optionLabel": "Percentage",
+          "isUnknownOption": false,
+          "helpText": null,
+          "sortOrder": 2
+        },
+        {
+          "optionValue": "Unknown",
+          "optionLabel": "Unknown",
+          "isUnknownOption": true,
+          "helpText": null,
+          "sortOrder": 3
+        }
+      ],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q090B",
+      "stageCode": "STAGE_3",
+      "prompt": "How much is the flat monthly property management fee?",
+      "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+      "beginnerHelp": "Enter the recurring monthly management fee, excluding separate leasing or setup charges.",
+      "responseType": "CURRENCY",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Monthly dollar amount",
+      "unit": "$",
+      "minValue": 0,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 732,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Flat fee\"}],\"combinator\":\"AND\"}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q090C",
+      "stageCode": "STAGE_3",
+      "prompt": "What percentage of monthly rent will they charge for property management?",
+      "whyItMatters": "Management cost belongs in stabilized underwriting even when you may self-manage initially.",
+      "beginnerHelp": "Enter the percentage of monthly rent charged for management, excluding separate leasing or setup charges.",
       "responseType": "PERCENTAGE",
       "personaMode": "BOTH",
       "routeCode": null,
       "sourceUrl": null,
-      "placeholder": "Percent",
+      "placeholder": "Percent of monthly rent",
       "unit": "%",
-      "minValue": null,
-      "maxValue": null,
+      "minValue": 0,
+      "maxValue": 100,
       "isRequired": false,
       "allowUnknown": true,
-      "sortOrder": 730,
+      "sortOrder": 733,
       "options": [],
-      "branches": []
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"Q090A\",\"operator\":\"eq\",\"value\":\"Percentage\"}],\"combinator\":\"AND\"}"
+        }
+      ]
     },
     {
       "questionCode": "Q091",
@@ -3250,7 +3362,7 @@
     {
       "questionCode": "Q093",
       "stageCode": "STAGE_3",
-      "prompt": "What minimum cash-on-cash return do you require?",
+      "prompt": "What minimum annual cash-on-cash return do you require on your invested cash?",
       "whyItMatters": "Measures pre-tax cash flow relative to cash invested.",
       "beginnerHelp": null,
       "responseType": "PERCENTAGE",
