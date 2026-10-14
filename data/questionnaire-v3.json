@@ -4214,9 +4214,9 @@
     {
       "questionCode": "Q130",
       "stageCode": "STAGE_5A",
-      "prompt": "Do you have a signed purchase contract or option giving you a real contractual/equitable interest?",
-      "whyItMatters": "You cannot assign or market an interest you do not actually control.",
-      "beginnerHelp": "No = wholesale route cannot proceed.",
+      "prompt": "Is assigning this deal to another buyer for a fee your primary plan? (Wholesale)",
+      "whyItMatters": "Distinguishes a primary wholesale strategy from purchasing while keeping assignment available as an alternative.",
+      "beginnerHelp": "No signed agreement is required to answer this planning question. Assignment eligibility must be checked in the proposed agreement.",
       "responseType": "SINGLE_SELECT",
       "personaMode": "BOTH",
       "routeCode": "WHOLESALE",
@@ -4232,16 +4232,23 @@
         {
           "optionValue": "Yes",
           "optionLabel": "Yes",
-          "helpText": null,
           "isUnknownOption": false,
+          "helpText": null,
           "sortOrder": 1
         },
         {
           "optionValue": "No",
           "optionLabel": "No",
-          "helpText": null,
           "isUnknownOption": false,
+          "helpText": null,
           "sortOrder": 2
+        },
+        {
+          "optionValue": "No, but I want the option to assign",
+          "optionLabel": "No, but I want the option to assign",
+          "isUnknownOption": false,
+          "helpText": null,
+          "sortOrder": 3
         }
       ],
       "branches": []

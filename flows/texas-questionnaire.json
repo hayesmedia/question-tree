@@ -4220,9 +4220,9 @@
       {
         "questionCode": "Q130",
         "stageCode": "STAGE_5A",
-        "prompt": "Do you have a signed purchase contract or option giving you a real contractual/equitable interest?",
-        "whyItMatters": "You cannot assign or market an interest you do not actually control.",
-        "beginnerHelp": "No = wholesale route cannot proceed.",
+        "prompt": "Is assigning this deal to another buyer for a fee your primary plan? (Wholesale)",
+        "whyItMatters": "Distinguishes a primary wholesale strategy from purchasing while keeping assignment available as an alternative.",
+        "beginnerHelp": "No signed agreement is required to answer this planning question. Assignment eligibility must be checked in the proposed agreement.",
         "responseType": "SINGLE_SELECT",
         "personaMode": "BOTH",
         "routeCode": "WHOLESALE",
@@ -4238,16 +4238,23 @@
           {
             "optionValue": "Yes",
             "optionLabel": "Yes",
-            "helpText": null,
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 1
           },
           {
             "optionValue": "No",
             "optionLabel": "No",
-            "helpText": null,
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 2
+          },
+          {
+            "optionValue": "No, but I want the option to assign",
+            "optionLabel": "No, but I want the option to assign",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 3
           }
         ],
         "branches": []
@@ -16032,7 +16039,7 @@
       "id": "Q130",
       "questionCode": "Q130",
       "type": "question",
-      "title": "Do you have a signed purchase contract or option giving you a real contractual/equitable interest?",
+      "title": "Is assigning this deal to another buyer for a fee your primary plan? (Wholesale)",
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
@@ -16041,9 +16048,9 @@
       "sourceRecord": {
         "questionCode": "Q130",
         "stageCode": "STAGE_5A",
-        "prompt": "Do you have a signed purchase contract or option giving you a real contractual/equitable interest?",
-        "whyItMatters": "You cannot assign or market an interest you do not actually control.",
-        "beginnerHelp": "No = wholesale route cannot proceed.",
+        "prompt": "Is assigning this deal to another buyer for a fee your primary plan? (Wholesale)",
+        "whyItMatters": "Distinguishes a primary wholesale strategy from purchasing while keeping assignment available as an alternative.",
+        "beginnerHelp": "No signed agreement is required to answer this planning question. Assignment eligibility must be checked in the proposed agreement.",
         "responseType": "SINGLE_SELECT",
         "personaMode": "BOTH",
         "routeCode": "WHOLESALE",
@@ -16059,24 +16066,31 @@
           {
             "optionValue": "Yes",
             "optionLabel": "Yes",
-            "helpText": null,
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 1
           },
           {
             "optionValue": "No",
             "optionLabel": "No",
-            "helpText": null,
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 2
+          },
+          {
+            "optionValue": "No, but I want the option to assign",
+            "optionLabel": "No, but I want the option to assign",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 3
           }
         ],
         "branches": []
       },
       "sequenceTarget": "Q131",
       "details": {
-        "whyWeAsk": "You cannot assign or market an interest you do not actually control.",
-        "beginnerHelp": "No = wholesale route cannot proceed.",
+        "whyWeAsk": "Distinguishes a primary wholesale strategy from purchasing while keeping assignment available as an alternative.",
+        "beginnerHelp": "No signed agreement is required to answer this planning question. Assignment eligibility must be checked in the proposed agreement.",
         "stage": "STAGE_5A",
         "responseType": "SINGLE_SELECT",
         "persona": "BOTH",
@@ -16112,6 +16126,14 @@
           "helpText": null,
           "sortOrder": 2,
           "target": ""
+        },
+        {
+          "value": "No, but I want the option to assign",
+          "label": "No, but I want the option to assign",
+          "unknown": false,
+          "helpText": null,
+          "sortOrder": 3,
+          "target": ""
         }
       ]
     },
@@ -16123,7 +16145,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10526,
+      "y": 10559,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q131",
@@ -16225,7 +16247,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10859,
+      "y": 10892,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q132",
@@ -16312,7 +16334,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11198,
+      "y": 11231,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q133",
@@ -16399,7 +16421,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11495,
+      "y": 11528,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q134",
@@ -16501,7 +16523,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11828,
+      "y": 11861,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q135",
@@ -16588,7 +16610,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 12209,
+      "y": 12242,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "QG-WHOLESALE-CONDUCT",
@@ -24497,6 +24519,7 @@
   "questionCorrections": {
     "management": "v1",
     "refinance": "v1",
-    "helpDecide": "v1"
+    "helpDecide": "v1",
+    "wholesaleIntent": "v1"
   }
 }

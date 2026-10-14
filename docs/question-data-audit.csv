@@ -109,7 +109,7 @@
 "G014","What is the total security-deposit balance held for all tenants?","CURRENCY","0","1",""
 "G015","Will those deposits be credited to you on the settlement statement at closing?","SINGLE_SELECT","3","1",""
 "Q119","Have you confirmed local rental/STR rules if your exit depends on renting?","SINGLE_SELECT","3","0",""
-"Q130","Do you have a signed purchase contract or option giving you a real contractual/equitable interest?","SINGLE_SELECT","2","0",""
+"Q130","Is assigning this deal to another buyer for a fee your primary plan? (Wholesale)","SINGLE_SELECT","3","0",""
 "Q131","Does the contract allow assignment, or has assignment been approved?","SINGLE_SELECT","3","0",""
 "Q132","After the end buyer's required profit/return, closing costs and your fee, is there still enough spread?","SINGLE_SELECT","2","0",""
 "Q133","Have you identified realistic end buyers for this exact deal type/area?","SINGLE_SELECT","2","0",""
