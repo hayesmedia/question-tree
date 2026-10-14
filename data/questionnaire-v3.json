@@ -1546,7 +1546,7 @@
       "minValue": null,
       "maxValue": null,
       "isRequired": false,
-      "allowUnknown": true,
+      "allowUnknown": false,
       "sortOrder": 290,
       "options": [
         {

@@ -1552,7 +1552,7 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 290,
         "options": [
           {
@@ -8399,7 +8399,7 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 290,
         "options": [
           {
@@ -8433,7 +8433,7 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 290,
         "branches": [],
         "visibility": {
@@ -8449,7 +8449,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "Q032",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "No",
@@ -8457,7 +8460,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "Q033",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -8548,6 +8554,7 @@
           "conditions": [
             {
               "field": "property.addendums.has.thirdPartyFinancingAddendum",
+              "sourceQuestion": "Q031",
               "operator": "eq",
               "values": [
                 "Yes"
@@ -24307,7 +24314,8 @@
   "conditionSources": {
     "insurance.insurable": "Q117",
     "property.hasMud": "QG-MUD",
-    "property.addendums.has.section1031Exchange": "Q027"
+    "property.addendums.has.section1031Exchange": "Q027",
+    "property.addendums.has.thirdPartyFinancingAddendum": "Q031"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24415,7 +24423,8 @@
     "insurance": "yes-unknown-v1",
     "archiveQ011": "archived",
     "mud": "yes-unknown-v1",
-    "exchange": "yes-unknown-v1"
+    "exchange": "yes-unknown-v1",
+    "financing": "yes-no-v1"
   },
   "archivedQuestions": [
     {

@@ -3,15 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "Q032",
-      "field": "property.addendums.has.thirdPartyFinancingAddendum",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "G002",
       "field": "seller.maritalHomesteadStatus",
       "operator": "in",
@@ -771,18 +762,6 @@
     },
     {
       "question": "Q030",
-      "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q031",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q031",
       "answer": "No",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."

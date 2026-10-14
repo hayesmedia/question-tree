@@ -4,13 +4,12 @@ Scope: deployed source dataset only. Browser-only and unsaved team edits are not
 
 Known working routes: Q004 Help me decide → Q070; Q090 Yes → Q090A, No → Q091; Q090A Flat fee → Q090B, Percentage → Q090C, Unknown → Q091; Q090B/C → Q091; Q096 → Q096A → Q097; Q117 Yes/Unknown → G011 → G012, No → Q118.
 
-Missing decisions: Q130 Yes, No and optional-assignment destinations. Other unassigned answers currently use question order, which may be intentional. All 278 such answers are listed in routing-review.json.
+Missing decisions: Q130 Yes, No and optional-assignment destinations. Other unassigned answers currently use question order, which may be intentional. All 276 such answers are listed in routing-review.json.
 
-41 condition entries across 15 fields have no executable source mapping. Each needs the actual source question and any value conversion; inferred purple lines are not canonical assignments.
+40 condition entries across 14 fields have no executable source mapping. Each needs the actual source question and any value conversion; inferred purple lines are not canonical assignments.
 
 | Field needing a mapping | Questions using it |
 | --- | --- |
-| property.addendums.has.thirdPartyFinancingAddendum | Q032 |
 | seller.maritalHomesteadStatus | G002 |
 | mortgage.first.exists | Q044, Q045, Q046, Q047, Q048, Q049, Q052, Q053, Q054, Q057, Q058, Q060 |
 | mortgage.first.status | G008, G009, G010 |
