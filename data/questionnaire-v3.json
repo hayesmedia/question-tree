@@ -1,5 +1,5 @@
 {
-  "conditionSources": {"mortgage.first.exists": "Q043"},
+  "conditionSources": {"mortgage.first.exists": "Q043", "mortgage.first.status": "Q045"},
   "contractDefaults": {"spouseSignsDeedAndClosingDocuments": true},
   "questionnaireCode": "GUIDED_INVESTOR_DEAL_JAMES",
   "questionnaireName": "Texas Investor Deal Discovery (James)",

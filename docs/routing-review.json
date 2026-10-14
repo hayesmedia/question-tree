@@ -3,36 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "G008",
-      "field": "mortgage.first.status",
-      "operator": "in",
-      "values": [
-        "In foreclosure",
-        "Behind"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "G009",
-      "field": "mortgage.first.status",
-      "operator": "in",
-      "values": [
-        "In foreclosure",
-        "Behind"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "G010",
-      "field": "mortgage.first.status",
-      "operator": "in",
-      "values": [
-        "In foreclosure",
-        "Behind"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q055",
       "field": "seller.openToSellerFinance",
       "operator": "in",
@@ -734,30 +704,6 @@
     },
     {
       "question": "Q042",
-      "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q045",
-      "answer": "Current",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q045",
-      "answer": "Behind",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q045",
-      "answer": "In foreclosure",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q045",
       "answer": "Unknown",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."

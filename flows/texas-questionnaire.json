@@ -6,7 +6,8 @@
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
     "conditionSources": {
-      "mortgage.first.exists": "Q043"
+      "mortgage.first.exists": "Q043",
+      "mortgage.first.status": "Q045"
     },
     "contractDefaults": {
       "spouseSignsDeedAndClosingDocuments": true
@@ -9638,7 +9639,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "Q046",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "Behind",
@@ -9646,7 +9650,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "G008",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "In foreclosure",
@@ -9654,7 +9661,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 3,
-          "target": ""
+          "target": "G008",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "Unknown",
@@ -9662,7 +9672,10 @@
           "unknown": true,
           "helpText": null,
           "sortOrder": 4,
-          "target": ""
+          "target": "Q046",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -9742,7 +9755,8 @@
               "values": [
                 "In foreclosure",
                 "Behind"
-              ]
+              ],
+              "sourceQuestion": "Q045"
             }
           ],
           "groups": []
@@ -9826,7 +9840,8 @@
               "values": [
                 "In foreclosure",
                 "Behind"
-              ]
+              ],
+              "sourceQuestion": "Q045"
             }
           ],
           "groups": []
@@ -9910,7 +9925,8 @@
               "values": [
                 "In foreclosure",
                 "Behind"
-              ]
+              ],
+              "sourceQuestion": "Q045"
             }
           ],
           "groups": []
@@ -20984,40 +21000,6 @@
       "color": "#168d88"
     },
     {
-      "source": "Q045",
-      "target": "G008",
-      "label": "In foreclosure / Behind",
-      "displayLabel": "In foreclosure / Behind",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.status",
-          "operator": "in",
-          "value": "In foreclosure,Behind"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.status\",\"operator\":\"in\",\"value\":\"In foreclosure,Behind\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.status",
-              "operator": "in",
-              "value": "In foreclosure,Behind"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "G008",
       "target": "G009",
       "label": "Next in stage order",
@@ -24347,7 +24329,8 @@
     "seller.isMarried": "G001",
     "seller.isHomestead": "G001A",
     "seller.spouseLegalName": "G001B",
-    "mortgage.first.exists": "Q043"
+    "mortgage.first.exists": "Q043",
+    "mortgage.first.status": "Q045"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24443,7 +24426,8 @@
     "Q090|Q091",
     "Q096|Q097",
     "G001|G002",
-    "Q043|Q044"
+    "Q043|Q044",
+    "Q045|G008"
   ],
   "questionCorrections": {
     "management": "v1",
@@ -24458,7 +24442,8 @@
     "homestead": "split-v1",
     "spouseName": "legal-name-v1",
     "spouseSigning": "automatic-v1",
-    "mortgage": "exists-v1"
+    "mortgage": "exists-v1",
+    "loanStatus": "unknown-skips-v1"
   },
   "archivedQuestions": [
     {
