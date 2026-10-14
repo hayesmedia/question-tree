@@ -10,6 +10,18 @@ async function sign(value,password){const key=await crypto.subtle.importKey('raw
 async function authenticated(req,password){const value=(req.headers.get('Cookie')||'').split(';').map(s=>s.trim()).find(s=>s.startsWith(cookieName+'='))?.slice(cookieName.length+1);if(!value)return false;const [expiry,mac,...rest]=value.split('.');if(rest.length||!/^\d+$/.test(expiry)||!/^[a-f0-9]{64}$/.test(mac||''))return false;const seconds=Number(expiry),now=Math.floor(Date.now()/1000);if(seconds<=now||seconds>now+ttl)return false;return equal(enc.encode(mac),enc.encode(await sign(expiry,password)));}
 function login(message='',status=200){return new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in · Question Tree</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#121927;color:#e6ebf5;font:15px system-ui}main{width:min(360px,85vw);padding:32px;background:#202b3d;border-radius:16px}h1{font-size:24px}p{color:#bac5d9;line-height:1.6}label{display:block;margin:20px 0 8px}input,button{box-sizing:border-box;width:100%;padding:13px;border-radius:8px;font:inherit}input{background:#121927;color:white;border:1px solid #52617d}button{margin-top:16px;background:#7963e2;border:0;color:white;cursor:pointer}.error{color:#ffb4b4}</style></head><body><main><h1>Question Tree</h1><p>Enter the shared password to open your workspace.</p>${message?`<p class="error" role="alert">${message}</p>`:''}<form method="post" action="/login"><label for="password">Password</label><input id="password" name="password" type="password" required autocomplete="current-password" autofocus maxlength="1024"><button>Sign in</button></form></main></body></html>`,{status,headers:{...headers,'Content-Type':'text/html; charset=utf-8'}});}
 export default {async fetch(req,env){
+ const requestUrl=new URL(req.url);
+ // A dedicated bearer token permits only a snapshot read, never browser login or writes.
+ if(req.headers.has('Authorization')){
+  const authorization=req.headers.get('Authorization'),match=/^Bearer ([^\s]+)$/i.exec(authorization||'');
+  if(!env.PROJECT_READ_TOKEN||!match||!equal(await digest(match[1]),await digest(env.PROJECT_READ_TOKEN)))return Response.json({error:'Invalid read token'},{status:401,headers:{'Cache-Control':'no-store','WWW-Authenticate':'Bearer'}});
+  if(requestUrl.pathname!=='/api/project'||req.method!=='GET'||req.headers.has('Upgrade'))return Response.json({error:'Read token only permits GET /api/project'},{status:403,headers:{'Cache-Control':'no-store'}});
+  if(!env.PROJECTS)return Response.json({error:'Shared storage is not configured'},{status:503,headers:{'Cache-Control':'no-store'}});
+  // Do not forward credentials to storage or include them in its responses.
+  const readRequest=new Request(requestUrl.origin+'/api/project');
+  const response=await env.PROJECTS.get(env.PROJECTS.idFromName('team-project')).fetch(readRequest);
+  const result=new Response(response.body,response);result.headers.set('Cache-Control','private, no-store');result.headers.set('X-Content-Type-Options','nosniff');return result;
+ }
  if(!env.SITE_PASSWORD)return new Response('Login is not configured yet. The administrator must add the SITE_PASSWORD secret in Cloudflare.',{status:503,headers});
  const url=new URL(req.url);
  if((url.pathname==='/login'||url.pathname==='/logout')&&req.method==='POST'){
