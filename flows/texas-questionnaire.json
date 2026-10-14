@@ -5,6 +5,9 @@
   "sourceModel": "json-linked-v3",
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
+    "contractDefaults": {
+      "spouseSignsDeedAndClosingDocuments": true
+    },
     "questionnaireCode": "GUIDED_INVESTOR_DEAL_JAMES",
     "questionnaireName": "Texas Investor Deal Discovery (James)",
     "description": "Guided Investor Questionnaire v1. 134 plain-English questions over the canonical field catalog. Texas jurisdiction.",
@@ -1780,6 +1783,36 @@
         "branches": []
       },
       {
+        "questionCode": "G001B",
+        "stageCode": "STAGE_2",
+        "prompt": "What is the seller’s spouse’s full legal name?",
+        "whyItMatters": "Include the spouse as an additional seller in the contract.",
+        "beginnerHelp": "Enter the spouse’s full legal name. This person is to be added as a seller in the contract.",
+        "responseType": "TEXT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Full legal name as shown on identification",
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": true,
+        "allowUnknown": false,
+        "sortOrder": 335.5,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ],
+        "contractMapping": {
+          "field": "seller.spouseLegalName",
+          "role": "SELLER",
+          "includeAsSeller": true
+        }
+      },
+      {
         "questionCode": "G001A",
         "stageCode": "STAGE_2",
         "prompt": "Is the property the seller’s Texas homestead?",
@@ -1816,6 +1849,7 @@
       },
       {
         "questionCode": "G002",
+        "archived": true,
         "stageCode": "STAGE_2",
         "prompt": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
         "whyItMatters": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
@@ -8998,7 +9032,7 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": "G001A",
+          "target": "G001B",
           "routing": "auto",
           "color": "#168d88",
           "style": "solid"
@@ -9017,6 +9051,101 @@
       ]
     },
     {
+      "id": "G001B",
+      "questionCode": "G001B",
+      "type": "question",
+      "title": "What is the seller’s spouse’s full legal name?",
+      "section": "2. Seller, Title and Debt",
+      "strategyTag": null,
+      "x": 4050,
+      "y": 1088,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "G001B",
+        "stageCode": "STAGE_2",
+        "prompt": "What is the seller’s spouse’s full legal name?",
+        "whyItMatters": "Include the spouse as an additional seller in the contract.",
+        "beginnerHelp": "Enter the spouse’s full legal name. This person is to be added as a seller in the contract.",
+        "responseType": "TEXT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Full legal name as shown on identification",
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": true,
+        "allowUnknown": false,
+        "sortOrder": 335.5,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ],
+        "contractMapping": {
+          "field": "seller.spouseLegalName",
+          "role": "SELLER",
+          "includeAsSeller": true
+        }
+      },
+      "sequenceTarget": "G001A",
+      "details": {
+        "whyWeAsk": "Include the spouse as an additional seller in the contract.",
+        "beginnerHelp": "Enter the spouse’s full legal name. This person is to be added as a seller in the contract.",
+        "stage": "STAGE_2",
+        "responseType": "TEXT",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": null,
+        "placeholder": "Full legal name as shown on identification",
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": true,
+        "allowUnknown": false,
+        "sortOrder": 335.5,
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "seller.isMarried",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        ],
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "field": "seller.isMarried",
+              "sourceQuestion": "G001",
+              "operator": "eq",
+              "values": [
+                "Yes"
+              ]
+            }
+          ],
+          "groups": []
+        },
+        "contractMapping": {
+          "field": "seller.spouseLegalName",
+          "role": "SELLER",
+          "includeAsSeller": true
+        }
+      },
+      "answers": [],
+      "continueTarget": "G001A"
+    },
+    {
       "id": "G001A",
       "questionCode": "G001A",
       "type": "question",
@@ -9024,7 +9153,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 1088,
+      "y": 1326,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G001A",
@@ -9061,7 +9190,7 @@
         ],
         "branches": []
       },
-      "sequenceTarget": "G002",
+      "sequenceTarget": "Q042",
       "details": {
         "whyWeAsk": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
         "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
@@ -9091,12 +9220,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": "G002",
+          "target": "Q042",
           "routing": "auto",
           "color": "#168d88",
-          "style": "solid",
-          "connectionLabel": "Yes + seller married",
-          "fallbackTarget": "Q042"
+          "style": "solid"
         },
         {
           "value": "No",
@@ -9112,165 +9239,6 @@
       ]
     },
     {
-      "id": "G002",
-      "questionCode": "G002",
-      "type": "question",
-      "title": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
-      "section": "2. Seller, Title and Debt",
-      "strategyTag": null,
-      "x": 4050,
-      "y": 1364,
-      "textIncomplete": false,
-      "sourceRecord": {
-        "questionCode": "G002",
-        "stageCode": "STAGE_2",
-        "prompt": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
-        "whyItMatters": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
-        "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
-        "responseType": "SINGLE_SELECT",
-        "personaMode": "BOTH",
-        "routeCode": null,
-        "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
-        "placeholder": null,
-        "unit": null,
-        "minValue": null,
-        "maxValue": null,
-        "isRequired": false,
-        "allowUnknown": true,
-        "sortOrder": 336,
-        "options": [
-          {
-            "optionValue": "Yes",
-            "optionLabel": "Yes",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 1
-          },
-          {
-            "optionValue": "No",
-            "optionLabel": "No",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 2
-          },
-          {
-            "optionValue": "Unknown",
-            "optionLabel": "Unknown",
-            "helpText": null,
-            "isUnknownOption": true,
-            "sortOrder": 3
-          },
-          {
-            "optionValue": "N/A",
-            "optionLabel": "N/A",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 4
-          }
-        ],
-        "branches": [
-          {
-            "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
-          }
-        ]
-      },
-      "sequenceTarget": "Q042",
-      "details": {
-        "whyWeAsk": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
-        "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
-        "stage": "STAGE_2",
-        "responseType": "SINGLE_SELECT",
-        "persona": "BOTH",
-        "routeTag": null,
-        "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
-        "placeholder": null,
-        "unit": null,
-        "minValue": null,
-        "maxValue": null,
-        "isRequired": false,
-        "allowUnknown": true,
-        "sortOrder": 336,
-        "branches": [
-          {
-            "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-            "condition": {
-              "conditions": [
-                {
-                  "fieldCode": "seller.isMarried",
-                  "operator": "eq",
-                  "value": "Yes"
-                },
-                {
-                  "fieldCode": "seller.isHomestead",
-                  "operator": "eq",
-                  "value": "Yes"
-                }
-              ],
-              "combinator": "AND"
-            }
-          }
-        ],
-        "visibility": {
-          "match": "ALL (AND)",
-          "conditions": [
-            {
-              "field": "seller.isMarried",
-              "sourceQuestion": "G001",
-              "operator": "eq",
-              "values": [
-                "Yes"
-              ]
-            },
-            {
-              "field": "seller.isHomestead",
-              "sourceQuestion": "G001A",
-              "operator": "eq",
-              "values": [
-                "Yes"
-              ]
-            }
-          ],
-          "groups": []
-        }
-      },
-      "answers": [
-        {
-          "value": "Yes",
-          "label": "Yes",
-          "unknown": false,
-          "helpText": null,
-          "sortOrder": 1,
-          "target": ""
-        },
-        {
-          "value": "No",
-          "label": "No",
-          "unknown": false,
-          "helpText": null,
-          "sortOrder": 2,
-          "target": ""
-        },
-        {
-          "value": "Unknown",
-          "label": "Unknown",
-          "unknown": true,
-          "helpText": null,
-          "sortOrder": 3,
-          "target": ""
-        },
-        {
-          "value": "N/A",
-          "label": "N/A",
-          "unknown": false,
-          "helpText": null,
-          "sortOrder": 4,
-          "target": ""
-        }
-      ]
-    },
-    {
       "id": "Q042",
       "questionCode": "Q042",
       "type": "question",
@@ -9278,7 +9246,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 1754,
+      "y": 1992,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q042",
@@ -9380,7 +9348,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2108,
+      "y": 2346,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q043",
@@ -9467,7 +9435,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2384,
+      "y": 2622,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q044",
@@ -9550,7 +9518,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2622,
+      "y": 2860,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q045",
@@ -9695,7 +9663,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2949,
+      "y": 3187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G008",
@@ -9779,7 +9747,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3187,
+      "y": 3425,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G009",
@@ -9863,7 +9831,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3446,
+      "y": 3684,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G010",
@@ -9947,7 +9915,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3684,
+      "y": 3922,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q046",
@@ -10030,7 +9998,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3922,
+      "y": 4160,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q047",
@@ -10113,7 +10081,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4181,
+      "y": 4419,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q048",
@@ -10196,7 +10164,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4440,
+      "y": 4678,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q049",
@@ -10326,7 +10294,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4812,
+      "y": 5050,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q050",
@@ -10443,7 +10411,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5181,
+      "y": 5419,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q051",
@@ -10545,7 +10513,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5514,
+      "y": 5752,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q052",
@@ -10675,7 +10643,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5868,
+      "y": 6106,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q053",
@@ -10805,7 +10773,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6222,
+      "y": 6460,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q054",
@@ -10920,7 +10888,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6498,
+      "y": 6736,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q055",
@@ -11036,7 +11004,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6795,
+      "y": 7033,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q056",
@@ -11197,7 +11165,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7221,
+      "y": 7459,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q057",
@@ -11312,7 +11280,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7560,
+      "y": 7798,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q058",
@@ -11525,7 +11493,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7914,
+      "y": 8152,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q059",
@@ -11715,7 +11683,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 8268,
+      "y": 8506,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q060",
@@ -11845,7 +11813,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 8622,
+      "y": 8860,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q191",
@@ -20267,8 +20235,8 @@
         "Q040",
         "Q041",
         "G001",
+        "G001B",
         "G001A",
-        "G002",
         "Q042",
         "Q043",
         "Q044",
@@ -20961,18 +20929,6 @@
     {
       "source": "Q041",
       "target": "G001",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
-    },
-    {
-      "source": "G002",
-      "target": "Q042",
       "label": "Next in stage order",
       "displayLabel": "Next",
       "kind": "sequence",
@@ -24381,6 +24337,19 @@
       "style": "solid",
       "color": "#168d88",
       "routing": "auto"
+    },
+    {
+      "source": "G001B",
+      "target": "G001A",
+      "kind": "continuation",
+      "provenance": "json-requested",
+      "executable": true,
+      "label": "Continue",
+      "displayLabel": "Continue",
+      "routing": "auto",
+      "width": 4,
+      "color": "#168d88",
+      "style": "solid"
     }
   ],
   "conditionSources": {
@@ -24389,7 +24358,8 @@
     "property.addendums.has.section1031Exchange": "Q027",
     "property.addendums.has.thirdPartyFinancingAddendum": "Q031",
     "seller.isMarried": "G001",
-    "seller.isHomestead": "G001A"
+    "seller.isHomestead": "G001A",
+    "seller.spouseLegalName": "G001B"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24405,7 +24375,7 @@
   "uploadProgress": {
     "questionDataComplete": true,
     "source": "questionnaire-v3.json",
-    "questions": 154
+    "questions": 155
   },
   "diagramFieldAssociations": {
     "property.type": {
@@ -24496,7 +24466,9 @@
     "mud": "yes-unknown-v1",
     "exchange": "yes-unknown-v1",
     "financing": "yes-no-v1",
-    "homestead": "split-v1"
+    "homestead": "split-v1",
+    "spouseName": "legal-name-v1",
+    "spouseSigning": "automatic-v1"
   },
   "archivedQuestions": [
     {
@@ -24674,9 +24646,198 @@
         }
       ],
       "reason": "Saved for later use; bypassed by Q010 → Q012."
+    },
+    {
+      "id": "G002",
+      "node": {
+        "id": "G002",
+        "questionCode": "G002",
+        "type": "question",
+        "title": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
+        "section": "2. Seller, Title and Debt",
+        "strategyTag": null,
+        "x": 4050,
+        "y": 1602,
+        "textIncomplete": false,
+        "sourceRecord": {
+          "questionCode": "G002",
+          "archived": true,
+          "stageCode": "STAGE_2",
+          "prompt": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
+          "whyItMatters": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
+          "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
+          "responseType": "SINGLE_SELECT",
+          "personaMode": "BOTH",
+          "routeCode": null,
+          "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+          "placeholder": null,
+          "unit": null,
+          "minValue": null,
+          "maxValue": null,
+          "isRequired": false,
+          "allowUnknown": true,
+          "sortOrder": 336,
+          "options": [
+            {
+              "optionValue": "Yes",
+              "optionLabel": "Yes",
+              "helpText": null,
+              "isUnknownOption": false,
+              "sortOrder": 1
+            },
+            {
+              "optionValue": "No",
+              "optionLabel": "No",
+              "helpText": null,
+              "isUnknownOption": false,
+              "sortOrder": 2
+            },
+            {
+              "optionValue": "Unknown",
+              "optionLabel": "Unknown",
+              "helpText": null,
+              "isUnknownOption": true,
+              "sortOrder": 3
+            },
+            {
+              "optionValue": "N/A",
+              "optionLabel": "N/A",
+              "helpText": null,
+              "isUnknownOption": false,
+              "sortOrder": 4
+            }
+          ],
+          "branches": [
+            {
+              "ruleOrder": 1,
+              "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            }
+          ]
+        },
+        "sequenceTarget": "Q042",
+        "details": {
+          "whyWeAsk": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
+          "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
+          "stage": "STAGE_2",
+          "responseType": "SINGLE_SELECT",
+          "persona": "BOTH",
+          "routeTag": null,
+          "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+          "placeholder": null,
+          "unit": null,
+          "minValue": null,
+          "maxValue": null,
+          "isRequired": false,
+          "allowUnknown": true,
+          "sortOrder": 336,
+          "branches": [
+            {
+              "ruleOrder": 1,
+              "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+              "condition": {
+                "conditions": [
+                  {
+                    "fieldCode": "seller.isMarried",
+                    "operator": "eq",
+                    "value": "Yes"
+                  },
+                  {
+                    "fieldCode": "seller.isHomestead",
+                    "operator": "eq",
+                    "value": "Yes"
+                  }
+                ],
+                "combinator": "AND"
+              }
+            }
+          ],
+          "visibility": {
+            "match": "ALL (AND)",
+            "conditions": [
+              {
+                "field": "seller.isMarried",
+                "sourceQuestion": "G001",
+                "operator": "eq",
+                "values": [
+                  "Yes"
+                ]
+              },
+              {
+                "field": "seller.isHomestead",
+                "sourceQuestion": "G001A",
+                "operator": "eq",
+                "values": [
+                  "Yes"
+                ]
+              }
+            ],
+            "groups": []
+          }
+        },
+        "answers": [
+          {
+            "value": "Yes",
+            "label": "Yes",
+            "unknown": false,
+            "helpText": null,
+            "sortOrder": 1,
+            "target": ""
+          },
+          {
+            "value": "No",
+            "label": "No",
+            "unknown": false,
+            "helpText": null,
+            "sortOrder": 2,
+            "target": ""
+          },
+          {
+            "value": "Unknown",
+            "label": "Unknown",
+            "unknown": true,
+            "helpText": null,
+            "sortOrder": 3,
+            "target": ""
+          },
+          {
+            "value": "N/A",
+            "label": "N/A",
+            "unknown": false,
+            "helpText": null,
+            "sortOrder": 4,
+            "target": ""
+          }
+        ]
+      },
+      "groups": [
+        {
+          "id": "STAGE_2",
+          "title": "2. Seller, Title and Debt",
+          "index": 5
+        }
+      ],
+      "connections": [
+        {
+          "source": "G002",
+          "target": "Q042",
+          "label": "Next in stage order",
+          "displayLabel": "Next",
+          "kind": "sequence",
+          "provenance": "json-order",
+          "traced": true,
+          "width": 4,
+          "style": "solid",
+          "color": "#168d88"
+        }
+      ],
+      "reason": "Removed from active workflow; saved for later use."
     }
   ],
   "deletedSourceIds": [
-    "Q011"
-  ]
+    "Q011",
+    "G002"
+  ],
+  "contractDefaults": {
+    "spouseSignsDeedAndClosingDocuments": true
+  }
 }
