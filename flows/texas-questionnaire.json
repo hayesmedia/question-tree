@@ -363,7 +363,7 @@
           },
           {
             "optionValue": "Open to best option",
-            "optionLabel": "Open to best option",
+            "optionLabel": "Help me decide",
             "helpText": null,
             "isUnknownOption": false,
             "sortOrder": 4
@@ -5825,7 +5825,7 @@
           },
           {
             "optionValue": "Open to best option",
-            "optionLabel": "Open to best option",
+            "optionLabel": "Help me decide",
             "helpText": null,
             "isUnknownOption": false,
             "sortOrder": 4
@@ -5883,11 +5883,14 @@
         },
         {
           "value": "Open to best option",
-          "label": "Open to best option",
+          "label": "Help me decide",
           "unknown": false,
           "helpText": null,
           "sortOrder": 4,
-          "target": ""
+          "target": "Q070",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -24493,6 +24496,7 @@
   ],
   "questionCorrections": {
     "management": "v1",
-    "refinance": "v1"
+    "refinance": "v1",
+    "helpDecide": "v1"
   }
 }
