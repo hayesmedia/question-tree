@@ -3,15 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "G017",
-      "field": "property.addendums.has.section1031Exchange",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q032",
       "field": "property.addendums.has.thirdPartyFinancingAddendum",
       "operator": "eq",
@@ -727,24 +718,6 @@
     {
       "question": "Q026",
       "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q027",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q027",
-      "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q027",
-      "answer": "Unknown",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."
     },

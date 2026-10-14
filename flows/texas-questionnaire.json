@@ -1428,7 +1428,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -7952,7 +7952,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "G017",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "No",
@@ -7960,7 +7963,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "Q028",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "Unknown",
@@ -7968,7 +7974,10 @@
           "unknown": true,
           "helpText": null,
           "sortOrder": 3,
-          "target": ""
+          "target": "G017",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -8025,7 +8034,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -8048,13 +8057,13 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
                   "fieldCode": "property.addendums.has.section1031Exchange",
-                  "operator": "eq",
-                  "value": "Yes"
+                  "operator": "in",
+                  "value": "Yes,Unknown"
                 }
               ],
               "combinator": "AND"
@@ -8066,9 +8075,11 @@
           "conditions": [
             {
               "field": "property.addendums.has.section1031Exchange",
-              "operator": "eq",
+              "sourceQuestion": "Q027",
+              "operator": "in",
               "values": [
-                "Yes"
+                "Yes",
+                "Unknown"
               ]
             }
           ],
@@ -20697,8 +20708,8 @@
     {
       "source": "Q027",
       "target": "G017",
-      "label": "Yes",
-      "displayLabel": "Yes",
+      "label": "Yes / Unknown",
+      "displayLabel": "Yes / Unknown",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
@@ -20709,19 +20720,19 @@
         {
           "ruleOrder": 1,
           "fieldCode": "property.addendums.has.section1031Exchange",
-          "operator": "eq",
-          "value": "Yes"
+          "operator": "in",
+          "value": "Yes,Unknown"
         }
       ],
       "sourceRule": {
         "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
         "condition": {
           "conditions": [
             {
               "fieldCode": "property.addendums.has.section1031Exchange",
-              "operator": "eq",
-              "value": "Yes"
+              "operator": "in",
+              "value": "Yes,Unknown"
             }
           ],
           "combinator": "AND"
@@ -24295,7 +24306,8 @@
   ],
   "conditionSources": {
     "insurance.insurable": "Q117",
-    "property.hasMud": "QG-MUD"
+    "property.hasMud": "QG-MUD",
+    "property.addendums.has.section1031Exchange": "Q027"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24402,7 +24414,8 @@
     "wholesaleIntent": "v1",
     "insurance": "yes-unknown-v1",
     "archiveQ011": "archived",
-    "mud": "yes-unknown-v1"
+    "mud": "yes-unknown-v1",
+    "exchange": "yes-unknown-v1"
   },
   "archivedQuestions": [
     {

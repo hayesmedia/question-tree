@@ -1,3 +1,4 @@
+import {correctExchange} from './exchange-route.js';
 import {correctMud} from './mud-route.js';
 import {archiveQ011} from './archive.js';
 import {correctInsurance} from './insurance-route.js';
@@ -35,7 +36,7 @@ export function convertPackage(pkg){
   }
   rowBottom=Math.max(rowBottom,cursor);if(stageIndex%5===4)rowTop=rowBottom+250;
  }
- const linked=addLongConnections(result);if(pkg.questions.some(q=>q.questionCode==='Q090A'))correctManagement(linked,{layout:false});if(pkg.questions.some(q=>q.questionCode==='Q096A'))correctRefinance(linked,{layout:false});connectHelpRoute(linked);if(pkg.questions.find(q=>q.questionCode==='Q130')?.prompt.includes('(Wholesale)'))correctWholesaleIntent(linked);if(pkg.questions.find(q=>q.questionCode==='G011')?.branches.some(b=>b.conditionJson.includes('Yes,Unknown')))correctInsurance(linked);if(pkg.questions.find(q=>q.questionCode==='Q011')?.archived)archiveQ011(linked);if(pkg.questions.find(q=>q.questionCode==='G006')?.branches.some(b=>b.conditionJson.includes('Yes,Unknown')))correctMud(linked);return validate(linked);
+ const linked=addLongConnections(result);if(pkg.questions.some(q=>q.questionCode==='Q090A'))correctManagement(linked,{layout:false});if(pkg.questions.some(q=>q.questionCode==='Q096A'))correctRefinance(linked,{layout:false});connectHelpRoute(linked);if(pkg.questions.find(q=>q.questionCode==='Q130')?.prompt.includes('(Wholesale)'))correctWholesaleIntent(linked);if(pkg.questions.find(q=>q.questionCode==='G011')?.branches.some(b=>b.conditionJson.includes('Yes,Unknown')))correctInsurance(linked);if(pkg.questions.find(q=>q.questionCode==='Q011')?.archived)archiveQ011(linked);if(pkg.questions.find(q=>q.questionCode==='G006')?.branches.some(b=>b.conditionJson.includes('Yes,Unknown')))correctMud(linked);if(pkg.questions.find(q=>q.questionCode==='G017')?.branches.some(b=>b.conditionJson.includes('Yes,Unknown')))correctExchange(linked);return validate(linked);
 }
 // Three-way source upgrade: only fields still equal to their screenshot source
 // are replaced. Canvas geometry, groups and edited destinations are user-owned.

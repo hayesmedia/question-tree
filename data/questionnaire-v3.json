@@ -1422,7 +1422,7 @@
       "branches": [
         {
           "ruleOrder": 1,
-          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.addendums.has.section1031Exchange\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.addendums.has.section1031Exchange\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
         }
       ]
     },
