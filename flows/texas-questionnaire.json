@@ -5,6 +5,9 @@
   "sourceModel": "json-linked-v3",
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
+    "conditionSources": {
+      "mortgage.first.exists": "Q043"
+    },
     "contractDefaults": {
       "spouseSignsDeedAndClosingDocuments": true
     },
@@ -9415,7 +9418,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "Q044",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "No",
@@ -9423,7 +9429,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "Q050",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -9502,7 +9511,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -9614,7 +9624,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -9982,7 +9993,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10065,7 +10077,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10148,7 +10161,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10253,7 +10267,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10602,7 +10617,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10732,7 +10748,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -10855,7 +10872,8 @@
               "operator": "eq",
               "values": [
                 "No"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -11247,7 +11265,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -11408,7 +11427,8 @@
                   "operator": "eq",
                   "values": [
                     "Yes"
-                  ]
+                  ],
+                  "sourceQuestion": "Q043"
                 }
               ],
               "groups": []
@@ -11772,7 +11792,8 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q043"
             }
           ],
           "groups": []
@@ -20951,40 +20972,6 @@
       "color": "#168d88"
     },
     {
-      "source": "Q043",
-      "target": "Q044",
-      "label": "Yes",
-      "displayLabel": "Yes",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "mortgage.first.exists",
-          "operator": "eq",
-          "value": "Yes"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"mortgage.first.exists\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "mortgage.first.exists",
-              "operator": "eq",
-              "value": "Yes"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
       "source": "Q044",
       "target": "Q045",
       "label": "Next in stage order",
@@ -24359,7 +24346,8 @@
     "property.addendums.has.thirdPartyFinancingAddendum": "Q031",
     "seller.isMarried": "G001",
     "seller.isHomestead": "G001A",
-    "seller.spouseLegalName": "G001B"
+    "seller.spouseLegalName": "G001B",
+    "mortgage.first.exists": "Q043"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24454,7 +24442,8 @@
   "deletedReferenceLinks": [
     "Q090|Q091",
     "Q096|Q097",
-    "G001|G002"
+    "G001|G002",
+    "Q043|Q044"
   ],
   "questionCorrections": {
     "management": "v1",
@@ -24468,7 +24457,8 @@
     "financing": "yes-no-v1",
     "homestead": "split-v1",
     "spouseName": "legal-name-v1",
-    "spouseSigning": "automatic-v1"
+    "spouseSigning": "automatic-v1",
+    "mortgage": "exists-v1"
   },
   "archivedQuestions": [
     {

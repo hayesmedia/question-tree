@@ -3,24 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "Q044",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q045",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "G008",
       "field": "mortgage.first.status",
       "operator": "in",
@@ -51,69 +33,6 @@
       "missing": "Source question and any value conversion required to evaluate this field."
     },
     {
-      "question": "Q046",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q047",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q048",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q049",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q052",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q053",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q054",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "No"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q055",
       "field": "seller.openToSellerFinance",
       "operator": "in",
@@ -134,24 +53,6 @@
       "missing": "Source question and any value conversion required to evaluate this field."
     },
     {
-      "question": "Q057",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q058",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q058",
       "field": "seller.openToSellerFinance",
       "operator": "in",
@@ -208,15 +109,6 @@
       "values": [
         "Yes",
         "Maybe"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "Q060",
-      "field": "mortgage.first.exists",
-      "operator": "eq",
-      "values": [
-        "Yes"
       ],
       "missing": "Source question and any value conversion required to evaluate this field."
     },
@@ -829,30 +721,6 @@
       "missing": "Uses question order; no explicit answer destination."
     },
     {
-      "question": "G002",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G002",
-      "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G002",
-      "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G002",
-      "answer": "N/A",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
       "question": "Q042",
       "answer": "Yes",
       "continuation": null,
@@ -867,18 +735,6 @@
     {
       "question": "Q042",
       "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q043",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q043",
-      "answer": "No",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."
     },
