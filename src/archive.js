@@ -18,3 +18,14 @@ export function restoreArchived(flow,id){
  if(id==='Q011'){const source=flow.nodes.find(n=>n.id==='Q010');if(source?.sequenceTarget==='Q012')source.sequenceTarget=id;flow.referenceLinks=flow.referenceLinks.filter(l=>!(l.source==='Q010'&&l.target==='Q012'&&l.kind==='sequence'));flow.questionCorrections.archiveQ011='restored';}
  flow.deletedSourceIds=(flow.deletedSourceIds||[]).filter(value=>value!==id);flow.archivedQuestions=flow.archivedQuestions.filter(value=>value.id!==id);return true;
 }
+
+export function recoverDeletedQuestions(flow,sources=[]){
+ const active=new Set(flow.nodes.map(n=>n.id)),archived=new Set((flow.archivedQuestions||[]).map(entry=>entry.id));
+ const deleted=new Set([...(flow.deletedSourceIds||[]),...(flow.sourcePackage?.questions||[]).filter(q=>!active.has(q.questionCode)).map(q=>q.questionCode)]);
+ const previousRecovery=JSON.stringify(flow.archiveRecovery);const recovered=[],missing=[];flow.archivedQuestions??=[];
+ for(const id of deleted){if(active.has(id)||archived.has(id)||/^(RULE:|STAGE-RULE:)/.test(id)||sources.some(source=>source?.nodes?.some(node=>node.id===id&&node.type!=='question')))continue;let entry=null;
+  for(const source of sources){if(!source)continue;const saved=source.archivedQuestions?.find(e=>e.id===id);if(saved){entry=structuredClone(saved);break;}const node=source.nodes?.find(n=>n.id===id&&n.type==='question');if(node){entry={id,node:structuredClone(node),groups:(source.groups||[]).filter(g=>g.members.includes(id)).map(g=>({id:g.id,title:g.title,index:g.members.indexOf(id)})),connections:structuredClone((source.referenceLinks||[]).filter(l=>l.source===id||l.target===id)),reason:'Recovered after deletion; retained for later use.',recoveredFrom:source===sources[0]?'browser backup':'source data'};break;}}
+  if(entry){flow.archivedQuestions.push(entry);recovered.push(id);}else missing.push(id);
+ }
+ flow.archiveRecovery={unrecoverableIds:missing};const changed=recovered.length>0||previousRecovery!==JSON.stringify(flow.archiveRecovery);return {changed,recovered,missing};
+}

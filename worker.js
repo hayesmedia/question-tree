@@ -23,7 +23,8 @@ export default {async fetch(req,env){
   return new Response(null,{status:303,headers:{...headers,Location:'/', 'Set-Cookie':`${cookieName}=${expiry}.${mac}; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=${ttl}`}});
  }
  if(!await authenticated(req,env.SITE_PASSWORD))return login('',401);
- if(url.pathname==='/api/project'){
+ if(url.pathname==='/api/project'||url.pathname==='/api/project/live'){
+ if(url.pathname.endsWith('/live')&&req.headers.get('Origin')!==url.origin)return new Response('Forbidden',{status:403,headers});
  if(!env.PROJECTS)return Response.json({error:'Shared storage is not configured'},{status:503});
  if(req.method==='PUT'){
   if(req.headers.get('Origin')!==url.origin)return new Response('Forbidden',{status:403,headers});
