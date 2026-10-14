@@ -1747,9 +1747,9 @@
       {
         "questionCode": "G001",
         "stageCode": "STAGE_2",
-        "prompt": "Is the seller married, and is this property their Texas homestead?",
+        "prompt": "Is the seller married?",
         "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
-        "beginnerHelp": "Homestead status is about where the seller actually lives and claims their exemption, not about the loan. If you are unsure, treat it as Unknown and let title confirm it. Getting this wrong after closing means re-opening the conveyance.",
+        "beginnerHelp": "Answer for the seller’s current marital status.",
         "responseType": "SINGLE_SELECT",
         "personaMode": "BOTH",
         "routeCode": null,
@@ -1759,36 +1759,57 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 335,
         "options": [
           {
-            "optionValue": "Married - homestead",
-            "optionLabel": "Married - homestead",
-            "helpText": null,
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 1
           },
           {
-            "optionValue": "Married - not homestead",
-            "optionLabel": "Married - not homestead",
-            "helpText": null,
+            "optionValue": "No",
+            "optionLabel": "No",
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 2
-          },
+          }
+        ],
+        "branches": []
+      },
+      {
+        "questionCode": "G001A",
+        "stageCode": "STAGE_2",
+        "prompt": "Is the property the seller’s Texas homestead?",
+        "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
+        "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
+        "responseType": "SINGLE_SELECT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 336,
+        "options": [
           {
-            "optionValue": "Not married",
-            "optionLabel": "Not married",
-            "helpText": null,
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
             "isUnknownOption": false,
-            "sortOrder": 3
+            "helpText": null,
+            "sortOrder": 1
           },
           {
-            "optionValue": "Unknown",
-            "optionLabel": "Unknown",
+            "optionValue": "No",
+            "optionLabel": "No",
+            "isUnknownOption": false,
             "helpText": null,
-            "isUnknownOption": true,
-            "sortOrder": 4
+            "sortOrder": 2
           }
         ],
         "branches": []
@@ -1843,7 +1864,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.maritalHomesteadStatus\",\"operator\":\"in\",\"value\":\"Married - homestead,Unknown\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -8906,7 +8927,7 @@
       "id": "G001",
       "questionCode": "G001",
       "type": "question",
-      "title": "Is the seller married, and is this property their Texas homestead?",
+      "title": "Is the seller married?",
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
@@ -8915,9 +8936,9 @@
       "sourceRecord": {
         "questionCode": "G001",
         "stageCode": "STAGE_2",
-        "prompt": "Is the seller married, and is this property their Texas homestead?",
+        "prompt": "Is the seller married?",
         "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
-        "beginnerHelp": "Homestead status is about where the seller actually lives and claims their exemption, not about the loan. If you are unsure, treat it as Unknown and let title confirm it. Getting this wrong after closing means re-opening the conveyance.",
+        "beginnerHelp": "Answer for the seller’s current marital status.",
         "responseType": "SINGLE_SELECT",
         "personaMode": "BOTH",
         "routeCode": null,
@@ -8927,44 +8948,30 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 335,
         "options": [
           {
-            "optionValue": "Married - homestead",
-            "optionLabel": "Married - homestead",
-            "helpText": null,
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 1
           },
           {
-            "optionValue": "Married - not homestead",
-            "optionLabel": "Married - not homestead",
-            "helpText": null,
+            "optionValue": "No",
+            "optionLabel": "No",
             "isUnknownOption": false,
+            "helpText": null,
             "sortOrder": 2
-          },
-          {
-            "optionValue": "Not married",
-            "optionLabel": "Not married",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 3
-          },
-          {
-            "optionValue": "Unknown",
-            "optionLabel": "Unknown",
-            "helpText": null,
-            "isUnknownOption": true,
-            "sortOrder": 4
           }
         ],
         "branches": []
       },
-      "sequenceTarget": "G002",
+      "sequenceTarget": "G001A",
       "details": {
         "whyWeAsk": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
-        "beginnerHelp": "Homestead status is about where the seller actually lives and claims their exemption, not about the loan. If you are unsure, treat it as Unknown and let title confirm it. Getting this wrong after closing means re-opening the conveyance.",
+        "beginnerHelp": "Answer for the seller’s current marital status.",
         "stage": "STAGE_2",
         "responseType": "SINGLE_SELECT",
         "persona": "BOTH",
@@ -8975,7 +8982,7 @@
         "minValue": null,
         "maxValue": null,
         "isRequired": false,
-        "allowUnknown": true,
+        "allowUnknown": false,
         "sortOrder": 335,
         "branches": [],
         "visibility": {
@@ -8986,36 +8993,121 @@
       },
       "answers": [
         {
-          "value": "Married - homestead",
-          "label": "Married - homestead",
+          "value": "Yes",
+          "label": "Yes",
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "G001A",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
-          "value": "Married - not homestead",
-          "label": "Married - not homestead",
+          "value": "No",
+          "label": "No",
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
-        },
+          "target": "G001A",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "G001A",
+      "questionCode": "G001A",
+      "type": "question",
+      "title": "Is the property the seller’s Texas homestead?",
+      "section": "2. Seller, Title and Debt",
+      "strategyTag": null,
+      "x": 4050,
+      "y": 1088,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "G001A",
+        "stageCode": "STAGE_2",
+        "prompt": "Is the property the seller’s Texas homestead?",
+        "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
+        "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
+        "responseType": "SINGLE_SELECT",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 336,
+        "options": [
+          {
+            "optionValue": "Yes",
+            "optionLabel": "Yes",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 1
+          },
+          {
+            "optionValue": "No",
+            "optionLabel": "No",
+            "isUnknownOption": false,
+            "helpText": null,
+            "sortOrder": 2
+          }
+        ],
+        "branches": []
+      },
+      "sequenceTarget": "G002",
+      "details": {
+        "whyWeAsk": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
+        "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
+        "stage": "STAGE_2",
+        "responseType": "SINGLE_SELECT",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+        "placeholder": null,
+        "unit": null,
+        "minValue": null,
+        "maxValue": null,
+        "isRequired": false,
+        "allowUnknown": false,
+        "sortOrder": 336,
+        "branches": [],
+        "visibility": {
+          "match": "ANY (OR)",
+          "conditions": [],
+          "groups": []
+        }
+      },
+      "answers": [
         {
-          "value": "Not married",
-          "label": "Not married",
+          "value": "Yes",
+          "label": "Yes",
           "unknown": false,
           "helpText": null,
-          "sortOrder": 3,
-          "target": ""
+          "sortOrder": 1,
+          "target": "G002",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid",
+          "connectionLabel": "Yes + seller married",
+          "fallbackTarget": "Q042"
         },
         {
-          "value": "Unknown",
-          "label": "Unknown",
-          "unknown": true,
+          "value": "No",
+          "label": "No",
+          "unknown": false,
           "helpText": null,
-          "sortOrder": 4,
-          "target": ""
+          "sortOrder": 2,
+          "target": "Q042",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -9027,7 +9119,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 1202,
+      "y": 1364,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G002",
@@ -9079,7 +9171,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.maritalHomesteadStatus\",\"operator\":\"in\",\"value\":\"Married - homestead,Unknown\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -9102,13 +9194,18 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.maritalHomesteadStatus\",\"operator\":\"in\",\"value\":\"Married - homestead,Unknown\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
-                  "fieldCode": "seller.maritalHomesteadStatus",
-                  "operator": "in",
-                  "value": "Married - homestead,Unknown"
+                  "fieldCode": "seller.isMarried",
+                  "operator": "eq",
+                  "value": "Yes"
+                },
+                {
+                  "fieldCode": "seller.isHomestead",
+                  "operator": "eq",
+                  "value": "Yes"
                 }
               ],
               "combinator": "AND"
@@ -9119,11 +9216,19 @@
           "match": "ALL (AND)",
           "conditions": [
             {
-              "field": "seller.maritalHomesteadStatus",
-              "operator": "in",
+              "field": "seller.isMarried",
+              "sourceQuestion": "G001",
+              "operator": "eq",
               "values": [
-                "Married - homestead",
-                "Unknown"
+                "Yes"
+              ]
+            },
+            {
+              "field": "seller.isHomestead",
+              "sourceQuestion": "G001A",
+              "operator": "eq",
+              "values": [
+                "Yes"
               ]
             }
           ],
@@ -9173,7 +9278,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 1592,
+      "y": 1754,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q042",
@@ -9275,7 +9380,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 1946,
+      "y": 2108,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q043",
@@ -9362,7 +9467,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2222,
+      "y": 2384,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q044",
@@ -9445,7 +9550,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2460,
+      "y": 2622,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q045",
@@ -9590,7 +9695,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 2787,
+      "y": 2949,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G008",
@@ -9674,7 +9779,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3025,
+      "y": 3187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G009",
@@ -9758,7 +9863,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3284,
+      "y": 3446,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "G010",
@@ -9842,7 +9947,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3522,
+      "y": 3684,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q046",
@@ -9925,7 +10030,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 3760,
+      "y": 3922,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q047",
@@ -10008,7 +10113,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4019,
+      "y": 4181,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q048",
@@ -10091,7 +10196,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4278,
+      "y": 4440,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q049",
@@ -10221,7 +10326,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 4650,
+      "y": 4812,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q050",
@@ -10338,7 +10443,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5019,
+      "y": 5181,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q051",
@@ -10440,7 +10545,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5352,
+      "y": 5514,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q052",
@@ -10570,7 +10675,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 5706,
+      "y": 5868,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q053",
@@ -10700,7 +10805,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6060,
+      "y": 6222,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q054",
@@ -10815,7 +10920,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6336,
+      "y": 6498,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q055",
@@ -10931,7 +11036,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 6633,
+      "y": 6795,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q056",
@@ -11092,7 +11197,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7059,
+      "y": 7221,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q057",
@@ -11207,7 +11312,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7398,
+      "y": 7560,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q058",
@@ -11420,7 +11525,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 7752,
+      "y": 7914,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q059",
@@ -11610,7 +11715,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 8106,
+      "y": 8268,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q060",
@@ -11740,7 +11845,7 @@
       "section": "2. Seller, Title and Debt",
       "strategyTag": null,
       "x": 4050,
-      "y": 8460,
+      "y": 8622,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q191",
@@ -20162,6 +20267,7 @@
         "Q040",
         "Q041",
         "G001",
+        "G001A",
         "G002",
         "Q042",
         "Q043",
@@ -20863,40 +20969,6 @@
       "width": 4,
       "style": "solid",
       "color": "#168d88"
-    },
-    {
-      "source": "G001",
-      "target": "G002",
-      "label": "Married - homestead / Unknown",
-      "displayLabel": "Married - homestead / Unknown",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "seller.maritalHomesteadStatus",
-          "operator": "in",
-          "value": "Married - homestead,Unknown"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.maritalHomesteadStatus\",\"operator\":\"in\",\"value\":\"Married - homestead,Unknown\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "seller.maritalHomesteadStatus",
-              "operator": "in",
-              "value": "Married - homestead,Unknown"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
     },
     {
       "source": "G002",
@@ -24315,7 +24387,9 @@
     "insurance.insurable": "Q117",
     "property.hasMud": "QG-MUD",
     "property.addendums.has.section1031Exchange": "Q027",
-    "property.addendums.has.thirdPartyFinancingAddendum": "Q031"
+    "property.addendums.has.thirdPartyFinancingAddendum": "Q031",
+    "seller.isMarried": "G001",
+    "seller.isHomestead": "G001A"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24331,7 +24405,7 @@
   "uploadProgress": {
     "questionDataComplete": true,
     "source": "questionnaire-v3.json",
-    "questions": 153
+    "questions": 154
   },
   "diagramFieldAssociations": {
     "property.type": {
@@ -24348,10 +24422,6 @@
     },
     "property.addendums.has.thirdPartyFinancingAddendum": {
       "question": "Q031",
-      "evidence": "Unique match to question wording; mapping not exported"
-    },
-    "seller.maritalHomesteadStatus": {
-      "question": "G001",
       "evidence": "Unique match to question wording; mapping not exported"
     },
     "mortgage.first.exists": {
@@ -24413,7 +24483,8 @@
   },
   "deletedReferenceLinks": [
     "Q090|Q091",
-    "Q096|Q097"
+    "Q096|Q097",
+    "G001|G002"
   ],
   "questionCorrections": {
     "management": "v1",
@@ -24424,7 +24495,8 @@
     "archiveQ011": "archived",
     "mud": "yes-unknown-v1",
     "exchange": "yes-unknown-v1",
-    "financing": "yes-no-v1"
+    "financing": "yes-no-v1",
+    "homestead": "split-v1"
   },
   "archivedQuestions": [
     {

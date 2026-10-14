@@ -3,16 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "G002",
-      "field": "seller.maritalHomesteadStatus",
-      "operator": "in",
-      "values": [
-        "Married - homestead",
-        "Unknown"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q044",
       "field": "mortgage.first.exists",
       "operator": "eq",
@@ -834,30 +824,6 @@
     },
     {
       "question": "Q041",
-      "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G001",
-      "answer": "Married - homestead",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G001",
-      "answer": "Married - not homestead",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G001",
-      "answer": "Not married",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "G001",
       "answer": "Unknown",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."

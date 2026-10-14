@@ -1741,9 +1741,9 @@
     {
       "questionCode": "G001",
       "stageCode": "STAGE_2",
-      "prompt": "Is the seller married, and is this property their Texas homestead?",
-      "whyItMatters": "A Texas homestead conveyance can require the seller\u0027s spouse to sign even when that spouse is not named on the deed.",
-      "beginnerHelp": "Homestead status is about where the seller actually lives and claims their exemption, not about the loan. If you are unsure, treat it as Unknown and let title confirm it. Getting this wrong after closing means re-opening the conveyance.",
+      "prompt": "Is the seller married?",
+      "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
+      "beginnerHelp": "Answer for the seller’s current marital status.",
       "responseType": "SINGLE_SELECT",
       "personaMode": "BOTH",
       "routeCode": null,
@@ -1753,36 +1753,57 @@
       "minValue": null,
       "maxValue": null,
       "isRequired": false,
-      "allowUnknown": true,
+      "allowUnknown": false,
       "sortOrder": 335,
       "options": [
         {
-          "optionValue": "Married - homestead",
-          "optionLabel": "Married - homestead",
-          "helpText": null,
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
           "isUnknownOption": false,
+          "helpText": null,
           "sortOrder": 1
         },
         {
-          "optionValue": "Married - not homestead",
-          "optionLabel": "Married - not homestead",
-          "helpText": null,
+          "optionValue": "No",
+          "optionLabel": "No",
           "isUnknownOption": false,
+          "helpText": null,
           "sortOrder": 2
-        },
+        }
+      ],
+      "branches": []
+    },
+    {
+      "questionCode": "G001A",
+      "stageCode": "STAGE_2",
+      "prompt": "Is the property the seller’s Texas homestead?",
+      "whyItMatters": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
+      "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
+      "responseType": "SINGLE_SELECT",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm",
+      "placeholder": null,
+      "unit": null,
+      "minValue": null,
+      "maxValue": null,
+      "isRequired": false,
+      "allowUnknown": false,
+      "sortOrder": 336,
+      "options": [
         {
-          "optionValue": "Not married",
-          "optionLabel": "Not married",
-          "helpText": null,
+          "optionValue": "Yes",
+          "optionLabel": "Yes",
           "isUnknownOption": false,
-          "sortOrder": 3
+          "helpText": null,
+          "sortOrder": 1
         },
         {
-          "optionValue": "Unknown",
-          "optionLabel": "Unknown",
+          "optionValue": "No",
+          "optionLabel": "No",
+          "isUnknownOption": false,
           "helpText": null,
-          "isUnknownOption": true,
-          "sortOrder": 4
+          "sortOrder": 2
         }
       ],
       "branches": []
@@ -1790,7 +1811,7 @@
     {
       "questionCode": "G002",
       "stageCode": "STAGE_2",
-      "prompt": "Will the seller\u0027s spouse sign the deed and closing documents, even though they are not on title?",
+      "prompt": "Will the seller's spouse sign the deed and closing documents, even though they are not on title?",
       "whyItMatters": "Missing spousal joinder on a homestead conveyance can leave a cloud on title that surfaces at your resale, not at your purchase.",
       "beginnerHelp": "If the answer is No or Unknown, this is a title or attorney question before you go under contract, not a closing-day question. Do not let a title company discover it for you three days out.",
       "responseType": "SINGLE_SELECT",
@@ -1837,7 +1858,7 @@
       "branches": [
         {
           "ruleOrder": 1,
-          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022seller.maritalHomesteadStatus\u0022,\u0022operator\u0022:\u0022in\u0022,\u0022value\u0022:\u0022Married - homestead,Unknown\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"seller.isMarried\",\"operator\":\"eq\",\"value\":\"Yes\"},{\"fieldCode\":\"seller.isHomestead\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
         }
       ]
     },
