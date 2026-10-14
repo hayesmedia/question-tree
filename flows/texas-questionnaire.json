@@ -3450,20 +3450,45 @@
       {
         "questionCode": "Q096",
         "stageCode": "STAGE_3",
-        "prompt": "What stabilized value and refinance LTV are you assuming?",
+        "prompt": "What do you expect the property to be worth after renovations?",
         "whyItMatters": "Determines whether enough capital can be recycled.",
-        "beginnerHelp": "Keep LTV and seasoning assumptions lender-specific.",
-        "responseType": "TEXT",
+        "beginnerHelp": "Enter the estimated dollar value after renovations, not the renovation cost.",
+        "responseType": "CURRENCY",
         "personaMode": "BOTH",
         "routeCode": null,
         "sourceUrl": null,
-        "placeholder": "Stabilized value and refinance LTV",
-        "unit": null,
-        "minValue": null,
+        "placeholder": "Estimated after-renovation value",
+        "unit": "$",
+        "minValue": 0,
         "maxValue": null,
         "isRequired": false,
         "allowUnknown": true,
         "sortOrder": 790,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      {
+        "questionCode": "Q096A",
+        "stageCode": "STAGE_3",
+        "prompt": "What percentage of that value do you expect the lender to let you borrow when refinancing?",
+        "whyItMatters": "Determines whether enough capital can be recycled.",
+        "beginnerHelp": "Use the refinance loan-to-value percentage quoted by your lender. For example, 75% of a $200,000 value means an estimated $150,000 loan.",
+        "responseType": "PERCENTAGE",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Refinance loan-to-value percentage",
+        "unit": "%",
+        "minValue": 0,
+        "maxValue": 100,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 791,
         "options": [],
         "branches": [
           {
@@ -13835,7 +13860,7 @@
       "id": "Q096",
       "questionCode": "Q096",
       "type": "question",
-      "title": "What stabilized value and refinance LTV are you assuming?",
+      "title": "What do you expect the property to be worth after renovations?",
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
@@ -13844,16 +13869,16 @@
       "sourceRecord": {
         "questionCode": "Q096",
         "stageCode": "STAGE_3",
-        "prompt": "What stabilized value and refinance LTV are you assuming?",
+        "prompt": "What do you expect the property to be worth after renovations?",
         "whyItMatters": "Determines whether enough capital can be recycled.",
-        "beginnerHelp": "Keep LTV and seasoning assumptions lender-specific.",
-        "responseType": "TEXT",
+        "beginnerHelp": "Enter the estimated dollar value after renovations, not the renovation cost.",
+        "responseType": "CURRENCY",
         "personaMode": "BOTH",
         "routeCode": null,
         "sourceUrl": null,
-        "placeholder": "Stabilized value and refinance LTV",
-        "unit": null,
-        "minValue": null,
+        "placeholder": "Estimated after-renovation value",
+        "unit": "$",
+        "minValue": 0,
         "maxValue": null,
         "isRequired": false,
         "allowUnknown": true,
@@ -13866,18 +13891,18 @@
           }
         ]
       },
-      "sequenceTarget": "Q097",
+      "sequenceTarget": "Q096A",
       "details": {
         "whyWeAsk": "Determines whether enough capital can be recycled.",
-        "beginnerHelp": "Keep LTV and seasoning assumptions lender-specific.",
+        "beginnerHelp": "Enter the estimated dollar value after renovations, not the renovation cost.",
         "stage": "STAGE_3",
-        "responseType": "TEXT",
+        "responseType": "CURRENCY",
         "persona": "BOTH",
         "routeTag": null,
         "sourceUrl": null,
-        "placeholder": "Stabilized value and refinance LTV",
-        "unit": null,
-        "minValue": null,
+        "placeholder": "Estimated after-renovation value",
+        "unit": "$",
+        "minValue": 0,
         "maxValue": null,
         "isRequired": false,
         "allowUnknown": true,
@@ -13906,13 +13931,100 @@
               "operator": "eq",
               "values": [
                 "Yes"
-              ]
+              ],
+              "sourceQuestion": "Q095"
             }
           ],
           "groups": []
         }
       },
-      "answers": []
+      "answers": [],
+      "continueTarget": "Q096A"
+    },
+    {
+      "id": "Q096A",
+      "questionCode": "Q096A",
+      "type": "question",
+      "title": "What percentage of that value do you expect the lender to let you borrow when refinancing?",
+      "section": "3. Deal Economics",
+      "strategyTag": null,
+      "x": 5650,
+      "y": 8732,
+      "textIncomplete": false,
+      "sourceRecord": {
+        "questionCode": "Q096A",
+        "stageCode": "STAGE_3",
+        "prompt": "What percentage of that value do you expect the lender to let you borrow when refinancing?",
+        "whyItMatters": "Determines whether enough capital can be recycled.",
+        "beginnerHelp": "Use the refinance loan-to-value percentage quoted by your lender. For example, 75% of a $200,000 value means an estimated $150,000 loan.",
+        "responseType": "PERCENTAGE",
+        "personaMode": "BOTH",
+        "routeCode": null,
+        "sourceUrl": null,
+        "placeholder": "Refinance loan-to-value percentage",
+        "unit": "%",
+        "minValue": 0,
+        "maxValue": 100,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 791,
+        "options": [],
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+          }
+        ]
+      },
+      "sequenceTarget": "Q097",
+      "details": {
+        "whyWeAsk": "Determines whether enough capital can be recycled.",
+        "beginnerHelp": "Use the refinance loan-to-value percentage quoted by your lender. For example, 75% of a $200,000 value means an estimated $150,000 loan.",
+        "stage": "STAGE_3",
+        "responseType": "PERCENTAGE",
+        "persona": "BOTH",
+        "routeTag": null,
+        "sourceUrl": null,
+        "placeholder": "Refinance loan-to-value percentage",
+        "unit": "%",
+        "minValue": 0,
+        "maxValue": 100,
+        "isRequired": false,
+        "allowUnknown": true,
+        "sortOrder": 791,
+        "branches": [
+          {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "deal.refinanceAvailable",
+                  "operator": "eq",
+                  "value": "Yes"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        ],
+        "visibility": {
+          "match": "ALL (AND)",
+          "conditions": [
+            {
+              "field": "deal.refinanceAvailable",
+              "operator": "eq",
+              "values": [
+                "Yes"
+              ],
+              "sourceQuestion": "Q095"
+            }
+          ],
+          "groups": []
+        }
+      },
+      "answers": [],
+      "continueTarget": "Q097"
     },
     {
       "id": "Q097",
@@ -13922,7 +14034,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8732,
+      "y": 9012,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q097",
@@ -14009,7 +14121,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 9029,
+      "y": 9309,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q098",
@@ -14126,7 +14238,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 9398,
+      "y": 9678,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q099",
@@ -15921,7 +16033,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 9907,
+      "y": 10187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q130",
@@ -16008,7 +16120,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10246,
+      "y": 10526,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q131",
@@ -16110,7 +16222,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10579,
+      "y": 10859,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q132",
@@ -16197,7 +16309,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10918,
+      "y": 11198,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q133",
@@ -16284,7 +16396,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11215,
+      "y": 11495,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q134",
@@ -16386,7 +16498,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11548,
+      "y": 11828,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q135",
@@ -16473,7 +16585,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11929,
+      "y": 12209,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "QG-WHOLESALE-CONDUCT",
@@ -16560,7 +16672,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 9907,
+      "y": 10187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q140",
@@ -16647,7 +16759,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10225,
+      "y": 10505,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q141",
@@ -16734,7 +16846,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10522,
+      "y": 10802,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q142",
@@ -16821,7 +16933,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10819,
+      "y": 11099,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q143",
@@ -16923,7 +17035,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11173,
+      "y": 11453,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q144",
@@ -17010,7 +17122,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11470,
+      "y": 11750,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q145",
@@ -17097,7 +17209,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11788,
+      "y": 12068,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q146",
@@ -17184,7 +17296,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 9907,
+      "y": 10187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q150",
@@ -17271,7 +17383,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10246,
+      "y": 10526,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q151",
@@ -17358,7 +17470,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10522,
+      "y": 10802,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q152",
@@ -17445,7 +17557,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10798,
+      "y": 11078,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q153",
@@ -17532,7 +17644,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 11095,
+      "y": 11375,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q154",
@@ -17619,7 +17731,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 11392,
+      "y": 11672,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q155",
@@ -17706,7 +17818,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 11710,
+      "y": 11990,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q156",
@@ -17836,7 +17948,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 12085,
+      "y": 12365,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q157",
@@ -17938,7 +18050,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "FORMAL_ASSUMPTION",
       "x": 5650,
-      "y": 9907,
+      "y": 10187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q160",
@@ -18025,7 +18137,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10204,
+      "y": 10484,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q161",
@@ -18112,7 +18224,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10564,
+      "y": 10844,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q162",
@@ -18199,7 +18311,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10882,
+      "y": 11162,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q163",
@@ -18286,7 +18398,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 11242,
+      "y": 11522,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q164",
@@ -18373,7 +18485,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 11581,
+      "y": 11861,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q165",
@@ -18475,7 +18587,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 11998,
+      "y": 12278,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q166",
@@ -18562,7 +18674,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 12316,
+      "y": 12596,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q167",
@@ -18692,7 +18804,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 12670,
+      "y": 12950,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q168",
@@ -18779,7 +18891,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 13009,
+      "y": 13289,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q169",
@@ -18866,7 +18978,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 9907,
+      "y": 10187,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q180",
@@ -18968,7 +19080,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10282,
+      "y": 10562,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q181",
@@ -19098,7 +19210,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10675,
+      "y": 10955,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q182",
@@ -19185,7 +19297,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10972,
+      "y": 11252,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q183",
@@ -19300,7 +19412,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11269,
+      "y": 11549,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q184",
@@ -19415,7 +19527,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11566,
+      "y": 11846,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q185",
@@ -19530,7 +19642,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11863,
+      "y": 12143,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q186",
@@ -19660,7 +19772,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12217,
+      "y": 12497,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q187",
@@ -19747,7 +19859,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12535,
+      "y": 12815,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q188",
@@ -19849,7 +19961,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12868,
+      "y": 13148,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q189",
@@ -19936,7 +20048,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 13207,
+      "y": 13487,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q190",
@@ -20171,6 +20283,7 @@
         "Q094",
         "Q095",
         "Q096",
+        "Q096A",
         "Q097",
         "Q098",
         "Q099"
@@ -21543,18 +21656,6 @@
           "combinator": "AND"
         }
       }
-    },
-    {
-      "source": "Q096",
-      "target": "Q097",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
     },
     {
       "source": "Q097",
@@ -23360,6 +23461,44 @@
       ]
     },
     {
+      "source": "Q095",
+      "target": "Q096A",
+      "label": "Yes",
+      "displayLabel": "Yes",
+      "kind": "dependency",
+      "provenance": "json-inferred-dependency",
+      "inferred": true,
+      "executable": false,
+      "evidence": "Visibility condition is exported; source question inferred from its wording.",
+      "traced": false,
+      "style": "dashed",
+      "width": 4,
+      "color": "#9575ed",
+      "routing": "orthogonal",
+      "sourceRule": {
+        "ruleOrder": 1,
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "condition": {
+          "conditions": [
+            {
+              "fieldCode": "deal.refinanceAvailable",
+              "operator": "eq",
+              "value": "Yes"
+            }
+          ],
+          "combinator": "AND"
+        }
+      },
+      "visibilityDependencies": [
+        {
+          "ruleOrder": 1,
+          "fieldCode": "deal.refinanceAvailable",
+          "operator": "eq",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
       "source": "Q117",
       "target": "G012",
       "label": "Yes",
@@ -24226,6 +24365,31 @@
       "routing": "auto",
       "userCreated": true,
       "kind": "management-continuation"
+    },
+    {
+      "source": "Q096",
+      "target": "Q096A",
+      "label": "Next",
+      "displayLabel": "Next",
+      "kind": "sequence",
+      "provenance": "json-order",
+      "traced": true,
+      "width": 4,
+      "style": "solid",
+      "color": "#168d88",
+      "routing": "auto"
+    },
+    {
+      "source": "Q096A",
+      "target": "Q097",
+      "label": "Next",
+      "displayLabel": "Next",
+      "kind": "sequence",
+      "provenance": "json-order",
+      "traced": true,
+      "style": "solid",
+      "color": "#168d88",
+      "routing": "auto"
     }
   ],
   "conditionSources": {},
@@ -24243,7 +24407,7 @@
   "uploadProgress": {
     "questionDataComplete": true,
     "source": "questionnaire-v3.json",
-    "questions": 152
+    "questions": 153
   },
   "diagramFieldAssociations": {
     "property.type": {
@@ -24324,9 +24488,11 @@
     }
   },
   "deletedReferenceLinks": [
-    "Q090|Q091"
+    "Q090|Q091",
+    "Q096|Q097"
   ],
   "questionCorrections": {
-    "management": "v1"
+    "management": "v1",
+    "refinance": "v1"
   }
 }

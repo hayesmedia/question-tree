@@ -3444,16 +3444,16 @@
     {
       "questionCode": "Q096",
       "stageCode": "STAGE_3",
-      "prompt": "What stabilized value and refinance LTV are you assuming?",
+      "prompt": "What do you expect the property to be worth after renovations?",
       "whyItMatters": "Determines whether enough capital can be recycled.",
-      "beginnerHelp": "Keep LTV and seasoning assumptions lender-specific.",
-      "responseType": "TEXT",
+      "beginnerHelp": "Enter the estimated dollar value after renovations, not the renovation cost.",
+      "responseType": "CURRENCY",
       "personaMode": "BOTH",
       "routeCode": null,
       "sourceUrl": null,
-      "placeholder": "Stabilized value and refinance LTV",
-      "unit": null,
-      "minValue": null,
+      "placeholder": "Estimated after-renovation value",
+      "unit": "$",
+      "minValue": 0,
       "maxValue": null,
       "isRequired": false,
       "allowUnknown": true,
@@ -3462,7 +3462,32 @@
       "branches": [
         {
           "ruleOrder": 1,
-          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022deal.refinanceAvailable\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+        }
+      ]
+    },
+    {
+      "questionCode": "Q096A",
+      "stageCode": "STAGE_3",
+      "prompt": "What percentage of that value do you expect the lender to let you borrow when refinancing?",
+      "whyItMatters": "Determines whether enough capital can be recycled.",
+      "beginnerHelp": "Use the refinance loan-to-value percentage quoted by your lender. For example, 75% of a $200,000 value means an estimated $150,000 loan.",
+      "responseType": "PERCENTAGE",
+      "personaMode": "BOTH",
+      "routeCode": null,
+      "sourceUrl": null,
+      "placeholder": "Refinance loan-to-value percentage",
+      "unit": "%",
+      "minValue": 0,
+      "maxValue": 100,
+      "isRequired": false,
+      "allowUnknown": true,
+      "sortOrder": 791,
+      "options": [],
+      "branches": [
+        {
+          "ruleOrder": 1,
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"deal.refinanceAvailable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
         }
       ]
     },

@@ -1,3 +1,4 @@
+import {correctRefinance} from './refinance.js';
 import {correctManagement} from './management.js';
 import {addLongConnections} from './connections.js';
 import {validate,mergeSource} from './model.js';
@@ -29,7 +30,7 @@ export function convertPackage(pkg){
   }
   rowBottom=Math.max(rowBottom,cursor);if(stageIndex%5===4)rowTop=rowBottom+250;
  }
- const linked=addLongConnections(result);if(pkg.questions.some(q=>q.questionCode==='Q090A'))correctManagement(linked,{layout:false});return validate(linked);
+ const linked=addLongConnections(result);if(pkg.questions.some(q=>q.questionCode==='Q090A'))correctManagement(linked,{layout:false});if(pkg.questions.some(q=>q.questionCode==='Q096A'))correctRefinance(linked,{layout:false});return validate(linked);
 }
 // Three-way source upgrade: only fields still equal to their screenshot source
 // are replaced. Canvas geometry, groups and edited destinations are user-owned.
