@@ -10,11 +10,11 @@ const [pkg,baseline,source]=await Promise.all(['data/questionnaire-v3.json','flo
 test('all questionnaire records, stage definitions and every exported field survive conversion losslessly',()=>{
  assert.deepEqual(convertPackage(pkg,baseline),source);
  assert.deepEqual(source.sourcePackage,pkg);
- assert.equal(source.nodes.filter(n=>n.type==='question').length,pkg.questions.length);
- for(const q of pkg.questions){const n=source.nodes.find(n=>n.id===q.questionCode);assert.equal(n.title,q.prompt);assert.equal(n.textIncomplete,false);assert.deepEqual(n.sourceRecord,q);assert.equal(n.details.beginnerHelp,q.beginnerHelp);assert.equal(n.details.responseType,q.responseType);assert.equal(n.answers.length,q.options.length);for(const o of q.options){const a=n.answers.find(a=>a.value===o.optionValue);assert.equal(a.label,o.optionLabel);assert.equal(a.helpText,o.helpText);assert.equal(a.unknown,o.isUnknownOption);}assert.deepEqual(n.details.branches.map(({condition,...b})=>b),q.branches);}
+ assert.equal(source.nodes.filter(n=>n.type==='question').length,pkg.questions.filter(q=>!q.archived).length);
+ for(const q of pkg.questions){const n=source.nodes.find(n=>n.id===q.questionCode)||source.archivedQuestions.find(entry=>entry.id===q.questionCode)?.node;assert.equal(n.title,q.prompt);assert.equal(n.textIncomplete,false);assert.deepEqual(n.sourceRecord,q);assert.equal(n.details.beginnerHelp,q.beginnerHelp);assert.equal(n.details.responseType,q.responseType);assert.equal(n.answers.length,q.options.length);for(const o of q.options){const a=n.answers.find(a=>a.value===o.optionValue);assert.equal(a.label,o.optionLabel);assert.equal(a.helpText,o.helpText);assert.equal(a.unknown,o.isUnknownOption);}assert.deepEqual(n.details.branches.map(({condition,...b})=>b),q.branches);}
  assert.equal(issues(source).length,0);
 });
-test('all conditions remain in Properties and connector records without generated note cards',()=>{assert.equal(source.nodes.length,pkg.questions.length);assert.ok(source.nodes.every(n=>n.type==='question'));let count=0;for(const n of source.nodes)for(const b of n.details.branches){count++;if(['Q090A','Q090B','Q090C'].includes(n.id))continue;for(const c of conditions(b.condition)){const edges=source.referenceLinks.filter(l=>l.target===n.id&&l.visibilityDependencies?.some(d=>d.fieldCode===c.fieldCode&&d.value===c.value));assert.ok(edges.length,n.id+':'+c.fieldCode);assert.ok(edges.every(l=>!l.displayLabel.includes(c.fieldCode)));}}assert.equal(count,43);assert.deepEqual(source.conditionSources,{'insurance.insurable':'Q117'});});
+test('all conditions remain in Properties and connector records without generated note cards',()=>{assert.equal(source.nodes.length,pkg.questions.filter(q=>!q.archived).length);assert.ok(source.nodes.every(n=>n.type==='question'));let count=0;for(const n of source.nodes)for(const b of n.details.branches){count++;if(['Q090A','Q090B','Q090C'].includes(n.id))continue;for(const c of conditions(b.condition)){const edges=source.referenceLinks.filter(l=>l.target===n.id&&l.visibilityDependencies?.some(d=>d.fieldCode===c.fieldCode&&d.value===c.value));assert.ok(edges.length,n.id+':'+c.fieldCode);assert.ok(edges.every(l=>!l.displayLabel.includes(c.fieldCode)));}}assert.equal(count,42);assert.deepEqual(source.conditionSources,{'insurance.insurable':'Q117'});});
 test('safe upgrade fills unchanged fragments while preserving geometry, grouping, routes and custom fields',()=>{
  const saved=structuredClone(baseline);const n=saved.nodes.find(n=>n.id==='Q088');n.x=9000;n.y=8000;n.width=400;n.rotation=15;
  const custom=saved.nodes.find(n=>n.id==='Q004');custom.title='My custom prompt';custom.details.whyWeAsk='My own explanation';custom.answers[0].target='Q043';custom.answers.splice(1,1);
@@ -33,7 +33,7 @@ test('new settings are filled when a saved card has a partial custom details obj
  const n=upgradeSource(saved,source,baseline).flow.nodes.find(n=>n.id==='Q088');assert.equal(n.details.whyWeAsk,'My explanation');assert.equal(n.details.responseType,'CURRENCY');
 });
 test('project CSV/PDF include all source prompts and complete configuration, metadata and conflicts',()=>{
- const c=csv(source),r=report(source);for(const q of pkg.questions){assert.ok(c.includes(q.prompt.replaceAll('"','""')),q.questionCode);const safe=q.prompt.replaceAll('&','&amp;').replaceAll("'",'&#39;');assert.ok(r.includes(safe),q.questionCode);}
+ const c=csv(source),r=report(source);for(const q of pkg.questions.filter(q=>!q.archived)){assert.ok(c.includes(q.prompt.replaceAll('"','""')),q.questionCode);const safe=q.prompt.replaceAll('&','&amp;').replaceAll("'",'&#39;');assert.ok(r.includes(safe),q.questionCode);}
  for(const field of ['Beginner help','Placeholder','Required','Allow unknown','Stage definition','Original question record'])assert.ok(c.includes(field));
  assert.ok(!r.includes('Earlier No connector'));assert.ok(r.includes('stroke-width="4"'));assert.ok(r.includes('No answer options are defined for this input.'));assert.ok(r.includes('blockedHeadline'));
 });
@@ -42,7 +42,7 @@ test('preview uses typed values, skips false visibility and retains unresolved s
  assert.equal(visibilityState(find('Q044'),source,{'mortgage.first.exists':'No'}),false);
  assert.equal(visibilityState(find('Q044'),source,{}),null);
  assert.equal(visibilityState(find('Q058'),source,{'mortgage.first.exists':'No','seller.openToSellerFinance':'Maybe','seller.openToSubjectTo':'No','seller.openToWrap':'No'}),true);
- assert.equal(visibilityState(find('Q011'),source,{'property.type':'New home construction'}),false);
+ assert.equal(visibilityState(source.archivedQuestions.find(entry=>entry.id==='Q011').node,source,{'property.type':'New home construction'}),false);
  assert.equal(nextPreview(source,'Q043',{'mortgage.first.exists':'No'}).id,'G008');
  assert.equal(nextPreview(source,'Q099',{},'STAGE_5C').id,'Q110');
  assert.equal(nextPreview(source,'Q119',{},'STAGE_5C').id,'Q150');
@@ -65,7 +65,7 @@ test('deployments do not revert a manually imported package or a newer source ve
 test('JSON-only conversion is independent of every screenshot detail and group',()=>{
  const poison={nodes:[{id:'Q001',title:'WRONG',answers:[{label:'Bogus',target:'fake'}],details:{canonicalMappings:['WRONG']}}],groups:[{title:'WRONG',members:['fake']}],referenceLinks:[{source:'Q043',target:'Q053',label:'No'}]};assert.deepEqual(convertPackage(pkg,poison),source);
  assert.equal(source.nodes.filter(n=>n.sourceRule).length,0);assert.equal(source.groups.length,10);
- for(const stage of pkg.stages){const group=source.groups.find(g=>g.id===stage.stageCode);assert.equal(group.title,stage.stageName);assert.deepEqual(group.stage,stage);const ids=group.members.filter(id=>source.nodes.find(n=>n.id===id).type==='question');assert.deepEqual(ids,pkg.questions.filter(q=>q.stageCode===stage.stageCode).sort((a,b)=>a.sortOrder-b.sortOrder).map(q=>q.questionCode));}
+ for(const stage of pkg.stages){const group=source.groups.find(g=>g.id===stage.stageCode);assert.equal(group.title,stage.stageName);assert.deepEqual(group.stage,stage);const ids=group.members.filter(id=>source.nodes.find(n=>n.id===id).type==='question');assert.deepEqual(ids,pkg.questions.filter(q=>q.stageCode===stage.stageCode&&!q.archived).sort((a,b)=>a.sortOrder-b.sortOrder).map(q=>q.questionCode));}
 });
 test('legacy JSON migration removes screenshot routes/settings, preserves custom work and stays idempotent',async()=>{
  const {convertLegacyPackage}=await import('../src/legacy-source.js');const saved=convertLegacyPackage(pkg,baseline);saved.nodes.find(n=>n.id==='Q088').x=5000;saved.nodes.find(n=>n.id==='Q088').y=6000;saved.nodes.find(n=>n.id==='Q004').title='Custom objective';saved.referenceLinks.push({source:'Q001',target:'Q140',label:'Custom link',userCreated:true,width:1});

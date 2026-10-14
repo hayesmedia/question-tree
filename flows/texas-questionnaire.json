@@ -646,6 +646,7 @@
       },
       {
         "questionCode": "Q011",
+        "archived": true,
         "stageCode": "STAGE_1",
         "prompt": "Is the seller a builder selling a new home?",
         "whyItMatters": "New construction uses different TREC contracts from resale property.",
@@ -6121,7 +6122,7 @@
         ],
         "branches": []
       },
-      "sequenceTarget": "Q011",
+      "sequenceTarget": "Q012",
       "details": {
         "whyWeAsk": "Texas uses different contract forms depending on property type.",
         "beginnerHelp": "Choosing the correct base contract is the first document decision.",
@@ -6191,122 +6192,6 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 6,
-          "target": ""
-        }
-      ]
-    },
-    {
-      "id": "Q011",
-      "questionCode": "Q011",
-      "type": "question",
-      "title": "Is the seller a builder selling a new home?",
-      "section": "1. Property and Contract",
-      "strategyTag": null,
-      "x": 2450,
-      "y": 520,
-      "textIncomplete": false,
-      "sourceRecord": {
-        "questionCode": "Q011",
-        "stageCode": "STAGE_1",
-        "prompt": "Is the seller a builder selling a new home?",
-        "whyItMatters": "New construction uses different TREC contracts from resale property.",
-        "beginnerHelp": null,
-        "responseType": "SINGLE_SELECT",
-        "personaMode": "BOTH",
-        "routeCode": null,
-        "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
-        "placeholder": null,
-        "unit": null,
-        "minValue": null,
-        "maxValue": null,
-        "isRequired": false,
-        "allowUnknown": true,
-        "sortOrder": 90,
-        "options": [
-          {
-            "optionValue": "Yes",
-            "optionLabel": "Yes",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 1
-          },
-          {
-            "optionValue": "No",
-            "optionLabel": "No",
-            "helpText": null,
-            "isUnknownOption": false,
-            "sortOrder": 2
-          }
-        ],
-        "branches": [
-          {
-            "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}"
-          }
-        ]
-      },
-      "sequenceTarget": "Q012",
-      "details": {
-        "whyWeAsk": "New construction uses different TREC contracts from resale property.",
-        "beginnerHelp": null,
-        "stage": "STAGE_1",
-        "responseType": "SINGLE_SELECT",
-        "persona": "BOTH",
-        "routeTag": null,
-        "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
-        "placeholder": null,
-        "unit": null,
-        "minValue": null,
-        "maxValue": null,
-        "isRequired": false,
-        "allowUnknown": true,
-        "sortOrder": 90,
-        "branches": [
-          {
-            "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}",
-            "condition": {
-              "conditions": [
-                {
-                  "fieldCode": "property.type",
-                  "operator": "in",
-                  "value": "New home incomplete,New home complete"
-                }
-              ],
-              "combinator": "AND"
-            }
-          }
-        ],
-        "visibility": {
-          "match": "ALL (AND)",
-          "conditions": [
-            {
-              "field": "property.type",
-              "operator": "in",
-              "values": [
-                "New home incomplete",
-                "New home complete"
-              ]
-            }
-          ],
-          "groups": []
-        }
-      },
-      "answers": [
-        {
-          "value": "Yes",
-          "label": "Yes",
-          "unknown": false,
-          "helpText": null,
-          "sortOrder": 1,
-          "target": ""
-        },
-        {
-          "value": "No",
-          "label": "No",
-          "unknown": false,
-          "helpText": null,
-          "sortOrder": 2,
           "target": ""
         }
       ]
@@ -20199,7 +20084,6 @@
       "title": "1. Property and Contract",
       "members": [
         "Q010",
-        "Q011",
         "Q012",
         "Q013",
         "Q014",
@@ -20550,52 +20434,6 @@
     {
       "source": "Q004",
       "target": "Q007",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
-    },
-    {
-      "source": "Q010",
-      "target": "Q011",
-      "label": "New home incomplete / New home complete",
-      "displayLabel": "New home incomplete / New home complete",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88",
-      "visibilityDependencies": [
-        {
-          "ruleOrder": 1,
-          "fieldCode": "property.type",
-          "operator": "in",
-          "value": "New home incomplete,New home complete"
-        }
-      ],
-      "sourceRule": {
-        "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}",
-        "condition": {
-          "conditions": [
-            {
-              "fieldCode": "property.type",
-              "operator": "in",
-              "value": "New home incomplete,New home complete"
-            }
-          ],
-          "combinator": "AND"
-        }
-      }
-    },
-    {
-      "source": "Q011",
-      "target": "Q012",
       "label": "Next in stage order",
       "displayLabel": "Next",
       "kind": "sequence",
@@ -24428,6 +24266,18 @@
       "style": "solid",
       "color": "#168d88",
       "routing": "auto"
+    },
+    {
+      "source": "Q010",
+      "target": "Q012",
+      "label": "Next",
+      "displayLabel": "Next",
+      "kind": "sequence",
+      "provenance": "json-order",
+      "traced": true,
+      "style": "solid",
+      "color": "#168d88",
+      "routing": "auto"
     }
   ],
   "conditionSources": {
@@ -24536,6 +24386,188 @@
     "refinance": "v1",
     "helpDecide": "v1",
     "wholesaleIntent": "v1",
-    "insurance": "yes-unknown-v1"
-  }
+    "insurance": "yes-unknown-v1",
+    "archiveQ011": "archived"
+  },
+  "archivedQuestions": [
+    {
+      "id": "Q011",
+      "node": {
+        "id": "Q011",
+        "questionCode": "Q011",
+        "type": "question",
+        "title": "Is the seller a builder selling a new home?",
+        "section": "1. Property and Contract",
+        "strategyTag": null,
+        "x": 2450,
+        "y": 520,
+        "textIncomplete": false,
+        "sourceRecord": {
+          "questionCode": "Q011",
+          "archived": true,
+          "stageCode": "STAGE_1",
+          "prompt": "Is the seller a builder selling a new home?",
+          "whyItMatters": "New construction uses different TREC contracts from resale property.",
+          "beginnerHelp": null,
+          "responseType": "SINGLE_SELECT",
+          "personaMode": "BOTH",
+          "routeCode": null,
+          "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+          "placeholder": null,
+          "unit": null,
+          "minValue": null,
+          "maxValue": null,
+          "isRequired": false,
+          "allowUnknown": true,
+          "sortOrder": 90,
+          "options": [
+            {
+              "optionValue": "Yes",
+              "optionLabel": "Yes",
+              "helpText": null,
+              "isUnknownOption": false,
+              "sortOrder": 1
+            },
+            {
+              "optionValue": "No",
+              "optionLabel": "No",
+              "helpText": null,
+              "isUnknownOption": false,
+              "sortOrder": 2
+            }
+          ],
+          "branches": [
+            {
+              "ruleOrder": 1,
+              "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}"
+            }
+          ]
+        },
+        "sequenceTarget": "Q012",
+        "details": {
+          "whyWeAsk": "New construction uses different TREC contracts from resale property.",
+          "beginnerHelp": null,
+          "stage": "STAGE_1",
+          "responseType": "SINGLE_SELECT",
+          "persona": "BOTH",
+          "routeTag": null,
+          "sourceUrl": "https://www.trec.texas.gov/agency-information/contracts",
+          "placeholder": null,
+          "unit": null,
+          "minValue": null,
+          "maxValue": null,
+          "isRequired": false,
+          "allowUnknown": true,
+          "sortOrder": 90,
+          "branches": [
+            {
+              "ruleOrder": 1,
+              "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}",
+              "condition": {
+                "conditions": [
+                  {
+                    "fieldCode": "property.type",
+                    "operator": "in",
+                    "value": "New home incomplete,New home complete"
+                  }
+                ],
+                "combinator": "AND"
+              }
+            }
+          ],
+          "visibility": {
+            "match": "ALL (AND)",
+            "conditions": [
+              {
+                "field": "property.type",
+                "operator": "in",
+                "values": [
+                  "New home incomplete",
+                  "New home complete"
+                ]
+              }
+            ],
+            "groups": []
+          }
+        },
+        "answers": [
+          {
+            "value": "Yes",
+            "label": "Yes",
+            "unknown": false,
+            "helpText": null,
+            "sortOrder": 1,
+            "target": ""
+          },
+          {
+            "value": "No",
+            "label": "No",
+            "unknown": false,
+            "helpText": null,
+            "sortOrder": 2,
+            "target": ""
+          }
+        ]
+      },
+      "groups": [
+        {
+          "id": "STAGE_1",
+          "title": "1. Property and Contract",
+          "index": 1
+        }
+      ],
+      "connections": [
+        {
+          "source": "Q010",
+          "target": "Q011",
+          "label": "New home incomplete / New home complete",
+          "displayLabel": "New home incomplete / New home complete",
+          "kind": "sequence",
+          "provenance": "json-order",
+          "traced": true,
+          "width": 4,
+          "style": "solid",
+          "color": "#168d88",
+          "visibilityDependencies": [
+            {
+              "ruleOrder": 1,
+              "fieldCode": "property.type",
+              "operator": "in",
+              "value": "New home incomplete,New home complete"
+            }
+          ],
+          "sourceRule": {
+            "ruleOrder": 1,
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.type\",\"operator\":\"in\",\"value\":\"New home incomplete,New home complete\"}],\"combinator\":\"AND\"}",
+            "condition": {
+              "conditions": [
+                {
+                  "fieldCode": "property.type",
+                  "operator": "in",
+                  "value": "New home incomplete,New home complete"
+                }
+              ],
+              "combinator": "AND"
+            }
+          }
+        },
+        {
+          "source": "Q011",
+          "target": "Q012",
+          "label": "Next in stage order",
+          "displayLabel": "Next",
+          "kind": "sequence",
+          "provenance": "json-order",
+          "traced": true,
+          "width": 4,
+          "style": "solid",
+          "color": "#168d88"
+        }
+      ],
+      "reason": "Saved for later use; bypassed by Q010 → Q012."
+    }
+  ],
+  "deletedSourceIds": [
+    "Q011"
+  ]
 }

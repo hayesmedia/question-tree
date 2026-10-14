@@ -1,9 +1,9 @@
 {
-  "total_questions": 153,
+  "total_questions": 152,
   "clipped_prompts": 0,
   "source_options_complete": true,
   "typed_inputs": 44,
-  "visibility_rules": 43,
+  "visibility_rules": 42,
   "missing_export_fields": [
     "canonicalMappings",
     "rememberChoice",

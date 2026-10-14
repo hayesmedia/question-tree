@@ -4,7 +4,6 @@
 "Q004","What is your primary objective with this opportunity?","SINGLE_SELECT","4","0",""
 "Q007","How are you Financing the deal?","SINGLE_SELECT","6","0",""
 "Q010","What type of property is it?","SINGLE_SELECT","6","0",""
-"Q011","Is the seller a builder selling a new home?","SINGLE_SELECT","2","1",""
 "Q012","Who occupies the property today?","SINGLE_SELECT","4","0",""
 "Q013","What year was the dwelling built?","YEAR","0","0",""
 "Q014","Is mandatory membership in a property owners association required?","SINGLE_SELECT","3","0",""

@@ -640,6 +640,7 @@
     },
     {
       "questionCode": "Q011",
+      "archived": true,
       "stageCode": "STAGE_1",
       "prompt": "Is the seller a builder selling a new home?",
       "whyItMatters": "New construction uses different TREC contracts from resale property.",

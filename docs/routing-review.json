@@ -3,16 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "Q011",
-      "field": "property.type",
-      "operator": "in",
-      "values": [
-        "New home incomplete",
-        "New home complete"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "G006",
       "field": "property.hasMud",
       "operator": "eq",
@@ -539,18 +529,6 @@
     {
       "question": "Q010",
       "answer": "5+ units/commercial/other",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q011",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q011",
-      "answer": "No",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."
     },
