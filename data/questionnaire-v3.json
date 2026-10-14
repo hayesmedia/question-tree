@@ -914,7 +914,7 @@
       "stageCode": "STAGE_1",
       "prompt": "What is the name of the water district exactly as it appears on the notice?",
       "whyItMatters": "The statutory notice has to name the district correctly, and the name is how title and the appraisal district identify the debt.",
-      "beginnerHelp": "Copy it from the tax statement or the district\u0027s own notice, not from the listing. \u0022Harris County MUD No. 374\u0022 and \u0022HC MUD 374\u0022 are not interchangeable on a recorded notice.",
+      "beginnerHelp": "Copy it from the tax statement or the district's own notice, not from the listing. \"Harris County MUD No. 374\" and \"HC MUD 374\" are not interchangeable on a recorded notice.",
       "responseType": "TEXT",
       "personaMode": "BOTH",
       "routeCode": null,
@@ -930,16 +930,16 @@
       "branches": [
         {
           "ruleOrder": 1,
-          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasMud\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
         }
       ]
     },
     {
       "questionCode": "G007",
       "stageCode": "STAGE_1",
-      "prompt": "What is the district\u0027s current total tax rate per $100 of assessed valuation?",
+      "prompt": "What is the district's current total tax rate per $100 of assessed valuation?",
       "whyItMatters": "District tax sits on top of city, county and school tax, and it is a real line in your operating expenses.",
-      "beginnerHelp": "Take this from the current notice, not from last year\u0027s. A district that is still paying off bonds can carry a rate above one dollar per hundred, which on a $250,000 property is more than $2,500 a year on its own.",
+      "beginnerHelp": "Take this from the current notice, not from last year's. A district that is still paying off bonds can carry a rate above one dollar per hundred, which on a $250,000 property is more than $2,500 a year on its own.",
       "responseType": "NUMBER",
       "personaMode": "BOTH",
       "routeCode": null,
@@ -955,7 +955,7 @@
       "branches": [
         {
           "ruleOrder": 1,
-          "conditionJson": "{\u0022conditions\u0022:[{\u0022fieldCode\u0022:\u0022property.hasMud\u0022,\u0022operator\u0022:\u0022eq\u0022,\u0022value\u0022:\u0022Yes\u0022}],\u0022combinator\u0022:\u0022AND\u0022}"
+          "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
         }
       ]
     },

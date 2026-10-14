@@ -936,7 +936,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -961,7 +961,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -6741,7 +6741,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "G006",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "No",
@@ -6749,7 +6752,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "Q017",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "Unknown",
@@ -6757,7 +6763,10 @@
           "unknown": true,
           "helpText": null,
           "sortOrder": 3,
-          "target": ""
+          "target": "G006",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -6792,7 +6801,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -6815,13 +6824,13 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
                   "fieldCode": "property.hasMud",
-                  "operator": "eq",
-                  "value": "Yes"
+                  "operator": "in",
+                  "value": "Yes,Unknown"
                 }
               ],
               "combinator": "AND"
@@ -6833,9 +6842,11 @@
           "conditions": [
             {
               "field": "property.hasMud",
-              "operator": "eq",
+              "sourceQuestion": "QG-MUD",
+              "operator": "in",
               "values": [
-                "Yes"
+                "Yes",
+                "Unknown"
               ]
             }
           ],
@@ -6875,7 +6886,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -6898,13 +6909,13 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
                   "fieldCode": "property.hasMud",
-                  "operator": "eq",
-                  "value": "Yes"
+                  "operator": "in",
+                  "value": "Yes,Unknown"
                 }
               ],
               "combinator": "AND"
@@ -6916,9 +6927,11 @@
           "conditions": [
             {
               "field": "property.hasMud",
-              "operator": "eq",
+              "sourceQuestion": "QG-MUD",
+              "operator": "in",
               "values": [
-                "Yes"
+                "Yes",
+                "Unknown"
               ]
             }
           ],
@@ -20506,8 +20519,8 @@
     {
       "source": "QG-MUD",
       "target": "G006",
-      "label": "Yes",
-      "displayLabel": "Yes",
+      "label": "Yes / Unknown",
+      "displayLabel": "Yes / Unknown",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
@@ -20518,19 +20531,19 @@
         {
           "ruleOrder": 1,
           "fieldCode": "property.hasMud",
-          "operator": "eq",
-          "value": "Yes"
+          "operator": "in",
+          "value": "Yes,Unknown"
         }
       ],
       "sourceRule": {
         "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
         "condition": {
           "conditions": [
             {
               "fieldCode": "property.hasMud",
-              "operator": "eq",
-              "value": "Yes"
+              "operator": "in",
+              "value": "Yes,Unknown"
             }
           ],
           "combinator": "AND"
@@ -22250,8 +22263,8 @@
     {
       "source": "QG-MUD",
       "target": "G007",
-      "label": "Yes",
-      "displayLabel": "Yes",
+      "label": "Yes / Unknown",
+      "displayLabel": "Yes / Unknown",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -22264,13 +22277,13 @@
       "routing": "orthogonal",
       "sourceRule": {
         "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"property.hasMud\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
         "condition": {
           "conditions": [
             {
               "fieldCode": "property.hasMud",
-              "operator": "eq",
-              "value": "Yes"
+              "operator": "in",
+              "value": "Yes,Unknown"
             }
           ],
           "combinator": "AND"
@@ -22280,8 +22293,8 @@
         {
           "ruleOrder": 1,
           "fieldCode": "property.hasMud",
-          "operator": "eq",
-          "value": "Yes"
+          "operator": "in",
+          "value": "Yes,Unknown"
         }
       ]
     },
@@ -24281,7 +24294,8 @@
     }
   ],
   "conditionSources": {
-    "insurance.insurable": "Q117"
+    "insurance.insurable": "Q117",
+    "property.hasMud": "QG-MUD"
   },
   "sourceConflicts": [],
   "sourceNotes": [
@@ -24387,7 +24401,8 @@
     "helpDecide": "v1",
     "wholesaleIntent": "v1",
     "insurance": "yes-unknown-v1",
-    "archiveQ011": "archived"
+    "archiveQ011": "archived",
+    "mud": "yes-unknown-v1"
   },
   "archivedQuestions": [
     {

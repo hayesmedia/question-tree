@@ -3,24 +3,6 @@
   "continuationConflicts": [],
   "unresolvedVisibility": [
     {
-      "question": "G006",
-      "field": "property.hasMud",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "G007",
-      "field": "property.hasMud",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "G017",
       "field": "property.addendums.has.section1031Exchange",
       "operator": "eq",
@@ -600,24 +582,6 @@
     },
     {
       "question": "Q016",
-      "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "QG-MUD",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "QG-MUD",
-      "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "QG-MUD",
       "answer": "Unknown",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."
