@@ -3951,7 +3951,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -4005,7 +4005,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -15076,7 +15076,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": ""
+          "target": "G011",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "No",
@@ -15084,7 +15087,10 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": ""
+          "target": "Q118",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         },
         {
           "value": "Unknown",
@@ -15092,7 +15098,10 @@
           "unknown": true,
           "helpText": null,
           "sortOrder": 3,
-          "target": ""
+          "target": "G011",
+          "routing": "auto",
+          "color": "#168d88",
+          "style": "solid"
         }
       ]
     },
@@ -15127,7 +15136,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -15150,13 +15159,13 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
                   "fieldCode": "insurance.insurable",
-                  "operator": "eq",
-                  "value": "Yes"
+                  "operator": "in",
+                  "value": "Yes,Unknown"
                 }
               ],
               "combinator": "AND"
@@ -15168,9 +15177,11 @@
           "conditions": [
             {
               "field": "insurance.insurable",
-              "operator": "eq",
+              "sourceQuestion": "Q117",
+              "operator": "in",
               "values": [
-                "Yes"
+                "Yes",
+                "Unknown"
               ]
             }
           ],
@@ -15239,7 +15250,7 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}"
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}"
           }
         ]
       },
@@ -15262,13 +15273,13 @@
         "branches": [
           {
             "ruleOrder": 1,
-            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+            "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
             "condition": {
               "conditions": [
                 {
                   "fieldCode": "insurance.insurable",
-                  "operator": "eq",
-                  "value": "Yes"
+                  "operator": "in",
+                  "value": "Yes,Unknown"
                 }
               ],
               "combinator": "AND"
@@ -15280,9 +15291,11 @@
           "conditions": [
             {
               "field": "insurance.insurable",
-              "operator": "eq",
+              "sourceQuestion": "Q117",
+              "operator": "in",
               "values": [
-                "Yes"
+                "Yes",
+                "Unknown"
               ]
             }
           ],
@@ -21793,8 +21806,8 @@
     {
       "source": "Q117",
       "target": "G011",
-      "label": "Yes",
-      "displayLabel": "Yes",
+      "label": "Yes / Unknown",
+      "displayLabel": "Yes / Unknown",
       "kind": "sequence",
       "provenance": "json-order",
       "traced": true,
@@ -21805,19 +21818,19 @@
         {
           "ruleOrder": 1,
           "fieldCode": "insurance.insurable",
-          "operator": "eq",
-          "value": "Yes"
+          "operator": "in",
+          "value": "Yes,Unknown"
         }
       ],
       "sourceRule": {
         "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
         "condition": {
           "conditions": [
             {
               "fieldCode": "insurance.insurable",
-              "operator": "eq",
-              "value": "Yes"
+              "operator": "in",
+              "value": "Yes,Unknown"
             }
           ],
           "combinator": "AND"
@@ -23526,8 +23539,8 @@
     {
       "source": "Q117",
       "target": "G012",
-      "label": "Yes",
-      "displayLabel": "Yes",
+      "label": "Yes / Unknown",
+      "displayLabel": "Yes / Unknown",
       "kind": "dependency",
       "provenance": "json-inferred-dependency",
       "inferred": true,
@@ -23540,13 +23553,13 @@
       "routing": "orthogonal",
       "sourceRule": {
         "ruleOrder": 1,
-        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"eq\",\"value\":\"Yes\"}],\"combinator\":\"AND\"}",
+        "conditionJson": "{\"conditions\":[{\"fieldCode\":\"insurance.insurable\",\"operator\":\"in\",\"value\":\"Yes,Unknown\"}],\"combinator\":\"AND\"}",
         "condition": {
           "conditions": [
             {
               "fieldCode": "insurance.insurable",
-              "operator": "eq",
-              "value": "Yes"
+              "operator": "in",
+              "value": "Yes,Unknown"
             }
           ],
           "combinator": "AND"
@@ -23556,8 +23569,8 @@
         {
           "ruleOrder": 1,
           "fieldCode": "insurance.insurable",
-          "operator": "eq",
-          "value": "Yes"
+          "operator": "in",
+          "value": "Yes,Unknown"
         }
       ]
     },
@@ -24417,7 +24430,9 @@
       "routing": "auto"
     }
   ],
-  "conditionSources": {},
+  "conditionSources": {
+    "insurance.insurable": "Q117"
+  },
   "sourceConflicts": [],
   "sourceNotes": [
     "Recreated exclusively from the uploaded JSON.",
@@ -24520,6 +24535,7 @@
     "management": "v1",
     "refinance": "v1",
     "helpDecide": "v1",
-    "wholesaleIntent": "v1"
+    "wholesaleIntent": "v1",
+    "insurance": "yes-unknown-v1"
   }
 }

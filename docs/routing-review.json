@@ -286,24 +286,6 @@
       "missing": "Source question and any value conversion required to evaluate this field."
     },
     {
-      "question": "G011",
-      "field": "insurance.insurable",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
-      "question": "G012",
-      "field": "insurance.insurable",
-      "operator": "eq",
-      "values": [
-        "Yes"
-      ],
-      "missing": "Source question and any value conversion required to evaluate this field."
-    },
-    {
       "question": "Q118",
       "field": "property.occupied",
       "operator": "eq",
@@ -1468,24 +1450,6 @@
     },
     {
       "question": "Q116",
-      "answer": "Unknown",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q117",
-      "answer": "Yes",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q117",
-      "answer": "No",
-      "continuation": null,
-      "missing": "Uses question order; no explicit answer destination."
-    },
-    {
-      "question": "Q117",
       "answer": "Unknown",
       "continuation": null,
       "missing": "Uses question order; no explicit answer destination."

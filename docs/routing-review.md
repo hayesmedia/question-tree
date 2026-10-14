@@ -2,11 +2,11 @@
 
 Scope: deployed source dataset only. Browser-only and unsaved team edits are not available in this workspace. Use Review routes on the live canvas or export its current JSON for a complete review.
 
-Known working routes: Q004 Help me decide → Q070; Q090 Yes → Q090A, No → Q091; Q090A Flat fee → Q090B, Percentage → Q090C, Unknown → Q091; Q090B/C → Q091; Q096 → Q096A → Q097.
+Known working routes: Q004 Help me decide → Q070; Q090 Yes → Q090A, No → Q091; Q090A Flat fee → Q090B, Percentage → Q090C, Unknown → Q091; Q090B/C → Q091; Q096 → Q096A → Q097; Q117 Yes/Unknown → G011 → G012, No → Q118.
 
-Missing decisions: Q117 No and Unknown bypass destinations; Q130 Yes, No and optional-assignment destinations. Other unassigned answers currently use question order, which may be intentional. All 289 such answers are listed in routing-review.json.
+Missing decisions: Q130 Yes, No and optional-assignment destinations. Other unassigned answers currently use question order, which may be intentional. All 286 such answers are listed in routing-review.json.
 
-47 condition entries across 19 fields have no executable source mapping. Each needs the actual source question and any value conversion; inferred purple lines are not canonical assignments.
+45 condition entries across 18 fields have no executable source mapping. Each needs the actual source question and any value conversion; inferred purple lines are not canonical assignments.
 
 | Field needing a mapping | Questions using it |
 | --- | --- |
@@ -21,7 +21,6 @@ Missing decisions: Q117 No and Unknown bypass destinations; Q130 Yes, No and opt
 | seller.openToSubjectTo | Q058, Q059 |
 | seller.openToWrap | Q058, Q059 |
 | property.hasHOA | Q087 |
-| insurance.insurable | G011, G012 |
 | property.occupied | Q118, G013, G014, G015 |
 | property.hasLease | Q118, G013, G014, G015 |
 | deal.refinanceAvailable | Q156 |
