@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import {convertPackage} from '../src/source-data.js';
+import {recoverDeletedQuestions,archiveQ011} from '../src/archive.js';
+import {adoptSpouseName,correctMonthlyDebt} from '../src/current-project-repair.js';
+import {correctInsurance} from '../src/insurance-route.js';
+import {correctMud} from '../src/mud-route.js';
+import {correctHomestead} from '../src/homestead-route.js';
+import {correctSpouseName,automaticSpouseSigning} from '../src/spouse-name.js';
+import {correctMortgage,correctLoanStatus} from '../src/mortgage-route.js';
+import {routingAudit} from '../src/routing-audit.js';
+import {validate} from '../src/model.js';
+const [input,output]=process.argv.slice(2);if(!input||!output)throw Error('Usage: node scripts/repair-project-export.js input.json output.json');
+const flow=JSON.parse(fs.readFileSync(input)),baseline=JSON.parse(fs.readFileSync(new URL('../flows/texas-questionnaire.json',import.meta.url)));
+const recoverySource=convertPackage(flow.sourcePackage);
+recoverDeletedQuestions(flow,[recoverySource,baseline]);archiveQ011(flow,baseline.archivedQuestions.find(e=>e.id==='Q011'));
+adoptSpouseName(flow);correctHomestead(flow);correctSpouseName(flow);automaticSpouseSigning(flow);correctMortgage(flow);correctLoanStatus(flow);correctInsurance(flow);correctMud(flow);correctMonthlyDebt(flow);
+validate(flow);fs.writeFileSync(output,JSON.stringify(flow,null,2)+'\n');fs.writeFileSync(output.replace(/\.json$/,'.audit.json'),JSON.stringify(routingAudit(flow),null,2)+'\n');
+console.log(JSON.stringify({questions:flow.nodes.length,archived:flow.archivedQuestions.map(e=>e.id),unresolved:routingAudit(flow).unresolvedVisibility.length,unbound:routingAudit(flow).unboundConnections.length}));

@@ -3388,9 +3388,9 @@
       {
         "questionCode": "Q091",
         "stageCode": "STAGE_3",
-        "prompt": "What annual debt service will the rental actually have?",
-        "whyItMatters": "DSCR compares NOI to required debt payments.",
-        "beginnerHelp": null,
+        "prompt": "What will your total monthly loan payments be for this rental property, including principal and interest?",
+        "whyItMatters": "Monthly principal and interest payments are multiplied by 12 to determine annual debt service for DSCR.",
+        "beginnerHelp": "Enter the total monthly principal and interest on all loans for this property. Exclude taxes and insurance counted as operating expenses.",
         "responseType": "CURRENCY",
         "personaMode": "BOTH",
         "routeCode": null,
@@ -3403,7 +3403,9 @@
         "allowUnknown": true,
         "sortOrder": 740,
         "options": [],
-        "branches": []
+        "branches": [],
+        "measurementPeriod": "MONTHLY",
+        "annualizationMultiplier": 12
       },
       {
         "questionCode": "Q092",
@@ -13574,7 +13576,7 @@
       "id": "Q091",
       "questionCode": "Q091",
       "type": "question",
-      "title": "What annual debt service will the rental actually have?",
+      "title": "What will your total monthly loan payments be for this rental property, including principal and interest?",
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
@@ -13583,9 +13585,9 @@
       "sourceRecord": {
         "questionCode": "Q091",
         "stageCode": "STAGE_3",
-        "prompt": "What annual debt service will the rental actually have?",
-        "whyItMatters": "DSCR compares NOI to required debt payments.",
-        "beginnerHelp": null,
+        "prompt": "What will your total monthly loan payments be for this rental property, including principal and interest?",
+        "whyItMatters": "Monthly principal and interest payments are multiplied by 12 to determine annual debt service for DSCR.",
+        "beginnerHelp": "Enter the total monthly principal and interest on all loans for this property. Exclude taxes and insurance counted as operating expenses.",
         "responseType": "CURRENCY",
         "personaMode": "BOTH",
         "routeCode": null,
@@ -13598,12 +13600,14 @@
         "allowUnknown": true,
         "sortOrder": 740,
         "options": [],
-        "branches": []
+        "branches": [],
+        "measurementPeriod": "MONTHLY",
+        "annualizationMultiplier": 12
       },
       "sequenceTarget": "Q092",
       "details": {
-        "whyWeAsk": "DSCR compares NOI to required debt payments.",
-        "beginnerHelp": null,
+        "whyWeAsk": "Monthly principal and interest payments are multiplied by 12 to determine annual debt service for DSCR.",
+        "beginnerHelp": "Enter the total monthly principal and interest on all loans for this property. Exclude taxes and insurance counted as operating expenses.",
         "stage": "STAGE_3",
         "responseType": "CURRENCY",
         "persona": "BOTH",
@@ -13621,7 +13625,9 @@
           "match": "ANY (OR)",
           "conditions": [],
           "groups": []
-        }
+        },
+        "measurementPeriod": "MONTHLY",
+        "annualizationMultiplier": 12
       },
       "answers": []
     },
@@ -13633,7 +13639,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7363,
+      "y": 7405,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q092",
@@ -13688,7 +13694,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7601,
+      "y": 7643,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q093",
@@ -13743,7 +13749,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 7881,
+      "y": 7923,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q094",
@@ -13798,7 +13804,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8140,
+      "y": 8182,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q095",
@@ -13900,7 +13906,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8473,
+      "y": 8515,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q096",
@@ -13985,7 +13991,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 8732,
+      "y": 8774,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q096A",
@@ -14070,7 +14076,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 9012,
+      "y": 9054,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q097",
@@ -14157,7 +14163,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 9309,
+      "y": 9351,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q098",
@@ -14274,7 +14280,7 @@
       "section": "3. Deal Economics",
       "strategyTag": null,
       "x": 5650,
-      "y": 9678,
+      "y": 9720,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q099",
@@ -16082,7 +16088,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10187,
+      "y": 10229,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q130",
@@ -16184,7 +16190,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10559,
+      "y": 10601,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q131",
@@ -16286,7 +16292,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 10892,
+      "y": 10934,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q132",
@@ -16373,7 +16379,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11231,
+      "y": 11273,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q133",
@@ -16460,7 +16466,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11528,
+      "y": 11570,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q134",
@@ -16562,7 +16568,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 11861,
+      "y": 11903,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q135",
@@ -16649,7 +16655,7 @@
       "section": "5A. Wholesale",
       "strategyTag": "WHOLESALE",
       "x": 850,
-      "y": 12242,
+      "y": 12284,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "QG-WHOLESALE-CONDUCT",
@@ -16736,7 +16742,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10187,
+      "y": 10229,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q140",
@@ -16823,7 +16829,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10505,
+      "y": 10547,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q141",
@@ -16910,7 +16916,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 10802,
+      "y": 10844,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q142",
@@ -16997,7 +17003,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11099,
+      "y": 11141,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q143",
@@ -17099,7 +17105,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11453,
+      "y": 11495,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q144",
@@ -17186,7 +17192,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 11750,
+      "y": 11792,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q145",
@@ -17273,7 +17279,7 @@
       "section": "5B. Fix and Flip",
       "strategyTag": "FIX_FLIP",
       "x": 2450,
-      "y": 12068,
+      "y": 12110,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q146",
@@ -17360,7 +17366,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10187,
+      "y": 10229,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q150",
@@ -17447,7 +17453,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10526,
+      "y": 10568,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q151",
@@ -17534,7 +17540,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 10802,
+      "y": 10844,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q152",
@@ -17621,7 +17627,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 11078,
+      "y": 11120,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q153",
@@ -17708,7 +17714,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 11375,
+      "y": 11417,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q154",
@@ -17795,7 +17801,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "HOLD_BRRRR",
       "x": 4050,
-      "y": 11672,
+      "y": 11714,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q155",
@@ -17882,7 +17888,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 11990,
+      "y": 12032,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q156",
@@ -18012,7 +18018,7 @@
       "section": "5C. Hold / BRRRR",
       "strategyTag": "BRRRR",
       "x": 4050,
-      "y": 12365,
+      "y": 12407,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q157",
@@ -18114,7 +18120,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "FORMAL_ASSUMPTION",
       "x": 5650,
-      "y": 10187,
+      "y": 10229,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q160",
@@ -18201,7 +18207,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10484,
+      "y": 10526,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q161",
@@ -18288,7 +18294,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 10844,
+      "y": 10886,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q162",
@@ -18375,7 +18381,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SUBJECT_TO",
       "x": 5650,
-      "y": 11162,
+      "y": 11204,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q163",
@@ -18462,7 +18468,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 11522,
+      "y": 11564,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q164",
@@ -18549,7 +18555,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "SELLER_FINANCE",
       "x": 5650,
-      "y": 11861,
+      "y": 11903,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q165",
@@ -18651,7 +18657,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 12278,
+      "y": 12320,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q166",
@@ -18738,7 +18744,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "WRAP_HYBRID",
       "x": 5650,
-      "y": 12596,
+      "y": 12638,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q167",
@@ -18868,7 +18874,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 12950,
+      "y": 12992,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q168",
@@ -18955,7 +18961,7 @@
       "section": "5D. Creative Finance",
       "strategyTag": "CREATIVE_FINANCE",
       "x": 5650,
-      "y": 13289,
+      "y": 13331,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q169",
@@ -19042,7 +19048,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10187,
+      "y": 10229,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q180",
@@ -19144,7 +19150,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10562,
+      "y": 10604,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q181",
@@ -19274,7 +19280,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 10955,
+      "y": 10997,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q182",
@@ -19361,7 +19367,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11252,
+      "y": 11294,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q183",
@@ -19476,7 +19482,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11549,
+      "y": 11591,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q184",
@@ -19591,7 +19597,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 11846,
+      "y": 11888,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q185",
@@ -19706,7 +19712,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12143,
+      "y": 12185,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q186",
@@ -19836,7 +19842,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12497,
+      "y": 12539,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q187",
@@ -19923,7 +19929,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 12815,
+      "y": 12857,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q188",
@@ -20025,7 +20031,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 13148,
+      "y": 13190,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q189",
@@ -20112,7 +20118,7 @@
       "section": "6. Contract and Closing",
       "strategyTag": null,
       "x": 7250,
-      "y": 13487,
+      "y": 13529,
       "textIncomplete": false,
       "sourceRecord": {
         "questionCode": "Q190",
@@ -24443,7 +24449,8 @@
     "spouseName": "legal-name-v1",
     "spouseSigning": "automatic-v1",
     "mortgage": "exists-v1",
-    "loanStatus": "unknown-skips-v1"
+    "loanStatus": "unknown-skips-v1",
+    "monthlyDebt": "monthly-v1"
   },
   "archivedQuestions": [
     {

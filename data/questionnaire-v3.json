@@ -3377,9 +3377,9 @@
     {
       "questionCode": "Q091",
       "stageCode": "STAGE_3",
-      "prompt": "What annual debt service will the rental actually have?",
-      "whyItMatters": "DSCR compares NOI to required debt payments.",
-      "beginnerHelp": null,
+      "prompt": "What will your total monthly loan payments be for this rental property, including principal and interest?",
+      "whyItMatters": "Monthly principal and interest payments are multiplied by 12 to determine annual debt service for DSCR.",
+      "beginnerHelp": "Enter the total monthly principal and interest on all loans for this property. Exclude taxes and insurance counted as operating expenses.",
       "responseType": "CURRENCY",
       "personaMode": "BOTH",
       "routeCode": null,
@@ -3392,7 +3392,9 @@
       "allowUnknown": true,
       "sortOrder": 740,
       "options": [],
-      "branches": []
+      "branches": [],
+      "measurementPeriod": "MONTHLY",
+      "annualizationMultiplier": 12
     },
     {
       "questionCode": "Q092",
