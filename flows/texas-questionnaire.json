@@ -5,6 +5,7 @@
   "sourceModel": "json-linked-v3",
   "sourceRevision": "2026-10-12T16:04:13.3859827Z",
   "sourcePackage": {
+    "sellerAuthorityAfterHomestead": true,
     "conditionSources": {
       "mortgage.first.exists": "Q043",
       "mortgage.first.status": "Q045"
@@ -8776,7 +8777,7 @@
         "options": [],
         "branches": []
       },
-      "sequenceTarget": "Q041",
+      "sequenceTarget": "G001",
       "details": {
         "whyWeAsk": "You need to know who can actually sign and convey title.",
         "beginnerHelp": "Compare seller identity to title commitment/deed records.",
@@ -8799,7 +8800,8 @@
           "groups": []
         }
       },
-      "answers": []
+      "answers": [],
+      "continueTarget": "G001"
     },
     {
       "id": "Q041",
@@ -8881,7 +8883,7 @@
         ],
         "branches": []
       },
-      "sequenceTarget": "G001",
+      "sequenceTarget": "Q042",
       "details": {
         "whyWeAsk": "Probate, divorce, trusts, entities and powers of attorney can affect authority.",
         "beginnerHelp": "Anything other than clearly confirmed authority should create a title/legal review task.",
@@ -8961,7 +8963,8 @@
           "sortOrder": 7,
           "target": ""
         }
-      ]
+      ],
+      "continueTarget": "Q042"
     },
     {
       "id": "G001",
@@ -9196,7 +9199,7 @@
         ],
         "branches": []
       },
-      "sequenceTarget": "Q042",
+      "sequenceTarget": "Q041",
       "details": {
         "whyWeAsk": "A Texas homestead conveyance can require the seller's spouse to sign even when that spouse is not named on the deed.",
         "beginnerHelp": "Ask about the seller’s current homestead status, not whether you plan to claim it after buying. Verify the status with the title company.",
@@ -9226,7 +9229,7 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 1,
-          "target": "Q042",
+          "target": "Q041",
           "routing": "auto",
           "color": "#168d88",
           "style": "solid"
@@ -9237,7 +9240,7 @@
           "unknown": false,
           "helpText": null,
           "sortOrder": 2,
-          "target": "Q042",
+          "target": "Q041",
           "routing": "auto",
           "color": "#168d88",
           "style": "solid"
@@ -20958,30 +20961,6 @@
       "color": "#168d88"
     },
     {
-      "source": "Q040",
-      "target": "Q041",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
-    },
-    {
-      "source": "Q041",
-      "target": "G001",
-      "label": "Next in stage order",
-      "displayLabel": "Next",
-      "kind": "sequence",
-      "provenance": "json-order",
-      "traced": true,
-      "width": 4,
-      "style": "solid",
-      "color": "#168d88"
-    },
-    {
       "source": "Q042",
       "target": "Q043",
       "label": "Next in stage order",
@@ -24325,6 +24304,32 @@
       "width": 4,
       "color": "#168d88",
       "style": "solid"
+    },
+    {
+      "source": "Q040",
+      "target": "G001",
+      "kind": "continuation",
+      "executable": true,
+      "provenance": "json-confirmed",
+      "label": "Continue",
+      "displayLabel": "Continue",
+      "width": 4,
+      "color": "#168d88",
+      "style": "solid",
+      "routing": "auto"
+    },
+    {
+      "source": "Q041",
+      "target": "Q042",
+      "kind": "continuation",
+      "executable": true,
+      "provenance": "json-confirmed",
+      "label": "Continue",
+      "displayLabel": "Continue",
+      "width": 4,
+      "color": "#168d88",
+      "style": "solid",
+      "routing": "auto"
     }
   ],
   "conditionSources": {
@@ -24433,7 +24438,10 @@
     "Q096|Q097",
     "G001|G002",
     "Q043|Q044",
-    "Q045|G008"
+    "Q045|G008",
+    "G001A|Q042",
+    "Q041|G001",
+    "Q040|Q041"
   ],
   "questionCorrections": {
     "management": "v1",
@@ -24450,7 +24458,8 @@
     "spouseSigning": "automatic-v1",
     "mortgage": "exists-v1",
     "loanStatus": "unknown-skips-v1",
-    "monthlyDebt": "monthly-v1"
+    "monthlyDebt": "monthly-v1",
+    "sellerAuthority": "homestead-to-authority-v1"
   },
   "archivedQuestions": [
     {

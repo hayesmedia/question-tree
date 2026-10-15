@@ -26,3 +26,16 @@ export function correctConfirmedRoutes(flow){
  }
  flow.questionCorrections={...flow.questionCorrections,confirmedRoutes:'oct14-v1'};return true;
 }
+export function correctSellerAuthority(flow){
+ if(flow.questionCorrections?.sellerAuthority==='homestead-to-authority-v1')return false;
+ const home=flow.nodes.find(n=>n.id==='G001A'),authority=flow.nodes.find(n=>n.id==='Q041');if(!home||!authority||!flow.nodes.some(n=>n.id==='Q042'))return false;
+ for(const answer of home.answers){answer.target='Q041';delete answer.fallbackTarget;delete answer.connectionLabel;answer.routing='auto';}
+ home.sequenceTarget='Q041';if(home.continueTarget)home.continueTarget='Q041';
+ const owner=flow.nodes.find(n=>n.id==='Q040');if(owner){owner.sequenceTarget=owner.continueTarget='G001';flow.referenceLinks=(flow.referenceLinks||[]).filter(l=>!(l.source==='Q040'&&['sequence','bypass','continuation'].includes(l.kind)));flow.referenceLinks.push({source:'Q040',target:'G001',kind:'continuation',executable:true,provenance:'json-confirmed',label:'Continue',displayLabel:'Continue',width:4,color:'#168d88',style:'solid',routing:'auto'});}
+ authority.sequenceTarget=authority.continueTarget='Q042';
+ flow.referenceLinks=(flow.referenceLinks||[]).filter(l=>!(l.source==='G001A'&&['sequence','bypass','continuation'].includes(l.kind))&&!(l.source==='Q041'&&(['sequence','bypass','continuation'].includes(l.kind)||l.executable)));
+ flow.referenceLinks.push({source:'Q041',target:'Q042',kind:'continuation',executable:true,provenance:'json-confirmed',label:'Continue',displayLabel:'Continue',width:4,color:'#168d88',style:'solid',routing:'auto'});
+ flow.deletedReferenceLinks=[...new Set([...(flow.deletedReferenceLinks||[]),'G001A|Q042','Q041|G001','Q040|Q041'])];
+ if(flow.sourcePackage)flow.sourcePackage.sellerAuthorityAfterHomestead=true;
+ flow.questionCorrections={...flow.questionCorrections,sellerAuthority:'homestead-to-authority-v1'};return true;
+}
