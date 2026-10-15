@@ -2,7 +2,7 @@ export function correctExchange(flow){
  if(flow.questionCorrections?.exchange==='yes-unknown-v1')return false;
  const question=flow.nodes.find(n=>n.id==='Q027');if(!question)return false;
  flow.conditionSources={...flow.conditionSources,'property.addendums.has.section1031Exchange':'Q027'};
- for(const answer of question.answers)if(['Yes','No','Unknown'].includes(answer.value||answer.label)){answer.target=(answer.value||answer.label)==='No'?'Q028':'G017';answer.routing='auto';answer.color??='#168d88';answer.style??='solid';}
+ for(const answer of question.answers)if(['Yes','No','Unknown'].includes(answer.value||answer.label)){answer.target=(answer.value||answer.label)==='No'||!flow.nodes.some(n=>n.id==='G017')?'Q028':'G017';answer.routing='auto';answer.color??='#168d88';answer.style??='solid';}
  for(const id of ['G017']){const node=flow.nodes.find(n=>n.id===id);if(!node)continue;
   const rule={conditions:[{fieldCode:'property.addendums.has.section1031Exchange',operator:'in',value:'Yes,Unknown'}],combinator:'AND'};
   const branches=[{ruleOrder:1,conditionJson:JSON.stringify(rule)}];

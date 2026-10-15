@@ -15,3 +15,14 @@ export function correctMonthlyDebt(flow){
  for(const record of [node.sourceRecord,flow.sourcePackage?.questions?.find(q=>q.questionCode==='Q091')])if(record)Object.assign(record,{prompt,responseType:'CURRENCY',unit:'$',measurementPeriod:'MONTHLY',annualizationMultiplier:12,whyItMatters:node.details.whyWeAsk,beginnerHelp:node.details.beginnerHelp});
  flow.questionCorrections={...flow.questionCorrections,monthlyDebt:'monthly-v1'};return true;
 }
+export function correctConfirmedRoutes(flow){
+ if(flow.questionCorrections?.confirmedRoutes==='oct14-v1')return false;
+ for(const [id,target] of [['Q060','Q110'],['Q010','Q012'],['Q014','Q016'],['Q027','Q028'],['Q040','G001']]){
+  const node=flow.nodes.find(n=>n.id===id);if(!node||!flow.nodes.some(n=>n.id===target))continue;
+  for(const a of node.answers){a.target=target;a.routing='auto';}
+  node.sequenceTarget=target;
+  flow.referenceLinks=(flow.referenceLinks||[]).filter(l=>l.source!==id||(!['sequence','bypass','stage-transition','continuation'].includes(l.kind)&&!l.executable));
+  if(!node.answers.length){node.continueTarget=target;flow.referenceLinks.push({source:id,target,kind:'continuation',executable:true,provenance:'json-confirmed',label:'Continue',displayLabel:'Continue',width:4,color:'#168d88',style:'solid',routing:'auto'});}
+ }
+ flow.questionCorrections={...flow.questionCorrections,confirmedRoutes:'oct14-v1'};return true;
+}
