@@ -11,6 +11,7 @@ export class SharedSync {
  async read(){const response=await this.fetcher('/api/project',{cache:'no-store'});if(!response.ok)throw Error(response.status===401?'Sign in again to sync':response.status===404?'Shared storage unavailable':'Unable to load shared project');const data=await response.json();if(!Number.isInteger(data.revision)||data.revision<0)throw Error('Invalid shared project response');return data;}
  async accept(remote,initial=false,force=false){
   if(!remote.flow){this.revision=remote.revision;this.ready=true;this.blocked=false;this.dirty=true;this.state('pending','Creating shared project…');this.schedule();return;}
+  if(this.ready&&!force&&!this.dirty&&this.revision===remote.revision)return;
   if(equal(remote.flow,this.getFlow())){this.revision=remote.revision;this.ready=true;this.blocked=false;this.dirty=false;this.conflicts=[];this.rememberBase(remote.flow);this.state('synced','Saved to site · version '+this.revision);return;}
   if(this.dirty&&!force&&this.revision===remote.revision){this.ready=true;this.blocked=false;this.rememberBase(remote.flow);this.state('pending','Saved locally — waiting to sync');this.schedule();return;}
   if(this.ready&&this.revision===remote.revision&&!force)return;
