@@ -108,6 +108,7 @@ export function upgradeSource(current,source,baseline){
 // Manually imported packages remain authoritative until the user explicitly
 // reviews deployed source data. A deployment must not roll them back on reload.
 export function upgradeForDeployment(current,source,baseline){
+ if(current.canvasMode==='standalone')return {flow:current,changed:false,preserved:[]};
  if((current.sourceImport==='manual'&&current.sourceModel===source.sourceModel)||(current.sourceRevision&&Date.parse(current.sourceRevision)>Date.parse(source.sourceRevision)))return {flow:current,changed:false,preserved:[]};
  return upgradeSource(current,source,baseline);
 }

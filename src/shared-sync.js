@@ -12,7 +12,7 @@ export class SharedSync {
  async accept(remote,initial=false,force=false){
   if(!remote.flow){this.revision=remote.revision;this.ready=true;this.blocked=false;this.dirty=true;this.state('pending','Creating shared project…');this.schedule();return;}
   if(this.ready&&!force&&!this.dirty&&this.revision===remote.revision)return;
-  if(equal(remote.flow,this.getFlow())){this.revision=remote.revision;this.ready=true;this.blocked=false;this.dirty=false;this.conflicts=[];this.rememberBase(remote.flow);this.state('synced','Saved to site · version '+this.revision);return;}
+  if(!remote.template&&equal(remote.flow,this.getFlow())){this.revision=remote.revision;this.ready=true;this.blocked=false;this.dirty=false;this.conflicts=[];this.rememberBase(remote.flow);this.state('synced','Saved to site · version '+this.revision);return;}
   if(this.dirty&&!force&&this.revision===remote.revision){this.ready=true;this.blocked=false;this.rememberBase(remote.flow);this.state('pending','Saved locally — waiting to sync');this.schedule();return;}
   if(this.ready&&this.revision===remote.revision&&!force)return;
   if(!this.ready&&this.revision===remote.revision&&!force){this.ready=true;this.dirty=true;this.rememberBase(remote.flow);this.state('pending','Saved locally — waiting to sync');this.schedule();return;}
@@ -25,7 +25,7 @@ export class SharedSync {
    try{await this.applyRemote(result.value,{initial:false,merged:true,revision:remote.revision});}catch(error){this.conflicts=[{path:[],pathName:'Workflow relationships',local:structuredClone(this.getFlow()),remote:remote.flow,message:error.message}];this.blocked=true;this.state('conflict','Concurrent workflow changes need review');return;}
    this.revision=remote.revision;this.rememberBase(remote.flow);this.ready=true;this.blocked=false;this.conflicts=[];this.dirty=!equal(this.getFlow(),remote.flow);this.state(this.dirty?'pending':'synced',this.dirty?'Independent edits merged — saving':'Saved to site · version '+this.revision);this.schedule();return;
   }
-  await this.applyRemote(remote.flow,{initial,revision:remote.revision});this.revision=remote.revision;this.ready=true;this.blocked=false;this.conflicts=[];this.rememberBase(remote.flow);this.dirty=!equal(remote.flow,this.getFlow());this.state(this.dirty?'pending':'synced',this.dirty?'Project updates waiting to sync':'Saved to site · version '+this.revision);this.schedule();
+  await this.applyRemote(remote.flow,{initial,revision:remote.revision});this.revision=remote.revision;this.ready=true;this.blocked=false;this.conflicts=[];this.rememberBase(remote.flow);this.dirty=!!remote.template||!equal(remote.flow,this.getFlow());this.state(this.dirty?'pending':'synced',this.dirty?'Project updates waiting to sync':'Saved to site · version '+this.revision);this.schedule();
  }
  async refresh(initial=false,force=false){if(this.closed)return;if(this.reading||this.saving){this.refreshPending=true;return;}this.reading=true;try{const remote=await this.read();if(!this.closed)await this.accept(remote,initial,force);}catch(error){this.state('offline','Saved locally — '+error.message);}finally{this.reading=false;if(this.refreshPending){this.refreshPending=false;queueMicrotask(()=>this.refresh());}}}
  async flush(){if(this.closed||!this.dirty||!this.ready||this.blocked||this.saving)return;if(this.isBusy()){this.schedule();return;}this.saving=true;const generation=this.generation,revision=this.revision,snapshot=structuredClone(this.getFlow());this.state('saving','Saving to site…');try{
