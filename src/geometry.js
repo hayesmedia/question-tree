@@ -1,3 +1,4 @@
+import {isTypedQuestion} from './question-settings.js';
 import {MinQueue} from './priority-queue.js';
 export const nodeWidth=n=>n.width||(n.shape==='diamond'?300:235);
 export const nodeHeight=n=>{
@@ -5,7 +6,7 @@ export const nodeHeight=n=>{
  const lines=Math.max(1,Math.ceil(String(n.title||'').length/chars));
  const textHeight=lines*font*1.5+21,header=(n.section?25:0)+26;
  const answers=(n.answers||[]).reduce((sum,a)=>sum+Math.max(36,Math.ceil(String(a.label||'').length/Math.max(8,Math.floor((nodeWidth(n)-50)/7.2)))*18+18),0);
- return Math.max(n.height||0,n.shape==='diamond'?220:0,header+textHeight+answers+(n.sourceRecord&&n.details?.responseType!=='SINGLE_SELECT'?34:0),n.section?103:78);
+ return Math.max(n.height||0,n.shape==='diamond'?220:0,header+textHeight+answers+(isTypedQuestion(n)?34:0),n.section?103:78);
 };
 function attachment(node,toward,side){
  const w=nodeWidth(node),h=nodeHeight(node),cx=node.x+w/2,cy=node.y+h/2,dx=toward.x-cx,dy=toward.y-cy;

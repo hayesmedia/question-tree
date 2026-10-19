@@ -64,3 +64,9 @@ New connections from single-select questions ask which answer should follow the 
 Q011 is archived, not permanently deleted. Its complete card and saved connections remain in project JSON under archivedQuestions. Q010 bypasses it to Q012. Use **Archive → Restore question** to bring it back later; restoration does not automatically archive it again on reload. If Q011 was already deleted locally, its source card is recovered into the archive from the deployed dataset.
 
 Deleted source questions are recovered into Archive from the browser backup or available source records when the project loads. Future question deletions archive the full card, group placement and connections before removing it from the active canvas. IDs that cannot be recovered are listed in Archive rather than silently discarded.
+
+### Numbering and configuring new questions
+
+Select a card (double-click its group first if it belongs to one). The top of Properties has **Question number** (for example `Q131`) and **Answer type**: multiple choice, number, text, dollar amount, percentage, year or date. Active question numbers must be unique; an archived number may be reused for a new card. A number-only entry such as `131` becomes `Q131`.
+
+Project JSON stores the displayed number in `questionCode` and the answer type in `details.responseType`. The internal `id` stays unchanged so references, groups and connections remain valid. Typed questions offer a **Continue to** destination and work in the questionnaire preview even when created manually. Converting from multiple choice preserves previous answers and routes in `responseSettings`; switching back restores them. Changing between typed formats preserves the current continuation. New questions created inside a group inherit its section/stage context.
